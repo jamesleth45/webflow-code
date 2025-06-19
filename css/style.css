@@ -396,8 +396,7 @@ input::placeholder {
 
 .hero__image {
   grid-column: 1 / -1;
-}
-
-.hero__image {
-  min-height: 105vh;
+  min-height: 100vh;
+  max-height: 110vh;
+  object-fit: cover;
 }
