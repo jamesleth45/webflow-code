@@ -396,4 +396,5 @@ input::placeholder {
 
 .hero__image {
   grid-column: span 6;
+  max-height: 100vh;
 }
