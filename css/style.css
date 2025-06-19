@@ -228,7 +228,7 @@ input::placeholder {
   }
 
   .header__nav-link,
-  .header__mobile-toggle {
+  .header__nav-toggle {
     width: 100%;
   }
 }
