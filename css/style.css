@@ -1,4 +1,4 @@
-/* TEST STYLE */
+/* TEST STYLE v2 */
 .test {
   background-color: #ffcc00;
   color: #000;
@@ -9,9 +9,10 @@
 }
 
 .test__toggle {
-  display: none;
+  display: block; /* always visible now */
   padding: 15px;
   background-color: #333;
   color: #fff;
   margin-top: 10px;
+  transition: all 0.3s ease;
 }
