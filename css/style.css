@@ -93,6 +93,10 @@ img {
   height: auto;
 }
 
+.i {
+  display: none;
+}
+
 /* forms */
 input,
 input.w-input {
