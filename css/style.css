@@ -268,3 +268,17 @@ input::placeholder {
     justify-content: flex-end;
   }
 }
+
+.header__mobile-toggle {
+  position: relative;
+  width: 2.375rem;
+  height: 3.5rem;
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 250ms cubic-bezier(.215, .61, .355, 1);
+}
+
+.header__mobile-toggle[data-visible="false"] {
+  opacity: 0;
+  pointer-events: none;
+}
