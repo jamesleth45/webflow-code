@@ -238,6 +238,7 @@ input::placeholder {
   }
 }
 
+
 @media (max-width: 991px) {
   .header__nav-item--preview {
     margin-top: 1.25rem;
@@ -250,6 +251,12 @@ input::placeholder {
   .header__nav-item--search {
     display: none;
   }
+}
+
+.header__nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (min-width: 992px) {
