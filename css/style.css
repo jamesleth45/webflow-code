@@ -80,6 +80,11 @@ button {
   text-transform: uppercase;
 }
 
+a:hover,
+button:hover {
+  font-weight: 700;
+}
+
 img {
   display: block;
   max-width: 100%;
