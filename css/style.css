@@ -148,9 +148,9 @@ input::placeholder {
   }
 }
 
-/* header */
 @media (min-width: 992px) {
-  .hero ~ .header {
+  .hero ~ .header,
+  body:has(.hero) .header {
     color: #fff;
   }
 }
