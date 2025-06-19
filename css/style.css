@@ -350,3 +350,16 @@ input::placeholder {
   align-items: center;
   justify-content: center;
 }
+
+.header__mobile-icon {
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(.215, .61, .355, 1);
+}
+
+.header__mobile-icon[data-visible="false"] {
+  opacity: 0;
+}
+
+.header__mobile-icon[data-visible="true"] {
+  opacity: 1;
+}
