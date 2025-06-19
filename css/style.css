@@ -278,6 +278,14 @@ input::placeholder {
   }
 }
 
+.header__nav-item--about {
+  margin-top: .625rem;
+}
+
+.header__nav-item--behind {
+  margin-bottom: 1.875rem;
+}
+
 .header__nav-icon {
   display: flex;
   align-items: center;
