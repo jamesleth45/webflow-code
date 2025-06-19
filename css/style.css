@@ -399,4 +399,5 @@ input::placeholder {
   min-height: 100vh;
   max-height: 110vh;
   object-fit: cover;
+  width: 100%;
 }
