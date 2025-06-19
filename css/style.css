@@ -223,6 +223,15 @@ input::placeholder {
   }
 }
 
+@media (min-width: 992px) {
+  .header__nav-list--right {
+    position: fixed;
+    top: 8.75rem;
+    right: 1.6875rem;
+    z-index: 102;
+  }
+}
+
 .header__nav-list--nested {
   height: 0;
   overflow: hidden;
