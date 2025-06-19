@@ -395,5 +395,5 @@ input::placeholder {
 }
 
 .hero__image {
-  grid-column: 1 / 6;
+  grid-column: span 6;
 }
