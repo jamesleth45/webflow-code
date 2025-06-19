@@ -234,10 +234,6 @@ input::placeholder {
   }
 }
 
-.header__nav-list--nested[data-open="true"] {
-  height: auto;
-}
-
 @media (max-width: 991px) {
   .header__nav-list--nested {
     margin-left: .625rem;
