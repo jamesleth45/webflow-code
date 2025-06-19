@@ -229,6 +229,7 @@ input::placeholder {
     top: 8.75rem;
     right: 1.6875rem;
     z-index: 102;
+    text-align: right;
   }
 }
 
