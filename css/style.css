@@ -1,3 +1,131 @@
+/* || Box Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: #000;
+  color: #fff;
+}
+
+/* || Typography */
+body {
+  font-family: "neue-haas-grotesk-text", "neue-haas-grotesk-text-fallback", sans-serif;
+  font-size: .625rem;
+  line-height: .8125rem;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  color: #000;
+  background-color: #fff;
+
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: .75rem;
+    line-height: .9375rem;
+  }
+}
+
+h1 {
+  font-family: "neue-haas-grotesk-display", "neue-haas-grotesk-display-fallback", sans-serif;
+  font-size: 1.375rem;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 1.1875rem;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 700;
+  line-height: inherit;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+/* || Reset */
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a[aria-current="page"] {
+  font-weight: 700;
+}
+
+button {
+  all: unset;
+  color: inherit;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* || Forms */
+input,
+input.w-input {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 0;
+  padding: 0 3.875rem .3125rem 0;
+  border: none;
+  border-bottom: 1px solid #000;
+  border-radius: 0;
+  background-color: transparent;
+  color: #000;
+  font-size: inherit;
+  line-height: inherit;
+  text-transform: uppercase;
+  box-shadow: none;
+  outline: none;
+}
+
+input:focus,
+input.w-input:focus {
+  border-bottom: 1px solid #000;
+  box-shadow: none;
+  outline: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  box-shadow: 0 0 0 1000px #fff inset !important;
+  -webkit-text-fill-color: #000 !important;
+  background-color: transparent !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+}
+
+input::placeholder {
+  color: #999;
+}
+
 /* || header */
 @media (max-width: 991px) {
   .header {
