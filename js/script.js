@@ -67,38 +67,50 @@ document.addEventListener('keydown', (e) => {
 });
 
 /* || Nav Nested Toggle */
+let animating = false;
+
 const navToggles = document.querySelectorAll('.header__nav-toggle');
 
 navToggles.forEach(toggle => {
   toggle.addEventListener('click', () => {
+    if (animating) return;
+    animating = true;
+
     const item = toggle.closest('.header__nav-item');
-    const nestedList = item?.querySelector('.header__nav-list--nested');
+    const nested = item?.querySelector('.header__nav-list--nested');
     const isActive = toggle.hasAttribute('data-active');
 
     document.querySelectorAll('.header__nav-toggle[data-active]').forEach(t => {
       t.removeAttribute('data-active');
     });
 
-    document.querySelectorAll('.header__nav-list--nested[data-open]').forEach(list => {
-      list.style.height = `${list.scrollHeight}px`;
+    document.querySelectorAll('.header__nav-list--nested[data-open]').forEach(section => {
+      const height = section.scrollHeight;
+      section.style.height = `${height}px`;
+
       requestAnimationFrame(() => {
-        list.style.height = '0px';
+        section.style.height = '0px';
       });
-      list.removeAttribute('data-open');
+
+      section.removeAttribute('data-open');
+      section.setAttribute('aria-hidden', 'true');
     });
 
-    if (isActive) return;
+    if (isActive) {
+      animating = false;
+      return;
+    }
 
     toggle.setAttribute('data-active', 'true');
-    nestedList?.setAttribute('data-open', 'true');
-    nestedList?.style.setProperty('height', `${nestedList.scrollHeight}px`);
-  });
-});
+    nested?.setAttribute('data-open', 'true');
+    nested?.setAttribute('aria-hidden', 'false');
+    nested?.style.setProperty('height', `${nested.scrollHeight}px`);
 
-document.querySelectorAll('.header__nav-list--nested').forEach(list => {
-  list.addEventListener('transitionend', () => {
-    if (list.hasAttribute('data-open')) {
-      list.style.height = 'auto';
-    }
+    nested?.addEventListener('transitionend', function handler(e) {
+      if (e.propertyName !== 'height') return;
+      nested.style.height = 'auto';
+      nested.removeEventListener('transitionend', handler);
+      animating = false;
+    });
   });
 });
