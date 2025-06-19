@@ -1,11 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
-  /* || Remove w-embed & w-script */
+  /* || Webflow Cleanup */
 
-  const classesToRemove = ['w-embed', 'w-script'];
-
-  classesToRemove.forEach(className => {
+  ['w-embed', 'w-script'].forEach(className => {
     document.querySelectorAll(`.${className}`).forEach(el => {
-      el.remove();
+      el.classList.remove(className);
     });
+  });
+
+  document.querySelectorAll('.css').forEach(el => {
+    if (el.classList.length === 1) {
+      el.remove();
+    }
   });
 });
