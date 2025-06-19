@@ -222,6 +222,17 @@ input::placeholder {
   }
 }
 
+@media (max-width: 991px) {
+  .header__nav-item {
+    line-height: 1.5625rem;
+  }
+
+  .header__nav-link,
+  .header__mobile-toggle {
+    width: 100%;
+  }
+}
+
 @media (min-width: 992px) {
   .header__nav-item--preview,
   .header__nav-item--brand {
