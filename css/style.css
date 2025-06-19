@@ -223,3 +223,30 @@ input::placeholder {
     right: 1.6875rem;
   }
 }
+
+@media (min-width: 992px) {
+  .header__nav-item--preview,
+  .header__nav-item--brand {
+    margin-top: .8125rem;
+  }
+
+  .header__nav-item--search {
+    position: fixed;
+    top: 1.6875rem;
+    right: 1.6875rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .header__nav-item--preview {
+    margin-top: 1.25rem;
+  }
+
+  .header__nav-item--brand {
+    margin-top: 1.875rem;
+  }
+
+  .header__nav-item--search {
+    display: none;
+  }
+}
