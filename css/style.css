@@ -149,3 +149,27 @@ input::placeholder {
     z-index: 102;
   }
 }
+
+.header__logo-link {
+  display: flow-root;
+  font-family: "neue-haas-grotesk-display", "neue-haas-grotesk-display-fallback", sans-serif;
+  font-size: 1.67rem;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+}
+
+.header__logo-link::before,
+.header__logo-link::after {
+  content: "";
+  display: table;
+  margin-bottom: calc(-.46lh + .36em);
+}
+
+@media (max-width: 991px) {
+  .header__logo-link {
+    font-size: 1.25rem;
+    padding: 1.25rem;
+  }
+}
