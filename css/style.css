@@ -179,3 +179,26 @@ input::placeholder {
     padding: 1.25rem;
   }
 }
+
+@media (max-width: 991px) {
+  .header__nav {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4.375rem;
+    padding: 3.5rem 1.25rem 1.25rem;
+    background-color: #fff;
+    overflow-y: auto;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 250ms cubic-bezier(.215, .61, .355, 1);
+  }
+
+  .header__nav[data-open="true"] {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
