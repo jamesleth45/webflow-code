@@ -1,10 +1,11 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const box = document.querySelector(".test");
-  const button = document.querySelector(".test__button");
+// TEST TOGGLE FUNCTION
+document.addEventListener("DOMContentLoaded", () => {
+  const testEl = document.querySelector(".test");
+  const toggleEl = document.querySelector(".test__toggle");
 
-  if (box && button) {
-    button.addEventListener("click", function () {
-      box.classList.toggle("active");
+  if (testEl && toggleEl) {
+    testEl.addEventListener("click", () => {
+      toggleEl.style.display = toggleEl.style.display === "none" ? "block" : "none";
     });
   }
 });
