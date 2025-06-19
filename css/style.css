@@ -256,6 +256,10 @@ input::placeholder {
   }
 }
 
+.header__nav-toggle[data-active="true"] {
+  font-weight: 700;
+}
+
 @media (min-width: 992px) {
   .header__nav-item--preview,
   .header__nav-item--brand {
