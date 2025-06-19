@@ -154,9 +154,8 @@ input::placeholder {
 
 @media (max-width: 991px) {
   .header__logo {
-    display: inline-flex;
-    position: relative;
-    z-index: 102;
+    top: 0;
+    left: 0;
   }
 }
 
