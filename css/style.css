@@ -362,13 +362,6 @@ input::placeholder {
 }
 
 /* hero */
-@media (min-width: 992px) {
-  .hero ~ .header,
-  body:has(.hero) .header {
-    color: #fff;
-  }
-}
-
 @media (max-width: 991px) {
   .hero {
     margin-top: 3.5rem;
