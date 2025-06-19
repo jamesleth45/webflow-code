@@ -154,8 +154,10 @@ input::placeholder {
 
 @media (max-width: 991px) {
   .header__logo {
+    position: fixed;
     top: 0;
     left: 0;
+    z-index: 102;
   }
 }
 
