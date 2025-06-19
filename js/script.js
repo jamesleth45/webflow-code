@@ -12,4 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
       el.remove();
     }
   });
+
+  requestAnimationFrame(() => {
+    document.querySelectorAll('.w--current').forEach(el => {
+      el.classList.remove('w--current');
+    });
+  });
 });
