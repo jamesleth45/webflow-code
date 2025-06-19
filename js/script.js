@@ -67,52 +67,50 @@ document.addEventListener('keydown', (e) => {
 });
 
 /* || Nav Nested Toggle */
-document.addEventListener('DOMContentLoaded', () => {
-  const toggles = document.querySelectorAll('.header__nav-toggle');
+document.querySelectorAll('.header__nav-toggle').forEach(toggle => {
+  let isAnimating = false;
 
-  toggles.forEach(toggle => {
-    toggle.addEventListener('click', () => {
-      const nested = toggle.closest('.header__nav-item')?.querySelector('.header__nav-list--nested');
-      if (!nested) return;
+  toggle.addEventListener('click', () => {
+    if (isAnimating) return;            // lock spam-clicks
+    const item   = toggle.closest('.header__nav-item');
+    const nested = item.querySelector('.header__nav-list--nested');
+    const isOpen = nested.getAttribute('data-open') === 'true';
 
-      if (nested.dataset.animating === 'true') return;
+    isAnimating = true;
 
-      const isOpen = nested.hasAttribute('data-open');
+    if (!isOpen) {
+      // === OPEN ===
+      // 1) measure height
+      const fullH = nested.scrollHeight + 'px';
+      // 2) apply attributes & inline height
+      nested.style.height      = fullH;
+      nested.setAttribute('data-open',   'true');
+      toggle.setAttribute('data-active', 'true');
 
-      nested.dataset.animating = 'true';
+      // 3) when transition ends, clean up
+      nested.addEventListener('transitionend', function handler(e) {
+        if (e.propertyName !== 'height') return;
+        nested.style.height = 'auto';      // remove fixed height
+        isAnimating = false;
+        nested.removeEventListener('transitionend', handler);
+      });
 
-      if (isOpen) {
-        // Close
-        nested.style.height = `${nested.scrollHeight}px`; // set current height to trigger transition
-        requestAnimationFrame(() => {
-          nested.style.height = '0px';
-        });
+    } else {
+      // === CLOSE ===
+      // 1) set height to current (needed for transition from px → 0)
+      nested.style.height = nested.scrollHeight + 'px';
+      // force reflow so the browser registers the start height
+      nested.offsetHeight;
+      // 2) collapse
+      nested.style.height = '0';
+      nested.removeAttribute('data-open');
+      toggle.removeAttribute('data-active');
 
-        nested.addEventListener('transitionend', function handler() {
-          nested.removeAttribute('data-open');
-          toggle.removeAttribute('data-active');
-          nested.removeAttribute('data-animating');
-          nested.removeEventListener('transitionend', handler);
-        });
-      } else {
-        // Open
-        nested.setAttribute('data-open', 'true');
-        toggle.setAttribute('data-active', 'true');
-
-        nested.style.height = 'auto';
-        const fullHeight = nested.scrollHeight;
-        nested.style.height = '0px';
-
-        requestAnimationFrame(() => {
-          nested.style.height = `${fullHeight}px`;
-        });
-
-        nested.addEventListener('transitionend', function handler() {
-          nested.style.height = 'auto';
-          nested.removeAttribute('data-animating');
-          nested.removeEventListener('transitionend', handler);
-        });
-      }
-    });
+      nested.addEventListener('transitionend', function handler(e) {
+        if (e.propertyName !== 'height') return;
+        isAnimating = false;
+        nested.removeEventListener('transitionend', handler);
+      });
+    }
   });
 });
