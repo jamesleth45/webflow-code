@@ -1,4 +1,19 @@
 .test {
-  padding: 8.75rem;
+  background-color: yellow;
+  padding: 4rem;
+  transition: background 0.3s ease;
+}
+
+.test__button {
+  padding: 1rem 2rem;
   background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.test.active {
+  background-color: lightblue;
 }
