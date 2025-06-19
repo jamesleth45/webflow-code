@@ -80,9 +80,11 @@ button {
   text-transform: uppercase;
 }
 
-a:hover,
-button:hover {
-  font-weight: 700;
+@media (hover: hover) {
+  a:hover,
+  button:hover {
+    font-weight: 700;
+  }
 }
 
 img {
