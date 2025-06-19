@@ -66,7 +66,7 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-/* || Nav Sub Toggle */
+/* || Nav Nested Toggle */
 const navToggles = document.querySelectorAll('.header__nav-toggle');
 
 navToggles.forEach(toggle => {
@@ -75,34 +75,28 @@ navToggles.forEach(toggle => {
     const nestedList = item?.querySelector('.header__nav-list--nested');
     const isActive = toggle.hasAttribute('data-active');
 
-    // Close all others
     document.querySelectorAll('.header__nav-toggle[data-active]').forEach(t => {
       t.removeAttribute('data-active');
     });
 
     document.querySelectorAll('.header__nav-list--nested[data-open]').forEach(list => {
-      list.style.height = `${list.scrollHeight}px`; // lock height
-      void list.offsetHeight; // force reflow
-      list.style.height = '0px';
+      list.style.height = `${list.scrollHeight}px`;
+      requestAnimationFrame(() => {
+        list.style.height = '0px';
+      });
       list.removeAttribute('data-open');
     });
 
-    // If already active, just closed everything
     if (isActive) return;
 
-    // Open this one
     toggle.setAttribute('data-active', 'true');
-    if (nestedList) {
-      nestedList.setAttribute('data-open', 'true');
-      nestedList.style.height = `${nestedList.scrollHeight}px`;
-    }
+    nestedList?.setAttribute('data-open', 'true');
+    nestedList?.style.setProperty('height', `${nestedList.scrollHeight}px`);
   });
 });
 
-// Reset height after open transition finishes
 document.querySelectorAll('.header__nav-list--nested').forEach(list => {
-  list.addEventListener('transitionend', (e) => {
-    if (e.propertyName !== 'height') return;
+  list.addEventListener('transitionend', () => {
     if (list.hasAttribute('data-open')) {
       list.style.height = 'auto';
     }
