@@ -69,25 +69,24 @@ document.addEventListener('keydown', (e) => {
 /* || Nav Nested Toggle */
 document.querySelectorAll('.header__nav-toggle').forEach(toggle => {
   let isAnimating = false;
-  const item   = toggle.closest('.header__nav-item');
-  const nested = item.querySelector('.header__nav-list--nested');
+  const nested = toggle
+    .closest('.header__nav-item')
+    .querySelector('.header__nav-list--nested');
 
-  // single named handler factory
-  function makeEndHandler(onClose) {
-    return function onTransitionEnd(e) {
+  const makeHandler = closing => {
+    const handler = e => {
       if (e.target !== nested || e.propertyName !== 'height') return;
-      nested.removeEventListener('transitionend', onTransitionEnd);
-      if (!onClose) {
-        // after OPEN
+      nested.removeEventListener('transitionend', handler);
+      if (!closing) {
         nested.style.height = 'auto';
       } else {
-        // after CLOSE
         nested.removeAttribute('data-open');
         toggle.removeAttribute('data-active');
       }
       isAnimating = false;
     };
-  }
+    return handler;
+  };
 
   toggle.addEventListener('click', () => {
     if (isAnimating) return;
@@ -96,30 +95,19 @@ document.querySelectorAll('.header__nav-toggle').forEach(toggle => {
     const isOpen = nested.getAttribute('data-open') === 'true';
 
     if (!isOpen) {
-      // ==== OPEN ====
-      // 1) prep start-state & attributes
       nested.style.height = '0px';
       nested.setAttribute('data-open', 'true');
       toggle.setAttribute('data-active', 'true');
-
-      // 2) force a reflow (so the next height change actually animates)
       requestAnimationFrame(() => {
         nested.style.height = nested.scrollHeight + 'px';
       });
-
-      // 3) listen once for end
-      nested.addEventListener('transitionend', makeEndHandler(false));
-
+      nested.addEventListener('transitionend', makeHandler(false));
     } else {
-      // ==== CLOSE ====
-      // 1) fix start height, force reflow
       nested.style.height = nested.scrollHeight + 'px';
       requestAnimationFrame(() => {
-        // 2) then collapse
         nested.style.height = '0px';
       });
-
-      nested.addEventListener('transitionend', makeEndHandler(true));
+      nested.addEventListener('transitionend', makeHandler(true));
     }
   });
 });
