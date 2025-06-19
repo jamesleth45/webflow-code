@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  /* || Webflow Cleanup */
+  /* || Remove w-embed & w-script */
 
   const classesToRemove = ['w-embed', 'w-script'];
 
