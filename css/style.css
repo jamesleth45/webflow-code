@@ -239,6 +239,12 @@ input::placeholder {
 }
 
 @media (max-width: 991px) {
+  .header__nav-list--nested {
+    margin-left: .625rem;
+  }
+}
+
+@media (max-width: 991px) {
   .header__nav-item {
     line-height: 1.5625rem;
   }
