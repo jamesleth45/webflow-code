@@ -65,3 +65,29 @@ document.addEventListener('keydown', (e) => {
     closeNav();
   }
 });
+
+/* || Nav Sub Toggle */
+const navToggles = document.querySelectorAll('.header__nav-toggle');
+
+navToggles.forEach(toggle => {
+  toggle.addEventListener('click', () => {
+    const nestedList = toggle.closest('.header__nav-item')?.querySelector('.header__nav-list--nested');
+    const isActive = toggle.hasAttribute('data-active');
+
+    // Close all others
+    document.querySelectorAll('.header__nav-toggle[data-active]').forEach(t => {
+      t.removeAttribute('data-active');
+    });
+
+    document.querySelectorAll('.header__nav-list--nested[data-open]').forEach(list => {
+      list.removeAttribute('data-open');
+    });
+
+    // If this one was already open, we're done (toggled off)
+    if (isActive) return;
+
+    // Open this one
+    toggle.setAttribute('data-active', 'true');
+    nestedList?.setAttribute('data-open', 'true');
+  });
+});
