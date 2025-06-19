@@ -369,7 +369,6 @@ input::placeholder {
 }
 
 /* hero */
-/* hero */
 @media (max-width: 991px) {
   .hero {
     margin-top: 3.5rem;
@@ -397,4 +396,8 @@ input::placeholder {
 
 .hero__image {
   grid-column: 1 / -1;
+}
+
+.hero__image {
+  min-height: 105vh;
 }
