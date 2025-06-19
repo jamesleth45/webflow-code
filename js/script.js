@@ -69,48 +69,57 @@ document.addEventListener('keydown', (e) => {
 /* || Nav Nested Toggle */
 document.querySelectorAll('.header__nav-toggle').forEach(toggle => {
   let isAnimating = false;
+  const item   = toggle.closest('.header__nav-item');
+  const nested = item.querySelector('.header__nav-list--nested');
+
+  // single named handler factory
+  function makeEndHandler(onClose) {
+    return function onTransitionEnd(e) {
+      if (e.target !== nested || e.propertyName !== 'height') return;
+      nested.removeEventListener('transitionend', onTransitionEnd);
+      if (!onClose) {
+        // after OPEN
+        nested.style.height = 'auto';
+      } else {
+        // after CLOSE
+        nested.removeAttribute('data-open');
+        toggle.removeAttribute('data-active');
+      }
+      isAnimating = false;
+    };
+  }
 
   toggle.addEventListener('click', () => {
-    if (isAnimating) return;            // lock spam-clicks
-    const item   = toggle.closest('.header__nav-item');
-    const nested = item.querySelector('.header__nav-list--nested');
-    const isOpen = nested.getAttribute('data-open') === 'true';
-
+    if (isAnimating) return;
     isAnimating = true;
 
+    const isOpen = nested.getAttribute('data-open') === 'true';
+
     if (!isOpen) {
-      // === OPEN ===
-      // 1) measure height
-      const fullH = nested.scrollHeight + 'px';
-      // 2) apply attributes & inline height
-      nested.style.height      = fullH;
-      nested.setAttribute('data-open',   'true');
+      // ==== OPEN ====
+      // 1) prep start-state & attributes
+      nested.style.height = '0px';
+      nested.setAttribute('data-open', 'true');
       toggle.setAttribute('data-active', 'true');
 
-      // 3) when transition ends, clean up
-      nested.addEventListener('transitionend', function handler(e) {
-        if (e.propertyName !== 'height') return;
-        nested.style.height = 'auto';      // remove fixed height
-        isAnimating = false;
-        nested.removeEventListener('transitionend', handler);
+      // 2) force a reflow (so the next height change actually animates)
+      requestAnimationFrame(() => {
+        nested.style.height = nested.scrollHeight + 'px';
       });
+
+      // 3) listen once for end
+      nested.addEventListener('transitionend', makeEndHandler(false));
 
     } else {
-      // === CLOSE ===
-      // 1) set height to current (needed for transition from px → 0)
+      // ==== CLOSE ====
+      // 1) fix start height, force reflow
       nested.style.height = nested.scrollHeight + 'px';
-      // force reflow so the browser registers the start height
-      nested.offsetHeight;
-      // 2) collapse
-      nested.style.height = '0';
-      nested.removeAttribute('data-open');
-      toggle.removeAttribute('data-active');
-
-      nested.addEventListener('transitionend', function handler(e) {
-        if (e.propertyName !== 'height') return;
-        isAnimating = false;
-        nested.removeEventListener('transitionend', handler);
+      requestAnimationFrame(() => {
+        // 2) then collapse
+        nested.style.height = '0px';
       });
+
+      nested.addEventListener('transitionend', makeEndHandler(true));
     }
   });
 });
