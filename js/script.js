@@ -81,7 +81,6 @@ document.querySelectorAll('.header__nav-toggle').forEach(toggle => {
         nested.style.height = 'auto';
       } else {
         nested.removeAttribute('data-open');
-        toggle.removeAttribute('data-active');
       }
       isAnimating = false;
     };
@@ -104,6 +103,7 @@ document.querySelectorAll('.header__nav-toggle').forEach(toggle => {
       nested.addEventListener('transitionend', makeHandler(false));
     } else {
       nested.style.height = nested.scrollHeight + 'px';
+      toggle.removeAttribute('data-active');
       requestAnimationFrame(() => {
         nested.style.height = '0px';
       });
