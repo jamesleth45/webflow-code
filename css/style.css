@@ -148,13 +148,6 @@ input::placeholder {
   }
 }
 
-@media (min-width: 992px) {
-  .hero ~ .header,
-  body:has(.hero) .header {
-    color: #fff;
-  }
-}
-
 .header__logo {
   position: fixed;
   z-index: 102;
