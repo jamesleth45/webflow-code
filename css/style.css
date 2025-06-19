@@ -222,6 +222,22 @@ input::placeholder {
   }
 }
 
+.header__nav-list--nested {
+  height: 0;
+  overflow: hidden;
+  transition: height .25s ease;
+}
+
+@media (min-width: 992px) {
+  .header__nav-list--nested {
+    text-align: right;
+  }
+}
+
+.header__nav-list--nested[data-open="true"] {
+  height: auto;
+}
+
 @media (max-width: 991px) {
   .header__nav-item {
     line-height: 1.5625rem;
