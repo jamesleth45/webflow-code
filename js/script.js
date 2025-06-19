@@ -67,50 +67,52 @@ document.addEventListener('keydown', (e) => {
 });
 
 /* || Nav Nested Toggle */
-let animating = false;
+document.addEventListener('DOMContentLoaded', () => {
+  const toggles = document.querySelectorAll('.header__nav-toggle');
 
-const navToggles = document.querySelectorAll('.header__nav-toggle');
+  toggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const nested = toggle.closest('.header__nav-item')?.querySelector('.header__nav-list--nested');
+      if (!nested) return;
 
-navToggles.forEach(toggle => {
-  toggle.addEventListener('click', () => {
-    if (animating) return;
-    animating = true;
+      if (nested.dataset.animating === 'true') return;
 
-    const item = toggle.closest('.header__nav-item');
-    const nested = item?.querySelector('.header__nav-list--nested');
-    const isActive = toggle.hasAttribute('data-active');
+      const isOpen = nested.hasAttribute('data-open');
 
-    document.querySelectorAll('.header__nav-toggle[data-active]').forEach(t => {
-      t.removeAttribute('data-active');
-    });
+      nested.dataset.animating = 'true';
 
-    document.querySelectorAll('.header__nav-list--nested[data-open]').forEach(section => {
-      const height = section.scrollHeight;
-      section.style.height = `${height}px`;
+      if (isOpen) {
+        // Close
+        nested.style.height = `${nested.scrollHeight}px`; // set current height to trigger transition
+        requestAnimationFrame(() => {
+          nested.style.height = '0px';
+        });
 
-      requestAnimationFrame(() => {
-        section.style.height = '0px';
-      });
+        nested.addEventListener('transitionend', function handler() {
+          nested.removeAttribute('data-open');
+          toggle.removeAttribute('data-active');
+          nested.removeAttribute('data-animating');
+          nested.removeEventListener('transitionend', handler);
+        });
+      } else {
+        // Open
+        nested.setAttribute('data-open', 'true');
+        toggle.setAttribute('data-active', 'true');
 
-      section.removeAttribute('data-open');
-      section.setAttribute('aria-hidden', 'true');
-    });
+        nested.style.height = 'auto';
+        const fullHeight = nested.scrollHeight;
+        nested.style.height = '0px';
 
-    if (isActive) {
-      animating = false;
-      return;
-    }
+        requestAnimationFrame(() => {
+          nested.style.height = `${fullHeight}px`;
+        });
 
-    toggle.setAttribute('data-active', 'true');
-    nested?.setAttribute('data-open', 'true');
-    nested?.setAttribute('aria-hidden', 'false');
-    nested?.style.setProperty('height', `${nested.scrollHeight}px`);
-
-    nested?.addEventListener('transitionend', function handler(e) {
-      if (e.propertyName !== 'height') return;
-      nested.style.height = 'auto';
-      nested.removeEventListener('transitionend', handler);
-      animating = false;
+        nested.addEventListener('transitionend', function handler() {
+          nested.style.height = 'auto';
+          nested.removeAttribute('data-animating');
+          nested.removeEventListener('transitionend', handler);
+        });
+      }
     });
   });
 });
