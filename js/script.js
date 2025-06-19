@@ -18,4 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
       el.classList.remove('w--current');
     });
   });
+
+  document.querySelectorAll('[class*="list"][role="list"]').forEach(el => {
+    el.removeAttribute('role');
+  });
 });
