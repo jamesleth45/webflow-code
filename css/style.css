@@ -359,3 +359,34 @@ input::placeholder {
 .header__mobile-icon[data-visible="true"] {
   opacity: 1;
 }
+
+/* hero */
+/* hero */
+@media (max-width: 991px) {
+  .hero {
+    margin-top: 3.5rem;
+  }
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: auto;
+  gap: 0;
+}
+
+@media (max-width: 991px) {
+  .hero__grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .hero__grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.hero__image {
+  grid-column: 1 / -1;
+}
