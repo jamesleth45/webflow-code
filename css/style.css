@@ -388,5 +388,5 @@ input::placeholder {
 }
 
 .hero__image {
-  grid-column: 4 / 9;
+  grid-column: 4 / 10;
 }
