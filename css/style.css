@@ -513,6 +513,12 @@ input::placeholder {
   align-items: center;
 }
 
+@media (max-width: 1279px) {
+  .footer__nav-item {
+    line-height: 1.5625rem;
+  }
+}
+
 /* Hero */
 @media (max-width: 1279px) { /* Tablet and below */
   .hero {
