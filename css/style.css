@@ -554,7 +554,17 @@ input::placeholder {
 }
 
 /* Hero */
-@media (max-width: 1279px) { /* Tablet and below */
+.hero {
+  margin-top: 0;
+}
+
+.hero__image {
+  display: block;
+  width: 100%;
+  grid-column: 5 / 9;
+}
+
+@media (max-width: 1279px) {
   .hero {
     margin-top: 3.5rem;
   }
@@ -562,8 +572,4 @@ input::placeholder {
   .hero__image {
     grid-column: 1 / -1;
   }
-}
-
-.hero__image {
-  grid-column: 5 / 9;
 }
