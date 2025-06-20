@@ -88,6 +88,12 @@ button {
   }
 }
 
+label {
+  display: inline;
+  margin: 0;
+  font-weight: inherit;
+}
+
 img {
   display: block;
   max-width: 100%;
