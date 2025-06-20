@@ -137,6 +137,26 @@ input::placeholder {
   color: #999;
 }
 
+/* grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: auto;
+  gap: 0;
+}
+
+@media (max-width: 1279.9px) {
+  .grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
 /* header */
 @media (min-width: 1280px) {
   .hero ~ .header,
@@ -381,25 +401,6 @@ input::placeholder {
 @media (max-width: 1279.9px) {
   .hero {
     margin-top: 3.5rem;
-  }
-}
-
-.hero__grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: auto;
-  gap: 0;
-}
-
-@media (max-width: 1279.9px) {
-  .hero__grid {
-    grid-template-columns: repeat(8, 1fr);
-  }
-}
-
-@media (max-width: 767px) {
-  .hero__grid {
-    grid-template-columns: repeat(6, 1fr);
   }
 }
 
