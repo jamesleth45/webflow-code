@@ -459,6 +459,7 @@ input::placeholder {
   .footer__nav-list--region {
     padding-top: 1.25rem;
     padding-left: 1.25rem;
+    grid-column: span 6;
   }
 
   .footer__nav-list--contact {
@@ -466,7 +467,7 @@ input::placeholder {
   }
 
   .footer__nav-list--main {
-    grid-column: span 4;
+    grid-column: span 6;
     text-align: right;
     padding-top: 1.25rem;
     padding-right: 1.25rem;
