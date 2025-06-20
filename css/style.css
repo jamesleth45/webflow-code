@@ -400,6 +400,12 @@ input::placeholder {
   border-top: 1px solid #eee;
 }
 
+.footer__nav-toggle--icon {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
 @media (min-width: 1280px) { /* Desktop and above */
   .footer {
     padding-top: 1.6875rem;
