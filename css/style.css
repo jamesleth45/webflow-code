@@ -530,6 +530,23 @@ input::placeholder {
   align-items: center;
 }
 
+@media (min-width: 1280px) {
+  .footer__nav-item--social-heading {
+    display: none;
+  }
+}
+
+@media (max-width: 1279px) {
+  .footer__nav-list--social {
+    position: relative;
+  }
+
+  .footer__nav-item--social-heading {
+    position: absolute;
+    left: 1.25rem;
+  }
+}
+
 /* Hero */
 @media (max-width: 1279px) { /* Tablet and below */
   .hero {
