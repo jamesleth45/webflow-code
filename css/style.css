@@ -573,7 +573,7 @@ input::placeholder {
 
 @media (max-width: 1023px) {
   .panel__inner {
-    grid-column: 7 / 9;
+    grid-column: 7 / 13;
   }
 }
 
