@@ -406,6 +406,10 @@ input::placeholder {
   gap: .25rem;
 }
 
+.footer__nav-list--region {
+  font-weight: 700;
+}
+
 @media (min-width: 1280px) { /* Desktop and above */
   .footer {
     padding-top: 1.6875rem;
