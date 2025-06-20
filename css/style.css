@@ -422,10 +422,12 @@ input::placeholder {
   }
 }
 
-.footer__nav-list--social {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+@media (max-width: 1279px) { /* Tablet and below */
+  .footer__nav-list--social {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
 }
 
 @media (min-width: 1280px) { /* Desktop and above */
