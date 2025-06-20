@@ -402,7 +402,12 @@ input::placeholder {
 
 @media (min-width: 1280px) { /* Desktop and above */
   .footer {
-    padding: 1.6875rem;
+    padding-top: 1.6875rem;
+    padding-bottom: 1.6875rem;
+  }
+
+  .footer__nav-list--region {
+    margin-left: 1.6875rem;
   }
 }
 
