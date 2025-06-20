@@ -520,7 +520,8 @@ input::placeholder {
 }
 
 @media (max-width: 1279px) {
-  .footer__nav-list--social .footer__nav-item {
+  .footer__nav-list--social .footer__nav-item,
+  .footer__nav-list--newsletter .footer__nav-item {
     line-height: inherit;
   }
 }
