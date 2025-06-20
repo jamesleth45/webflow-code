@@ -403,7 +403,7 @@ input::placeholder {
 .footer__nav-toggle--icon {
   display: flex;
   align-items: center;
-  gap: .5rem;
+  gap: .25rem;
 }
 
 @media (min-width: 1280px) { /* Desktop and above */
