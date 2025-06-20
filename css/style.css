@@ -405,7 +405,7 @@ input::placeholder {
 }
 
 .hero__image {
-  grid-column: 1 / -1;
+  grid-column: 4 / 9;
   max-height: 100vh;
   object-fit: cover;
 }
