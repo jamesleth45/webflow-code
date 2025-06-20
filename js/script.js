@@ -73,14 +73,27 @@ document.querySelectorAll('.header__nav-toggle').forEach(toggle => {
     .closest('.header__nav-item')
     .querySelector('.header__nav-list--nested');
 
+  const closeNested = (el, relatedToggle) => {
+    el.style.height = el.scrollHeight + 'px'; // Set full height first
+    void el.offsetHeight; // Force reflow
+    requestAnimationFrame(() => {
+      el.style.height = '0px';
+    });
+    el.addEventListener('transitionend', e => {
+      if (e.target === el && e.propertyName === 'height') {
+        el.removeAttribute('data-open');
+      }
+    }, { once: true });
+    if (relatedToggle) relatedToggle.removeAttribute('data-active');
+  };
+
   const makeHandler = closing => {
     const handler = e => {
       if (e.target !== nested || e.propertyName !== 'height') return;
-      nested.removeEventListener('transitionend', handler);
-      if (!closing) {
-        nested.style.height = 'auto';
-      } else {
+      if (closing) {
         nested.removeAttribute('data-open');
+      } else {
+        nested.style.height = 'auto';
       }
       isAnimating = false;
     };
@@ -101,18 +114,7 @@ document.querySelectorAll('.header__nav-toggle').forEach(toggle => {
             const otherToggle = openEl
               .closest('.header__nav-item')
               .querySelector('.header__nav-toggle');
-            openEl.style.height = openEl.scrollHeight + 'px';
-            requestAnimationFrame(() => {
-              openEl.style.height = '0px';
-            });
-            openEl.addEventListener('transitionend', e => {
-              if (e.target === openEl && e.propertyName === 'height') {
-                openEl.removeAttribute('data-open');
-              }
-            }, { once: true });
-            if (otherToggle) {
-              otherToggle.removeAttribute('data-active');
-            }
+            closeNested(openEl, otherToggle);
           }
         });
       }
@@ -120,17 +122,23 @@ document.querySelectorAll('.header__nav-toggle').forEach(toggle => {
       nested.style.height = '0px';
       nested.setAttribute('data-open', 'true');
       toggle.setAttribute('data-active', 'true');
+
+      void nested.offsetHeight; // Force reflow before animating
       requestAnimationFrame(() => {
         nested.style.height = nested.scrollHeight + 'px';
       });
-      nested.addEventListener('transitionend', makeHandler(false));
+
+      nested.addEventListener('transitionend', makeHandler(false), { once: true });
     } else {
       nested.style.height = nested.scrollHeight + 'px';
       toggle.removeAttribute('data-active');
+
+      void nested.offsetHeight; // Force reflow
       requestAnimationFrame(() => {
         nested.style.height = '0px';
       });
-      nested.addEventListener('transitionend', makeHandler(true));
+
+      nested.addEventListener('transitionend', makeHandler(true), { once: true });
     }
   });
 });
