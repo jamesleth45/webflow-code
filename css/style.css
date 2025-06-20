@@ -141,7 +141,7 @@ input::placeholder {
 @media (min-width: 1280px) {
   .hero ~ .header,
   body:has(.hero) .header {
-    color: #000;
+    color: #fff;
   }
 }
 
