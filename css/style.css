@@ -539,14 +539,8 @@ input::placeholder {
 }
 
 @media (max-width: 1279px) {
-  .footer__nav-list--social {
-    position: relative;
-    z-index: -1;
-  }
-
   .footer__nav-item--social-heading {
-    position: absolute;
-    left: 1.25rem;
+    margin-left: auto;
   }
 
   .footer__nav-heading {
