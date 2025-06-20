@@ -499,6 +499,14 @@ input::placeholder {
   justify-content: center;
 }
 
+@media (max-width: 1279px) { /* Tablet and below */
+  .footer__nav-icon--social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 /* Hero */
 @media (max-width: 1279px) { /* Tablet and below */
   .hero {
