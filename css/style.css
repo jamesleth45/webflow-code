@@ -546,6 +546,11 @@ input::placeholder {
   .footer__nav-item--social-heading {
     position: absolute;
     left: 1.25rem;
+  }
+
+  .footer__nav-heading {
+    position: absolute;
+    left: 1.25rem;
     font-weight: 400;
   }
 }
