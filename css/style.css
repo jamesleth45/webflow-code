@@ -616,3 +616,17 @@ input::placeholder {
     grid-column: 1 / -1;
   }
 }
+
+/* W classes */
+.w-form {
+  margin: 0;
+}
+
+.w-form-done,
+.w-form-fail {
+  display: none;
+  margin: 0;
+  padding: 0;
+  background: none;
+  text-align: inherit;
+}
