@@ -571,6 +571,18 @@ input::placeholder {
   overflow-y: auto;
 }
 
+@media (max-width: 1023px) {
+  .panel__inner {
+    grid-column: 7 / 9;
+  }
+}
+
+@media (max-width: 767px) {
+  .panel__inner {
+    grid-column: 1 / -1;
+  }
+}
+
 /* Hero */
 .hero {
   margin-top: 0;
