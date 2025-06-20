@@ -416,7 +416,7 @@ input::placeholder {
   }
 }
 
-@media (min-width: 1280px) { /* Desktop and above */
+@media (min-width: 1280px) {
   .footer__nav-icon--social {
     display: none;
   }
@@ -493,7 +493,7 @@ input::placeholder {
   }
 }
 
-.footer__nav-icon {
+.footer__nav-icon--arrow {
   display: flex;
   align-items: center;
   justify-content: center;
