@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   /* || webflow cleanup */
-  ['w-inline-block', 'w-embed', 'w-script', 'w-layout-grid', 'w--current'].forEach(className => {
+  ['w-inline-block', 'w-embed', 'w-script', 'w-layout-grid', 'w--current', 'w-inline-block'].forEach(className => {
     document.querySelectorAll(`.${className}`).forEach(el => {
       el.classList.remove(className);
     });
