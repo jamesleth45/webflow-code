@@ -409,6 +409,10 @@ input::placeholder {
   .footer__nav-list--region {
     margin-left: 1.6875rem;
   }
+
+  .footer__nav-list--newsletter {
+    margin-right: 1.6875rem;
+  }
 }
 
 .footer__nav-list {
