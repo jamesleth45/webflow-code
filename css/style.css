@@ -525,9 +525,11 @@ input::placeholder {
   }
 }
 
-.footer__nav-list--social .footer__nav-item {
-  display: flex;
-  align-items: center;
+@media (max-width: 1279px) {
+  .footer__nav-list--social .footer__nav-item {
+    display: flex;
+    align-items: center;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -544,6 +546,7 @@ input::placeholder {
   .footer__nav-item--social-heading {
     position: absolute;
     left: 1.25rem;
+    font-weight: 400;
   }
 }
 
