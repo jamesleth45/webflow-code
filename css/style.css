@@ -462,6 +462,12 @@ input::placeholder {
   }
 }
 
+.footer__nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Hero */
 @media (max-width: 1279px) { /* Tablet and below */
   .hero {
