@@ -525,6 +525,11 @@ input::placeholder {
   }
 }
 
+.footer__nav-list--social .footer__nav-item {
+  display: flex;
+  align-items: center;
+}
+
 /* Hero */
 @media (max-width: 1279px) { /* Tablet and below */
   .hero {
