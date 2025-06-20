@@ -395,6 +395,19 @@ input::placeholder {
   opacity: 1;
 }
 
+@media (min-width: 1280px) { /* Desktop and above */
+  .header__nav-item--region {
+    display: none;
+  }
+}
+
+@media (max-width: 1279px) { /* Tablet and below */
+  .header__nav-item--region {
+    font-weight: 700;
+    margin-top: 1.875rem;
+  }
+}
+
 /* Footer */
 .footer {
   border-top: 1px solid #eee;
