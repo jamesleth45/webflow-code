@@ -540,7 +540,7 @@ input::placeholder {
 
 @media (max-width: 1279px) {
   .footer__nav-item--social-heading {
-    margin-left: auto;
+    margin-right: auto;
   }
 
   .footer__nav-heading {
