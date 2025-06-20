@@ -410,6 +410,24 @@ input::placeholder {
   font-weight: 700;
 }
 
+@media (max-width: 1279px) { /* Tablet and below */
+  .footer__nav-text--social {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) { /* Desktop and above */
+  .footer__nav-icon--social {
+    display: none;
+  }
+}
+
+.footer__nav-list--social {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 @media (min-width: 1280px) { /* Desktop and above */
   .footer {
     padding-top: 1.6875rem;
