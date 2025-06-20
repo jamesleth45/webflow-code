@@ -92,8 +92,31 @@ document.querySelectorAll('.header__nav-toggle').forEach(toggle => {
     isAnimating = true;
 
     const isOpen = nested.getAttribute('data-open') === 'true';
+    const isTabletOrBelow = window.matchMedia('(max-width: 1279px)').matches;
 
     if (!isOpen) {
+      if (isTabletOrBelow) {
+        document.querySelectorAll('.header__nav-list--nested[data-open="true"]').forEach(openEl => {
+          if (openEl !== nested) {
+            const otherToggle = openEl
+              .closest('.header__nav-item')
+              .querySelector('.header__nav-toggle');
+            openEl.style.height = openEl.scrollHeight + 'px';
+            requestAnimationFrame(() => {
+              openEl.style.height = '0px';
+            });
+            openEl.addEventListener('transitionend', e => {
+              if (e.target === openEl && e.propertyName === 'height') {
+                openEl.removeAttribute('data-open');
+              }
+            }, { once: true });
+            if (otherToggle) {
+              otherToggle.removeAttribute('data-active');
+            }
+          }
+        });
+      }
+
       nested.style.height = '0px';
       nested.setAttribute('data-open', 'true');
       toggle.setAttribute('data-active', 'true');
