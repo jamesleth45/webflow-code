@@ -161,7 +161,7 @@ input::placeholder {
 @media (min-width: 1280px) {
   .hero ~ .header,
   body:has(.hero) .header {
-    color: #fff;
+    color: #000;
   }
 }
 
@@ -405,7 +405,7 @@ input::placeholder {
 }
 
 .hero__image {
-  grid-column: span 6;
+  grid-column: 4 / 9;
   max-height: 100vh;
   height: 100%;
   width: 100%;
@@ -413,12 +413,6 @@ input::placeholder {
 }
 
 @media (max-width: 1279.9px) {
-  .hero__image {
-    grid-column: span 4;
-  }
-}
-
-@media (max-width: 767px) {
   .hero__image {
     grid-column: 1 / -1;
   }
