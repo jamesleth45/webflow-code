@@ -138,7 +138,7 @@ input::placeholder {
 }
 
 /* header */
-@media (max-width: 991px) {
+@media (max-width: 1279.9px) {
   .header {
     position: fixed;
     top: 0;
@@ -160,7 +160,7 @@ input::placeholder {
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1279.9px) {
   .header__logo {
     top: 0;
     left: 0;
@@ -184,14 +184,14 @@ input::placeholder {
   margin-bottom: calc(-.46lh + .36em);
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1279.9px) {
   .header__logo-link {
     font-size: 1.25rem;
     padding: 1.25rem;
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1279.9px) {
   .header__nav {
     position: fixed;
     inset: 0;
@@ -245,13 +245,13 @@ input::placeholder {
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1279.9px) {
   .header__nav-list--nested {
     margin-left: .625rem;
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1279.9px) {
   .header__nav-item {
     line-height: 1.5625rem;
   }
@@ -282,7 +282,7 @@ input::placeholder {
 }
 
 
-@media (max-width: 991px) {
+@media (max-width: 1279.9px) {
   .header__nav-item--preview {
     margin-top: 1.25rem;
   }
@@ -316,7 +316,7 @@ input::placeholder {
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1279.9px) {
   .header__mobile {
     position: fixed;
     top: 0;
@@ -372,7 +372,7 @@ input::placeholder {
 }
 
 /* hero */
-@media (max-width: 991px) {
+@media (max-width: 1279.9px) {
   .hero {
     margin-top: 3.5rem;
   }
@@ -385,7 +385,7 @@ input::placeholder {
   gap: 0;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1279.9px) {
   .hero__grid {
     grid-template-columns: repeat(8, 1fr);
   }
