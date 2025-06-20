@@ -138,6 +138,13 @@ input::placeholder {
 }
 
 /* header */
+@media (min-width: 1280px) {
+  .hero ~ .header,
+  body:has(.hero) .header {
+    color: #000;
+  }
+}
+
 @media (max-width: 1279.9px) {
   .header {
     position: fixed;
