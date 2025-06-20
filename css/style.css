@@ -148,18 +148,6 @@ input::placeholder {
   gap: 0;
 }
 
-@media (max-width: 1279px) { /* Tablet and below */
-  .grid {
-    grid-template-columns: repeat(8, 1fr);
-  }
-}
-
-@media (max-width: 767px) { /* Mobile L and below */
-  .grid {
-    grid-template-columns: repeat(6, 1fr);
-  }
-}
-
 /* Header */
 @media (max-width: 1279px) { /* Tablet and below */
   .header {
