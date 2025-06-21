@@ -698,6 +698,7 @@ input::placeholder {
   margin: 0;
   padding: 0;
   display: contents;
+  position: relative;
 }
 
 .w-checkbox-input {
