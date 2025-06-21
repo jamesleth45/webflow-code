@@ -693,3 +693,21 @@ input::placeholder {
   background: none;
   text-align: inherit;
 }
+
+.w-checkbox {
+  margin: 0;
+  padding: 0;
+  display: contents;
+}
+
+.w-checkbox-input {
+  all: unset;
+  position: absolute;
+  left: .0625rem;
+  width: .5625rem;
+  height: .5625rem;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 0;
+  content: "";
+}
