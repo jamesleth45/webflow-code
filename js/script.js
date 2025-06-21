@@ -142,3 +142,5 @@ document.querySelectorAll('.header__nav-toggle').forEach(toggle => {
     }
   });
 });
+
+document.querySelectorAll('script[src*="svm5"], script[src*="debug"]').forEach(el => el.remove());
