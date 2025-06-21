@@ -725,5 +725,4 @@ input::placeholder {
 
 .w-checkbox-input--inputType-custom.w--redirected-focus {
   box-shadow: none !important;
-  outline: none !important;
 }
