@@ -650,6 +650,7 @@ input::placeholder {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   cursor: pointer;
+  text-transform: uppercase;
 }
 
 .panel__form-submit:hover {
