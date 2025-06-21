@@ -625,6 +625,28 @@ input::placeholder {
   transform: translateY(-15px);
 }
 
+.panel__form-submit {
+  border: 1px solid #000;
+  background-color: #000;
+  text-align: center;
+  height: 2.75rem;
+  align-content: center;
+  -webkit-box-pack: center;
+  white-space: normal;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  text-wrap: balance;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  cursor: pointer;
+}
+
+.panel__form-submit:hover {
+  border-color: #222;
+  background-color: #222;
+}
+
 /* Hero */
 .hero {
   margin-top: 0;
