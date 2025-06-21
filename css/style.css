@@ -634,6 +634,10 @@ input::placeholder {
   margin-top: .9375rem;
 }
 
+.panel__form-confirmation {
+  margin-top: 1.25rem;
+}
+
 .panel__form-submit {
   margin-top: 1.25rem;
   border: 1px solid #000;
