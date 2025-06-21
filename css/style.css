@@ -722,8 +722,8 @@ input::placeholder {
 }
 
 .w-checkbox-input[class*="w--redirected-checked"] {
-  width: .375rem;
-  height: .375rem;
+  width: .25rem;
+  height: .25rem;
   background-color: #000;
   border: 1px solid #fff;
   outline: 1px solid #000;
