@@ -149,10 +149,10 @@ input::placeholder {
 
 .grid {
   display: grid;
-  height: 100%;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 1fr;
   gap: 0;
+  height: 100%;
 }
 
 /* Header */
@@ -163,7 +163,7 @@ input::placeholder {
     width: 100%;
     height: 3.5rem;
     background-color: #fff;
-    z-index: 102;
+    z-index: 103;
   }
 }
 
@@ -593,6 +593,16 @@ input::placeholder {
   .panel__inner {
     grid-column: 1 / -1;
     padding: 3.5rem 1.25rem 1.25rem 1.25rem;
+  }
+}
+
+@media (min-width: 1280px) { /* Desktop and above */
+  .panel__inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    gap: 0;
+    height: 100%;
   }
 }
 
