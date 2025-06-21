@@ -712,3 +712,12 @@ input::placeholder {
   border-radius: 0;
   content: "";
 }
+
+.w-checkbox-input:checked {
+  width: .4375rem;
+  height: .4375rem;
+  background-color: #000;
+  border: 1px solid #fff;
+  outline: 1px solid #000;
+  outline-offset: 0;
+}
