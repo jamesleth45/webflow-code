@@ -648,6 +648,14 @@ input::placeholder {
   background-color: #222;
 }
 
+.panel__form-policy {
+  margin-top: .625rem;
+}
+
+.panel__form-policy-link {
+  text-decoration: underline;
+}
+
 /* Hero */
 .hero {
   margin-top: 0;
