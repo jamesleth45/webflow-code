@@ -628,6 +628,10 @@ input::placeholder {
   text-transform: none;
 }
 
+.panel__form-consent {
+  position: relative;
+}
+
 .panel__form-submit {
   margin-top: 1.25rem;
   border: 1px solid #000;
@@ -703,6 +707,7 @@ input::placeholder {
 
 .w-checkbox-input {
   all: unset;
+  position: absolute;
   display: block;
   left: .0625rem;
   width: .5625rem;
