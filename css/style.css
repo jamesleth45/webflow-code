@@ -701,13 +701,8 @@ input::placeholder {
   position: relative;
 }
 
-panel__form-field {
-  position: relative;
-}
-
 .w-checkbox-input {
   all: unset;
-  position: absolute;
   left: .0625rem;
   width: .5625rem;
   height: .5625rem;
