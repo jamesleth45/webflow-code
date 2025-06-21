@@ -626,6 +626,7 @@ input::placeholder {
 }
 
 .panel__form-submit {
+  margin-top: 1.25rem;
   border: 1px solid #000;
   background-color: #000;
   text-align: center;
