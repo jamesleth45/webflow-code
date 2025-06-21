@@ -630,6 +630,7 @@ input::placeholder {
 
 .panel__form-consent {
   position: relative;
+  padding-left: 1.25rem;
 }
 
 .panel__form-submit {
