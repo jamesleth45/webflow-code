@@ -625,6 +625,10 @@ input::placeholder {
   transform: translateY(-15px);
 }
 
+.panel__form-input {
+  text-transform: none;
+}
+
 .panel__form-submit {
   margin-top: 1.25rem;
   border: 1px solid #000;
