@@ -703,6 +703,7 @@ input::placeholder {
 
 .w-checkbox-input {
   all: unset;
+  display: block;
   left: .0625rem;
   width: .5625rem;
   height: .5625rem;
