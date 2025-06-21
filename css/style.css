@@ -713,11 +713,12 @@ input::placeholder {
   content: "";
 }
 
-.w-checkbox-input:checked {
+.w-checkbox-input[class*="w--redirected-checked"] {
   width: .4375rem;
   height: .4375rem;
   background-color: #000;
   border: 1px solid #fff;
   outline: 1px solid #000;
   outline-offset: 0;
+  background-image: none;
 }
