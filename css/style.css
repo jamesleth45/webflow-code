@@ -710,6 +710,7 @@ input::placeholder {
   all: unset;
   position: absolute;
   display: block;
+  left: 0;
   width: .5rem;
   height: .5rem;
   background-color: #fff;
