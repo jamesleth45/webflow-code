@@ -722,3 +722,8 @@ input::placeholder {
   outline-offset: 0;
   background-image: none;
 }
+
+.w-checkbox-input.w--redirected-focus {
+  box-shadow: none;
+  outline: none;
+}
