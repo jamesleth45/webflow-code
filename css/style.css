@@ -611,6 +611,10 @@ input::placeholder {
   }
 }
 
+.panel__form-text {
+  margin-top: 1.875rem;
+}
+
 /* Hero */
 .hero {
   margin-top: 0;
