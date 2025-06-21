@@ -713,8 +713,8 @@ input::placeholder {
   display: block;
   left: 0;
   top: .125rem;
-  width: .5rem;
-  height: .5rem;
+  width: .375rem;
+  height: .375rem;
   background-color: #fff;
   border: 1px solid #000;
   border-radius: 0;
