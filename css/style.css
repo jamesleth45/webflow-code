@@ -723,6 +723,7 @@ input::placeholder {
   background-image: none;
   margin-left: 1px;
   margin-top: 1px;
+  margin-bottom: 1px;
 }
 
 .w-checkbox-input--inputType-custom.w--redirected-focus {
