@@ -739,6 +739,19 @@ input::placeholder {
   margin-bottom: 1px;
 }
 
+@media (max-width: 767px) {
+  .w-checkbox-input {
+    top: .1875rem;
+    width: .438rem;
+    height: .438rem;
+  }
+
+  .w-checkbox-input[class*="w--redirected-checked"] {
+    width: .313rem;
+    height: .313rem;
+  }
+}
+
 .w-checkbox-input--inputType-custom.w--redirected-focus {
   box-shadow: none !important;
 }
