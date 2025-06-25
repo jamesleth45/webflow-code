@@ -258,3 +258,10 @@ formInputs.forEach(input => {
   input.addEventListener('input', updateLabel);
   updateLabel();
 });
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth >= 1280) {
+    document.body.style.overflow = '';
+    document.body.style.width = '';
+  }
+});
