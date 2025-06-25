@@ -797,12 +797,12 @@ input::placeholder {
   }
 }
 
-.panel__item--heading {
+.panel__heading {
   margin-bottom: 1.6875rem;
 }
 
 @media (max-width: 767px) {
-  .panel__item--heading {
+  .panel__heading {
     margin-bottom: 1.25rem;
   }
 
