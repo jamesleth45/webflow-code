@@ -278,8 +278,13 @@ window.addEventListener('resize', () => {
   }
 });
 
-document.querySelectorAll('script').forEach((script) => {
-  if (script.innerText.includes('debugger')) {
-    script.remove();
-  }
+/* || Webflow Debugger Removed */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.querySelectorAll('script').forEach((script) => {
+      if (script.innerText.includes('debugger')) {
+        script.remove();
+      }
+    });
+  }, 50);
 });
