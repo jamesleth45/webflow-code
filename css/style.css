@@ -495,7 +495,7 @@ input::placeholder {
   @media (max-width: 767px) { /* Mobile L and below */
     .footer__nav-list--region,
     .footer__nav-list--main {
-      grid-column: span 3;
+      grid-column: span 6;
     }
   }
 }
