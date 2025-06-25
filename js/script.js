@@ -45,6 +45,9 @@ const openNav = () => {
   searchToggle?.setAttribute('data-visible', 'false');
   iconHam?.setAttribute('data-visible', 'false');
   iconX?.setAttribute('data-visible', 'true');
+
+  document.body.style.overflow = 'hidden';
+  document.body.style.width = '100%';
 };
 
 const closeNav = () => {
@@ -53,6 +56,9 @@ const closeNav = () => {
   searchToggle?.removeAttribute('data-visible');
   iconX?.setAttribute('data-visible', 'false');
   iconHam?.removeAttribute('data-visible');
+
+  document.body.style.overflow = '';
+  document.body.style.width = '';
 };
 
 navToggle?.addEventListener('click', () => {
