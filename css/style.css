@@ -582,6 +582,12 @@ input::placeholder {
   transition: opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
+@media (max-width: 767px) {
+  .panel__content {
+    transition: opacity 150ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+}
+
 .panel[data-open="true"] .panel__content {
   opacity: 1;
   transition: opacity 350ms cubic-bezier(0.215, 0.61, 0.355, 1) 150ms;
@@ -601,7 +607,7 @@ input::placeholder {
   .panel__inner {
     transform: none;
     opacity: 0;
-    transition: opacity 350ms cubic-bezier(0.215, 0.61, 0.355, 1) 150ms;
+    transition: opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1) 150ms;
   }
 
   .panel[data-open="true"] .panel__inner {
