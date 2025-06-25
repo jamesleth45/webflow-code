@@ -163,6 +163,10 @@ function closeAllPanels() {
 
     setTimeout(() => {
       panel.style.display = 'none';
+      if (!document.querySelector('.panel[data-open="true"]')) {
+        document.body.style.overflow = '';
+        document.body.style.width = '';
+      }
     }, 500);
   });
 }
@@ -176,11 +180,12 @@ openers.forEach(opener => {
     closeAllPanels();
     targetPanel.style.display = 'block';
 
-    // Autofocus search input immediately (iOS-safe)
     const searchField = targetPanel.querySelector('.panel__search-input');
     if (searchField) searchField.focus();
 
-    // Delay 2 frames to ensure smooth animation always
+    document.body.style.overflow = 'hidden';
+    document.body.style.width = '100%';
+
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         targetPanel.setAttribute('data-open', 'true');
@@ -214,7 +219,6 @@ panels.forEach(panel => {
   }
 });
 
-// Search Input Typing → Show/Hide Clear Button
 if (searchInput && clearBtn) {
   searchInput.addEventListener('input', () => {
     if (searchInput.value.trim() !== '') {
@@ -231,7 +235,6 @@ if (searchInput && clearBtn) {
   });
 }
 
-// Floating Label Logic
 formInputs.forEach(input => {
   const label = input.previousElementSibling;
   if (!label || !label.classList.contains('panel__form-label')) return;
@@ -247,5 +250,5 @@ formInputs.forEach(input => {
   input.addEventListener('focus', updateLabel);
   input.addEventListener('blur', updateLabel);
   input.addEventListener('input', updateLabel);
-  updateLabel(); // run on load (for autofill etc.)
+  updateLabel();
 });
