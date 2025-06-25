@@ -278,13 +278,20 @@ window.addEventListener('resize', () => {
   }
 });
 
-/* || Webflow Debugger Removed */
+/* || Webflow Watchdog Kill */
 window.addEventListener('load', () => {
   setTimeout(() => {
-    document.querySelectorAll('script').forEach((script) => {
-      if (script.innerText.includes('debugger')) {
-        script.remove();
+    for (const key in window) {
+      const obj = window[key];
+      if (
+        obj &&
+        typeof obj === 'object' &&
+        obj.watchCatInterval &&
+        obj.widgetMap instanceof Map
+      ) {
+        clearInterval(obj.watchCatInterval);
+        obj.watchCatInterval = null;
       }
-    });
+    }
   }, 50);
 });
