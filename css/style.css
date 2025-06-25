@@ -629,6 +629,10 @@ input::placeholder {
   text-transform: none;
 }
 
+.panel__search-input {
+  text-transform: uppercase;
+}
+
 .panel__form-consent {
   position: relative;
   padding-left: 1.25rem;
