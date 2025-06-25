@@ -39,6 +39,11 @@ const searchToggle = document.querySelector('.header__mobile-toggle--search');
 const iconHam = document.querySelector('.header__mobile-icon--ham');
 const iconX = document.querySelector('.header__mobile-icon--x');
 
+function unlockScroll() {
+  document.body.style.overflow = '';
+  document.body.style.width = '';
+}
+
 const openNav = () => {
   nav.setAttribute('data-open', 'true');
   bagToggle?.setAttribute('data-visible', 'false');
@@ -57,8 +62,7 @@ const closeNav = () => {
   iconX?.setAttribute('data-visible', 'false');
   iconHam?.removeAttribute('data-visible');
 
-  document.body.style.overflow = '';
-  document.body.style.width = '';
+  unlockScroll();
 };
 
 navToggle?.addEventListener('click', () => {
@@ -69,6 +73,12 @@ navToggle?.addEventListener('click', () => {
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && nav.hasAttribute('data-open')) {
     closeNav();
+  }
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth >= 1280) {
+    unlockScroll();
   }
 });
 
