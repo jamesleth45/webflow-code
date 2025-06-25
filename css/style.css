@@ -24,7 +24,7 @@ body {
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
-@media (max-width: 767px) { /* Mobile L and below */
+@media (max-width: 767px) {
   body {
     font-size: .75rem;
     line-height: .9375rem;
@@ -45,7 +45,7 @@ h1 {
   -webkit-font-smoothing: antialiased;
 }
 
-@media (max-width: 767px) { /* Mobile L and below */
+@media (max-width: 767px) {
   h1 {
     font-size: 1.1875rem;
   }
@@ -58,6 +58,13 @@ a {
 
 a[aria-current="page"] {
   font-weight: 700;
+}
+
+@media (hover: hover) {
+  a:hover,
+  button:hover {
+    font-weight: 700;
+  }
 }
 
 button {
@@ -77,44 +84,22 @@ label {
   font-weight: inherit;
 }
 
-p {
-  margin: 0;
-}
-
-ul,
-ol {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-@media (hover: hover) {
-  a:hover,
-  button:hover {
-    font-weight: 700;
-  }
-}
-
-.i {
-  display: none;
-}
-
 input,
 input.w-input {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 0;
+  padding: 0 3.875rem .3125rem 0;
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #000;
   border-radius: 0;
   box-shadow: none;
   color: #000;
-  display: block;
   font-size: inherit;
-  height: auto;
   line-height: inherit;
-  margin-bottom: 0;
   outline: none;
-  padding: 0 3.875rem .3125rem 0;
-  width: 100%;
 }
 
 input:focus,
@@ -122,6 +107,10 @@ input.w-input:focus {
   border-bottom: 1px solid #000;
   box-shadow: none;
   outline: none;
+}
+
+input::placeholder {
+  color: #999;
 }
 
 input:-webkit-autofill,
@@ -133,16 +122,27 @@ input:-webkit-autofill:focus {
   transition: background-color 5000s ease-in-out 0s !important;
 }
 
-input::placeholder {
-  color: #999;
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.i {
+  display: none;
 }
 
 .grid {
   display: grid;
+  height: 100%;
   gap: 0;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 1fr;
-  height: 100%;
 }
 
 /* Header */
