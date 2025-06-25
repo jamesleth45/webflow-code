@@ -577,7 +577,7 @@ input::placeholder {
 
 @media (max-width: 1279px) {
   .panel__inner {
-    padding: 3.5rem 1.25rem 1.25rem .625rem;
+    padding: 3.75rem 1.25rem 1.25rem .625rem;
   }
 }
 
