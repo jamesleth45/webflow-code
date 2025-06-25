@@ -797,6 +797,20 @@ input::placeholder {
   }
 }
 
+.panel__item--heading {
+  margin-bottom: 1.6875rem;
+}
+
+@media (max-width: 767px) {
+  .panel__item--heading {
+    margin-bottom: 1.25rem;
+  }
+}
+
+.panel__item {
+  line-height: 1.5625rem;
+}
+
 /* Hero */
 .hero {
   margin-top: 0;
