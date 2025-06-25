@@ -231,6 +231,21 @@ p {
 }
 
 /* Header */
+
+@media (min-width: 1280px) { /* Desktop and above */
+  .hero ~ .header {
+    color: #fff;
+  }
+
+  body:has(.hero) .header {
+    color: #fff;
+  }
+}
+
+body:has(.hero) .header {
+  color: #fff;
+}
+
 @media (max-width: 1279px) { /* Tablet and below */
   .header__inner {
     position: fixed;
@@ -901,15 +916,11 @@ p {
 .hero__image {
   display: block;
   width: 100%;
-  grid-column: 5 / 9;
+  grid-column: 1 / -1;
 }
 
 @media (max-width: 1279px) {
   .hero {
     margin-top: 3.5rem;
-  }
-
-  .hero__image {
-    grid-column: 1 / -1;
   }
 }
