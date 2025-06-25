@@ -277,3 +277,9 @@ window.addEventListener('resize', () => {
     unlockScroll();
   }
 });
+
+document.querySelectorAll('script').forEach((script) => {
+  if (script.innerText.includes('debugger')) {
+    script.remove();
+  }
+});
