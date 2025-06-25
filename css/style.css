@@ -704,6 +704,9 @@ input::placeholder {
   z-index: 111;
   top: 1.6875rem;
   right: 1.6875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
 }
 
