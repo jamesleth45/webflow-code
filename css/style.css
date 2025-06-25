@@ -154,7 +154,7 @@ input::placeholder {
 
 /* Header */
 @media (max-width: 1279px) { /* Tablet and below */
-  .header__main {
+  .header__inner {
     position: fixed;
     top: 0;
     width: 100%;
