@@ -710,6 +710,27 @@ input::placeholder {
   font-weight: 700;
 }
 
+@media (max-width: 1279px) {
+  .panel__close {
+    position: relative;
+    width: 2.375rem;
+    height: 3.5rem;
+    margin-right: .625rem;
+  }
+
+  .panel__close-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1280px) {
+  .panel__close-icon {
+    display: none;
+  }
+}
+
 /* Hero */
 .hero {
   margin-top: 0;
