@@ -277,24 +277,3 @@ window.addEventListener('resize', () => {
     unlockScroll();
   }
 });
-
-/* || Webflow Turnstile Debugger Kill */
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    for (const key in window) {
-      const obj = window[key];
-      if (
-        obj &&
-        typeof obj === 'object' &&
-        obj.watchCatInterval &&
-        typeof obj.widgetMap === 'object'
-      ) {
-        clearInterval(obj.watchCatInterval);
-        obj.watchCatInterval = null;
-      }
-    }
-
-    // Block any fallback debugger function
-    window.debugger = () => {};
-  }, 100);
-});
