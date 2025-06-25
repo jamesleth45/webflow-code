@@ -142,3 +142,49 @@ document.querySelectorAll('.header__nav-toggle').forEach(toggle => {
     }
   });
 });
+
+/* || Panel Toggle */
+const openers = document.querySelectorAll('[data-toggle]');
+const panels = document.querySelectorAll('.panel');
+
+function closeAllPanels() {
+  panels.forEach(panel => {
+    panel.removeAttribute('data-open');
+  });
+}
+
+openers.forEach(opener => {
+  opener.addEventListener('click', e => {
+    const targetId = opener.getAttribute('data-toggle');
+    const targetPanel = document.querySelector(`.panel[data-panel="${targetId}"]`);
+    if (!targetPanel) return;
+
+    closeAllPanels();
+    targetPanel.setAttribute('data-open', 'true');
+  });
+});
+
+document.addEventListener('click', e => {
+  const openPanel = document.querySelector('.panel[data-open="true"]');
+  if (!openPanel) return;
+
+  const inner = openPanel.querySelector('.panel__inner');
+  if (!inner.contains(e.target) && !e.target.closest('[data-toggle]')) {
+    closeAllPanels();
+  }
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    closeAllPanels();
+  }
+});
+
+panels.forEach(panel => {
+  const closeBtn = panel.querySelector('.panel__close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      closeAllPanels();
+    });
+  }
+});
