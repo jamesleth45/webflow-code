@@ -177,6 +177,70 @@ p {
   grid-template-rows: 1fr;
 }
 
+/* W classes */
+.w-form {
+  margin: 0;
+}
+
+.w-form-done,
+.w-form-fail {
+  display: none;
+  padding: 0;
+  background: none;
+  text-align: inherit;
+}
+
+.w-checkbox {
+  margin: 0;
+  padding: 0;
+  display: contents;
+  position: relative;
+}
+
+.w-checkbox-input {
+  all: unset;
+  position: absolute;
+  display: block;
+  left: 0;
+  top: .125rem;
+  width: .375rem;
+  height: .375rem;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 0;
+  content: "";
+}
+
+.w-checkbox-input[class*="w--redirected-checked"] {
+  width: .25rem;
+  height: .25rem;
+  background-color: #000;
+  border: 1px solid #fff;
+  outline: 1px solid #000;
+  outline-offset: 0;
+  background-image: none;
+  margin-left: 1px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+@media (max-width: 767px) {
+  .w-checkbox-input {
+    top: .1875rem;
+    width: .438rem;
+    height: .438rem;
+  }
+
+  .w-checkbox-input[class*="w--redirected-checked"] {
+    width: .313rem;
+    height: .313rem;
+  }
+}
+
+.w-checkbox-input--inputType-custom.w--redirected-focus {
+  box-shadow: none !important;
+}
+
 /* Header */
 @media (max-width: 1279px) { /* Tablet and below */
   .header__inner {
@@ -859,68 +923,4 @@ p {
   .hero__image {
     grid-column: 1 / -1;
   }
-}
-
-/* W classes */
-.w-form {
-  margin: 0;
-}
-
-.w-form-done,
-.w-form-fail {
-  display: none;
-  padding: 0;
-  background: none;
-  text-align: inherit;
-}
-
-.w-checkbox {
-  margin: 0;
-  padding: 0;
-  display: contents;
-  position: relative;
-}
-
-.w-checkbox-input {
-  all: unset;
-  position: absolute;
-  display: block;
-  left: 0;
-  top: .125rem;
-  width: .375rem;
-  height: .375rem;
-  background-color: #fff;
-  border: 1px solid #000;
-  border-radius: 0;
-  content: "";
-}
-
-.w-checkbox-input[class*="w--redirected-checked"] {
-  width: .25rem;
-  height: .25rem;
-  background-color: #000;
-  border: 1px solid #fff;
-  outline: 1px solid #000;
-  outline-offset: 0;
-  background-image: none;
-  margin-left: 1px;
-  margin-top: 1px;
-  margin-bottom: 1px;
-}
-
-@media (max-width: 767px) {
-  .w-checkbox-input {
-    top: .1875rem;
-    width: .438rem;
-    height: .438rem;
-  }
-
-  .w-checkbox-input[class*="w--redirected-checked"] {
-    width: .313rem;
-    height: .313rem;
-  }
-}
-
-.w-checkbox-input--inputType-custom.w--redirected-focus {
-  box-shadow: none !important;
 }
