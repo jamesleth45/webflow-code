@@ -826,7 +826,6 @@ input::placeholder {
 .w-form-done,
 .w-form-fail {
   display: none;
-  margin: 0;
   padding: 0;
   background: none;
   text-align: inherit;
