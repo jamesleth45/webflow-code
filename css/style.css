@@ -234,11 +234,11 @@ p {
 
 @media (min-width: 1280px) { /* Desktop and above */
   .hero ~ .header {
-    color: #fff;
+    color: #000;
   }
 
   body:has(.hero) .header {
-    color: #fff;
+    color: #000;
   }
 }
 
