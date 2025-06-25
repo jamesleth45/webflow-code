@@ -731,6 +731,12 @@ input::placeholder {
   }
 }
 
+@media (max-width: 1279px) {
+  .panel__close-text {
+    display: none;
+  }
+}
+
 /* Hero */
 .hero {
   margin-top: 0;
