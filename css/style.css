@@ -699,6 +699,17 @@ input::placeholder {
   display: block;
 }
 
+.panel__close {
+  position: absolute;
+  top: 1.6875rem;
+  right: 1.6875rem;
+  cursor: pointer;
+}
+
+.panel__close:hover {
+  font-weight: 700;
+}
+
 /* Hero */
 .hero {
   margin-top: 0;
