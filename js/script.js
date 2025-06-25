@@ -149,18 +149,28 @@ const panels = document.querySelectorAll('.panel');
 
 function closeAllPanels() {
   panels.forEach(panel => {
+    if (!panel.hasAttribute('data-open')) return;
+
     panel.removeAttribute('data-open');
+
+    setTimeout(() => {
+      panel.style.display = 'none';
+    }, 500); // 450ms exit + 50ms delay
   });
 }
 
 openers.forEach(opener => {
-  opener.addEventListener('click', e => {
+  opener.addEventListener('click', () => {
     const targetId = opener.getAttribute('data-toggle');
     const targetPanel = document.querySelector(`.panel[data-panel="${targetId}"]`);
     if (!targetPanel) return;
 
     closeAllPanels();
-    targetPanel.setAttribute('data-open', 'true');
+    targetPanel.style.display = 'block'; // Unhide first
+
+    requestAnimationFrame(() => {
+      targetPanel.setAttribute('data-open', 'true');
+    });
   });
 });
 
