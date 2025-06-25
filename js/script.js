@@ -156,6 +156,11 @@ const searchInput = document.querySelector('.panel__search-input');
 const clearBtn = document.querySelector('.panel__search-clear');
 const formInputs = document.querySelectorAll('.panel__form-input');
 
+function unlockScroll() {
+  document.body.style.overflow = '';
+  document.body.style.width = '';
+}
+
 function closeAllPanels() {
   panels.forEach(panel => {
     if (!panel.hasAttribute('data-open')) return;
@@ -169,12 +174,10 @@ function closeAllPanels() {
 
     setTimeout(() => {
       panel.style.display = 'none';
-      if (!document.querySelector('.panel[data-open="true"]')) {
-        document.body.style.overflow = '';
-        document.body.style.width = '';
-      }
     }, 500);
   });
+
+  unlockScroll();
 }
 
 openers.forEach(opener => {
@@ -261,7 +264,6 @@ formInputs.forEach(input => {
 
 window.addEventListener('resize', () => {
   if (window.innerWidth >= 1280) {
-    document.body.style.overflow = '';
-    document.body.style.width = '';
+    unlockScroll();
   }
 });
