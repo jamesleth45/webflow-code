@@ -180,8 +180,11 @@ openers.forEach(opener => {
     const searchField = targetPanel.querySelector('.panel__search-input');
     if (searchField) searchField.focus();
 
+    // Delay 2 frames to ensure smooth animation always
     requestAnimationFrame(() => {
-      targetPanel.setAttribute('data-open', 'true');
+      requestAnimationFrame(() => {
+        targetPanel.setAttribute('data-open', 'true');
+      });
     });
   });
 });
@@ -211,7 +214,7 @@ panels.forEach(panel => {
   }
 });
 
-// 🔍 Search Input Typing → Show/Hide Clear Button
+// Search Input Typing → Show/Hide Clear Button
 if (searchInput && clearBtn) {
   searchInput.addEventListener('input', () => {
     if (searchInput.value.trim() !== '') {
@@ -228,7 +231,7 @@ if (searchInput && clearBtn) {
   });
 }
 
-// 📩 Floating Label Logic
+// Floating Label Logic
 formInputs.forEach(input => {
   const label = input.previousElementSibling;
   if (!label || !label.classList.contains('panel__form-label')) return;
@@ -244,7 +247,5 @@ formInputs.forEach(input => {
   input.addEventListener('focus', updateLabel);
   input.addEventListener('blur', updateLabel);
   input.addEventListener('input', updateLabel);
-
-  // Run once on load in case browser auto-fills
-  updateLabel();
+  updateLabel(); // run on load (for autofill etc.)
 });
