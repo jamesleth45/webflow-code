@@ -714,6 +714,10 @@ input::placeholder {
 @media (max-width: 1279px) {
   .panel__close {
     width: 2.375rem;
+    position: absolute;
+    z-index: 111;
+    top: 0;
+    right: 0;
     height: 3.5rem;
     margin-right: .625rem;
   }
