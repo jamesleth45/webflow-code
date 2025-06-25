@@ -146,6 +146,9 @@ document.querySelectorAll('.header__nav-toggle').forEach(toggle => {
 /* || Panel Toggle */
 const openers = document.querySelectorAll('[data-toggle]');
 const panels = document.querySelectorAll('.panel');
+const searchInput = document.querySelector('.panel__search-input');
+const clearBtn = document.querySelector('.panel__search-clear');
+const formInputs = document.querySelectorAll('.panel__form-input');
 
 function closeAllPanels() {
   panels.forEach(panel => {
@@ -153,9 +156,15 @@ function closeAllPanels() {
 
     panel.removeAttribute('data-open');
 
+    // Clear search input + hide clear button if it's the search panel
+    const searchField = panel.querySelector('.panel__search-input');
+    const searchClear = panel.querySelector('.panel__search-clear');
+    if (searchField) searchField.value = '';
+    if (searchClear) searchClear.removeAttribute('data-visible');
+
     setTimeout(() => {
       panel.style.display = 'none';
-    }, 500); // 450ms exit + 50ms delay
+    }, 500);
   });
 }
 
@@ -166,10 +175,14 @@ openers.forEach(opener => {
     if (!targetPanel) return;
 
     closeAllPanels();
-    targetPanel.style.display = 'block'; // Unhide first
+    targetPanel.style.display = 'block';
 
     requestAnimationFrame(() => {
       targetPanel.setAttribute('data-open', 'true');
+
+      // Focus search input if it's the search panel
+      const searchField = targetPanel.querySelector('.panel__search-input');
+      if (searchField) searchField.focus();
     });
   });
 });
@@ -197,4 +210,39 @@ panels.forEach(panel => {
       closeAllPanels();
     });
   }
+});
+
+// 🔍 Search Input Typing → Show/Hide Clear Button
+if (searchInput && clearBtn) {
+  searchInput.addEventListener('input', () => {
+    if (searchInput.value.trim() !== '') {
+      clearBtn.setAttribute('data-visible', 'true');
+    } else {
+      clearBtn.removeAttribute('data-visible');
+    }
+  });
+
+  clearBtn.addEventListener('click', () => {
+    searchInput.value = '';
+    clearBtn.removeAttribute('data-visible');
+    searchInput.focus();
+  });
+}
+
+// 📩 Floating Label Logic
+formInputs.forEach(input => {
+  const label = input.previousElementSibling;
+  if (!label || !label.classList.contains('panel__form-label')) return;
+
+  const updateLabel = () => {
+    if (input === document.activeElement || input.value.trim() !== '') {
+      label.setAttribute('data-active', 'true');
+    } else {
+      label.removeAttribute('data-active');
+    }
+  };
+
+  input.addEventListener('focus', updateLabel);
+  input.addEventListener('blur', updateLabel);
+  input.addEventListener('input', updateLabel);
 });
