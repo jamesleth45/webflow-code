@@ -231,19 +231,10 @@ p {
 }
 
 /* Header */
-
 @media (min-width: 1280px) { /* Desktop and above */
-  .hero ~ .header {
-    color: #000;
-  }
-
   body:has(.hero) .header {
     color: #000;
   }
-}
-
-body:has(.hero) .header {
-  color: #fff;
 }
 
 @media (max-width: 1279px) { /* Tablet and below */
