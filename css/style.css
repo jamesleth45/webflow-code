@@ -805,10 +805,14 @@ input::placeholder {
   .panel__item--heading {
     margin-bottom: 1.25rem;
   }
+
+  .panel__item {
+    margin-bottom: 1rem;
+  }
 }
 
 .panel__item {
-  line-height: 1.5625rem;
+  margin-bottom: .625rem;
 }
 
 /* Hero */
