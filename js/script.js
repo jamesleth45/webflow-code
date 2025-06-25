@@ -156,7 +156,6 @@ function closeAllPanels() {
 
     panel.removeAttribute('data-open');
 
-    // Clear search input + hide clear button if it's the search panel
     const searchField = panel.querySelector('.panel__search-input');
     const searchClear = panel.querySelector('.panel__search-clear');
     if (searchField) searchField.value = '';
@@ -177,12 +176,12 @@ openers.forEach(opener => {
     closeAllPanels();
     targetPanel.style.display = 'block';
 
+    // Autofocus search input immediately (iOS-safe)
+    const searchField = targetPanel.querySelector('.panel__search-input');
+    if (searchField) searchField.focus();
+
     requestAnimationFrame(() => {
       targetPanel.setAttribute('data-open', 'true');
-
-      // Focus search input if it's the search panel
-      const searchField = targetPanel.querySelector('.panel__search-input');
-      if (searchField) searchField.focus();
     });
   });
 });
@@ -245,4 +244,7 @@ formInputs.forEach(input => {
   input.addEventListener('focus', updateLabel);
   input.addEventListener('blur', updateLabel);
   input.addEventListener('input', updateLabel);
+
+  // Run once on load in case browser auto-fills
+  updateLabel();
 });
