@@ -278,7 +278,7 @@ window.addEventListener('resize', () => {
   }
 });
 
-/* || Webflow Watchdog Kill */
+/* || Webflow Turnstile Debugger Kill */
 window.addEventListener('load', () => {
   setTimeout(() => {
     for (const key in window) {
@@ -287,11 +287,14 @@ window.addEventListener('load', () => {
         obj &&
         typeof obj === 'object' &&
         obj.watchCatInterval &&
-        obj.widgetMap instanceof Map
+        typeof obj.widgetMap === 'object'
       ) {
         clearInterval(obj.watchCatInterval);
         obj.watchCatInterval = null;
       }
     }
-  }, 50);
+
+    // Block any fallback debugger function
+    window.debugger = () => {};
+  }, 100);
 });
