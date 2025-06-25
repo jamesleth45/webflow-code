@@ -679,6 +679,26 @@ input::placeholder {
   visibility: hidden;
 }
 
+.panel__search {
+  position: relative;
+}
+
+.panel__search-clear {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+  cursor: pointer;
+}
+
+.panel__search-clear:hover {
+  font-weight: 700;
+}
+
+.panel__search-clear[data-visible="true"] {
+  display: block;
+}
+
 /* Hero */
 .hero {
   margin-top: 0;
