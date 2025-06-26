@@ -1024,3 +1024,17 @@ p {
     grid-column: 1 / -1;
   }
 }
+
+.product-headertest {
+  margin-top: 1.25rem;
+}
+
+.product-header__wrappertest {
+  grid-column: 3 / 11;
+}
+
+@media (max-width: 1279px) {
+  .product-header__wrappertest {
+    grid-column: 1 / -1;
+  }
+}
