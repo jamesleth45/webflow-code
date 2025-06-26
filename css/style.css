@@ -972,6 +972,10 @@ p {
   }
 }
 
+.product-listing__link:hover .product-listing__meta-title {
+  font-weight: 700;
+}
+
 .product-listing__meta {
   margin-top: .625rem;
 }
