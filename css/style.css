@@ -1016,7 +1016,7 @@ p {
 .product-body-test {
   grid-column: 3 / 11;
 
-  margin-bottom: 1.625rem;
+  margin-bottom: 5rem;
 }
 
 @media (max-width: 1279px) {
@@ -1027,6 +1027,7 @@ p {
 
 .product-headertest {
   margin-top: 1.25rem;
+  margin-bottom: .8125rem;
 }
 
 .product-header__wrappertest {
