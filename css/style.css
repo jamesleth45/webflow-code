@@ -944,6 +944,7 @@ p {
   width: 100%;
   grid-column: 5 / 9;
   height: 100vh;
+  object-fit: cover;
 }
 
 @media (max-width: 1279px) {
