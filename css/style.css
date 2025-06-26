@@ -1016,7 +1016,7 @@ p {
 .product-body-test {
   grid-column: 3 / 11;
 
-  margin-top: 1.625rem;
+  margin-bottom: 1.625rem;
 }
 
 @media (max-width: 1279px) {
