@@ -971,3 +971,19 @@ p {
     grid-column: 1 / -1;
   }
 }
+
+.product-listing__meta {
+  margin-top: .625rem;
+}
+
+.product-listing__meta-title {
+  height: 1.625rem;
+  max-height: 1.625rem;
+  margin-bottom: .4375rem;
+
+  font-weight: 400;
+}
+
+.product-listing__meta-price {
+  font-weight: 700;
+}
