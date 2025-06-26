@@ -194,7 +194,7 @@ p {
   gap: 0;
 }
 
-/* W classes */
+/* w classes */
 .w-form {
   margin: 0;
 }
@@ -202,43 +202,54 @@ p {
 .w-form-done,
 .w-form-fail {
   display: none;
+
   padding: 0;
-  background: none;
+
   text-align: inherit;
+
+  background: none;
 }
 
 .w-checkbox {
-  margin: 0;
-  padding: 0;
   display: contents;
   position: relative;
+
+  margin: 0;
+  padding: 0;
 }
 
 .w-checkbox-input {
   all: unset;
-  position: absolute;
+
   display: block;
-  left: 0;
+  position: absolute;
   top: .125rem;
+  left: 0;
+
   width: .375rem;
   height: .375rem;
+
   background-color: #fff;
   border: 1px solid #000;
   border-radius: 0;
+
   content: "";
 }
 
 .w-checkbox-input[class*="w--redirected-checked"] {
   width: .25rem;
   height: .25rem;
-  background-color: #000;
-  border: 1px solid #fff;
-  outline: 1px solid #000;
-  outline-offset: 0;
-  background-image: none;
-  margin-left: 1px;
+
   margin-top: 1px;
   margin-bottom: 1px;
+  margin-left: 1px;
+
+  background-color: #000;
+  background-image: none;
+  border: 1px solid #fff;
+
+  outline: 1px solid #000;
+  outline-offset: 0;
 }
 
 @media (max-width: 767px) {
