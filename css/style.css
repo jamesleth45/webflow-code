@@ -270,6 +270,19 @@ p {
 }
 
 /* header */
+@media (max-width: 1279px) {
+  .header__inner {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+
+    width: 100%;
+    height: 3.5rem;
+
+    background-color: #fff;
+  }
+}
+
 .header__logo {
   position: fixed;
   z-index: 101;
@@ -310,22 +323,8 @@ p {
 
 @media (max-width: 1279px) {
   .header__logo-link {
-    font-size: 1.25rem;
-
     padding: 1.25rem;
-  }
-}
-
-@media (max-width: 1279px) {
-  .header__inner {
-    position: fixed;
-    top: 0;
-    z-index: 100;
-
-    width: 100%;
-    height: 3.5rem;
-
-    background-color: #fff;
+    font-size: 1.25rem;
   }
 }
 
@@ -334,19 +333,20 @@ p {
     position: fixed;
     inset: 0;
     z-index: 100;
+
     display: flex;
-
-    padding: 3.5rem 1.25rem 1.25rem;
-
     flex-direction: column;
     justify-content: space-between;
     gap: 4.375rem;
 
+    padding: 3.5rem 1.25rem 1.25rem;
+
     background-color: #fff;
     overflow-y: auto;
-    opacity: 0;
 
+    opacity: 0;
     pointer-events: none;
+
     transition: opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
   }
 
@@ -354,7 +354,6 @@ p {
     opacity: 1;
     pointer-events: auto;
   }
-}
 
   .header__nav-item {
     line-height: 1.5625rem;
@@ -383,7 +382,7 @@ p {
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1280px) { /* Desktop and above */
   .header__nav-list--left,
   .header__nav-list--right {
     position: fixed;
@@ -441,13 +440,13 @@ p {
   justify-content: center;
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1280px) { /* Desktop and above */
   .header__mobile {
     display: none;
   }
 }
 
-@media (max-width: 1279px) {
+@media (max-width: 1279px) { /* Tablet and below */
   .header__mobile {
     position: fixed;
     top: 0;
@@ -508,13 +507,13 @@ p {
   opacity: 1;
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1280px) { /* Desktop and above */
   .header__nav-item--region {
     display: none;
   }
 }
 
-@media (max-width: 1279px) {
+@media (max-width: 1279px) { /* Tablet and below */
   .header__nav-item--region {
     font-weight: 700;
     margin-top: 1.875rem;
@@ -536,7 +535,7 @@ p {
   font-weight: 700;
 }
 
-@media (max-width: 1279px) {
+@media (max-width: 1279px) { /* Tablet and below */
   .footer__nav-text--social {
     display: none;
   }
