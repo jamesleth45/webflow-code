@@ -967,6 +967,10 @@ p {
 }
 
 /* product-listing */
+.product-listing {
+  min-height: 100vh;
+}
+
 @media (max-width: 1279px) {
   .product-listing {
     margin-top: 3.5rem;
