@@ -904,7 +904,7 @@ p {
   margin-top: 0;
 }
 
-.hero__image {
+.hero__img {
   display: block;
   width: 100%;
   grid-column: 5 / 9;
@@ -915,7 +915,7 @@ p {
     margin-top: 3.5rem;
   }
 
-  .hero__image {
+  .hero__img {
     grid-column: 1 / -1;
   }
 }
