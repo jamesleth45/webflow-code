@@ -949,6 +949,23 @@ p {
   }
 }
 
+/* product-header */
+.product-header {
+  margin-top: 8.75rem;
+
+  margin-bottom: 1.25rem;
+}
+
+.product-header__wrapper {
+  grid-column: 3 / 11;
+}
+
+@media (max-width: 1279px) {
+  .product-header__wrapper {
+    grid-column: 1 / -1;
+  }
+}
+
 /* product-listing */
 @media (max-width: 1279px) {
   .product-listing {
