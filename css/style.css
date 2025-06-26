@@ -285,7 +285,7 @@ p {
 
 .header__logo {
   position: fixed;
-  z-index: 101;
+  z-index: 120;
 }
 
 @media (min-width: 1280px) {
@@ -387,7 +387,7 @@ p {
   .header__nav-list--right {
     position: fixed;
     top: 8.75rem;
-    z-index: 102;
+    z-index: 100;
   }
 
   .header__nav-list--left {
@@ -678,7 +678,7 @@ p {
 .panel {
   position: fixed;
   inset: 0;
-  z-index: 100;
+  z-index: 110;
   display: none;
 }
 
@@ -873,7 +873,7 @@ p {
 
 .panel__close {
   position: absolute;
-  z-index: 111;
+  z-index: 120;
   top: 1.6875rem;
   right: 1.6875rem;
   display: flex;
@@ -890,7 +890,7 @@ p {
   .panel__close {
     width: 2.375rem;
     position: absolute;
-    z-index: 103;
+    z-index: 120;
     top: 0;
     right: 0;
     height: 3.5rem;
