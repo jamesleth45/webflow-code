@@ -961,6 +961,16 @@ p {
   }
 }
 
+.product-listing__header-wrapper {
+  grid-column: 3 / 11;
+}
+
+@media (max-width: 1279px) {
+  .product-listing__header-wrapper {
+    grid-column: 1 / -1;
+  }
+}
+
 .product-listing__items {
   grid-column: 3 / 11;
 
