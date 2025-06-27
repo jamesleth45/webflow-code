@@ -1267,3 +1267,9 @@ select {
   margin-top: .625rem;
   margin-bottom: 1.875rem;
 }
+
+.product__accordions {
+  display: grid;
+
+  gap: .625rem;
+}
