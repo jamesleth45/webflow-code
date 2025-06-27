@@ -97,6 +97,7 @@ a[aria-current="page"] {
   .header__nav-toggle:hover,
   .footer__nav-link:hover,
   .footer__nav-toggle:hover,
+  .product__toggle:hover,
   .panel__form-policy-link:hover {
     font-weight: 700;
   }
@@ -1223,4 +1224,10 @@ select {
   border-color: #222;
   background-color: #222;
   color: #fff;
+}
+
+.product__toggle-icon {
+  display: flex;
+  align-items: center;
+  gap: .25rem;
 }
