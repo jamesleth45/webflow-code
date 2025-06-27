@@ -279,15 +279,19 @@ window.addEventListener('resize', () => {
 });
 
 /* || Toggle visibility of secondary image on hover */
-const productListingLink = document.querySelector('.product-listing__link');
-const secondaryImage = document.querySelector('.product-listing__image--secondary');
+document.addEventListener('DOMContentLoaded', () => {
+  const productListingLink = document.querySelector('.product-listing__link');
+  const secondaryImage = document.querySelector('.product-listing__image--secondary');
 
-productListingLink.addEventListener('mouseenter', () => {
-  secondaryImage.setAttribute('data-visible', 'true');
-});
+  if (productListingLink && secondaryImage) {
+    productListingLink.addEventListener('mouseenter', () => {
+      secondaryImage.setAttribute('data-visible', 'true');
+    });
 
-productListingLink.addEventListener('mouseleave', () => {
-  secondaryImage.removeAttribute('data-visible');
+    productListingLink.addEventListener('mouseleave', () => {
+      secondaryImage.removeAttribute('data-visible');
+    });
+  }
 });
 
 /* || Bold curent link */
