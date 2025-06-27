@@ -745,7 +745,7 @@ p {
 }
 
 .panel__inner {
-  grid-column: 9 / 13;
+  grid-column: 8 / 11;
   height: 100%;
   background-color: #fff;
   padding: 8.75rem 1.6875rem 1.6875rem .625rem;
