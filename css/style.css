@@ -1114,12 +1114,8 @@ p {
 }
 
 .product__meta {
-  grid-column: 9 / 11;
-  padding: 1.6875rem 1.6875rem 1.6875rem .625rem;
-  max-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  grid-column: span 2;
+  padding: 8.75rem 1.6875rem 1.6875rem .625rem;
 }
 
 .product__title {
@@ -1201,7 +1197,7 @@ select {
 .product__add {
   width: 100%;
   margin-top: 1.25rem;
-  height: 2.75rem;
+  height: 1.563rem;
   padding: 0 .625rem;
   border: 1px solid #000;
   background-color: #000;
