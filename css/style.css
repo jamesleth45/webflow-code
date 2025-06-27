@@ -1114,7 +1114,7 @@ p {
 }
 
 .product__meta {
-  grid-column: 10 / 11;
+  grid-column: 9 / 11;
   padding: 1.6875rem 1.6875rem 1.6875rem .625rem;
   max-height: 100vh;
   display: flex;
