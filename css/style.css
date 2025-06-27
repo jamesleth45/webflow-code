@@ -1037,6 +1037,13 @@ p {
   font-weight: 700;
 }
 
+@media (hover: hover) {
+  a:hover,
+  button:hover {
+    font-weight: normal;  /* Reset font-weight for other elements */
+  }
+}
+
 .product-listing__meta {
   margin-top: .625rem;
 }
