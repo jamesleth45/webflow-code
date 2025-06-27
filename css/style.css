@@ -1171,6 +1171,11 @@ select {
   border-bottom: 1px solid #000;
 }
 
+.product__select-arrow {
+  display: inline-block;
+  transform: rotate(90deg); /* right → down */
+}
+
 .product__add {
   width: 100%;
   margin-top: .625rem;
