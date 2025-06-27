@@ -1084,3 +1084,9 @@ p {
 .product-listing__link {
   position: relative;
 }
+
+.product-listing__image--secondary {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
