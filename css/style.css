@@ -1107,7 +1107,7 @@ p {
 
 .product__price {
   margin-top: .625rem;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .product__add {
