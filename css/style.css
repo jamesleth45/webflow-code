@@ -1084,18 +1084,3 @@ p {
 .product-listing__link {
   position: relative;
 }
-
-.product-listing__image2 {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-  transition: opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1), pointer-events 250ms cubic-bezier(0.215, 0.61, 0.355, 1) !important;
-  z-index: 5 !important;  /* Ensure it's below image1 */
-}
-
-.product-listing__image2[data-visible="true"] {
-  opacity: 1 !important;
-  pointer-events: auto !important;
-}
