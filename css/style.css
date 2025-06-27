@@ -1101,6 +1101,10 @@ p {
   padding: 8.75rem 1.6875rem 1.6875rem .625rem;
 }
 
+.product__price {
+  margin-top: .625rem;
+}
+
 .product__add {
   width: 100%;
   margin-top: .625rem;
