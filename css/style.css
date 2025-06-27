@@ -92,13 +92,6 @@ a[aria-current="page"] {
   font-weight: 700;
 }
 
-@media (hover: hover) {
-  a:hover,
-  button:hover {
-    font-weight: 700;
-  }
-}
-
 /* button */
 button {
   all: unset;
@@ -1035,13 +1028,6 @@ p {
 
 .product-listing__link:hover .product-listing__meta-title {
   font-weight: 700;
-}
-
-@media (hover: hover) {
-  a:hover,
-  button:hover {
-    font-weight: normal;  /* Reset font-weight for other elements */
-  }
 }
 
 .product-listing__meta {
