@@ -290,3 +290,47 @@ links.forEach(link => {
     link.removeAttribute('aria-current');
   }
 });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const select = document.getElementById("option-set-20f9441a4bdfdc6b166e9caa96f03eee");
+
+    if (!select) return;
+
+    // Hide the original select
+    select.style.display = "none";
+
+    // Create the custom wrapper
+    const wrapper = document.createElement("div");
+    wrapper.className = "fake-radio-wrapper";
+
+    // Fake options
+    const options = [
+      { label: "24in H and W", value: "24in" },
+      { label: "Black", value: "black" }
+    ];
+
+    options.forEach(opt => {
+      const label = document.createElement("label");
+      label.className = "fake-radio";
+
+      const input = document.createElement("input");
+      input.type = "radio";
+      input.name = "fake-radio-set";
+      input.value = opt.value;
+
+      const span = document.createElement("span");
+      span.textContent = opt.label;
+
+      input.addEventListener("change", () => {
+        select.value = opt.value;
+        select.dispatchEvent(new Event("change", { bubbles: true }));
+      });
+
+      label.appendChild(input);
+      label.appendChild(span);
+      wrapper.appendChild(label);
+    });
+
+    // Inject after the select
+    select.parentNode.insertBefore(wrapper, select.nextSibling);
+  });
