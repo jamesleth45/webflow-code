@@ -967,12 +967,12 @@ p {
   grid-auto-rows: auto;
 }
 
-.product-listing__header-wrapper {
+.product-listing__header {
   grid-column: 3 / 11;
 }
 
 @media (max-width: 1279px) {
-  .product-listing__header-wrapper {
+  .product-listing__header {
     grid-column: 1 / -1;
   }
 }
