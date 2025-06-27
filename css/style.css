@@ -1089,3 +1089,7 @@ p {
 .product__gallery {
   grid-column: 3 / 9;
 }
+
+.product__meta {
+  grid-column: span 2;
+}
