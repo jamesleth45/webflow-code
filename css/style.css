@@ -774,7 +774,7 @@ p {
 @media (min-width: 1280px) { /* Desktop and above */
   .panel__inner {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
     gap: 0;
   }
@@ -782,7 +782,7 @@ p {
 
 @media (min-width: 1280px) { /* Desktop and above */
   .panel__content {
-    grid-column: span 3;
+    grid-column: span 2;
   }
 }
 
