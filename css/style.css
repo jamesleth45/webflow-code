@@ -1231,3 +1231,9 @@ select {
   align-items: center;
   gap: .25rem;
 }
+
+.product__icon--arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
