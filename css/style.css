@@ -1177,8 +1177,8 @@ select {
 
 .product__select-arrow {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: .25rem;
+  right: -.25rem;
 
   display: flex;
   align-items: center;
