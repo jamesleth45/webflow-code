@@ -97,7 +97,7 @@ a[aria-current="page"] {
   .header__nav-toggle:hover,
   .footer__nav-link:hover,
   .footer__nav-toggle:hover,
-  .panel__form-policy-link {
+  .panel__form-policy-link:hover {
     font-weight: 700;
   }
 }
