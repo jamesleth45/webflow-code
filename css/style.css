@@ -98,6 +98,7 @@ a[aria-current="page"] {
   .footer__nav-link:hover,
   .footer__nav-toggle:hover,
   .product__toggle:hover,
+  .product__link:hover,
   .panel__form-policy-link:hover {
     font-weight: 700;
   }
@@ -1249,4 +1250,8 @@ select {
 
 .product__description {
   margin-top: 1.25rem;
+}
+
+.product__link {
+  text-decoration: underline;
 }
