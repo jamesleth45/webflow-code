@@ -99,6 +99,7 @@ a[aria-current="page"] {
   .footer__nav-toggle:hover,
   .product__toggle:hover,
   .product__link:hover,
+  .product__accordion-toggle:hover,
   .panel__form-policy-link:hover {
     font-weight: 700;
   }
