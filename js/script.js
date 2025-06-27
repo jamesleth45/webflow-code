@@ -278,7 +278,24 @@ window.addEventListener('resize', () => {
   }
 });
 
+/* || Product-listuing hover */
+const link = document.querySelectorAll('.product-listing__link');
 
+link.forEach(item => {
+  item.addEventListener('mouseenter', () => {
+    const imageSecondary = item.querySelector('.product-listing__image--secondary');
+    if (imageSecondary) {
+      imageSecondary.setAttribute('data-visible', 'true');
+    }
+  });
+
+  item.addEventListener('mouseleave', () => {
+    const imageSecondary = item.querySelector('.product-listing__image--secondary');
+    if (imageSecondary) {
+      imageSecondary.removeAttribute('data-visible');
+    }
+  });
+});
 
 /* || Bold curent link */
 const links = document.querySelectorAll('.header__nav-link');
