@@ -195,7 +195,7 @@ p {
 
   height: 100%;
 
-  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(12, 1fr);
   grid-auto-rows: auto;
   gap: 0;
 }
@@ -582,7 +582,7 @@ p {
 }
 
 .footer__nav-list--region {
-  grid-column: span 2;
+  grid-column: span 4;
 }
 
 @media (max-width: 1279px) { /* Tablet and below */
@@ -748,7 +748,7 @@ p {
 }
 
 .panel__inner {
-  grid-column: 8 / 11;
+  grid-column: 9 / 12;
   height: 100%;
   background-color: #fff;
   padding: 8.75rem 1.6875rem 1.6875rem .625rem;
