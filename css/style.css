@@ -5,6 +5,11 @@ html {
   background-color: #000; /* Black background */
 }
 
+body {
+  min-height: 100%;
+  background-color: transparent; /* Content area stays transparent */
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
