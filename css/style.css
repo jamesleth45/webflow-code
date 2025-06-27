@@ -1143,6 +1143,12 @@ p {
   border-bottom: 1px solid #000;
 }
 
+.w-select:focus {
+  all: unset;
+
+  border-bottom: 1px solid #000;
+}
+
 .product__add {
   width: 100%;
   margin-top: .625rem;
