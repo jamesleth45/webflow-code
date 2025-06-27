@@ -1129,7 +1129,7 @@ p {
   margin-top: 1.25rem;
 }
 
-.product__select {
+.w-select {
   all: unset;
 
   display: block;
