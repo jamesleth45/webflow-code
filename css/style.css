@@ -1011,9 +1011,9 @@ p {
   position: sticky;
   top: 0;
   z-index: 2;
-  padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
-  margin-top: -1.25rem;
+  padding-top: 1.6875rem;
+  padding-bottom: 1.6875rem;
+  margin-top: -1.6875rem;
   background-color: #fff;
 }
 
