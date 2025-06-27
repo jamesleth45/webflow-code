@@ -1127,3 +1127,9 @@ p {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
+
+.product__add:hover {
+  border-color: #222;
+  background-color: #222;
+  color: #fff;
+}
