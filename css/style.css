@@ -1049,7 +1049,7 @@ p {
 
 @media (max-width: 767px) {
   .product-listing__items {
-    grid-template-columns: repeat(2, 1fr); /* Adjusting to 2 columns on mobile L and below */
+    grid-template-columns: repeat(1, 1fr); /* Adjusting to 2 columns on mobile L and below */
   }
 }
 
