@@ -1087,5 +1087,5 @@ p {
 
 /* product */
 .product__gallery {
-  grid-column: 3 / 10;
+  grid-column: 3 / 9;
 }
