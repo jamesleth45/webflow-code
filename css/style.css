@@ -1230,7 +1230,7 @@ select {
   margin-top: 1.25rem;
 }
 
-.product__toggle--size {
+.product__toggle {
   display: flex;
   align-items: center;
   gap: .25rem;
