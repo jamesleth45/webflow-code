@@ -277,3 +277,17 @@ window.addEventListener('resize', () => {
     unlockScroll();
   }
 });
+
+// Get all the navigation links
+const links = document.querySelectorAll('.header__nav-link');
+
+// Get the current URL path
+const currentPath = window.location.pathname;
+
+// Loop through each link
+links.forEach(link => {
+  // If the href of the link matches the current URL, add the aria-current="page" attribute
+  if (link.href.includes(currentPath)) {
+    link.setAttribute('aria-current', 'page');
+  }
+});
