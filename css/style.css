@@ -1084,3 +1084,8 @@ p {
 .product-listing__link {
   position: relative;
 }
+
+/* product */
+.product__gallery {
+  grid-column: 3 / 10;
+}
