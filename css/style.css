@@ -1055,6 +1055,12 @@ p {
   margin-top: .625rem;
 }
 
+@media (max-width: 1279px) {
+  .product-listing__meta {
+    padding-left: 1.25rem;
+  }
+}
+
 .product-listing__meta-title {
   height: 1.625rem;
   max-height: 1.625rem;
