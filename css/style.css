@@ -1171,9 +1171,21 @@ select {
   border-bottom: 1px solid #000;
 }
 
+.product__size {
+  position: relative;
+}
+
 .product__select-arrow {
-  display: inline-block;
-  transform: rotate(90deg); /* right → down */
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: rotate(90deg);
+  pointer-events: none;
 }
 
 .product__add {
