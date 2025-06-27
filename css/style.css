@@ -1231,6 +1231,10 @@ select {
   margin-top: 1.25rem;
 }
 
+.product__toggle--service {
+  margin-top: .625rem;
+}
+
 .product__toggle {
   display: flex;
   align-items: center;
