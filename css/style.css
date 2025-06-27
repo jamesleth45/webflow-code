@@ -971,6 +971,15 @@ p {
   }
 }
 
+.product-listing__title {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  margin-top: -1.25rem;
+}
+
 .product-listing__items {
   grid-column: 3 / 11;
 
