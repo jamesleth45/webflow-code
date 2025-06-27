@@ -1091,9 +1091,7 @@ p {
   left: 0 !important;
   opacity: 1 !important;
   pointer-events: auto !important;
-  z-index: 10 !important;  /* Ensure it's on top */
-  width: 100%; /* Ensure the image covers the space */
-  height: auto; /* Or specify height */
+  z-index: 4 !important;  /* Ensure it's on top */
 }
 
 .product-listing__image2 {
@@ -1104,8 +1102,6 @@ p {
   pointer-events: none !important;
   transition: opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1), pointer-events 250ms cubic-bezier(0.215, 0.61, 0.355, 1) !important;
   z-index: 5 !important;  /* Ensure it's below image1 */
-  width: 100%; /* Ensure the image covers the space */
-  height: auto; /* Or specify height */
 }
 
 .product-listing__image2[data-visible="true"] {
