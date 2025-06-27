@@ -1,4 +1,10 @@
 /* global */
+
+html {
+  height: 100%;
+  background-color: #000; /* Black background */
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
