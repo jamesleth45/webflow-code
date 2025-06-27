@@ -1144,6 +1144,8 @@ select {
   min-height: 1.563rem;
   line-height: 1.563rem;
 
+  padding: 0;
+
   border: none;
   border-bottom: 1px solid #000;
 
