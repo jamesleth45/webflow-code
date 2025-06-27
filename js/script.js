@@ -278,18 +278,17 @@ window.addEventListener('resize', () => {
   }
 });
 
-// Get all the navigation links
+
+
+/* || Bold curent link */
 const links = document.querySelectorAll('.header__nav-link');
 
-// Get the current URL
 const currentUrl = window.location.href;
 
-// Loop through each link
 links.forEach(link => {
-  // Only apply aria-current="page" if the href exactly matches the current URL
   if (link.href === currentUrl) {
     link.setAttribute('aria-current', 'page');
   } else {
-    link.removeAttribute('aria-current'); // Remove it from other links
+    link.removeAttribute('aria-current');
   }
 });

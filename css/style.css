@@ -1080,3 +1080,22 @@ p {
 .product-listing__meta-price {
   font-weight: 700;
 }
+
+.product-listing__link {
+  position: relative;
+}
+
+.product-listing__image--secondary {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1), pointer-events 0s;
+}
+
+.product-listing__image--secondary[data-visible="true"] {
+  opacity: 1;
+  pointer-events: auto;
+}
