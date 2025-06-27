@@ -1100,3 +1100,8 @@ p {
   grid-column: span 3;
   padding: 8.75rem 1.6875rem 1.6875rem .625rem;
 }
+
+label[for="quantity-c1472e9006f4cd712cea27859ced007a"],
+.w-commerce-commerceaddtocartquantityinput {
+  visibility: hidden;
+}
