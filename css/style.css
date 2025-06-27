@@ -92,6 +92,15 @@ a[aria-current="page"] {
   font-weight: 700;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .header__nav-link:hover,
+  .header__nav-toggle:hover,
+  .footer__nav-link:hover,
+  .footer__nav-toggle:hover {
+    font-weight: 700;
+  }
+}
+
 /* button */
 button {
   all: unset;
