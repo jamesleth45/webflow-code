@@ -1104,4 +1104,26 @@ p {
 label[for="quantity-c1472e9006f4cd712cea27859ced007a"],
 .w-commerce-commerceaddtocartquantityinput {
   visibility: hidden;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  line-height: normal;
+  display: none;
+}
+
+label[for="quantity-c1472e9006f4cd712cea27859ced007a"] {
+  margin-bottom: 0;
+  font-weight: normal;
+  display: inline;
+}
+
+.w-commerce-commerceaddtocartquantityinput {
+  background-color: transparent;
+  border: none;
 }
