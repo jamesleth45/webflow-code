@@ -1272,6 +1272,7 @@ select {
   display: grid;
 
   gap: .625rem;
+  margin-top: 1.25rem;
 }
 
 .w-commerce-commerceaddtocartform {
