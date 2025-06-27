@@ -1226,6 +1226,10 @@ select {
   color: #fff;
 }
 
+.product__toggle {
+  margin-top: 1.25rem;
+}
+
 .product__toggle--icon {
   display: flex;
   align-items: center;
