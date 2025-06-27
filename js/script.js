@@ -283,16 +283,26 @@ const link = document.querySelectorAll('.product-listing__link');
 
 link.forEach(item => {
   item.addEventListener('mouseenter', () => {
-    const imageSecondary = item.querySelector('.product-listing__image--secondary');
-    if (imageSecondary) {
-      imageSecondary.setAttribute('data-visible', 'true');
+    const mainImage = item.querySelector('.product-listing__image--main');
+    const secondaryImage = item.querySelector('.product-listing__image--secondary');
+    
+    if (mainImage) {
+      mainImage.setAttribute('data-visible', 'false');  // Main image becomes hidden
+    }
+    if (secondaryImage) {
+      secondaryImage.setAttribute('data-visible', 'true');  // Secondary image becomes visible
     }
   });
 
   item.addEventListener('mouseleave', () => {
-    const imageSecondary = item.querySelector('.product-listing__image--secondary');
-    if (imageSecondary) {
-      imageSecondary.removeAttribute('data-visible');
+    const mainImage = item.querySelector('.product-listing__image--main');
+    const secondaryImage = item.querySelector('.product-listing__image--secondary');
+    
+    if (mainImage) {
+      mainImage.setAttribute('data-visible', 'true');  // Main image becomes visible again
+    }
+    if (secondaryImage) {
+      secondaryImage.setAttribute('data-visible', 'false');  // Secondary image becomes hidden again
     }
   });
 });
