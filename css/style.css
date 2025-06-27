@@ -1256,3 +1256,14 @@ select {
 .product__link {
   text-decoration: underline;
 }
+
+.hproduct__accordion-body {
+  height: 0;
+  overflow: hidden;
+  transition: height .25s ease;
+}
+
+.product__accordion-text {
+  margin-top: .625rem;
+  margin-bottom: 1.875rem;
+}
