@@ -1116,6 +1116,10 @@ p {
 .product__meta {
   grid-column: span 2;
   padding: 1.6875rem 1.6875rem 1.6875rem .625rem;
+  max-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .product__title {
