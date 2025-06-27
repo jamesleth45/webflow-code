@@ -988,6 +988,15 @@ p {
   }
 }
 
+.product-listing__season {
+  margin-top: 1.25rem;
+  margin-bottom: .8125rem;
+}
+
+.product-listing__header {
+  margin-bottom: 5rem;
+}
+
 .product-listing__list {
   grid-column: 3 / 11;
 }
