@@ -1103,7 +1103,7 @@ p {
 
 /* product */
 .product__gallery {
-  grid-column: 3 / 9;
+  grid-column: 4 / 8;
 }
 
 .product__details {
@@ -1112,7 +1112,7 @@ p {
 }
 
 .product__meta {
-  grid-column: span 3;
+  grid-column: span 2;
   padding: 8.75rem 1.6875rem 1.6875rem .625rem;
 }
 
