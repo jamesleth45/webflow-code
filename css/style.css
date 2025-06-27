@@ -960,7 +960,7 @@ p {
 .hero__image {
   display: block;
   width: 100%;
-  grid-column: 4 / 8;
+  grid-column: 5 / 9;
   height: 100vh;
   object-fit: cover;
 }
