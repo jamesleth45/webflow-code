@@ -281,13 +281,15 @@ window.addEventListener('resize', () => {
 // Get all the navigation links
 const links = document.querySelectorAll('.header__nav-link');
 
-// Get the current URL path
-const currentPath = window.location.pathname;
+// Get the current URL
+const currentUrl = window.location.href;
 
 // Loop through each link
 links.forEach(link => {
-  // If the href of the link matches the current URL, add the aria-current="page" attribute
-  if (link.href.includes(currentPath)) {
+  // Only apply aria-current="page" if the href exactly matches the current URL
+  if (link.href === currentUrl) {
     link.setAttribute('aria-current', 'page');
+  } else {
+    link.removeAttribute('aria-current'); // Remove it from other links
   }
 });
