@@ -92,7 +92,7 @@ a[aria-current="page"] {
   font-weight: 700;
 }
 
-@media (hover: hover) and (pointer: fine) {
+@media (hover: hover) {
   .header__nav-link:hover,
   .header__nav-toggle:hover,
   .footer__nav-link:hover,
@@ -1053,7 +1053,7 @@ p {
   }
 }
 
-@media (hover: hover) and (pointer: fine) {
+@media (hover: hover) {
   .product-listing__link:hover .product-listing__meta-title {
     font-weight: 700;
   }
