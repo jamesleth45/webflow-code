@@ -1053,8 +1053,10 @@ p {
   }
 }
 
-.product-listing__link:hover .product-listing__meta-title {
-  font-weight: 700;
+@media (hover: hover) and (pointer: fine) {
+  .product-listing__link:hover .product-listing__meta-title {
+    font-weight: 700;
+  }
 }
 
 .product-listing__meta {
