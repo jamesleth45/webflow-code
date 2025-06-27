@@ -1101,29 +1101,29 @@ p {
   padding: 8.75rem 1.6875rem 1.6875rem .625rem;
 }
 
-label[for="quantity-c1472e9006f4cd712cea27859ced007a"],
-.w-commerce-commerceaddtocartquantityinput {
-  visibility: hidden;
+.product__add {
+  width: 100%;
+  margin-top: .625rem;
+  height: 2.75rem;
+  padding: 0 .625rem;
+  border: 1px solid #000;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
   -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
-  background-color: transparent;
-  border: none;
-  border-radius: 0;
-  width: auto;
-  height: auto;
-  margin: 0;
-  padding: 0;
-  line-height: normal;
-  display: none;
-}
-
-label[for="quantity-c1472e9006f4cd712cea27859ced007a"] {
-  margin-bottom: 0;
-  font-weight: normal;
-  display: inline;
-}
-
-.w-commerce-commerceaddtocartquantityinput {
-  background-color: transparent;
-  border: none;
+  display: -webkit-box;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: center;
+  white-space: normal;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  text-wrap: balance;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
