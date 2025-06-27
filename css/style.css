@@ -1115,7 +1115,7 @@ p {
 
 .product__meta {
   grid-column: span 2;
-  padding: 8.75rem 1.6875rem 1.6875rem .625rem;
+  padding: 1.6875rem 1.6875rem 1.6875rem .625rem;
 }
 
 .product__title {
