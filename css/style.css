@@ -1129,6 +1129,19 @@ p {
   margin-top: 1.25rem;
 }
 
+.product__select {
+  all: unset;
+
+  display: block;
+
+  width: 100%;
+  height: 1.563rem;
+
+  padding: 0 .625rem;
+
+  border-bottom: 1px solid #000;
+}
+
 .product__add {
   width: 100%;
   margin-top: .625rem;
