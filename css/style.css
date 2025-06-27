@@ -825,7 +825,7 @@ p {
   border: 1px solid #000;
   background-color: #000;
   text-align: center;
-  height: 2.25rem;
+  height: 1.563rem;
   align-content: center;
   -webkit-box-pack: center;
   white-space: normal;
@@ -1122,7 +1122,7 @@ p {
 .product__add {
   width: 100%;
   margin-top: .625rem;
-  height: 2.25rem;
+  height: 1.563rem;
   padding: 0 .625rem;
   border: 1px solid #000;
   background-color: #000;
