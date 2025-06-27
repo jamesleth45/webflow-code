@@ -1136,6 +1136,13 @@ p {
   padding: 0;
 
   border-bottom: 1px solid #000;
+  background-color: transparent;
+  color: #000;
+  margin-bottom: 0;
+  font-size: inherit;
+  line-height: inherit;
+  text-transform: uppercase;
+
 }
 
 .w-select:focus {
