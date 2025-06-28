@@ -777,7 +777,7 @@ p {
 @media (min-width: 1280px) { /* Desktop and above */
   .panel__inner {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
     gap: 0;
   }
@@ -1104,7 +1104,7 @@ p {
 
 /* product */
 .product__gallery {
-  grid-column: 4 / 8;
+  grid-column: 3 / 9;
 }
 
 .product__details {
