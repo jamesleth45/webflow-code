@@ -1041,7 +1041,7 @@ p {
 }
 
 .product-listing__list {
-  grid-column: 3 / 8;
+  grid-column: 3 / 11;
 }
 
 @media (max-width: 1279px) {
