@@ -785,7 +785,7 @@ p {
 
 @media (min-width: 1280px) { /* Desktop and above */
   .panel__content {
-    grid-column: span 2;
+    grid-column: span 3;
   }
 }
 
