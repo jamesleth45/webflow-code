@@ -1253,6 +1253,7 @@ select {
 
 .product__description {
   margin-top: .625rem;
+  color: #ccc;
 }
 
 .product__link {
