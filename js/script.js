@@ -366,3 +366,13 @@ document.querySelectorAll('.product__accordion-toggle').forEach(toggle => {
     }
   });
 });
+
+/* || Force open any accordion marked as open on load */
+document.querySelectorAll('.product__accordion-body[data-open="true"]').forEach(body => {
+  const toggle = body
+    .closest('.product__accordion')
+    .querySelector('.product__accordion-toggle');
+
+  body.style.height = body.scrollHeight + 'px';
+  toggle.setAttribute('data-active', 'true');
+});
