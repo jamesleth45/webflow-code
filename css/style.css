@@ -1114,8 +1114,9 @@ p {
 
 .product__meta {
   grid-column: span 3;
-  padding: 8.75rem 1.6875rem 1.6875rem .625rem;
-  max-width: 480px;
+  padding-top: 8.75rem;
+  padding-left: .625rem;
+  max-width: 460px;
 }
 
 .product__title {
