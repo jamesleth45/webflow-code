@@ -290,3 +290,79 @@ links.forEach(link => {
     link.removeAttribute('aria-current');
   }
 });
+
+/* || Product Accordion Toggle */
+document.querySelectorAll('.product__accordion-toggle').forEach(toggle => {
+  let isAnimating = false;
+  const body = toggle
+    .closest('.product__accordion')
+    .querySelector('.product__accordion-body');
+
+  const closeBody = (el, relatedToggle) => {
+    el.style.height = el.scrollHeight + 'px';
+    void el.offsetHeight;
+    requestAnimationFrame(() => {
+      el.style.height = '0px';
+    });
+    el.addEventListener('transitionend', e => {
+      if (e.target === el && e.propertyName === 'height') {
+        el.removeAttribute('data-open');
+      }
+    }, { once: true });
+    if (relatedToggle) relatedToggle.removeAttribute('data-active');
+  };
+
+  const makeHandler = closing => {
+    return e => {
+      if (e.target !== body || e.propertyName !== 'height') return;
+      if (closing) {
+        body.removeAttribute('data-open');
+      } else {
+        body.style.height = 'auto';
+      }
+      isAnimating = false;
+    };
+  };
+
+  toggle.addEventListener('click', () => {
+    if (isAnimating) return;
+    isAnimating = true;
+
+    const isOpen = body.getAttribute('data-open') === 'true';
+    const isTabletOrBelow = window.matchMedia('(max-width: 1279px)').matches;
+
+    if (!isOpen) {
+      if (isTabletOrBelow) {
+        document.querySelectorAll('.product__accordion-body[data-open="true"]').forEach(openEl => {
+          if (openEl !== body) {
+            const otherToggle = openEl
+              .closest('.product__accordion')
+              .querySelector('.product__accordion-toggle');
+            closeBody(openEl, otherToggle);
+          }
+        });
+      }
+
+      body.style.height = '0px';
+      body.setAttribute('data-open', 'true');
+      toggle.setAttribute('data-active', 'true');
+
+      void body.offsetHeight;
+      requestAnimationFrame(() => {
+        body.style.height = body.scrollHeight + 'px';
+      });
+
+      body.addEventListener('transitionend', makeHandler(false), { once: true });
+    } else {
+      body.style.height = body.scrollHeight + 'px';
+      toggle.removeAttribute('data-active');
+
+      void body.offsetHeight;
+      requestAnimationFrame(() => {
+        body.style.height = '0px';
+      });
+
+      body.addEventListener('transitionend', makeHandler(true), { once: true });
+    }
+  });
+});
