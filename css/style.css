@@ -1116,7 +1116,6 @@ p {
 .product__actions{
   position: sticky;
   bottom: 1.6875rem;
-  margin-top: auto;
 }
 
 .product__meta {
@@ -1124,6 +1123,13 @@ p {
   padding-top: 8.75rem;
   padding-left: .625rem;
   max-width: 470px;
+}
+
+.product__meta {
+  display: flex;
+  flex-direction: column;
+
+  row-gap: .625rem;
 }
 
 .product__title {
