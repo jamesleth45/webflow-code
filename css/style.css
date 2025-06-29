@@ -1265,6 +1265,10 @@ select {
   transition: height .25s ease;
 }
 
+.product__accordion-body[data-open="true"] {
+  height: auto;
+}
+
 .product__accordion-text {
   margin-top: .625rem;
 }
