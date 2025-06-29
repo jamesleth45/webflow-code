@@ -385,6 +385,10 @@ p {
     margin-top: 1.875rem;
   }
 
+  .header__nav-item--bag {
+    margin-top: 1.875rem;
+  }
+
   .header__nav-item--search {
     display: none;
   }
