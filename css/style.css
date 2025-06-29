@@ -1339,3 +1339,11 @@ select {
 .product__accordion-toggle[data-active="true"] {
   font-weight: 700;
 }
+
+.panel__title {
+  margin-top: 1.6875rem;
+}
+
+.panel__text {
+  margin-top: .25rem;
+}
