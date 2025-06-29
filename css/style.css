@@ -1116,6 +1116,7 @@ p {
 .product__actions{
   position: sticky;
   bottom: 1.6875rem;
+  margin-top: auto;
 }
 
 .product__meta {
