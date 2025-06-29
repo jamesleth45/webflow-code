@@ -1113,6 +1113,11 @@ p {
   top: 1.6875rem;
 }
 
+.product__actions{
+  position: sticky;
+  bottom: 1.6875rem;
+}
+
 .product__meta {
   grid-column: span 3;
   padding-top: 8.75rem;
