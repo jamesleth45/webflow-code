@@ -1128,8 +1128,7 @@ p {
 .product__meta {
   display: flex;
   flex-direction: column;
-
-  row-gap: .625rem;
+  justify-content: space-between;
 }
 
 .product__title {
