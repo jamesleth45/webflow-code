@@ -1271,6 +1271,7 @@ select {
 
 .product__accordion-text {
   margin-top: .625rem;
+  text-transform: none;
 }
 
 .product__accordions {
