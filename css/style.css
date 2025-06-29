@@ -1335,3 +1335,7 @@ select {
   cursor: pointer;
   outline-style: none;
 }
+
+.product__accordion-toggle[data-active="true"] {
+  font-weight: 700;
+}
