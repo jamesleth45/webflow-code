@@ -416,7 +416,8 @@ p {
   }
 
   .header__nav-item--preview,
-  .header__nav-item--brand {
+  .header__nav-item--brand,
+  .header__nav-item--bag {
     margin-top: .8125rem;
   }
 
