@@ -1326,7 +1326,7 @@ select {
   box-shadow: inset 0 0 0 .0625rem #000;
 }
 
-.w--ecommerce-pill-disabled {
+.w-commerce-commerceaddtocartoptionpill.w--ecommerce-pill-disabled {
   color: #ccc;
 
   background-color: transparent;
