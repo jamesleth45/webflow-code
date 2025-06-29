@@ -103,6 +103,7 @@ a[aria-current="page"] {
   .panel__link:hover,
   .panel__form-policy-link:hover {
     font-weight: 700;
+    text-transform: uppercase;
   }
 }
 
@@ -1253,6 +1254,7 @@ select {
 
 .product__description {
   margin-top: .625rem;
+  text-transform: none;
 }
 
 .product__link {
