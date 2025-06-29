@@ -1289,6 +1289,7 @@ select {
   -ms-flex-flow: row wrap;
 
   gap: .625rem;
+  margin-bottom: 0;
 }
 
 
