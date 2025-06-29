@@ -705,7 +705,7 @@ p {
 
 @media (min-width: 1280px) { /* Desktop and above */
   .panel__content {
-    max-width: 470px;
+    max-width: 460px;
   }
 }
 
