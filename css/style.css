@@ -705,7 +705,7 @@ p {
 
 @media (min-width: 1280px) { /* Desktop and above */
   .panel__content {
-    padding-right: .625rem;
+    max-width: 470px;
   }
 }
 
