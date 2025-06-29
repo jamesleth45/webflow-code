@@ -1125,6 +1125,7 @@ p {
 }
 
 .product__price {
+  margin-top: .625rem;
   font-weight: 700;
 }
 
