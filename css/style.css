@@ -1113,22 +1113,11 @@ p {
   top: 1.6875rem;
 }
 
-.product__actions{
-  position: sticky;
-  bottom: 1.6875rem;
-}
-
 .product__meta {
   grid-column: span 3;
   padding-top: 8.75rem;
   padding-left: .625rem;
   max-width: 470px;
-}
-
-.product__meta {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .product__title {
