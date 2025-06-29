@@ -278,19 +278,6 @@ window.addEventListener('resize', () => {
   }
 });
 
-/* || Bold curent link */
-const links = document.querySelectorAll('.header__nav-link');
-
-const currentUrl = window.location.href;
-
-links.forEach(link => {
-  if (link.href === currentUrl) {
-    link.setAttribute('aria-current', 'page');
-  } else {
-    link.removeAttribute('aria-current');
-  }
-});
-
 /* || Product Accordion Toggle */
 document.querySelectorAll('.product__accordion-toggle').forEach(toggle => {
   let isAnimating = false;
