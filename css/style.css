@@ -101,7 +101,8 @@ a[aria-current="page"] {
   .product__link:hover,
   .product__accordion-toggle:hover,
   .panel__link:hover,
-  .panel__form-policy-link:hover {
+  .panel__form-policy-link:hover,
+  .cart__remove:hover {
     font-weight: 700;
     text-transform: uppercase;
   }
