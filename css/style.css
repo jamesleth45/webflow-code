@@ -1545,6 +1545,7 @@ p {
 .panel__bag,
 .w-commerce-commercecartwrapper {
   height: 100%;
+  min-width: 460px;
 }
 
 .w-commerce-commercecartform {
