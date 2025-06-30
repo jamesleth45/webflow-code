@@ -1298,8 +1298,7 @@ p {
   gap: .25rem;
 }
 
-.product__toggle--size,
-.product__toggle--shipping {
+.product__toggle--size {
   margin-top: 1.25rem;
 }
 
