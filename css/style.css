@@ -1348,3 +1348,9 @@ p {
   display: inline;
   cursor: pointer;
 }
+
+@media (hover: hover) and (pointer: fine) {
+  .w-commerce-commercecartopenlink:hover {
+    font-weight: 700;
+  }
+}
