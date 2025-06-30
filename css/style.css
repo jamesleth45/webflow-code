@@ -1381,6 +1381,10 @@ p {
   box-shadow: none;
 }
 
+.w-commerce-commercecartformwrapper {
+  height: 100%;
+}
+
 .removetest {
   display: none !important;
 }
