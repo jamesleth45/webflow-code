@@ -1110,10 +1110,11 @@ p {
 }
 
 /* product */
-
-.product {
-  position: relative;
-  top: 3.5rem;
+@media (max-width: 1279px) {
+  .product {
+    position: relative;
+    top: 3.5rem;
+  }
 }
 
 .product__gallery {
