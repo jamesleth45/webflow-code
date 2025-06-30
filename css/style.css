@@ -1568,3 +1568,22 @@ p {
 .cart__meta-quantity {
   margin-top: .8125rem;
 }
+
+.cart__actions {
+  display: flex;
+
+  gap: .625rem;
+}
+
+.w-commerce-commercecartfooter {
+  position: sticky;
+  bottom: -.625rem;
+
+  margin-top: auto;
+  margin-bottom: -.625rem;
+  height: 6.75rem;
+  padding-top: 1.3125rem;
+  padding-bottom: .625rem;
+
+  background-color: #fff;
+}
