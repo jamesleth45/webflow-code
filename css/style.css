@@ -1193,7 +1193,10 @@ p {
 
 .product__actions {
   margin-top: 1.25rem;
-  margin-bottom: 0;
+}
+
+.w-commerce-commerceaddtocartform {
+  margin: 0;
 }
 
 .w-commerce-commerceaddtocartoptionpillgroup {
