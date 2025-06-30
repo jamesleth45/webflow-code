@@ -1360,20 +1360,11 @@ p {
   all: unset;
 }
 
-.w-commerce-commercecartcontainerwrapper--cartType-rightSidebar {
-  display: grid;
-  height: 100%;
-  grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: auto;
-  gap: 0;
-}
-
 .w-commerce-commercecartcontainerwrapper {
   background-color: transparent;
 }
 
 .w-commerce-commercecartcontainer {
-  grid-column: 1 / 13;
   height: 100%;
 
   background-color: #fff;
@@ -1386,7 +1377,7 @@ p {
   flex-direction: unset;
   width: auto;
   min-width: unset;
-  max-width: unset;
+  max-width: 460px;
   box-shadow: none;
 }
 
