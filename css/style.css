@@ -1393,3 +1393,11 @@ p {
 .removetest {
   display: none !important;
 }
+
+.w-commerce-commercecartheader {
+  all: unset;
+}
+
+.w-commerce-commercecartcloselink {
+  visibility: hidden;
+}
