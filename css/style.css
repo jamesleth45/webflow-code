@@ -1400,3 +1400,37 @@ p {
 .w-commerce-commercecartfooter {
   all: unset;
 }
+
+.w-commerce-commercecartcheckoutbutton {
+  width: 100%;
+  margin-top: 1.25rem;
+  height: 2.75rem;
+  padding: 0 .625rem;
+  border: 1px solid #000;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: -webkit-box;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-box-pack: center;
+  white-space: normal;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  text-wrap: balance;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-transform: uppercase; /* Only here */
+}
+
+.w-commerce-commercecartcheckoutbutton:hover {
+  border-color: #222;
+  background-color: #222;
+  color: #fff;
+}
