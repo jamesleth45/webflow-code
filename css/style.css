@@ -1437,8 +1437,6 @@ p {
 }
 
 .w-commerce-commercecartiteminfo {
-  margin-left: .625rem;
-  margin-right: .625rem;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -1515,5 +1513,11 @@ p {
 }
 
 .w-commerce-commercecartitemimage {
-  width: 10rem;
+  position: relative;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin-right: .625rem;
+  width: 5.8125rem;
+  width: calc((((100% - 20px) / 3) * 1) + 0px);
 }
