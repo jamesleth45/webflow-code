@@ -362,5 +362,5 @@ document.querySelectorAll('.product__accordion-body[data-open="true"]').forEach(
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.removetest').forEach(el => el.remove());
+  document.querySelectorAll('.removetest, .removetest2').forEach(el => el.remove());
 });
