@@ -382,3 +382,28 @@ document.addEventListener('DOMContentLoaded', () => {
     attributeFilter: ['style', 'data-open']
   });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const panel = document.querySelector('[data-panel="bag"]');
+
+  if (!panel) return;
+
+  const openPanel = () => {
+    panel.style.display = 'block';
+    panel.setAttribute('data-open', 'true');
+  };
+
+  const cartAdded = document.querySelector('.w-commerce-commercecartadded');
+
+  if (cartAdded) {
+    new MutationObserver(() => {
+      const isVisible = getComputedStyle(cartAdded).display !== 'none';
+      if (isVisible) {
+        openPanel();
+      }
+    }).observe(cartAdded, {
+      attributes: true,
+      attributeFilter: ['style']
+    });
+  }
+});
