@@ -1371,3 +1371,11 @@ p {
 .w-commerce-commercecartcontainerwrapper {
   background-color: transparent;
 }
+
+.w-commerce-commercecartcontainer {
+  grid-column: 9 / 13;
+  height: 100%;
+  background-color: #fff;
+  padding: 8.75rem 1.6875rem 1.6875rem .625rem;
+  overflow-y: auto;
+}
