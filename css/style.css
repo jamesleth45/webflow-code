@@ -1359,3 +1359,7 @@ p {
 .w-commerce-commercecartopenlinkcount {
   all: unset;
 }
+
+.w-commerce-commercecartcontainerwrapper {
+  background-color: transparent;
+}
