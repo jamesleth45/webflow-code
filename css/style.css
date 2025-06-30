@@ -1277,6 +1277,7 @@ select {
 
 .product__accordion-text {
   margin-top: .625rem;
+  margin-bottom: .625rem;
 }
 
 .product__accordions {
