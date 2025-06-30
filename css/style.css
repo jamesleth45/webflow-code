@@ -1345,7 +1345,8 @@ p {
 .w-commerce-commercecartopenlink {
   all: unset;
 
-  display: inline;
+  display: flex;
+  align-items: center;
   cursor: pointer;
 }
 
