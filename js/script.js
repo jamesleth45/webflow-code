@@ -363,35 +363,44 @@ document.querySelectorAll('.product__accordion-body[data-open="true"]').forEach(
 
 
 
-// === Override Webflow Cart Animation & Use Custom Slide ===
-
 const wrapper = document.querySelector('.w-commerce-commercecartcontainerwrapper');
 const container = document.querySelector('.w-commerce-commercecartcontainer');
 
 if (wrapper && container) {
-  // Observe wrapper for Webflow's inline styles (opacity, display, transition)
+  // Track last open/close state
+  let wasOpen = false;
+
+  // Observe wrapper style changes
   const wrapperObserver = new MutationObserver(() => {
+    const isOpen = getComputedStyle(wrapper).display !== 'none';
+
+    if (isOpen && !wasOpen) {
+      // OPENING — allow normal open
+      container.setAttribute('data-open', 'true');
+      wasOpen = true;
+    } else if (!isOpen && wasOpen) {
+      // CLOSING — block Webflow from hiding instantly
+      wrapper.style.display = 'block';
+      container.setAttribute('data-open', 'false');
+      wasOpen = false;
+
+      // Wait for your slide-out to finish (450ms + 50ms delay)
+      setTimeout(() => {
+        wrapper.style.display = 'none';
+      }, 500);
+    }
+
+    // Kill Webflow inline junk
     wrapper.style.transition = '';
     wrapper.style.opacity = '';
-    wrapper.style.display = '';
-
-    const isOpen = getComputedStyle(wrapper).display !== 'none';
-    container.setAttribute('data-open', isOpen ? 'true' : 'false');
   });
 
-  // Observe container for injected transform/transition styles
+  // Strip container inline styles
   const containerObserver = new MutationObserver(() => {
     container.style.transition = '';
     container.style.transform = '';
   });
 
-  wrapperObserver.observe(wrapper, {
-    attributes: true,
-    attributeFilter: ['style']
-  });
-
-  containerObserver.observe(container, {
-    attributes: true,
-    attributeFilter: ['style']
-  });
+  wrapperObserver.observe(wrapper, { attributes: true, attributeFilter: ['style'] });
+  containerObserver.observe(container, { attributes: true, attributeFilter: ['style'] });
 }
