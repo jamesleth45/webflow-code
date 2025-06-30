@@ -1290,6 +1290,7 @@ p {
 
 .product__delivery {
   margin-top: .625rem;
+  text-transform: none;
 }
 
 .product__toggles {
@@ -1339,4 +1340,5 @@ p {
 .product__accordion-text {
   margin-top: .625rem;
   margin-bottom: .625rem;
+  text-transform: none;
 }
