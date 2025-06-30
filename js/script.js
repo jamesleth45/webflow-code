@@ -367,3 +367,33 @@ document.addEventListener('DOMContentLoaded', () => {
     bagPanel.style.display = 'block';
   }
 });
+
+
+
+
+
+// === Open Custom Bag Panel on Successful Add to Cart ===
+
+document.addEventListener('DOMContentLoaded', () => {
+  const panel = document.querySelector('[data-panel="bag"]');
+  if (!panel) return;
+
+  document.querySelectorAll('.w-commerce-commerceaddtocartform').forEach(form => {
+    const button = form.querySelector('.w-commerce-commerceaddtocartbutton');
+
+    const observer = new MutationObserver(() => {
+      const isLoading = form.hasAttribute('data-wf-atc-loading') || button.getAttribute('aria-busy') === 'true';
+      if (!isLoading) {
+        panel.setAttribute('data-open', 'true');
+      }
+    });
+
+    if (form) {
+      observer.observe(form, { attributes: true, attributeFilter: ['data-wf-atc-loading'] });
+    }
+
+    if (button) {
+      observer.observe(button, { attributes: true, attributeFilter: ['aria-busy'] });
+    }
+  });
+});
