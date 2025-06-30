@@ -1449,10 +1449,10 @@ p {
 
 .w-commerce-commercecartiteminfo {
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-flow: row nowrap;
-  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
   margin: 0;
 }
 
