@@ -368,6 +368,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+const el = document.querySelector('.w-commerce-commercecartopenlinkcount');
+
+if (el) {
+  const wrapCount = () => {
+    const raw = el.textContent.trim();
+    if (!raw.startsWith('(')) el.textContent = `(${raw})`;
+  };
+
+  const observer = new MutationObserver(wrapCount);
+  observer.observe(el, { childList: true, subtree: true });
+
+  // run once on load
+  wrapCount();
+}
+
 
 
 
