@@ -1360,6 +1360,14 @@ p {
   all: unset;
 }
 
+.w-commerce-commercecartcontainerwrapper--cartType-rightSidebar {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: auto;
+  gap: 0;
+}
+
 .w-commerce-commercecartcontainerwrapper {
   background-color: transparent;
 }
