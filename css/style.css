@@ -1440,6 +1440,7 @@ p {
   color: #fff;
 }
 
-.panel__bag {
+.panel__bag,
+.w-commerce-commercecartwrapper {
   height: 100%;
 }
