@@ -1516,7 +1516,6 @@ p {
 .panel__bag,
 .w-commerce-commercecartwrapper {
   height: 100%;
-  display: block;
 }
 
 .w-commerce-commercecartform {
