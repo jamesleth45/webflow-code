@@ -366,75 +366,53 @@ document.querySelectorAll('.product__accordion-body[data-open="true"]').forEach(
 
 
 
+document.addEventListener('DOMContentLoaded', () => {
+  const cartToggle = document.querySelector('[data-toggle="bag"]');
+  const cartPanel = document.querySelector('.w-commerce-commercecartcontainerwrapper.w-commerce-commercecartcontainerwrapper--cartType-rightSidebar');
+  const cartInner = document.querySelector('.w-commerce-commercecartcontainer');
 
-const cartToggle = document.querySelector('[data-toggle="bag"]');
-const cartPanel = document.querySelector('.w-commerce-commercecartcontainerwrapper.w-commerce-commercecartcontainerwrapper--cartType-rightSidebar');
-const cartInner = document.querySelector('.w-commerce-commercecartcontainer');
+  if (!cartToggle || !cartPanel || !cartInner) return;
 
-// Remove Webflow inline styles on cart inner
-if (cartInner) {
+  // Remove inline styles from Webflow
   new MutationObserver(() => {
     cartInner.removeAttribute('style');
-  }).observe(cartInner, {
-    attributes: true,
-    attributeFilter: ['style']
-  });
-}
+  }).observe(cartInner, { attributes: true, attributeFilter: ['style'] });
 
-// Remove Webflow inline styles on wrapper
-if (cartPanel) {
   new MutationObserver(() => {
     cartPanel.removeAttribute('style');
-  }).observe(cartPanel, {
-    attributes: true,
-    attributeFilter: ['style']
-  });
-}
+  }).observe(cartPanel, { attributes: true, attributeFilter: ['style'] });
 
-function closeCartPanel() {
-  if (!cartPanel.hasAttribute('data-open')) return;
+  const closeCartPanel = () => {
+    if (!cartPanel.hasAttribute('data-open')) return;
 
-  cartPanel.removeAttribute('data-open');
+    cartPanel.removeAttribute('data-open');
 
-  setTimeout(() => {
-    cartPanel.style.display = 'none';
-  }, 500); // match slide-out timing
-}
+    setTimeout(() => {
+      cartPanel.style.display = 'none';
+    }, 500); // close timing
+  };
 
-function openCartPanel() {
-  cartPanel.style.display = 'block';
-
-  requestAnimationFrame(() => {
+  const openCartPanel = () => {
+    cartPanel.style.display = 'block';
     requestAnimationFrame(() => {
-      cartPanel.setAttribute('data-open', 'true');
+      requestAnimationFrame(() => {
+        cartPanel.setAttribute('data-open', 'true');
+      });
     });
-  });
-}
+  };
 
-if (cartToggle) {
   cartToggle.addEventListener('click', () => {
     const isOpen = cartPanel.hasAttribute('data-open');
-
-    if (isOpen) {
-      closeCartPanel();
-    } else {
-      openCartPanel();
-    }
+    isOpen ? closeCartPanel() : openCartPanel();
   });
-}
 
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') {
-    closeCartPanel();
-  }
-});
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeCartPanel();
+  });
 
-document.addEventListener('click', e => {
-  if (!cartPanel.hasAttribute('data-open')) return;
-
-  const isClickInside = cartInner.contains(e.target) || e.target.closest('[data-toggle="bag"]');
-
-  if (!isClickInside) {
-    closeCartPanel();
-  }
+  document.addEventListener('click', e => {
+    if (!cartPanel.hasAttribute('data-open')) return;
+    const isClickInside = cartInner.contains(e.target) || e.target.closest('[data-toggle="bag"]');
+    if (!isClickInside) closeCartPanel();
+  });
 });
