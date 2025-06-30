@@ -1388,8 +1388,8 @@ p {
 }
 
 .w-commerce-commercecartitem {
-  height: 100%;
   margin-top: .625rem;
+  padding: 0;
 }
 
 .w-commerce-commercecartform {
