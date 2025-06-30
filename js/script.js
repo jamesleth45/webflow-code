@@ -364,21 +364,3 @@ document.querySelectorAll('.product__accordion-body[data-open="true"]').forEach(
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.removetest, .removetest2').forEach(el => el.remove());
 });
-
-document.addEventListener('DOMContentLoaded', () => {
-  const bag = document.querySelector('[data-bag]');
-  if (!bag) return;
-
-  const keepBagOpen = () => {
-    bag.style.display = 'block';
-    bag.setAttribute('data-open', 'true');
-  };
-
-  keepBagOpen();
-
-  // Lock it open against any interference
-  new MutationObserver(keepBagOpen).observe(bag, {
-    attributes: true,
-    attributeFilter: ['style', 'data-open']
-  });
-});
