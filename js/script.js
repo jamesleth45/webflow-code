@@ -364,7 +364,9 @@ document.querySelectorAll('.product__accordion-body[data-open="true"]').forEach(
 const cartWrapper = document.querySelector('.w-commerce-commercecartcontainerwrapper');
 const cartContainer = document.querySelector('.w-commerce-commercecartcontainer');
 
-// Kill Webflow’s inline transform and transition
+let isManuallyClosing = false;
+
+// Kill inline styles from Webflow
 if (cartContainer) {
   new MutationObserver(() => {
     cartContainer.style.transition = '';
@@ -375,23 +377,25 @@ if (cartContainer) {
   });
 }
 
-// Watch wrapper and control data-open / slide-out timing
+// Observe wrapper and control open/close
 if (cartWrapper && cartContainer) {
   new MutationObserver(() => {
     const style = getComputedStyle(cartWrapper);
 
-    if (style.display !== 'none') {
-      // Cart is open — apply data-open for slide-in
+    if (style.display !== 'none' && !isManuallyClosing) {
+      // OPEN: show cart
       cartContainer.setAttribute('data-open', 'true');
-    } else {
-      // Cart is closing — prevent Webflow from instantly hiding
-      cartWrapper.style.display = 'block'; // Force stay visible
-      cartContainer.removeAttribute('data-open'); // Triggers slide-out
+    } else if (!isManuallyClosing) {
+      // CLOSE: prevent hide, animate, then hide manually
+      isManuallyClosing = true;
 
-      // After slide-out duration (450ms + 50ms delay), manually hide
+      cartWrapper.style.display = 'block';
+      cartContainer.removeAttribute('data-open');
+
       setTimeout(() => {
         cartWrapper.style.display = 'none';
-      }, 500);
+        isManuallyClosing = false;
+      }, 500); // match your close transition + delay
     }
   }).observe(cartWrapper, {
     attributes: true,
