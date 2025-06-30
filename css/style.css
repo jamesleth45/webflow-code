@@ -969,6 +969,7 @@ p {
 
 .panel__text {
   margin-top: .25rem;
+  text-transform: none;
 }
 
 /* hero */
