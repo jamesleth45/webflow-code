@@ -1394,7 +1394,7 @@ p {
 
 .w-commerce-commercecartquantity {
   all: unset;
-  display: inline;
+  display: flex;
   -webkit-appearance: none;
      -moz-appearance: textfield;
   appearance: none;
