@@ -1394,6 +1394,10 @@ p {
 
 .w-commerce-commercecartquantity {
   all: unset;
+  appearance: textfield;
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+
   display: inline;
 }
 
