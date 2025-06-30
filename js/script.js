@@ -434,9 +434,8 @@ if (el) {
   const wrapCount = () => {
     const raw = el.textContent.trim();
 
-    // only wrap if it doesn't already start with ' ('
-    if (!raw.startsWith('(') && !raw.startsWith(' (')) {
-      el.textContent = ` (${raw})`;
+    if (!raw.startsWith('(') && !raw.startsWith(' (') && !raw.startsWith('\u00a0(')) {
+      el.innerHTML = `&nbsp;(${raw})`;
     }
   };
 
