@@ -1394,10 +1394,14 @@ p {
 
 .w-commerce-commercecartquantity {
   all: unset;
-  display: flex;
   -webkit-appearance: none;
      -moz-appearance: textfield;
   appearance: none;
+
+  display: inline-block;
+  width: auto;
+  min-width: 0;
+  max-width: none;
 }
 
 /* Remove arrows in Safari/Chrome */
