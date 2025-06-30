@@ -362,5 +362,8 @@ document.querySelectorAll('.product__accordion-body[data-open="true"]').forEach(
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.removetest, .removetest2').forEach(el => el.remove());
+  const bagPanel = document.querySelector('.panel__bag');
+  if (bagPanel) {
+    bagPanel.style.display = 'block';
+  }
 });
