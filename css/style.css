@@ -1392,6 +1392,11 @@ p {
   padding: 0;
 }
 
+.w-commerce-commercecartquantity {
+  all: unset;
+  display: inline;
+}
+
 .w-commerce-commercecartform {
   height: 100%;
 }
