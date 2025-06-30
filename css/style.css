@@ -1110,6 +1110,12 @@ p {
 }
 
 /* product */
+
+.product {
+  position: relative;
+  top: 3.5rem;
+}
+
 .product__gallery {
   grid-column: 3 / 9;
 }
