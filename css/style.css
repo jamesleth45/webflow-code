@@ -824,12 +824,10 @@ p {
   position: relative;
   padding-left: 1.25rem;
   margin-top: .9375rem;
-  text-transform: none;
 }
 
 .panel__form-confirmation {
   margin-top: 1.25rem;
-  text-transform: none;
 }
 
 .panel__form-submit {
@@ -868,7 +866,6 @@ p {
 
 .panel__form-policy {
   margin-top: .625rem;
-  text-transform: none;
 }
 
 .panel__form-policy-link {
@@ -972,7 +969,6 @@ p {
 
 .panel__text {
   margin-top: .25rem;
-  text-transform: none;
 }
 
 /* hero */
@@ -1294,7 +1290,6 @@ p {
 
 .product__delivery {
   margin-top: .625rem;
-  text-transform: none;
 }
 
 .product__toggles {
@@ -1344,5 +1339,4 @@ p {
 .product__accordion-text {
   margin-top: .625rem;
   margin-bottom: .625rem;
-  text-transform: none;
 }
