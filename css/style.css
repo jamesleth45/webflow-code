@@ -1532,8 +1532,10 @@ p {
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   margin-right: .625rem;
-  width: calc((((100% - 20px) / 3) * 1) + 0px);
-  min-width: 173px;
+  min-height: 8.75rem;
+  min-width: 7rem;
+  max-height: 8.75rem;
+  max-width: 7rem;
 }
 
 .cart__meta-attrs,
