@@ -1404,6 +1404,11 @@ p {
   max-width: none;
 }
 
+.cart__quantity {
+  display: flex;
+  align-items: center;
+}
+
 /* Remove arrows in Safari/Chrome */
 .w-commerce-commercecartquantity::-webkit-inner-spin-button,
 .w-commerce-commercecartquantity::-webkit-outer-spin-button {
