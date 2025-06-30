@@ -1126,8 +1126,6 @@ p {
   }
 }
 
-@media (max-width: 1279px) {
-
 .product__details {
   position: sticky;
   top: 1.6875rem;
