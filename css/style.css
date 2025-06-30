@@ -1399,6 +1399,7 @@ p {
 
 .w-commerce-commercecartfooter {
   all: unset;
+  margin-top: auto;
 }
 
 .w-commerce-commercecartcheckoutbutton {
