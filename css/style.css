@@ -1536,6 +1536,7 @@ p {
   min-width: 7rem;
   max-height: 8.75rem;
   max-width: 7rem;
+  object-fit: cover;
 }
 
 .cart__meta-attrs,
