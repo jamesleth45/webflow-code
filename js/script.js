@@ -361,48 +361,49 @@ document.querySelectorAll('.product__accordion-body[data-open="true"]').forEach(
   toggle.setAttribute('data-active', 'true');
 });
 
+
+
+
+
+
+
+const cartToggle = document.querySelector('[data-toggle="cart"]');
 const cartWrapper = document.querySelector('.w-commerce-commercecartcontainerwrapper');
 const cartContainer = document.querySelector('.w-commerce-commercecartcontainer');
 
-let isManuallyClosing = false;
-
-// Clean injected transform/transition
-if (cartContainer) {
-  new MutationObserver(() => {
+if (cartToggle && cartWrapper && cartContainer) {
+  // Disable Webflow's inline styles forever
+  const cleanupObserver = new MutationObserver(() => {
     cartContainer.style.transition = '';
     cartContainer.style.transform = '';
-  }).observe(cartContainer, {
+  });
+
+  cleanupObserver.observe(cartContainer, {
     attributes: true,
     attributeFilter: ['style']
   });
-}
 
-// New observer: watch for opacity change to trigger close
-if (cartWrapper && cartContainer) {
-  new MutationObserver(() => {
-    const opacity = parseFloat(getComputedStyle(cartWrapper).opacity);
+  // Custom open/close handler
+  let isOpen = false;
 
-    if (opacity === 1 && !isManuallyClosing) {
-      // Cart is opening
+  const openCart = () => {
+    cartWrapper.style.display = 'block';
+    requestAnimationFrame(() => {
       cartContainer.setAttribute('data-open', 'true');
-    }
+      isOpen = true;
+    });
+  };
 
-    if (opacity === 0 && !isManuallyClosing) {
-      // Cart is closing → delay hide so slide-out can play
-      isManuallyClosing = true;
+  const closeCart = () => {
+    cartContainer.removeAttribute('data-open');
+    isOpen = false;
+    setTimeout(() => {
+      cartWrapper.style.display = 'none';
+    }, 500); // match your close animation duration
+  };
 
-      // Cancel fade
-      cartWrapper.style.opacity = '1';
-      cartWrapper.style.transition = 'none';
-      cartContainer.removeAttribute('data-open');
-
-      setTimeout(() => {
-        cartWrapper.style.display = 'none';
-        isManuallyClosing = false;
-      }, 500); // 450ms + 50ms delay
-    }
-  }).observe(cartWrapper, {
-    attributes: true,
-    attributeFilter: ['style']
+  cartToggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    isOpen ? closeCart() : openCart();
   });
 }
