@@ -395,4 +395,3 @@ if (wrapper && container) {
     attributeFilter: ['style']
   });
 }
-
