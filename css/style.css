@@ -1191,6 +1191,10 @@ p {
   font-weight: 700;
 }
 
+.w-commerce-commerceaddtocartform {
+  margin: 0;
+}
+
 .product__size {
   margin-top: 1.25rem;
 }
@@ -1316,6 +1320,10 @@ p {
   margin-top: 1.25rem;
 }
 
+.product__accordion-toggle[data-active="true"] {
+  font-weight: 700;
+}
+
 .product__accordion-body {
   height: 0;
   overflow: hidden;
@@ -1329,12 +1337,4 @@ p {
 .product__accordion-text {
   margin-top: .625rem;
   margin-bottom: .625rem;
-}
-
-.w-commerce-commerceaddtocartform {
-  margin: 0;
-}
-
-.product__accordion-toggle[data-active="true"] {
-  font-weight: 700;
 }
