@@ -363,35 +363,36 @@ document.querySelectorAll('.product__accordion-body[data-open="true"]').forEach(
 
 
 
-// === Custom Cart Open/Close Animation Control ===
+// === Override Webflow Cart Animation & Use Custom Slide ===
 
 const wrapper = document.querySelector('.w-commerce-commercecartcontainerwrapper');
 const container = document.querySelector('.w-commerce-commercecartcontainer');
 
-// 1. Remove Webflow's inline transform/transition
-const cleanInjectedStyles = new MutationObserver(() => {
-  if (container?.style) {
+if (wrapper && container) {
+  // Observe wrapper for Webflow's inline styles (opacity, display, transition)
+  const wrapperObserver = new MutationObserver(() => {
+    wrapper.style.transition = '';
+    wrapper.style.opacity = '';
+    wrapper.style.display = '';
+
+    const isOpen = getComputedStyle(wrapper).display !== 'none';
+    container.setAttribute('data-open', isOpen ? 'true' : 'false');
+  });
+
+  // Observe container for injected transform/transition styles
+  const containerObserver = new MutationObserver(() => {
     container.style.transition = '';
     container.style.transform = '';
-  }
-});
+  });
 
-if (container) {
-  cleanInjectedStyles.observe(container, {
+  wrapperObserver.observe(wrapper, {
+    attributes: true,
+    attributeFilter: ['style']
+  });
+
+  containerObserver.observe(container, {
     attributes: true,
     attributeFilter: ['style']
   });
 }
 
-// 2. Watch wrapper visibility and toggle custom [data-open]
-const trackOpenState = new MutationObserver(() => {
-  const isOpen = getComputedStyle(wrapper).display !== 'none';
-  container?.setAttribute('data-open', isOpen ? 'true' : 'false');
-});
-
-if (wrapper) {
-  trackOpenState.observe(wrapper, {
-    attributes: true,
-    attributeFilter: ['style']
-  });
-}
