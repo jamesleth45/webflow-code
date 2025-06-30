@@ -366,7 +366,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const bag = document.querySelector('[data-panel="bag"]');
+  const bag = document.querySelector('[data-bag]');
   if (!bag) return;
 
   const keepBagOpen = () => {
@@ -376,7 +376,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   keepBagOpen();
 
-  // Watch for any changes and force it back open
+  // Lock it open against any interference
   new MutationObserver(keepBagOpen).observe(bag, {
     attributes: true,
     attributeFilter: ['style', 'data-open']
