@@ -1276,12 +1276,7 @@ p {
   color: #fff;
 }
 
-.product__toggle--size,
-.product__toggle--returns {
-  margin-top: 1.25rem;
-}
-
-.product__toggle--service {
+.product__delivery {
   margin-top: .625rem;
 }
 
@@ -1291,18 +1286,30 @@ p {
   gap: .25rem;
 }
 
+.product__toggle--size,
+.product__toggle--shipping {
+  margin-top: 1.25rem;
+}
+
+.product__toggle--service {
+  margin-top: .625rem;
+}
+
 .product__toggle-icon--arrow {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.product__delivery {
-  margin-top: .625rem;
-}
-
 .product__link {
   text-decoration: underline;
+}
+
+.product__accordions {
+  display: grid;
+
+  gap: .625rem;
+  margin-top: 1.25rem;
 }
 
 .product__accordion-body {
@@ -1318,13 +1325,6 @@ p {
 .product__accordion-text {
   margin-top: .625rem;
   margin-bottom: .625rem;
-}
-
-.product__accordions {
-  display: grid;
-
-  gap: .625rem;
-  margin-top: 1.25rem;
 }
 
 .w-commerce-commerceaddtocartform {
