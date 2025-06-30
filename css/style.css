@@ -1403,6 +1403,7 @@ p {
   min-width: 0;
   max-width: none;
   font-weight: 700;
+  pointer-events: none;
 }
 
 .cart__quantity {
@@ -1521,4 +1522,8 @@ p {
   margin-right: .625rem;
   width: calc((((100% - 20px) / 3) * 1) + 0px);
   min-width: 173px;
+}
+
+.cart__meta-attrs {
+  margin-top: .8125rem;
 }
