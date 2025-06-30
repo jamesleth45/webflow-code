@@ -1362,6 +1362,7 @@ p {
 
 .w-commerce-commercecartcontainerwrapper {
   background-color: transparent;
+  position: relative;
 }
 
 .w-commerce-commercecartcontainer {
@@ -1437,4 +1438,8 @@ p {
   border-color: #222;
   background-color: #222;
   color: #fff;
+}
+
+.panel__cart {
+  height: 100%;
 }
