@@ -1354,3 +1354,7 @@ p {
     font-weight: 700;
   }
 }
+
+.w-commerce-commercecartopenlinkcount {
+  all: unset;
+}
