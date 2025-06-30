@@ -963,6 +963,14 @@ p {
   margin-bottom: .625rem;
 }
 
+.panel__title {
+  margin-top: 1.6875rem;
+}
+
+.panel__text {
+  margin-top: .25rem;
+}
+
 /* hero */
 .hero__image {
   display: block;
@@ -1291,7 +1299,7 @@ p {
   margin-top: 1.25rem;
 }
 
-.product__toggle--service {
+.product__toggle--returns {
   margin-top: .625rem;
 }
 
@@ -1299,10 +1307,6 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.product__link {
-  text-decoration: underline;
 }
 
 .product__accordions {
@@ -1333,12 +1337,4 @@ p {
 
 .product__accordion-toggle[data-active="true"] {
   font-weight: 700;
-}
-
-.panel__title {
-  margin-top: 1.6875rem;
-}
-
-.panel__text {
-  margin-top: .25rem;
 }
