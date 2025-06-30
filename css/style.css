@@ -1402,6 +1402,7 @@ p {
   width: auto;
   min-width: 0;
   max-width: none;
+  font-weight: 700;
 }
 
 .cart__quantity {
@@ -1415,6 +1416,15 @@ p {
   -webkit-appearance: none;
   margin: 0;
 }
+
+.w-commerce-commercecartproductname {
+  font-weight: 400;
+}
+
+.cart__meta-price {
+  font-weight: 700;
+}
+
 
 .w-commerce-commercecartform {
   height: 100%;
