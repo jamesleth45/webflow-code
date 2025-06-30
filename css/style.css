@@ -1401,3 +1401,11 @@ p {
 .w-commerce-commercecartcloselink {
   visibility: hidden;
 }
+
+.w-commerce-commercecartlist {
+  all: unset;
+}
+
+.w-commerce-commercecartfooter {
+  all: unset;
+}
