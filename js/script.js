@@ -360,3 +360,5 @@ document.querySelectorAll('.product__accordion-body[data-open="true"]').forEach(
   body.style.height = body.scrollHeight + 'px';
   toggle.setAttribute('data-active', 'true');
 });
+
+document.querySelector('.w-commerce-commercecartcontainerwrapper--cartType-rightSidebar')?.removeAttribute('style');
