@@ -1293,6 +1293,9 @@ p {
 }
 
 .product__toggles {
+  display: grid;
+
+  gap: .625rem;
   margin-top: 1.25rem;
 }
 
@@ -1300,14 +1303,6 @@ p {
   display: flex;
   align-items: center;
   gap: .25rem;
-}
-
-.product__toggle--size {
-  margin-top: 1.25rem;
-}
-
-.product__toggle--returns {
-  margin-top: .625rem;
 }
 
 .product__toggle-icon--arrow {
