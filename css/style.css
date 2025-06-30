@@ -1394,11 +1394,17 @@ p {
 
 .w-commerce-commercecartquantity {
   all: unset;
-  appearance: textfield;
-  -moz-appearance: textfield;
-  -webkit-appearance: none;
-
   display: inline;
+  -webkit-appearance: none;
+     -moz-appearance: textfield;
+  appearance: none;
+}
+
+/* Remove arrows in Safari/Chrome */
+.w-commerce-commercecartquantity::-webkit-inner-spin-button,
+.w-commerce-commercecartquantity::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .w-commerce-commercecartform {
