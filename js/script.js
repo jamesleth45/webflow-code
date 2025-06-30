@@ -360,3 +360,32 @@ document.querySelectorAll('.product__accordion-body[data-open="true"]').forEach(
   body.style.height = body.scrollHeight + 'px';
   toggle.setAttribute('data-active', 'true');
 });
+
+const cartWrapper = document.querySelector('.w-commerce-commercecartcontainerwrapper');
+const cartContainer = document.querySelector('.w-commerce-commercecartcontainer');
+
+// Remove Webflow's inline transition and transform
+if (cartContainer) {
+  new MutationObserver(() => {
+    cartContainer.style.transition = '';
+    cartContainer.style.transform = '';
+  }).observe(cartContainer, {
+    attributes: true,
+    attributeFilter: ['style']
+  });
+}
+
+// Toggle [data-open] based on wrapper visibility
+if (cartWrapper) {
+  new MutationObserver(() => {
+    const isOpen = getComputedStyle(cartWrapper).display !== 'none';
+    if (isOpen) {
+      cartContainer.setAttribute('data-open', 'true');
+    } else {
+      cartContainer.removeAttribute('data-open');
+    }
+  }).observe(cartWrapper, {
+    attributes: true,
+    attributeFilter: ['style']
+  });
+}
