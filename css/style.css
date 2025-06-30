@@ -1385,8 +1385,8 @@ p {
   height: 100%;
 }
 
-.removetest {
-  display: none !important;
+.w-commerce-commercecartform {
+  height: 100%;
 }
 
 .w-commerce-commercecartheader {
