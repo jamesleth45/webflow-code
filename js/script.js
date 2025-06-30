@@ -360,3 +360,38 @@ document.querySelectorAll('.product__accordion-body[data-open="true"]').forEach(
   body.style.height = body.scrollHeight + 'px';
   toggle.setAttribute('data-active', 'true');
 });
+
+
+
+// === Custom Cart Open/Close Animation Control ===
+
+const wrapper = document.querySelector('.w-commerce-commercecartcontainerwrapper');
+const container = document.querySelector('.w-commerce-commercecartcontainer');
+
+// 1. Remove Webflow's inline transform/transition
+const cleanInjectedStyles = new MutationObserver(() => {
+  if (container?.style) {
+    container.style.transition = '';
+    container.style.transform = '';
+  }
+});
+
+if (container) {
+  cleanInjectedStyles.observe(container, {
+    attributes: true,
+    attributeFilter: ['style']
+  });
+}
+
+// 2. Watch wrapper visibility and toggle custom [data-open]
+const trackOpenState = new MutationObserver(() => {
+  const isOpen = getComputedStyle(wrapper).display !== 'none';
+  container?.setAttribute('data-open', isOpen ? 'true' : 'false');
+});
+
+if (wrapper) {
+  trackOpenState.observe(wrapper, {
+    attributes: true,
+    attributeFilter: ['style']
+  });
+}
