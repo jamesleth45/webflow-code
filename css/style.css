@@ -1427,6 +1427,7 @@ p {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   text-transform: uppercase; /* Only here */
+  border-radius: 0;
 }
 
 .w-commerce-commercecartcheckoutbutton:hover {
