@@ -1384,7 +1384,12 @@ p {
 
 .w-commerce-commercecartformwrapper {
   height: 100%;
-  margin-top: 1.375rem;
+  margin-top: .75rem;
+}
+
+.w-commerce-commercecartitem {
+  height: 100%;
+  margin-top: .625rem;
 }
 
 .w-commerce-commercecartform {
