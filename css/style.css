@@ -1146,7 +1146,7 @@ p {
   .product__meta {
     grid-column: span 4;
 
-    padding-top: 3.5rem;
+    padding-top: 0;
     padding-right: 1.25rem;
 
     max-width: none;
@@ -1166,6 +1166,12 @@ p {
 .product__details {
   position: sticky;
   top: 1.6875rem;
+}
+
+@media (max-width: 1279px) {
+  .product__details {
+    top: 3.5rem;
+  }
 }
 
 .product__title {
