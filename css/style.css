@@ -1372,11 +1372,8 @@ p {
 
   overflow-y: auto;
 
-  display: block;
-  flex-direction: unset;
   width: auto;
   min-width: unset;
-  max-width: 497px;
   box-shadow: none;
 }
 
