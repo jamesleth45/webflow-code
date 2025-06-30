@@ -1114,6 +1114,20 @@ p {
   grid-column: 3 / 9;
 }
 
+@media (max-width: 1279px) {
+  .product__gallery {
+    grid-column: 1 / 9;
+  }
+}
+
+@media (max-width: 767px) {
+  .product__gallery {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 1279px) {
+
 .product__details {
   position: sticky;
   top: 1.6875rem;
