@@ -1299,7 +1299,7 @@ select {
   gap: .25rem;
 }
 
-.product__icon--arrow {
+.product__toggle-icon--arrow {
   display: flex;
   align-items: center;
   justify-content: center;
