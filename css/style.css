@@ -1112,8 +1112,7 @@ p {
 /* product */
 @media (max-width: 1279px) {
   .product {
-    position: relative;
-    top: 3.5rem;
+    margin-top: 3.5rem;
   }
 }
 
