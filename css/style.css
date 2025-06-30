@@ -1445,3 +1445,10 @@ p {
   height: 100%;
   display: block;
 }
+
+.w-commerce-commercecartform {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
