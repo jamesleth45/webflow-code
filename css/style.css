@@ -1340,3 +1340,11 @@ p {
   margin-top: .625rem;
   margin-bottom: .625rem;
 }
+
+/* cart */
+.w-commerce-commercecartopenlink {
+  all: unset;
+
+  display: inline;
+  cursor: pointer;
+}
