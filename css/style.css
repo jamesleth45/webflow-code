@@ -1406,7 +1406,7 @@ p {
   pointer-events: none;
 }
 
-.cart__quantity {
+.cart__meta-quantity {
   display: flex;
   align-items: center;
 }
@@ -1535,6 +1535,7 @@ p {
   min-width: 173px;
 }
 
-.cart__meta-attrs {
+.cart__meta-attrs,
+.cart__meta-quantity {
   margin-top: .8125rem;
 }
