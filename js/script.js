@@ -371,45 +371,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-
-// === Open Bag Panel on Successful Add to Cart ===
+// === Open Bag Panel When Button Completes Status Cycle ===
 
 document.addEventListener('DOMContentLoaded', () => {
   const panel = document.querySelector('.panel[data-panel="bag"]');
   if (!panel) return;
 
-  const quantityEl = document.querySelector('.w-commerce-commercecartquantity .cart__quantity-number');
-  let lastQuantity = quantityEl?.textContent.trim() || '0';
-
-  document.querySelectorAll('.w-commerce-commerceaddtocartform').forEach(form => {
-    const button = form.querySelector('.w-commerce-commerceaddtocartbutton');
+  document.querySelectorAll('.w-commerce-commerceaddtocartbutton').forEach(button => {
+    let wasAdded = false;
 
     const observer = new MutationObserver(() => {
-      const isLoading = button.getAttribute('aria-busy') === 'true';
-      if (!isLoading) {
-        const currentQuantity = quantityEl?.textContent.trim() || '0';
-        if (currentQuantity !== lastQuantity) {
-          lastQuantity = currentQuantity;
+      const value = button.value;
 
-          // === OPEN PANEL EXACTLY LIKE YOUR TOGGLE JS ===
-          panel.style.display = 'block';
-          document.body.style.overflow = 'hidden';
-          document.body.style.width = '100%';
+      if (value === 'Added') {
+        wasAdded = true;
+        return;
+      }
 
+      if (value === 'Add to Bag' && wasAdded) {
+        wasAdded = false;
+
+        // === Your exact panel open sequence ===
+        panel.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        document.body.style.width = '100%';
+
+        requestAnimationFrame(() => {
           requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-              panel.setAttribute('data-open', 'true');
-            });
+            panel.setAttribute('data-open', 'true');
           });
-        }
+        });
       }
     });
 
-    if (button) {
-      observer.observe(button, {
-        attributes: true,
-        attributeFilter: ['aria-busy'],
-      });
-    }
+    observer.observe(button, {
+      attributes: true,
+      attributeFilter: ['value'],
+    });
   });
 });
