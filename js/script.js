@@ -360,3 +360,7 @@ document.querySelectorAll('.product__accordion-body[data-open="true"]').forEach(
   body.style.height = body.scrollHeight + 'px';
   toggle.setAttribute('data-active', 'true');
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.removetest').forEach(el => el.remove());
+});

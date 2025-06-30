@@ -1389,3 +1389,7 @@ p {
   max-width: unset;
   box-shadow: none;
 }
+
+.removetest {
+  display: none !important;
+}
