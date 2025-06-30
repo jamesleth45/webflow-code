@@ -1426,6 +1426,15 @@ p {
   font-weight: 700;
 }
 
+.w-commerce-commercecartiteminfo {
+  margin-left: .625rem;
+  margin-right: .625rem;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+}
 
 .w-commerce-commercecartform {
   height: 100%;
