@@ -1305,6 +1305,10 @@ p {
   gap: .25rem;
 }
 
+.product__toggle--size {
+  margin-top: 1.25rem;
+}
+
 .product__toggle-icon--arrow {
   display: flex;
   align-items: center;
