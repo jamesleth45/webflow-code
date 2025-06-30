@@ -368,20 +368,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-const el = document.querySelector('.w-commerce-commercecartopenlinkcount');
-
-if (el) {
-  const wrapCount = () => {
-    const raw = el.textContent.trim();
-    if (!raw.startsWith('(')) el.textContent = `(${raw})`;
-  };
-
-  const observer = new MutationObserver(wrapCount);
-  observer.observe(el, { childList: true, subtree: true });
-
-  // run once on load
-  wrapCount();
-}
 
 
 
@@ -425,3 +411,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+
+const el = document.querySelector('.w-commerce-commercecartopenlinkcount');
+
+if (el) {
+  const wrapCount = () => {
+    const raw = el.textContent.trim();
+    if (!raw.startsWith('(')) el.textContent = `(${raw})`;
+  };
+
+  const observer = new MutationObserver(wrapCount);
+  observer.observe(el, { childList: true, subtree: true });
+
+  // run once on load
+  wrapCount();
+}
+
+
+
+
+
+
+const el = document.querySelector('.w-commerce-commercecartopenlinkcount');
+
+if (el) {
+  const wrapCount = () => {
+    const raw = el.textContent.trim();
+
+    // only wrap if it doesn't already start with ' ('
+    if (!raw.startsWith('(') && !raw.startsWith(' (')) {
+      el.textContent = ` (${raw})`;
+    }
+  };
+
+  const observer = new MutationObserver(wrapCount);
+  observer.observe(el, { childList: true, subtree: true });
+
+  wrapCount(); // run once on load
+}
