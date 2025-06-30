@@ -316,19 +316,16 @@ document.querySelectorAll('.product__accordion-toggle').forEach(toggle => {
     isAnimating = true;
 
     const isOpen = body.getAttribute('data-open') === 'true';
-    const isTabletOrBelow = window.matchMedia('(max-width: 1279px)').matches;
 
     if (!isOpen) {
-      if (isTabletOrBelow) {
-        document.querySelectorAll('.product__accordion-body[data-open="true"]').forEach(openEl => {
-          if (openEl !== body) {
-            const otherToggle = openEl
-              .closest('.product__accordion')
-              .querySelector('.product__accordion-toggle');
-            closeBody(openEl, otherToggle);
-          }
-        });
-      }
+      document.querySelectorAll('.product__accordion-body[data-open="true"]').forEach(openEl => {
+        if (openEl !== body) {
+          const otherToggle = openEl
+            .closest('.product__accordion')
+            .querySelector('.product__accordion-toggle');
+          closeBody(openEl, otherToggle);
+        }
+      });
 
       body.style.height = '0px';
       body.setAttribute('data-open', 'true');
