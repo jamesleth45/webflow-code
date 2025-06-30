@@ -1447,7 +1447,8 @@ p {
   overflow: hidden;
 }
 
-.w-commerce-commercecartiteminfo {
+.w-commerce-commercecartiteminfo,
+.cart__meta-attrs {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
