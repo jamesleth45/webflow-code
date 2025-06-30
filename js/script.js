@@ -366,7 +366,7 @@ const cartContainer = document.querySelector('.w-commerce-commercecartcontainer'
 
 let isManuallyClosing = false;
 
-// Kill inline styles from Webflow
+// Clean injected transform/transition
 if (cartContainer) {
   new MutationObserver(() => {
     cartContainer.style.transition = '';
@@ -377,25 +377,29 @@ if (cartContainer) {
   });
 }
 
-// Observe wrapper and control open/close
+// New observer: watch for opacity change to trigger close
 if (cartWrapper && cartContainer) {
   new MutationObserver(() => {
-    const style = getComputedStyle(cartWrapper);
+    const opacity = parseFloat(getComputedStyle(cartWrapper).opacity);
 
-    if (style.display !== 'none' && !isManuallyClosing) {
-      // OPEN: show cart
+    if (opacity === 1 && !isManuallyClosing) {
+      // Cart is opening
       cartContainer.setAttribute('data-open', 'true');
-    } else if (!isManuallyClosing) {
-      // CLOSE: prevent hide, animate, then hide manually
+    }
+
+    if (opacity === 0 && !isManuallyClosing) {
+      // Cart is closing → delay hide so slide-out can play
       isManuallyClosing = true;
 
-      cartWrapper.style.display = 'block';
+      // Cancel fade
+      cartWrapper.style.opacity = '1';
+      cartWrapper.style.transition = 'none';
       cartContainer.removeAttribute('data-open');
 
       setTimeout(() => {
         cartWrapper.style.display = 'none';
         isManuallyClosing = false;
-      }, 500); // match your close transition + delay
+      }, 500); // 450ms + 50ms delay
     }
   }).observe(cartWrapper, {
     attributes: true,
