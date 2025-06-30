@@ -361,4 +361,7 @@ document.querySelectorAll('.product__accordion-body[data-open="true"]').forEach(
   toggle.setAttribute('data-active', 'true');
 });
 
-document.querySelector('.w-commerce-commercecartcontainerwrapper--cartType-rightSidebar')?.removeAttribute('style');
+const cartWrapper = document.querySelector('.w-commerce-commercecartcontainerwrapper--cartType-rightSidebar');
+if (cartWrapper) {
+  cartWrapper.setAttribute('style', 'opacity: 1; transition: opacity 0s;');
+}
