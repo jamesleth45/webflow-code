@@ -372,28 +372,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// === Open Custom Bag Panel on Successful Add to Cart ===
+// === Open Bag Panel on Successful Add to Cart ===
 
 document.addEventListener('DOMContentLoaded', () => {
-  const panel = document.querySelector('[data-panel="bag"]');
+  const panel = document.querySelector('.panel[data-panel="bag"]');
   if (!panel) return;
+
+  const quantityEl = document.querySelector('.w-commerce-commercecartquantity .cart__quantity-number');
+  let lastQuantity = quantityEl?.textContent.trim() || '0';
 
   document.querySelectorAll('.w-commerce-commerceaddtocartform').forEach(form => {
     const button = form.querySelector('.w-commerce-commerceaddtocartbutton');
 
     const observer = new MutationObserver(() => {
-      const isLoading = form.hasAttribute('data-wf-atc-loading') || button.getAttribute('aria-busy') === 'true';
+      const isLoading = button.getAttribute('aria-busy') === 'true';
       if (!isLoading) {
-        panel.setAttribute('data-open', 'true');
+        const currentQuantity = quantityEl?.textContent.trim() || '0';
+        if (currentQuantity !== lastQuantity) {
+          lastQuantity = currentQuantity;
+
+          // === OPEN PANEL EXACTLY LIKE YOUR TOGGLE JS ===
+          panel.style.display = 'block';
+          document.body.style.overflow = 'hidden';
+          document.body.style.width = '100%';
+
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              panel.setAttribute('data-open', 'true');
+            });
+          });
+        }
       }
     });
 
-    if (form) {
-      observer.observe(form, { attributes: true, attributeFilter: ['data-wf-atc-loading'] });
-    }
-
     if (button) {
-      observer.observe(button, { attributes: true, attributeFilter: ['aria-busy'] });
+      observer.observe(button, {
+        attributes: true,
+        attributeFilter: ['aria-busy'],
+      });
     }
   });
 });
