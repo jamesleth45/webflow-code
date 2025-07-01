@@ -1,5 +1,5 @@
+// #region webflow cleanup
 document.addEventListener('DOMContentLoaded', () => {
-  /* || webflow cleanup */
   ['w-inline-block', 'w-embed', 'w-script', 'w-layout-grid', 'w--current', 'w-inline-block'].forEach(className => {
     document.querySelectorAll(`.${className}`).forEach(el => {
       el.classList.remove(className);
@@ -30,8 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+// #endregion
 
-/* || Nav Toggle */
+// #region Nav Toggle
 const navToggle = document.querySelector('[data-toggle="nav"]');
 const nav = document.querySelector('.header__nav');
 const bagToggle = document.querySelector('.header__mobile-toggle--bag');
@@ -81,8 +82,9 @@ window.addEventListener('resize', () => {
     unlockScroll();
   }
 });
+// #endregion
 
-/* || Nav Nested Toggle */
+// #region Nav Nested Toggle
 document.querySelectorAll('.header__nav-toggle').forEach(toggle => {
   let isAnimating = false;
   const nested = toggle
@@ -158,8 +160,9 @@ document.querySelectorAll('.header__nav-toggle').forEach(toggle => {
     }
   });
 });
+// #endregion
 
-/* || Panel Toggle */
+// #region Panel Toggl
 const openers = document.querySelectorAll('[data-toggle]');
 const panels = document.querySelectorAll('.panel');
 const searchInput = document.querySelector('.panel__search-input');
@@ -277,8 +280,9 @@ window.addEventListener('resize', () => {
     unlockScroll();
   }
 });
+// #endregion
 
-/* || Product Accordion Toggle */
+// #region Product Accordion Toggle
 document.querySelectorAll('.product__accordion-toggle').forEach(toggle => {
   let isAnimating = false;
   const body = toggle
@@ -367,13 +371,9 @@ document.addEventListener('DOMContentLoaded', () => {
     bagPanel.style.display = 'block';
   }
 });
+// #endregion
 
-
-
-
-
-// === Open Bag Panel When Button Completes Status Cycle ===
-
+// #region Open Bag Panel When Button Completes Status Cycle
 document.addEventListener('DOMContentLoaded', () => {
   const panel = document.querySelector('.panel[data-panel="bag"]');
   if (!panel) return;
@@ -411,23 +411,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+// #endregion
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// #region Cart brakets on count
 const el = document.querySelector('.w-commerce-commercecartopenlinkcount');
 
 if (el) {
@@ -444,3 +430,4 @@ if (el) {
 
   wrapCount(); // run once on load
 }
+// #endregion
