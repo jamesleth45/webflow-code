@@ -262,7 +262,7 @@ button {
 
     opacity: 0;
 
-    transition: opacity 0.3s var(--ease-fade);
+    transition: opacity .25s var(--ease-fade);
 
     overflow-y: auto;
     pointer-events: none;
@@ -414,7 +414,7 @@ button {
 
   opacity: 1;
 
-  transition: opacity 0.3s var(--ease-fade);
+  transition: opacity .25s var(--ease-fade);
 
   pointer-events: auto;
 }
@@ -441,7 +441,7 @@ button {
 
   opacity: 1;
 
-  transition: opacity 0.3s var(--ease-fade);
+  transition: opacity .25s var(--ease-fade);
 
   transform: translate(-50%, -50%);
 }
