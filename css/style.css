@@ -287,10 +287,6 @@ button {
 
     overflow: hidden;
   }
-
-  .header__nav-list--nested[data-open="true"] {
-    height: auto;
-  }
 }
 
 @media (max-width: 1279px) { /* Tablet and below */
