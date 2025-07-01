@@ -181,25 +181,20 @@ button {
 /* #region Header */
 @media (max-width: 1279px) {
   .header__main {
+    position: fixed;
+    z-index: 100;
+
     height: 3.5rem;
 
     background-color: #fff;
-
-    position: fixed;
-    z-index: 100;
   }
 }
 
 .header__logo {
   position: fixed;
   z-index: 110;
-}
-
-@media (min-width: 1280px) {
-  .header__logo {
-    top: 1.6875rem;
-    left: 1.6875rem;
-  }
+  top: 1.6875rem;
+  left: 1.6875rem;
 }
 
 @media (max-width: 1279px) {
