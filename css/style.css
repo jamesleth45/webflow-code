@@ -1,4 +1,4 @@
-/* | Reset */
+/* #region Reset */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -16,8 +16,9 @@
   background: #000;
   color: #fff;
 }
+/* #endregion */
 
-/* | Global */
+/* #region Global */
 body {
   display: block;
 
@@ -175,8 +176,9 @@ button {
 .i {
   display: none;
 }
+/* #endregion */
 
-/* | Header */
+/* #region Header */
 @media (max-width: 1279px) {
   .header__main {
     height: 3.5rem;
@@ -432,8 +434,9 @@ button {
 .header__mobile-icon[data-visible="true"] {
   opacity: 1;
 }
+/* #endregion */
 
-/* | Footer */
+/* #region Footer */
 .footer {
   border-top: 1px solid #eee;
 }
@@ -586,8 +589,9 @@ button {
     font-weight: 400;
   }
 }
+/* #endregion */
 
-/* panel */
+/* #region Panel */
 .panel {
   position: fixed;
   inset: 0;
@@ -869,8 +873,9 @@ button {
 .panel__text {
   margin-top: .25rem;
 }
+/* #endregion */
 
-/* hero */
+/* #region Hero */
 .hero__image {
   display: block;
   width: 100%;
@@ -884,8 +889,9 @@ button {
     grid-column: 1 / -1;
   }
 }
+/* #endregion */
 
-/* product-listing */
+/* #region Product-listing */
 .product-listing {
   min-height: 100vh;
   padding-bottom: 6.25rem;
@@ -1015,8 +1021,9 @@ button {
 .product-listing__link {
   position: relative;
 }
+/* #endregion */
 
-/* product */
+/* #region Product */
 @media (max-width: 1279px) {
   .product {
     margin-top: 3.5rem;
@@ -1238,8 +1245,9 @@ button {
   margin-top: .625rem;
   margin-bottom: .625rem;
 }
+/* #endregion */
 
-/* cart */
+/* #region Cart */
 .w-commerce-commercecartopenlink {
   all: unset;
 
@@ -1468,8 +1476,9 @@ button {
 
   gap: .625rem;
 }
+/* #endregion */
 
-/* w classes */
+/* #region Webflow Classes */
 .w-form {
   margin: 0;
 }
@@ -1543,3 +1552,4 @@ button {
 .w-checkbox-input--inputType-custom.w--redirected-focus {
   box-shadow: none !important;
 }
+/* #endregion */
