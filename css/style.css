@@ -1174,7 +1174,7 @@ p {
 
 .product__details {
   position: sticky;
-  top: 1.6875rem;
+  top: 8.75rem;
 }
 
 @media (max-width: 1279px) {
