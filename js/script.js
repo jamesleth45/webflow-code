@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* || Nav Toggle */
-const navToggle = document.querySelector('.header__mobile-toggle--nav');
+const navToggle = document.querySelector('[data-toggle="nav"]');
 const nav = document.querySelector('.header__nav');
 const bagToggle = document.querySelector('.header__mobile-toggle--bag');
 const searchToggle = document.querySelector('.header__mobile-toggle--search');
