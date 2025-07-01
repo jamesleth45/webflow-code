@@ -292,6 +292,7 @@ button {
 @media (max-width: 1279px) { /* Tablet and below */
   .header__nav-list--nested {
     margin-left: .625rem;
+    text-align: left;
   }
 }
   
