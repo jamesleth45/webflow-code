@@ -213,6 +213,9 @@ button {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
 
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 }
 
