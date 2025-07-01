@@ -184,17 +184,17 @@ button {
 
 .header__logo {
   position: fixed;
-  z-index: 120;
+  z-index: 110;
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1280px) { /* Desktop and above */
   .header__logo {
     top: 1.6875rem;
     left: 1.6875rem;
   }
 }
 
-@media (max-width: 1279px) {
+@media (max-width: 1279px) { /* Tablet and below */
   .header__logo {
     top: 0;
     left: 0;
@@ -203,56 +203,62 @@ button {
 
 .header__logo-link {
   display: flow-root;
-  user-select: none;
 
   font-family: "neue-haas-grotesk-display", "neue-haas-grotesk-display-fallback", sans-serif;
   font-size: 1.67rem;
   font-weight: 700;
   line-height: 1;
-
   -webkit-font-smoothing: antialiased;
+
+  user-select: none;
 }
 
 .header__logo-link::before,
 .header__logo-link::after {
-  content: "";
   display: table;
+
   margin-bottom: calc(-.46lh + .36em);
+
+  content: "";
 }
 
-@media (max-width: 1279px) {
+@media (max-width: 1279px) { /* Tablet and below */
   .header__logo-link {
     padding: 1.25rem;
+
     font-size: 1.25rem;
   }
 }
 
-@media (max-width: 1279px) {
+@media (max-width: 1279px) { /* Tablet and below */
   .header__nav {
-    position: fixed;
-    inset: 0;
-    z-index: 100;
-
     display: flex;
+
     flex-direction: column;
     justify-content: space-between;
-    gap: 4.375rem;
 
+    gap: 4.375rem;
     padding: 3.5rem 1.25rem 1.25rem;
 
     background-color: #fff;
-    overflow-y: auto;
 
     opacity: 0;
-    pointer-events: none;
 
     transition: opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
+
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    overflow-y: auto;
+    pointer-events: none;
   }
 
   .header__nav[data-open="true"] {
     opacity: 1;
+
     pointer-events: auto;
   }
+}
 
   .header__nav-item {
     line-height: 1.5625rem;
