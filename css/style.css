@@ -754,7 +754,6 @@ button {
   text-overflow: ellipsis;
   text-wrap: balance;
   overflow: hidden;
-  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   text-transform: uppercase; /* Only here */
 }
@@ -1178,7 +1177,6 @@ button {
   text-overflow: ellipsis;
   text-wrap: balance;
   overflow: hidden;
-  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   text-transform: uppercase; /* Only here */
 }
@@ -1401,7 +1399,6 @@ button {
   text-overflow: ellipsis;
   text-wrap: balance;
   overflow: hidden;
-  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   text-transform: uppercase; /* Only here */
   border-radius: 0;
@@ -1430,7 +1427,6 @@ button {
   text-overflow: ellipsis;
   text-wrap: balance;
   overflow: hidden;
-  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   text-transform: uppercase; /* Only here */
   border-radius: 0;
@@ -1547,4 +1543,5 @@ button {
 
 .w-checkbox-input--inputType-custom.w--redirected-focus {
   box-shadow: none !important;
+  }
 }
