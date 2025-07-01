@@ -260,6 +260,16 @@ button {
   }
 }
 
+.header__nav-list--nested {
+  height: 0;
+
+  text-align: right;
+
+  transition: height .25s ease;
+
+  overflow: hidden;
+}
+
 @media (min-width: 1280px) { /* Desktop and above */
   .header__nav-list--left,
   .header__nav-list--right {
@@ -276,16 +286,6 @@ button {
     text-align: right;
 
     right: 1.6875rem;
-  }
-
-  .header__nav-list--nested {
-    height: 0;
-
-    text-align: right;
-
-    transition: height .25s ease;
-
-    overflow: hidden;
   }
 }
 
