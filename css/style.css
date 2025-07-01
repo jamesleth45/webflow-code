@@ -16,6 +16,14 @@
   background: #000;
   color: #fff;
 }
+
+:root {
+  --ease: cubic-bezier(.4, 0, .2, 1);
+  --ease-fade: cubic-bezier(.25, .1, .25, 1);
+  --ease-transform: cubic-bezier(.22, 1, .36, 1);
+  --ease-bounce: cubic-bezier(.65, -.55, .25, 1.5);
+  --ease-out-quint: cubic-bezier(.22, 1, .36, 1);
+}
 /* #endregion */
 
 /* #region Global */
@@ -238,6 +246,10 @@ button {
 
 @media (max-width: 1279px) {
   .header__nav {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+
     display: flex;
 
     flex-direction: column;
@@ -250,11 +262,8 @@ button {
 
     opacity: 0;
 
-    transition: opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: opacity 0.3s var(--ease-fade);
 
-    position: fixed;
-    inset: 0;
-    z-index: 100;
     overflow-y: auto;
     pointer-events: none;
   }
