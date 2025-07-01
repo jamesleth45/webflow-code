@@ -45,7 +45,7 @@ body {
   overscroll-behavior: contain;
 }
 
-@media (max-width: 767px) { /* Mobile L and below */
+@media (max-width: 767px) {
   body {
     font-size: .75rem;
     line-height: .9375rem;
@@ -171,7 +171,7 @@ button {
 }
 
 /* | Header */
-@media (max-width: 1279px) { /* Tablet and below */
+@media (max-width: 1279px) {
   .header__main {
     height: 3.5rem;
 
@@ -187,14 +187,14 @@ button {
   z-index: 110;
 }
 
-@media (min-width: 1280px) { /* Desktop and above */
+@media (min-width: 1280px) {
   .header__logo {
     top: 1.6875rem;
     left: 1.6875rem;
   }
 }
 
-@media (max-width: 1279px) { /* Tablet and below */
+@media (max-width: 1279px) {
   .header__logo {
     top: 0;
     left: 0;
@@ -222,7 +222,7 @@ button {
   content: "";
 }
 
-@media (max-width: 1279px) { /* Tablet and below */
+@media (max-width: 1279px) {
   .header__logo-link {
     padding: 1.25rem;
 
@@ -230,7 +230,7 @@ button {
   }
 }
 
-@media (max-width: 1279px) { /* Tablet and below */
+@media (max-width: 1279px) {
   .header__nav {
     display: flex;
 
@@ -270,7 +270,7 @@ button {
   overflow: hidden;
 }
 
-@media (min-width: 1280px) { /* Desktop and above */
+@media (min-width: 1280px) {
   .header__nav-list--left,
   .header__nav-list--right {
     position: fixed;
@@ -289,7 +289,7 @@ button {
   }
 }
 
-@media (max-width: 1279px) { /* Tablet and below */
+@media (max-width: 1279px) {
   .header__nav-list--nested {
     margin-left: .625rem;
     text-align: left;
@@ -319,7 +319,7 @@ button {
     display: flex;
 }
 
-@media (max-width: 1279px) { /* Tablet and below */
+@media (max-width: 1279px) {
     .header__nav-item {
         line-height: 1.5625rem;
     }
@@ -337,7 +337,7 @@ button {
     }
 }
 
-@media (max-width: 1279px) { /* Tablet and below */
+@media (max-width: 1279px) {
   .header__nav-link,
   .header__nav-toggle {
     display: block;
@@ -355,19 +355,20 @@ button {
   justify-content: center;
 }
 
-@media (min-width: 1280px) { /* Desktop and above */
+@media (min-width: 1280px) {
   .header__mobile {
     display: none;
   }
 }
 
-@media (max-width: 1279px) { /* Tablet and below */
+@media (max-width: 1279px) {
   .header__mobile {
     position: fixed;
     top: 0;
     z-index: 101;
 
     display: flex;
+
     align-items: center;
     justify-content: flex-end;
 
@@ -385,13 +386,15 @@ button {
   height: 3.5rem;
 
   opacity: 1;
-  pointer-events: auto;
 
   transition: opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
+
+  pointer-events: auto;
 }
 
 .header__mobile-toggle[data-visible="false"] {
   opacity: 0;
+
   pointer-events: none;
 }
 
