@@ -312,6 +312,12 @@ button {
   }
 }
 
+@media (min-width: 1280px) {
+  .header__nav-item--region {
+    display: none;
+  }
+}
+
 @media (max-width: 1279px) {
   .header__nav-item {
     line-height: 1.5625rem;
@@ -353,6 +359,12 @@ button {
 
   .header__nav-item--search {
     display: none;
+  }
+
+  .header__nav-item--region {
+    margin-top: 1.875rem;
+
+    font-weight: 700;
   }
 }
 
