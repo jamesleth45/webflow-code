@@ -601,7 +601,7 @@ button {
 .footer__nav-toggle--icon {
   display: flex;
   align-items: center;
-  gap: .625rem;
+  gap: .5rem;
 }
 
 .footer__nav-icon--arrow {
