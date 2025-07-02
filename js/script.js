@@ -1,16 +1,10 @@
-// #region Remove All .css Elements
 document.addEventListener('DOMContentLoaded', () => {
+  // #region Remove All .css Elements
   document.querySelectorAll('.css').forEach(el => el.remove());
-});
-// #endregion
+  // #endregion
 
-// #region Webflow Class Cleanup
-document.addEventListener('DOMContentLoaded', () => {
-  const classesToRemove = [
-    'w-inline-block',
-    'w-embed'
-  ];
-
+  // #region Webflow Class Cleanup
+  const classesToRemove = ['w-inline-block', 'w-embed'];
   classesToRemove.forEach(className => {
     document.querySelectorAll(`.${className}`).forEach(el => {
       el.classList.remove(className);
@@ -22,17 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
       el.classList.remove('w--current');
     });
   });
-});
-// #endregion
+  // #endregion
 
-// #region Replace Divs with Spans
-document.addEventListener('DOMContentLoaded', () => {
+  // #region Replace Divs with Spans
   const classNames = [
     'header__logo-text',
     'header__nav-text',
     'footer__nav-text'
   ];
-
   classNames.forEach(className => {
     const el = document.querySelector(`.${className}`);
     if (el?.tagName === 'DIV') {
@@ -42,5 +33,5 @@ document.addEventListener('DOMContentLoaded', () => {
       el.replaceWith(span);
     }
   });
+  // #endregion
 });
-// #endregion
