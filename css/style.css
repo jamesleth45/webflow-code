@@ -820,19 +820,19 @@ button {
   text-decoration: underline;
 }
 
-.panel__search-input {
+.search__input {
   text-transform: uppercase;
 }
 
-.panel__search-submit {
+.search__submit {
   visibility: hidden;
 }
 
-.panel__search {
+.search {
   position: relative;
 }
 
-.panel__search-clear {
+.search__clear {
   position: absolute;
   top: 0;
   right: 0;
@@ -840,11 +840,11 @@ button {
   cursor: pointer;
 }
 
-.panel__search-clear:hover {
+.search__clear:hover {
   font-weight: 700;
 }
 
-.panel__search-clear[data-visible="true"] {
+.search__clear[data-visible="true"] {
   display: block;
 }
 

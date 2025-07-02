@@ -165,8 +165,8 @@ document.querySelectorAll('.header__nav-toggle').forEach(toggle => {
 // #region Panel Toggl
 const openers = document.querySelectorAll('[data-toggle]');
 const panels = document.querySelectorAll('.panel');
-const searchInput = document.querySelector('.panel__search-input');
-const clearBtn = document.querySelector('.panel__search-clear');
+const searchInput = document.querySelector('.search__input');
+const clearBtn = document.querySelector('.search__clear');
 const formInputs = document.querySelectorAll('.panel__form-input');
 
 function unlockScroll() {
@@ -180,8 +180,8 @@ function closeAllPanels() {
 
     panel.removeAttribute('data-open');
 
-    const searchField = panel.querySelector('.panel__search-input');
-    const searchClear = panel.querySelector('.panel__search-clear');
+    const searchField = panel.querySelector('.search__input');
+    const searchClear = panel.querySelector('.search__clear');
     if (searchField) searchField.value = '';
     if (searchClear) searchClear.removeAttribute('data-visible');
 
@@ -202,7 +202,7 @@ openers.forEach(opener => {
     closeAllPanels();
     targetPanel.style.display = 'block';
 
-    const searchField = targetPanel.querySelector('.panel__search-input');
+    const searchField = targetPanel.querySelector('.search__input');
     if (searchField) searchField.focus();
 
     document.body.style.overflow = 'hidden';
