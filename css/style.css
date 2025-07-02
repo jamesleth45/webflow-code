@@ -707,7 +707,7 @@ button {
   }
 }
 
-@media (min-width: 1280px) { /* Desktop and above */
+@media (min-width: 1280px) {
   .panel__content {
     max-width: 460px;
   }
@@ -718,9 +718,15 @@ button {
   transition: opacity .25s var(--ease-fade);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767px) { 
   .panel__content {
     transition: opacity .15s var(--ease-fade);
+  }
+}
+
+@media (min-width: 1280px) {
+  .panel__content {
+    grid-column: span 3;
   }
 }
 
@@ -739,9 +745,48 @@ button {
   transition: opacity .35s var(--ease-fade);
 }
 
-@media (min-width: 1280px) { /* Desktop and above */
-  .panel__content {
-    grid-column: span 3;
+.panel__close {
+  position: absolute;
+  z-index: 120;
+  top: 1.6875rem;
+  right: 1.6875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.panel__close:hover {
+  font-weight: 700;
+}
+
+@media (max-width: 1279px) {
+  .panel__close {
+    width: 2.375rem;
+    position: absolute;
+    z-index: 120;
+    top: 0;
+    right: 0;
+    height: 3.5rem;
+    margin-right: .625rem;
+  }
+
+  .panel__close-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1280px) {
+  .panel__close-icon {
+    display: none;
+  }
+}
+
+@media (max-width: 1279px) {
+  .panel__close-text {
+    display: none;
   }
 }
 
@@ -803,7 +848,7 @@ button {
   text-wrap: balance;
   overflow: hidden;
   -webkit-box-orient: vertical;
-  text-transform: uppercase; /* Only here */
+  text-transform: uppercase;
 }
 
 .panel__form-submit:hover {
@@ -846,51 +891,6 @@ button {
 
 .search__clear[data-visible="true"] {
   display: block;
-}
-
-.panel__close {
-  position: absolute;
-  z-index: 120;
-  top: 1.6875rem;
-  right: 1.6875rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.panel__close:hover {
-  font-weight: 700;
-}
-
-@media (max-width: 1279px) {
-  .panel__close {
-    width: 2.375rem;
-    position: absolute;
-    z-index: 120;
-    top: 0;
-    right: 0;
-    height: 3.5rem;
-    margin-right: .625rem;
-  }
-
-  .panel__close-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-@media (min-width: 1280px) {
-  .panel__close-icon {
-    display: none;
-  }
-}
-
-@media (max-width: 1279px) {
-  .panel__close-text {
-    display: none;
-  }
 }
 
 .panel__heading {
