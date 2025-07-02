@@ -615,6 +615,12 @@ button {
   display: inline-flex;
   align-items: center;
 }
+
+@media (hover: hover) {
+  .footer__nav-toggle:hover {
+    font-weight: 700;
+  }
+}
 /* #endregion */
 
 /* #region Panel */
