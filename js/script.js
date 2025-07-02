@@ -1,3 +1,13 @@
+// #region Remove .css Element
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.css').forEach(el => {
+    if (el.classList.length === 1) {
+      el.remove();
+    }
+  });
+});
+// #endregion
+
 // #region Webflow Class Cleanup
 document.addEventListener('DOMContentLoaded', () => {
   const classesToRemove = [
