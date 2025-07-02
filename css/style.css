@@ -594,13 +594,13 @@ button {
 }
 
 @media (min-width: 1280px) {
-  .footer__nav-item--social-heading {
+  .footer__nav-item--title {
     display: none;
   }
 }
 
 @media (max-width: 1279px) {
-  .footer__nav-item--social-heading {
+  .footer__nav-item--title {
     margin-right: auto;
   }
 
