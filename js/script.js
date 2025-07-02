@@ -1,10 +1,6 @@
-// #region Remove .css Element
+// #region Remove All .css Elements
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.css').forEach(el => {
-    if (el.classList.length === 1) {
-      el.remove();
-    }
-  });
+  document.querySelectorAll('.css').forEach(el => el.remove());
 });
 // #endregion
 
