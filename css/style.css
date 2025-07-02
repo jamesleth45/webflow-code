@@ -511,7 +511,7 @@ button {
 }
 
 .footer__nav-list--region {
-  grid-column: span 2;
+  grid-column: span 4;
 }
 
 @media (max-width: 1279px) { /* Tablet and below */
@@ -607,10 +607,6 @@ button {
   .footer__nav-title {
     font-weight: 400;
   }
-}
-
-.footer__nav-list--newsletter {
-  grid-column: 11 / 13;
 }
 /* #endregion */
 
