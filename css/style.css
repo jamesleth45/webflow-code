@@ -608,6 +608,10 @@ button {
     font-weight: 400;
   }
 }
+
+.footer__nav-list--newsletter {
+  grid-column: 11 / 13;
+}
 /* #endregion */
 
 /* #region Panel */
