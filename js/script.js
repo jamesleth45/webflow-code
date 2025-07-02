@@ -1,18 +1,11 @@
+// #region Webflow Class Cleanup
+document.addEventListener('DOMContentLoaded', () => {
+  const classesToRemove = ['w-inline-block', 'w--current'];
 
-const el = document.querySelector('.w-commerce-commercecartopenlinkcount');
-
-if (el) {
-  const wrapCount = () => {
-    const raw = el.textContent.trim();
-
-    if (!raw.startsWith('(') && !raw.startsWith(' (') && !raw.startsWith('\u00a0(')) {
-      el.innerHTML = `&nbsp;(${raw})`;
-    }
-  };
-
-  const observer = new MutationObserver(wrapCount);
-  observer.observe(el, { childList: true, subtree: true });
-
-  wrapCount(); // run once on load
-}
+  classesToRemove.forEach(className => {
+    document.querySelectorAll(`.${className}`).forEach(el => {
+      el.classList.remove(className);
+    });
+  });
+});
 // #endregion
