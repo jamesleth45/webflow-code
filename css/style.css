@@ -658,14 +658,14 @@ button {
   background-color: #fff;
 
   transform: translateX(100%);
-  transition: transform .35s var(--ease-fade)
+  transition: transform .35s var(--ease-fade);
 
   overflow-y: auto;
 }
 
 .panel[data-open="true"] .panel__inner {
   transform: translateX(0);
-  transition: transform .7s var(--ease-out-quint)
+  transition: transform .7s var(--ease-out-quint);
 }
 
 @media (min-width: 1280px) {
