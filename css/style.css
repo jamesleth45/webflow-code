@@ -153,6 +153,15 @@ p {
   }
 }
 
+.header__nav-list--nested {
+  height: 0;
+  overflow: hidden;
+}
+
+.header__nav-list--nested[data-open='true'] {
+  height: auto;
+}
+
 @media (min-width: 1280px) {
   .header__nav-list--nested {
     text-align: right;
