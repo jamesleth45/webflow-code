@@ -111,7 +111,7 @@ p {
 }
 
 .header__logo-text {
-  display: flow-root;
+  display: inline-block;
   font-family: neue-haas-grotesk-display, neue-haas-grotesk-display-fallback, sans-serif;
   font-size: 1.67rem;
   font-weight: 700;
