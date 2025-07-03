@@ -277,4 +277,22 @@ p {
   }
 }
 
+.header__mobile-btn {
+  position: relative;
+  width: 2.375rem;
+  height: 3.5rem;
+  opacity: 1;
+  transition: opacity 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+  pointer-events: auto;
+}
+
+.header__mobile-btn[data-visible='false'] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.header__mobile-btn--nav {
+  margin-right: 0.625rem;
+}
+
 /* #endregion */
