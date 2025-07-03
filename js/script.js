@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const classNames = [
     "header__logo-text",
-    "header__nav-text",
-    "footer__nav-text",
+    "header__nav-text"
+    "footer__nav-text"
   ];
 
   classNames.forEach((className) => {

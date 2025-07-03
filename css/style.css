@@ -7,19 +7,23 @@
 
 body {
   display: block;
+
   width: 100%;
   height: 100%;
+
   background-color: #fff;
+
   font-family: neue-haas-grotesk-text, neue-haas-grotesk-text-fallback,
     sans-serif;
   font-size: 0.625rem;
   font-weight: 400;
+  font-feature-settings: "kern";
   line-height: 0.8125rem;
-  text-transform: uppercase;
   letter-spacing: 0.03em;
+  text-transform: uppercase;
+
   color: #000;
   font-display: swap;
-  font-feature-settings: "kern";
   font-kerning: normal;
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: auto;
@@ -86,8 +90,10 @@ p {
     position: fixed;
     top: 0;
     z-index: 100;
+
     width: 100%;
     height: 3.5rem;
+
     background-color: #fff;
   }
 }
