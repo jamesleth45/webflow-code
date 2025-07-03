@@ -255,7 +255,7 @@ p {
   .header__nav-btn {
     display: block;
     width: 100%;
-    height: 1.5625rem;
+    line-height: 1.5625rem;
   }
 }
 
