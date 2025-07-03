@@ -80,6 +80,10 @@ p {
 /* #endregion */
 
 /* #region Header */
+.header {
+  /* Keep this outside the media so it flows with the rest */
+}
+
 @media (max-width: 1279px) {
   .header {
     position: fixed;
@@ -89,6 +93,41 @@ p {
     height: 3.5rem;
     background-color: #fff;
   }
+
+  .header__logo {
+    top: 0;
+    left: 0;
+  }
+
+  .header__logo-link {
+    padding: 1.25rem;
+  }
+
+  .header__logo-text {
+    font-size: 1.25rem;
+  }
+
+  .header__nav-list--nested {
+    margin-left: 0.625rem;
+  }
+
+  .header__nav-item--preview {
+    margin-top: 1.25rem;
+  }
+
+  .header__nav-item--brand {
+    margin-top: 1.875rem;
+  }
+
+  .header__nav-item--search {
+    display: none;
+  }
+
+  .header__nav-item--region {
+    display: block;
+    margin-top: 1.875rem;
+    font-weight: 700;
+  }
 }
 
 .header__logo {
@@ -96,19 +135,6 @@ p {
   top: 1.6875rem;
   left: 1.6875rem;
   display: flex;
-}
-
-@media (max-width: 1279px) {
-  .header__logo {
-    top: 0;
-    left: 0;
-  }
-}
-
-@media (max-width: 1279px) {
-  .header__logo-link {
-    padding: 1.25rem;
-  }
 }
 
 .header__logo-text {
@@ -132,12 +158,6 @@ p {
   content: '';
 }
 
-@media (max-width: 1279px) {
-  .header__logo-text {
-    font-size: 1.25rem;
-  }
-}
-
 @media (min-width: 1280px) {
   .header__nav-list--left {
     position: fixed;
@@ -151,17 +171,9 @@ p {
     right: 1.6875rem;
     text-align: right;
   }
-}
 
-@media (min-width: 1280px) {
   .header__nav-list--nested {
     text-align: right;
-  }
-}
-
-@media (max-width: 1279px) {
-  .header__nav-list--nested {
-    margin-left: 0.625rem;
   }
 }
 
@@ -177,20 +189,8 @@ p {
   margin-top: 0.8125rem;
 }
 
-@media (max-width: 1279px) {
-  .header__nav-item--preview {
-    margin-top: 1.25rem;
-  }
-}
-
 .header__nav-item--brand {
   margin-top: 0.8125rem;
-}
-
-@media (max-width: 1279px) {
-  .header__nav-item--brand {
-    margin-top: 1.875rem;
-  }
 }
 
 .header__nav-item--search {
@@ -199,22 +199,8 @@ p {
   right: 1.6875rem;
 }
 
-@media (max-width: 1279px) {
-  .header__nav-item--search {
-    display: none;
-  }
-}
-
 .header__nav-item--region {
   display: none;
-}
-
-@media (max-width: 1279px) {
-  .header__nav-item--region {
-    display: block;
-    margin-top: 1.875rem;
-    font-weight: 700;
-  }
 }
 
 /* #endregion */
