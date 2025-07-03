@@ -153,4 +153,12 @@ p {
   }
 }
 
+.header__nav-list--nested > li:first-child {
+  margin-top: 0.625rem;
+}
+
+.header__nav-list--nested > li:last-child {
+  margin-bottom: 1.875rem;
+}
+
 /* #endregion */
