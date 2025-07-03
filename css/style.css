@@ -13,7 +13,8 @@ body {
 
   background-color: #fff;
 
-  font-family: neue-haas-grotesk-text, neue-haas-grotesk-text-fallback, sans-serif;
+  font-family: neue-haas-grotesk-text, neue-haas-grotesk-text-fallback,
+    sans-serif;
   font-size: 0.625rem;
   font-weight: 400;
   font-feature-settings: "kern";
@@ -117,7 +118,8 @@ p {
 }
 
 .header__logo-text {
-  font-family: neue-haas-grotesk-display, neue-haas-grotesk-display-fallback, sans-serif;
+  font-family: neue-haas-grotesk-display, neue-haas-grotesk-display-fallback,
+    sans-serif;
   font-size: 1.67rem;
   font-weight: 700;
   line-height: 1;
