@@ -15,8 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   requestAnimationFrame(() => {
-    document.querySelectorAll('.w--current').forEach(el => {
-      el.classList.remove('w--current');
+    requestAnimationFrame(() => {
+      document.querySelectorAll('.w--current').forEach(el => {
+        el.classList.remove('w--current');
+      });
     });
   });
 });
