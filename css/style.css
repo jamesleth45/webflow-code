@@ -37,7 +37,6 @@ body {
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
-
   -ms-scroll-chaining: none;
   overscroll-behavior: contain;
 }
@@ -53,6 +52,13 @@ ul,
 ol {
   margin: 0;
   padding: 0;
+
   list-style: none;
+}
+
+button {
+  all: unset;
+
+  cursor: pointer;
 }
 /* #endregion */
