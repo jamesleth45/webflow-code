@@ -76,4 +76,13 @@ p {
 a {
   all: unset;
 }
+
+a:hover,
+button:hover {
+  font-weight: 700;
+}
+
+.i {
+  display: none;
+}
 /* #endregion */
