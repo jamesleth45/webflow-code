@@ -177,8 +177,20 @@ p {
   margin-top: 0.8125rem;
 }
 
+@media (max-width: 1279px) {
+  .header__nav-item--preview {
+    margin-top: 1.25rem;
+  }
+}
+
 .header__nav-item--brand {
   margin-top: 0.8125rem;
+}
+
+@media (max-width: 1279px) {
+  .header__nav-item--brand {
+    margin-top: 1.875rem;
+  }
 }
 
 .header__nav-item--search {
@@ -187,23 +199,17 @@ p {
   right: 1.6875rem;
 }
 
+@media (max-width: 1279px) {
+  .header__nav-item--search {
+    display: none;
+  }
+}
+
 .header__nav-item--region {
   display: none;
 }
 
 @media (max-width: 1279px) {
-  .header__nav-item--preview {
-    margin-top: 1.25rem;
-  }
-
-  .header__nav-item--brand {
-    margin-top: 1.875rem;
-  }
-
-  .header__nav-item--search {
-    display: none;
-  }
-
   .header__nav-item--region {
     display: block;
     margin-top: 1.875rem;
