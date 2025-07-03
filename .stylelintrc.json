@@ -13,6 +13,7 @@
     "max-nesting-depth": 3,
     "no-descending-specificity": true,
     "selector-pseudo-element-colon-notation": "double",
+    "media-feature-range-notation": null,
 
     "order/properties-order": [
       "position",
