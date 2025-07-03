@@ -52,3 +52,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 // #endregion
+
+// #region Replace spacer divs with clean HTML comments
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.i').forEach(el => {
+    if (el.innerHTML.trim() === '') {
+      const comment = document.createComment('');
+      el.replaceWith(comment);
+    }
+  });
+});
+// #endregion
