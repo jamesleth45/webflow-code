@@ -95,6 +95,7 @@ p {
   position: fixed;
   top: 1.6875rem;
   left: 1.6875rem;
+  z-index: 100;
   display: flex;
 }
 
