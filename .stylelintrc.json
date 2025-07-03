@@ -1,0 +1,36 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "order/properties-order": [
+      [
+        { "groupName": "Positioning", "properties": ["position", "top", "right", "bottom", "left", "z-index"] },
+        { "groupName": "Display & Box Model", "properties": ["display", "visibility", "float", "clear", "box-sizing"] },
+        { "groupName": "Flex/Grid Layout", "properties": ["flex", "flex-direction", "justify-content", "align-items", "grid", "grid-area", "grid-template", "grid-column", "grid-row", "grid-gap", "gap"] },
+        { "groupName": "Sizing", "properties": ["width", "min-width", "max-width", "height", "min-height", "max-height"] },
+        { "groupName": "Spacing", "properties": ["margin", "padding"] },
+        { "groupName": "Borders", "properties": ["border", "border-top", "border-right", "border-bottom", "border-left", "border-radius"] },
+        { "groupName": "Background", "properties": ["background", "background-color", "background-image", "background-position", "background-size"] },
+        { "groupName": "Typography", "properties": ["font", "font-family", "font-size", "font-weight", "line-height", "text-align", "text-transform", "letter-spacing", "white-space"] },
+        { "groupName": "Colors & Opacity", "properties": ["color", "opacity"] },
+        { "groupName": "Visuals", "properties": ["box-shadow", "filter"] },
+        { "groupName": "Transitions & Animations", "properties": ["transition", "animation"] },
+        { "groupName": "Transforms", "properties": ["transform"] },
+        { "groupName": "Misc", "properties": ["cursor", "overflow", "pointer-events", "user-select"] }
+      ],
+      { "unspecified": "bottomAlphabetical" }
+    ],
+    "declaration-empty-line-before": [
+      "always",
+      {
+        "except": ["first-nested"],
+        "ignore": ["after-declaration"]
+      }
+    ],
+    "block-no-empty": true,
+    "unit-no-unknown": true,
+    "color-no-invalid-hex": true,
+    "no-duplicate-selectors": true,
+    "length-zero-no-unit": true
+  }
+}

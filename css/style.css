@@ -13,36 +13,30 @@ body {
 
   background-color: #fff;
 
-  font-family: "neue-haas-grotesk-text", "neue-haas-grotesk-text-fallback",
+  font-family: neue-haas-grotesk-text, neue-haas-grotesk-text-fallback,
     sans-serif;
   font-size: 0.625rem;
   font-weight: 400;
   line-height: 0.8125rem;
-  letter-spacing: 0.03em;
   text-transform: uppercase;
-  font-feature-settings: "kern";
-  -webkit-font-feature-settings: "kern";
-  font-kerning: normal;
-  -webkit-font-kerning: normal;
-  font-variant-ligatures: common-ligatures;
-  -webkit-font-variant-ligatures: common-ligatures;
-  font-display: swap;
-  text-rendering: optimizeLegibility;
+  letter-spacing: 0.03em;
 
   color: #000;
+  font-display: swap;
+  font-feature-settings: "kern";
+  font-kerning: normal;
 
   -webkit-font-smoothing: subpixel-antialiased;
   -moz-osx-font-smoothing: auto;
-
-  -webkit-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-  -ms-scroll-chaining: none;
+  font-variant-ligatures: common-ligatures;
   overscroll-behavior: contain;
+  -ms-scroll-chaining: none;
+  text-rendering: optimizelegibility;
+
+  text-size-adjust: 100%;
 }
 
-@media (max-width: 767px) {
+@media (width <= 767px) {
   body {
     font-size: 0.75rem;
     line-height: 0.9375rem;
@@ -50,15 +44,13 @@ body {
 }
 
 button {
-  all: unset;
-
   cursor: pointer;
+  all: unset;
 }
 
 a {
-  all: unset;
-
   cursor: pointer;
+  all: unset;
 }
 
 @media (hover: hover) {
@@ -92,10 +84,11 @@ p {
 .i {
   display: none;
 }
+
 /* #endregion */
 
 /* #region Header */
-@media (max-width: 1279px) {
+@media (width <= 1279px) {
   .header {
     position: fixed;
     top: 0;
@@ -107,4 +100,5 @@ p {
     background-color: #fff;
   }
 }
+
 /* #endregion */
