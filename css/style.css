@@ -161,20 +161,18 @@ p {
   margin-bottom: 1.875rem;
 }
 
-@media (min-width: 1280px) {
-  .header__nav-item--preview {
-    margin-top: 0.8125rem;
-  }
+.header__nav-item--preview {
+  margin-top: 0.8125rem;
+}
 
-  .header__nav-item--brand {
-    margin-top: 0.8125rem;
-  }
+.header__nav-item--brand {
+  margin-top: 0.8125rem;
+}
 
-  .header__nav-item--search {
-    position: fixed;
-    top: 1.6875rem;
-    right: 1.6875rem;
-  }
+.header__nav-item--search {
+  position: fixed;
+  top: 1.6875rem;
+  right: 1.6875rem;
 }
 
 @media (max-width: 1279px) {
