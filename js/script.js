@@ -22,11 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // #region Replace Divs with Spans
 document.addEventListener("DOMContentLoaded", () => {
-  const classNames = [
-    "header__logo-text",
-    "header__nav-text",
-    "footer__nav-text",
-  ];
+  const classNames = [, "header__nav-text", "footer__nav-text"];
 
   classNames.forEach((className) => {
     document.querySelectorAll(`.${className}`).forEach((el) => {
