@@ -15,11 +15,11 @@ body {
 
   font-family: neue-haas-grotesk-text, neue-haas-grotesk-text-fallback,
     sans-serif;
-  font-size: .625rem;
+  font-size: 0.625rem;
   font-weight: 400;
   font-feature-settings: "kern";
-  line-height: .8125rem;
-  letter-spacing: .03em;
+  line-height: 0.8125rem;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
 
   color: #000;
@@ -36,8 +36,8 @@ body {
 
 @media (max-width: 767px) {
   body {
-    font-size: .75rem;
-    line-height: .9375rem;
+    font-size: 0.75rem;
+    line-height: 0.9375rem;
   }
 }
 
@@ -118,13 +118,31 @@ p {
 }
 
 .header__logo-text {
+  display: flow-root;
+
   font-family: neue-haas-grotesk-display, neue-haas-grotesk-display-fallback,
     sans-serif;
   font-size: 1.67rem;
   font-weight: 700;
   line-height: 1;
 
+  color: inherit;
+
   -webkit-font-smoothing: antialiased;
+}
+
+.header__logo-text::before {
+  display: table;
+
+  margin-bottom: calc(-0.5lh + 0.34em);
+  content: "";
+}
+
+.header__logo-text::after {
+  display: table;
+
+  margin-bottom: calc(-0.5lh + 0.38em);
+  content: "";
 }
 
 @media (max-width: 1279px) {
