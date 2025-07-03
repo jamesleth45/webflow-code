@@ -13,11 +13,12 @@ body {
 
   background-color: #fff;
 
-  font-family: "neue-haas-grotesk-text", "neue-haas-grotesk-text-fallback", sans-serif;
-  font-size: .625rem;
+  font-family: "neue-haas-grotesk-text", "neue-haas-grotesk-text-fallback",
+    sans-serif;
+  font-size: 0.625rem;
   font-weight: 400;
-  line-height: .8125rem;
-  letter-spacing: .03em;
+  line-height: 0.8125rem;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   font-feature-settings: "kern";
   -webkit-font-feature-settings: "kern";
@@ -43,17 +44,21 @@ body {
 
 @media (max-width: 767px) {
   body {
-    font-size: .75rem;
-    line-height: .9375rem;
+    font-size: 0.75rem;
+    line-height: 0.9375rem;
   }
 }
 
 button {
   all: unset;
+
+  cursor: pointer;
 }
 
 a {
   all: unset;
+
+  cursor: pointer;
 }
 
 @media (hover: hover) {
