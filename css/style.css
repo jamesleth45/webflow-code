@@ -295,4 +295,27 @@ p {
   margin-right: 0.625rem;
 }
 
+.header__mobile-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+}
+
+.header__mobile-icon[data-visible='false'] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.header__mobile-icon[data-visible='true'] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* #endregion */
