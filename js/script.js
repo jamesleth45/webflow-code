@@ -42,3 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 // #endregion
+
+// #region Remove role="list" from all lists
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('[role="list"]').forEach(el => {
+    el.removeAttribute('role');
+  });
+});
+// #endregion
