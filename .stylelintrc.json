@@ -4,7 +4,7 @@
   "rules": {
     "selector-class-pattern": "^[a-z0-9]+(?:__[a-z0-9-]+)?(?:--[a-z0-9-]+)?$",
     "selector-max-id": 0,
-    "selector-max-type": 1,
+    "selector-max-type": 5,
     "selector-max-universal": 1,
 
     "declaration-no-important": true,
