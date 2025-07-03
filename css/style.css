@@ -141,7 +141,7 @@ p {
 .header__logo-text::after {
   display: table;
 
-  margin-bottom: calc(-0.5lh + 0.38em);
+  margin-bottom: calc(-0.5lh + 0.36em);
   content: "";
 }
 
