@@ -6,18 +6,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // #region Webflow Class Cleanup
 document.addEventListener("DOMContentLoaded", () => {
-  const classesToRemove = ["w-inline-block", "w-embed"];
-
-  classesToRemove.forEach((className) => {
-    document.querySelectorAll(`.${className}`).forEach((el) => {
-      el.classList.remove(className);
-    });
-  });
-
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
-      document.querySelectorAll(".w--current").forEach((el) => {
-        el.classList.remove("w--current");
+      const classesToRemove = ["w-inline-block", "w-embed", "w--current"];
+
+      classesToRemove.forEach((className) => {
+        document.querySelectorAll(`.${className}`).forEach((el) => {
+          el.classList.remove(className);
+        });
       });
     });
   });
@@ -28,8 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const classNames = [
     "header__logo-text",
-    "header__nav-text"
-    "footer__nav-text"
+    "header__nav-text",
+    "footer__nav-text",
   ];
 
   classNames.forEach((className) => {
