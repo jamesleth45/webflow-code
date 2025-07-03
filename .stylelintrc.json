@@ -250,6 +250,8 @@
     "unit-no-unknown": true,
     "color-no-invalid-hex": true,
     "no-duplicate-selectors": true,
-    "length-zero-no-unit": true
+    "length-zero-no-unit": true,
+    "media-feature-range-notation": "prefix",
+    "selector-class-pattern": "^[a-z0-9]+(?:__[a-z0-9]+)?(?:--[a-z0-9]+)?$"
   }
 }

@@ -34,7 +34,7 @@ body {
   text-size-adjust: 100%;
 }
 
-@media (width <= 767px) {
+@media (max-width: 767px) {
   body {
     font-size: 0.75rem;
     line-height: 0.9375rem;
@@ -85,7 +85,7 @@ p {
 /* #endregion */
 
 /* #region Header */
-@media (width <= 1279px) {
+@media (max-width: 1279px) {
   .header {
     position: fixed;
     top: 0;
@@ -95,6 +95,21 @@ p {
     height: 3.5rem;
 
     background-color: #fff;
+  }
+}
+
+.header__logo {
+  position: fixed;
+  top: 1.6875rem;
+  left: 1.6875rem;
+}
+
+@media (max-width: 1279px) {
+  .header__logo {
+    top: 0;
+    left: 0;
+
+    padding: 1.25rem;
   }
 }
 
