@@ -107,12 +107,13 @@ p {
 
 @media (max-width: 1279px) {
   .header__logo-link {
+    display: flex;
     padding: 1.25rem;
   }
 }
 
 .header__logo-text {
-  display: inline-block;
+  display: flow-root;
   font-family: neue-haas-grotesk-display, neue-haas-grotesk-display-fallback, sans-serif;
   font-size: 1.67rem;
   font-weight: 700;
