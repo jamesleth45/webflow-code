@@ -48,16 +48,27 @@ body {
   }
 }
 
+button {
+  all: unset;
+}
+
+a {
+  all: unset;
+}
+
+@media (hover: hover) {
+  a:hover,
+  button:hover {
+    font-weight: 700;
+  }
+}
+
 ul,
 ol {
   margin: 0;
   padding: 0;
 
   list-style: none;
-}
-
-button {
-  all: unset;
 }
 
 h1,
@@ -71,15 +82,6 @@ h6 {
 
 p {
   all: unset;
-}
-
-a {
-  all: unset;
-}
-
-a:hover,
-button:hover {
-  font-weight: 700;
 }
 
 .i {
