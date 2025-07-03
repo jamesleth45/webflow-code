@@ -68,4 +68,8 @@ h5,
 h6 {
   all: unset;
 }
+
+p {
+  all: unset;
+}
 /* #endregion */
