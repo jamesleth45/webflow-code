@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
-      const classesToRemove = ['w-inline-block', 'w-embed', 'w--current'];
+      const classesToRemove = ['w-inline-block', 'w-embed', 'w--current', 'w-layout-grid'];
 
       classesToRemove.forEach(className => {
         document.querySelectorAll(`.${className}`).forEach(el => {
