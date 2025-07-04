@@ -525,6 +525,33 @@ p {
   }
 }
 
+.panel__close {
+  position: fixed;
+  top: 1.6875rem;
+  right: 1.6875rem;
+}
+
+@media (max-width: 1279px) {
+  .panel__close {
+    position: relative;
+    width: 2.375rem;
+    height: 3.5rem;
+    margin-right: 0.625rem;
+  }
+}
+
+@media (max-width: 1279px) {
+  .panel__close-text {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  .panel__close-icon {
+    display: none;
+  }
+}
+
 .panel__content {
   opacity: 0;
   transition: opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
