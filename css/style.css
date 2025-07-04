@@ -326,9 +326,12 @@ p {
 /* #endregion */
 
 /* #region Hero */
+.hero {
+  position: relative;
+}
+
 @media (max-width: 1279px) {
   .hero {
-    position: relative;
     margin-top: 3.5rem;
   }
 }
