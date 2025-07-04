@@ -71,12 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const isActive = toggle.getAttribute('data-active') === 'true';
       const panel = toggle.nextElementSibling;
 
-      const isNestedList = panel?.classList.contains('header__nav-list--nested');
+      if (!panel?.classList.contains('header__nav-list--nested')) return;
 
-      // If no nested list, do nothing
-      if (!isNestedList) return;
+      if (panel.style.height && panel.style.height !== '0px') return;
 
-      // Close all others
       document.querySelectorAll('.header__nav-btn').forEach(t => {
         t.removeAttribute('data-active');
         const p = t.nextElementSibling;
@@ -86,12 +84,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // If not active, open this one
-      if (!isActive) {
-        toggle.setAttribute('data-active', 'true');
-        panel.setAttribute('data-open', 'true');
-        panel.style.height = `${panel.scrollHeight}px`;
-      }
+      toggle.setAttribute('data-active', 'true');
+      panel.setAttribute('data-open', 'true');
+      panel.style.height = `${panel.scrollHeight}px`;
     });
   });
 });
