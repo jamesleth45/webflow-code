@@ -332,6 +332,15 @@ p {
 
 /* #endregion */
 
+/* #region Footer */
+.footer {
+  padding-top: 1.6875rem;
+  padding-bottom: 1.6875rem;
+  border-top: 1px solid #ccc;
+}
+
+/* #endregion */
+
 /* #region Hero */
 .hero {
   position: relative;
