@@ -465,6 +465,20 @@ p {
 
 /* #endregion */
 
+/* #region Panel */
+.panel {
+  position: fixed;
+  z-index: 101;
+  display: none;
+  inset: 0;
+}
+
+.panel[data-open='true'] {
+  display: block;
+}
+
+/* #endregion */
+
 /* #region Hero */
 .hero {
   position: relative;

@@ -1,4 +1,4 @@
-// #region Purge <style>.css Tags
+// #region Purge .css .search__submit Classes
 document.addEventListener('DOMContentLoaded', () => {
   const classesToRemove = ['css', 'search__submit'];
 
