@@ -648,6 +648,7 @@ p {
   padding: 0 0 0.3125rem;
   font-size: inherit;
   line-height: inherit;
+  text-transform: uppercase;
   color: #000;
   background: rgb(0 0 0 / 0%);
   border: 0 none;
