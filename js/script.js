@@ -217,3 +217,54 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 // #endregion
+
+// #region Panel Toggle
+document.addEventListener('DOMContentLoaded', () => {
+  const panels = document.querySelectorAll('.panel');
+
+  // Open panel
+  document.querySelectorAll('[data-toggle]').forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const target = toggle.getAttribute('data-toggle');
+      const panel = document.querySelector(`.panel[data-panel="${target}"]`);
+      if (panel) {
+        panel.setAttribute('data-open', 'true');
+      }
+    });
+  });
+
+  // Close on .panel__close click
+  document.querySelectorAll('.panel__close').forEach(button => {
+    button.addEventListener('click', () => {
+      const panel = button.closest('.panel');
+      if (panel) {
+        panel.removeAttribute('data-open');
+      }
+    });
+  });
+
+  // Close on outside click
+  document.addEventListener('click', e => {
+    panels.forEach(panel => {
+      if (
+        panel.getAttribute('data-open') === 'true' &&
+        !panel.querySelector('.panel__inner').contains(e.target) &&
+        !e.target.closest('[data-toggle]')
+      ) {
+        panel.removeAttribute('data-open');
+      }
+    });
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      panels.forEach(panel => {
+        if (panel.getAttribute('data-open') === 'true') {
+          panel.removeAttribute('data-open');
+        }
+      });
+    }
+  });
+});
+// #endregion
