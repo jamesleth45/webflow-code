@@ -144,33 +144,47 @@ document.addEventListener('DOMContentLoaded', () => {
   const iconHam = document.querySelector('.header__mobile-icon--ham');
   const iconX = document.querySelector('.header__mobile-icon--x');
 
-  iconX?.setAttribute('data-visible', 'false');
+  const isOpen = () => nav.getAttribute('data-open') === 'true';
+
+  const setVisible = (el, visible) => {
+    if (!el) return;
+    visible ? el.removeAttribute('data-visible') : el.setAttribute('data-visible', 'false');
+  };
+
+  const lockScroll = () => {
+    document.body.style.overflow = 'hidden';
+  };
+
+  const unlockScroll = () => {
+    document.body.style.overflow = '';
+  };
+
+  setVisible(iconX, false);
 
   const openNav = () => {
     nav.setAttribute('data-open', 'true');
-    btnSearch?.setAttribute('data-visible', 'false');
-    btnBag?.setAttribute('data-visible', 'false');
-    iconHam?.setAttribute('data-visible', 'false');
-    iconX?.removeAttribute('data-visible');
-    document.body.style.overflow = 'hidden';
+    setVisible(btnSearch, false);
+    setVisible(btnBag, false);
+    setVisible(iconHam, false);
+    setVisible(iconX, true);
+    lockScroll();
   };
 
   const closeNav = () => {
     nav.removeAttribute('data-open');
-    btnSearch?.removeAttribute('data-visible');
-    btnBag?.removeAttribute('data-visible');
-    iconHam?.removeAttribute('data-visible');
-    iconX?.setAttribute('data-visible', 'false');
-    document.body.style.overflow = '';
+    setVisible(btnSearch, true);
+    setVisible(btnBag, true);
+    setVisible(iconHam, true);
+    setVisible(iconX, false);
+    unlockScroll();
   };
 
   toggle.addEventListener('click', () => {
-    const isOpen = nav.getAttribute('data-open') === 'true';
-    isOpen ? closeNav() : openNav();
+    isOpen() ? closeNav() : openNav();
   });
 
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && nav.getAttribute('data-open') === 'true') {
+    if (e.key === 'Escape' && isOpen()) {
       closeNav();
     }
   });
