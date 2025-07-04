@@ -386,4 +386,8 @@ p {
   }
 }
 
+.hero__text {
+  text-decoration: underline;
+}
+
 /* #endregion */
