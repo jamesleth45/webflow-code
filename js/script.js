@@ -68,11 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   toggles.forEach(toggle => {
     toggle.addEventListener('click', () => {
-      const isActive = toggle.getAttribute('data-active') === 'true';
       const panel = toggle.nextElementSibling;
+      const isOpen = panel?.hasAttribute('data-open');
 
       if (!panel?.classList.contains('header__nav-list--nested')) return;
-
       if (panel.style.height && panel.style.height !== '0px') return;
 
       document.querySelectorAll('.header__nav-btn').forEach(t => {
@@ -86,7 +85,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
       toggle.setAttribute('data-active', 'true');
       panel.setAttribute('data-open', 'true');
-      panel.style.height = `${panel.scrollHeight}px`;
+
+      const targetHeight = panel.scrollHeight;
+      panel.style.height = `${targetHeight}px`;
+
+      panel.addEventListener(
+        'transitionend',
+        () => {
+          panel.style.removeProperty('height');
+        },
+        { once: true }
+      );
     });
   });
 });
