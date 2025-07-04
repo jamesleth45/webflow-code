@@ -639,7 +639,6 @@ p {
 
 /* #region Webflow classes */
 .w-input {
-  position: relative;
   display: block;
   width: 100%;
   height: auto;
