@@ -62,61 +62,49 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // #endregion
 
-// #region Header nested lists toggle
 document.addEventListener('DOMContentLoaded', () => {
   const toggles = document.querySelectorAll('.header__nav-btn');
 
   toggles.forEach(toggle => {
-    let isAnimating = false;
-
     toggle.addEventListener('click', () => {
-      if (isAnimating) return;
+      const nested = toggle.nextElementSibling;
+      const isOpen = nested.getAttribute('data-open') === 'true';
 
-      const panel = toggle.nextElementSibling;
-      const isOpen = toggle.getAttribute('data-active') === 'true';
+      document.querySelectorAll('.header__nav-list--nested[data-open="true"]').forEach(openList => {
+        if (openList !== nested) {
+          openList.style.height = `${openList.scrollHeight}px`;
+          requestAnimationFrame(() => {
+            openList.style.height = '0';
+            openList.removeAttribute('data-open');
+            openList.previousElementSibling?.removeAttribute('data-active');
+          });
+        }
+      });
 
-      if (!panel?.classList.contains('header__nav-list--nested')) return;
+      if (!isOpen) {
+        nested.style.height = 'auto';
+        const height = nested.scrollHeight;
+        nested.style.height = '0';
 
-      isAnimating = true;
-
-      if (isOpen) {
-        toggle.removeAttribute('data-active');
-        panel.style.height = `${panel.scrollHeight}px`;
         requestAnimationFrame(() => {
-          panel.style.height = '0px';
-        });
-        panel.removeAttribute('data-open');
-        panel.addEventListener(
-          'transitionend',
-          () => {
-            panel.style.removeProperty('height');
-            isAnimating = false;
-          },
-          { once: true }
-        );
-      } else {
-        document.querySelectorAll('.header__nav-btn').forEach(t => {
-          t.removeAttribute('data-active');
-          const p = t.nextElementSibling;
-          if (p?.classList.contains('header__nav-list--nested')) {
-            p.removeAttribute('data-open');
-            p.style.removeProperty('height');
-          }
+          nested.style.height = `${height}px`;
+          nested.setAttribute('data-open', 'true');
+          toggle.setAttribute('data-active', 'true');
         });
 
-        toggle.setAttribute('data-active', 'true');
-        panel.setAttribute('data-open', 'true');
-        panel.style.height = `${panel.scrollHeight}px`;
-        panel.addEventListener(
-          'transitionend',
-          () => {
-            panel.style.removeProperty('height');
-            isAnimating = false;
-          },
-          { once: true }
-        );
+        nested.addEventListener('transitionend', function handler() {
+          nested.style.height = 'auto';
+          nested.removeEventListener('transitionend', handler);
+        });
+      } else {
+        nested.style.height = `${nested.scrollHeight}px`;
+
+        requestAnimationFrame(() => {
+          nested.style.height = '0';
+          nested.removeAttribute('data-open');
+          toggle.removeAttribute('data-active');
+        });
       }
     });
   });
 });
-// #endregion
