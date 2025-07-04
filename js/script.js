@@ -223,39 +223,48 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggles = document.querySelectorAll('[data-toggle]');
   const panels = document.querySelectorAll('.panel');
 
-  function closePanels() {
-    panels.forEach(panel => panel.removeAttribute('data-open'));
+  function openPanel(target) {
+    panels.forEach(panel => {
+      const match = panel.getAttribute('data-panel') === target;
+      if (match) panel.setAttribute('data-open', 'true');
+      else panel.removeAttribute('data-open');
+    });
+  }
+
+  function closePanel(panel) {
+    const inner = panel.querySelector('.panel__inner');
+    if (!inner) return;
+
+    // Slide out
+    inner.style.transform = 'translateX(100%)';
+
+    // Wait for animation to finish, then hide panel
+    setTimeout(() => {
+      panel.removeAttribute('data-open');
+      inner.style.transform = ''; // Reset so next open can animate in
+    }, 450); // match your transition: 450ms
   }
 
   toggles.forEach(toggle => {
     toggle.addEventListener('click', () => {
       const target = toggle.getAttribute('data-toggle');
-
-      panels.forEach(panel => {
-        if (panel.getAttribute('data-panel') === target) {
-          panel.setAttribute('data-open', 'true');
-        } else {
-          panel.removeAttribute('data-open');
-        }
-      });
+      openPanel(target);
     });
   });
 
-  // ESC key
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
-      closePanels();
+      panels.forEach(closePanel);
     }
   });
 
-  // Click close button or outside panel__inner
   document.addEventListener('click', e => {
     const panel = e.target.closest('.panel');
     const isCloseBtn = e.target.closest('.panel__close');
     const isInner = e.target.closest('.panel__inner');
 
     if (panel && (isCloseBtn || !isInner)) {
-      panel.removeAttribute('data-open');
+      closePanel(panel);
     }
   });
 });
