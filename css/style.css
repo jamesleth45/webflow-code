@@ -469,12 +469,15 @@ p {
 .panel {
   position: fixed;
   z-index: 105;
-  display: none;
+  opacity: 0;
+  transition: opacity 1ms ease;
+  pointer-events: none;
   inset: 0;
 }
 
 .panel[data-open='true'] {
-  display: block;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .panel__grid {
