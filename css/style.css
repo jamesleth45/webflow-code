@@ -173,12 +173,14 @@ p {
     position: fixed;
     top: 8.75rem;
     left: 1.6875rem;
+    z-index: 110;
   }
 
   .header__nav-list--right {
     position: fixed;
     top: 8.75rem;
     right: 1.6875rem;
+    z-index: 110;
     text-align: right;
   }
 }
