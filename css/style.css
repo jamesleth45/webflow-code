@@ -173,14 +173,14 @@ p {
     position: fixed;
     top: 8.75rem;
     left: 1.6875rem;
-    z-index: 110;
+    z-index: 100;
   }
 
   .header__nav-list--right {
     position: fixed;
     top: 8.75rem;
     right: 1.6875rem;
-    z-index: 110;
+    z-index: 100;
     text-align: right;
   }
 }
@@ -468,7 +468,7 @@ p {
 /* #region Panel */
 .panel {
   position: fixed;
-  z-index: 101;
+  z-index: 105;
   display: none;
   inset: 0;
 }
