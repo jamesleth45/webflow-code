@@ -144,6 +144,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const iconHam = document.querySelector('.header__mobile-icon--ham');
   const iconX = document.querySelector('.header__mobile-icon--x');
 
+  let navWasOpen = false;
+
   const isOpen = () => nav.getAttribute('data-open') === 'true';
 
   const setVisible = (el, visible) => {
@@ -194,9 +196,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('resize', () => {
     if (window.innerWidth >= 1280) {
+      if (isOpen()) navWasOpen = true;
+      nav.removeAttribute('data-open');
       unlockScroll();
-    } else if (isOpen()) {
-      lockScroll();
+    } else {
+      if (navWasOpen) {
+        nav.setAttribute('data-open', 'true');
+        lockScroll();
+        navWasOpen = false;
+      }
     }
   });
 });
