@@ -324,3 +324,29 @@ p {
 }
 
 /* #endregion */
+
+/* #region Hero */
+@media (max-width: 1279px) {
+  .hero {
+    margin-top: 3.5rem;
+  }
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  gap: 0;
+}
+
+.hero__image {
+  grid-column: 6 / 9;
+}
+
+@media (max-width: 1279px) {
+  .hero__image {
+    grid-column: 1 / -1;
+  }
+}
+
+/* #endregion */
