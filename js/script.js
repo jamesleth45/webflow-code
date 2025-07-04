@@ -92,10 +92,13 @@ document.addEventListener('DOMContentLoaded', () => {
           toggle.setAttribute('data-active', 'true');
         });
 
-        nested.addEventListener('transitionend', function handler() {
-          nested.style.height = 'auto';
-          nested.removeEventListener('transitionend', handler);
-        });
+        nested.addEventListener(
+          'transitionend',
+          () => {
+            nested.style.height = 'auto';
+          },
+          { once: true }
+        );
       } else {
         nested.style.height = `${nested.scrollHeight}px`;
 
