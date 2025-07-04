@@ -228,8 +228,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = toggle.getAttribute('data-toggle');
 
       panels.forEach(panel => {
-        const isTarget = panel.getAttribute('data-panel') === target;
-        panel.toggleAttribute('data-open', isTarget);
+        if (panel.getAttribute('data-panel') === target) {
+          panel.setAttribute('data-open', 'true'); // ✅ THIS
+        } else {
+          panel.removeAttribute('data-open');
+        }
       });
     });
   });
