@@ -61,3 +61,38 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 // #endregion
+
+// #region Header nested lists toggle
+document.addEventListener('DOMContentLoaded', () => {
+  const toggles = document.querySelectorAll('.header__nav-btn');
+
+  toggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const isActive = toggle.getAttribute('data-active') === 'true';
+      const panel = toggle.nextElementSibling;
+
+      const isNestedList = panel?.classList.contains('header__nav-list--nested');
+
+      // If no nested list, do nothing
+      if (!isNestedList) return;
+
+      // Close all others
+      document.querySelectorAll('.header__nav-btn').forEach(t => {
+        t.removeAttribute('data-active');
+        const p = t.nextElementSibling;
+        if (p?.classList.contains('header__nav-list--nested')) {
+          p.removeAttribute('data-open');
+          p.style.removeProperty('height');
+        }
+      });
+
+      // If not active, open this one
+      if (!isActive) {
+        toggle.setAttribute('data-active', 'true');
+        panel.setAttribute('data-open', 'true');
+        panel.style.height = `${panel.scrollHeight}px`;
+      }
+    });
+  });
+});
+// #endregion
