@@ -414,7 +414,6 @@ p {
   .footer__nav-link,
   .footer__nav-button {
     display: block;
-    width: 100%;
     line-height: 1.5625rem;
   }
 }
