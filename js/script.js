@@ -134,3 +134,36 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 // #endregion
+
+// #region Opens nav
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.querySelector('[data-toggle="nav"]');
+  const nav = document.querySelector('.header__nav');
+  const btnSearch = document.querySelector('.header__mobile-btn--search');
+  const btnBag = document.querySelector('.header__mobile-btn--bag');
+  const iconHam = document.querySelector('.header__mobile-icon--ham');
+  const iconX = document.querySelector('.header__mobile-icon--x');
+
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.getAttribute('data-open') === 'true';
+
+    if (!isOpen) {
+      nav.setAttribute('data-open', 'true');
+      btnSearch?.setAttribute('data-visible', 'false');
+      btnBag?.setAttribute('data-visible', 'false');
+      iconHam?.setAttribute('data-visible', 'false');
+      iconX?.setAttribute('data-visible', 'true');
+      document.body.style.overflow = 'hidden';
+      document.body.style.width = '100%';
+    } else {
+      nav.removeAttribute('data-open');
+      btnSearch?.removeAttribute('data-visible');
+      btnBag?.removeAttribute('data-visible');
+      iconHam?.removeAttribute('data-visible');
+      iconX?.removeAttribute('data-visible');
+      document.body.style.overflow = '';
+      document.body.style.width = '';
+    }
+  });
+});
+// #endregion
