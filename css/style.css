@@ -541,7 +541,8 @@ p {
 
 @media (max-width: 1279px) {
   .panel__close {
-    position: relative;
+    top: 0;
+    right: 0;
     width: 2.375rem;
     height: 3.5rem;
     margin-right: 0.625rem;
