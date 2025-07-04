@@ -1,10 +1,10 @@
-// #region Remove All .css Elements
+// #region Purge <style>.css Tags
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.css').forEach(el => el.remove());
 });
 // #endregion
 
-// #region Webflow Class Cleanup
+// #region Strip Webflow Utility Classes
 document.addEventListener('DOMContentLoaded', () => {
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // #endregion
 
-// #region Remove role="list" from all lists
+// #region Remove role="list" from <ul>/<ol>
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[role="list"]').forEach(el => {
     el.removeAttribute('role');
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // #endregion
 
-// #region Replace spacer divs with clean HTML comments
+// #region Replace Spacer Divs with <!----> Comments
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.i').forEach(el => {
     if (el.innerHTML.trim() === '') {
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // #endregion
 
-// #region Opens nested lists
+// #region Nested List Toggle
 document.addEventListener('DOMContentLoaded', () => {
   const toggles = document.querySelectorAll('.header__nav-btn');
 
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // #endregion
 
-// #region Opens nav
+// #region Main Nav Toggle
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('[data-toggle="nav"]');
   const nav = document.querySelector('.header__nav');
