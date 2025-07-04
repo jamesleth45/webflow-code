@@ -188,5 +188,11 @@ document.addEventListener('DOMContentLoaded', () => {
       closeNav();
     }
   });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1280 && isOpen()) {
+      closeNav();
+    }
+  });
 });
 // #endregion
