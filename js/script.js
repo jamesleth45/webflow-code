@@ -1,6 +1,10 @@
 // #region Purge <style>.css Tags
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.css').forEach(el => el.remove());
+  const classesToRemove = ['css', 'search__submit'];
+
+  classesToRemove.forEach(className => {
+    document.querySelectorAll(`.${className}`).forEach(el => el.remove());
+  });
 });
 // #endregion
 
