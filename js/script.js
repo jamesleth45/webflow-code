@@ -221,16 +221,17 @@ document.addEventListener('DOMContentLoaded', () => {
 // #region Panel Toggle
 document.addEventListener('DOMContentLoaded', () => {
   let currentPanel = null;
+  let lock = false;
 
   function closePanel(panel) {
     if (!panel) return;
     panel.removeAttribute('data-open');
-    document.removeEventListener('click', handleOutsideClick, true);
     currentPanel = null;
   }
 
   function handleOutsideClick(e) {
     if (
+      lock === false &&
       currentPanel &&
       !currentPanel.querySelector('.panel__inner').contains(e.target) &&
       !e.target.closest('[data-toggle]')
@@ -243,10 +244,9 @@ document.addEventListener('DOMContentLoaded', () => {
     toggle.addEventListener('click', () => {
       const target = toggle.getAttribute('data-toggle');
       const panel = document.querySelector(`.panel[data-panel="${target}"]`);
-
       if (!panel) return;
 
-      // Close any currently open panel
+      // Close other panels
       if (currentPanel && currentPanel !== panel) {
         closePanel(currentPanel);
       }
@@ -254,22 +254,25 @@ document.addEventListener('DOMContentLoaded', () => {
       panel.setAttribute('data-open', 'true');
       currentPanel = panel;
 
-      // Use capture phase and delay attach to avoid immediate close
+      // Lock interaction briefly to ignore open click
+      lock = true;
       setTimeout(() => {
-        document.addEventListener('click', handleOutsideClick, true);
-      }, 10); // small delay ensures it's post-click
+        lock = false;
+      }, 300); // ← you can match this to your transition time
     });
   });
 
+  // Listen once globally
+  document.addEventListener('click', handleOutsideClick);
+
   document.querySelectorAll('.panel__close').forEach(closeBtn => {
     closeBtn.addEventListener('click', () => {
-      const panel = closeBtn.closest('.panel');
-      closePanel(panel);
+      closePanel(closeBtn.closest('.panel'));
     });
   });
 
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && currentPanel) {
+    if (e.key === 'Escape') {
       closePanel(currentPanel);
     }
   });
