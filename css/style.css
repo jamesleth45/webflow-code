@@ -337,6 +337,12 @@ p {
   position: relative;
 }
 
+@media (max-width: 1279px) {
+  .hero {
+    margin-top: 3.5rem;
+  }
+}
+
 .hero__grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
