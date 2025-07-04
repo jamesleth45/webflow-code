@@ -223,18 +223,40 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggles = document.querySelectorAll('[data-toggle]');
   const panels = document.querySelectorAll('.panel');
 
+  function closePanels() {
+    panels.forEach(panel => panel.removeAttribute('data-open'));
+  }
+
   toggles.forEach(toggle => {
     toggle.addEventListener('click', () => {
       const target = toggle.getAttribute('data-toggle');
 
       panels.forEach(panel => {
         if (panel.getAttribute('data-panel') === target) {
-          panel.setAttribute('data-open', 'true'); // ✅ THIS
+          panel.setAttribute('data-open', 'true');
         } else {
           panel.removeAttribute('data-open');
         }
       });
     });
+  });
+
+  // ESC key
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      closePanels();
+    }
+  });
+
+  // Click close button or outside panel__inner
+  document.addEventListener('click', e => {
+    const panel = e.target.closest('.panel');
+    const isCloseBtn = e.target.closest('.panel__close');
+    const isInner = e.target.closest('.panel__inner');
+
+    if (panel && (isCloseBtn || !isInner)) {
+      panel.removeAttribute('data-open');
+    }
   });
 });
 // #endregion
