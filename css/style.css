@@ -430,6 +430,12 @@ p {
   }
 }
 
+@media (max-width: 1279px) {
+  .footer__nav-text--social {
+    display: none;
+  }
+}
+
 /* #endregion */
 
 /* #region Hero */
