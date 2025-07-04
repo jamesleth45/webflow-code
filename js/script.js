@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // #endregion
 
+// #region Opens nested lists
 document.addEventListener('DOMContentLoaded', () => {
   const toggles = document.querySelectorAll('.header__nav-btn');
 
@@ -75,8 +76,15 @@ document.addEventListener('DOMContentLoaded', () => {
           openList.style.height = `${openList.scrollHeight}px`;
           requestAnimationFrame(() => {
             openList.style.height = '0';
-            openList.removeAttribute('data-open');
-            openList.previousElementSibling?.removeAttribute('data-active');
+            openList.addEventListener(
+              'transitionend',
+              () => {
+                openList.removeAttribute('style');
+                openList.removeAttribute('data-open');
+                openList.previousElementSibling?.removeAttribute('data-active');
+              },
+              { once: true }
+            );
           });
         }
       });
@@ -104,10 +112,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         requestAnimationFrame(() => {
           nested.style.height = '0';
-          nested.removeAttribute('data-open');
-          toggle.removeAttribute('data-active');
+          nested.addEventListener(
+            'transitionend',
+            () => {
+              nested.removeAttribute('style');
+              nested.removeAttribute('data-open');
+              toggle.removeAttribute('data-active');
+            },
+            { once: true }
+          );
         });
       }
     });
   });
 });
+// #endregion
