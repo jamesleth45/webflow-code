@@ -497,6 +497,7 @@ p {
 .panel[data-open='true'] .panel__inner {
   transition: transform 650ms cubic-bezier(0.19, 1, 0.22, 1);
   transform: translateX(0);
+  will-change: transform;
 }
 
 @media (min-width: 1280px) {

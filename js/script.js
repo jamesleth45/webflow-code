@@ -220,61 +220,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // #region Panel Toggle
 document.addEventListener('DOMContentLoaded', () => {
-  let currentPanel = null;
-  let lock = false;
+  const toggles = document.querySelectorAll('[data-toggle]');
+  const panels = document.querySelectorAll('.panel');
 
-  function closePanel(panel) {
-    if (!panel) return;
-    panel.removeAttribute('data-open');
-    currentPanel = null;
-  }
-
-  function handleOutsideClick(e) {
-    if (
-      lock === false &&
-      currentPanel &&
-      !currentPanel.querySelector('.panel__inner').contains(e.target) &&
-      !e.target.closest('[data-toggle]')
-    ) {
-      closePanel(currentPanel);
-    }
-  }
-
-  document.querySelectorAll('[data-toggle]').forEach(toggle => {
+  toggles.forEach(toggle => {
     toggle.addEventListener('click', () => {
       const target = toggle.getAttribute('data-toggle');
-      const panel = document.querySelector(`.panel[data-panel="${target}"]`);
-      if (!panel) return;
 
-      // Close other panels
-      if (currentPanel && currentPanel !== panel) {
-        closePanel(currentPanel);
-      }
-
-      panel.setAttribute('data-open', 'true');
-      currentPanel = panel;
-
-      // Lock interaction briefly to ignore open click
-      lock = true;
-      setTimeout(() => {
-        lock = false;
-      }, 300); // ← you can match this to your transition time
+      panels.forEach(panel => {
+        const isTarget = panel.getAttribute('data-panel') === target;
+        panel.toggleAttribute('data-open', isTarget);
+      });
     });
-  });
-
-  // Listen once globally
-  document.addEventListener('click', handleOutsideClick);
-
-  document.querySelectorAll('.panel__close').forEach(closeBtn => {
-    closeBtn.addEventListener('click', () => {
-      closePanel(closeBtn.closest('.panel'));
-    });
-  });
-
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      closePanel(currentPanel);
-    }
   });
 });
 // #endregion
