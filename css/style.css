@@ -394,6 +394,11 @@ p {
 
 @media (max-width: 1279px) {
   .footer__nav-list--social {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 1.25rem;
     grid-column: 1 / -1;
     padding: 1.25rem;
   }
