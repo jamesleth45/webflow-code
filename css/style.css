@@ -434,6 +434,12 @@ p {
   }
 }
 
+.footer__nav-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 @media (max-width: 1279px) {
   .footer__nav-link,
   .footer__nav-button {
