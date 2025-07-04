@@ -220,55 +220,58 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // #region Panel Toggle
 document.addEventListener('DOMContentLoaded', () => {
-  const panels = document.querySelectorAll('.panel');
+  let currentPanel = null;
 
-  // Helper: Close all panels
-  function closeAllPanels() {
-    panels.forEach(panel => panel.removeAttribute('data-open'));
+  function closePanel(panel) {
+    if (!panel) return;
+    panel.removeAttribute('data-open');
+    document.removeEventListener('click', handleOutsideClick, true);
+    currentPanel = null;
   }
 
-  // Open panel
+  function handleOutsideClick(e) {
+    if (
+      currentPanel &&
+      !currentPanel.querySelector('.panel__inner').contains(e.target) &&
+      !e.target.closest('[data-toggle]')
+    ) {
+      closePanel(currentPanel);
+    }
+  }
+
   document.querySelectorAll('[data-toggle]').forEach(toggle => {
-    toggle.addEventListener('click', e => {
+    toggle.addEventListener('click', () => {
       const target = toggle.getAttribute('data-toggle');
       const panel = document.querySelector(`.panel[data-panel="${target}"]`);
 
       if (!panel) return;
 
-      closeAllPanels();
+      // Close any currently open panel
+      if (currentPanel && currentPanel !== panel) {
+        closePanel(currentPanel);
+      }
+
       panel.setAttribute('data-open', 'true');
+      currentPanel = panel;
 
-      // Delay binding outside click listener to avoid instant close
+      // Use capture phase and delay attach to avoid immediate close
       setTimeout(() => {
-        const handleOutsideClick = event => {
-          if (
-            panel.getAttribute('data-open') === 'true' &&
-            !panel.querySelector('.panel__inner').contains(event.target) &&
-            !event.target.closest('[data-toggle]')
-          ) {
-            panel.removeAttribute('data-open');
-            document.removeEventListener('click', handleOutsideClick);
-          }
-        };
-
-        document.addEventListener('click', handleOutsideClick);
-      }, 0);
+        document.addEventListener('click', handleOutsideClick, true);
+      }, 10); // small delay ensures it's post-click
     });
   });
 
-  // Close with ESC
+  document.querySelectorAll('.panel__close').forEach(closeBtn => {
+    closeBtn.addEventListener('click', () => {
+      const panel = closeBtn.closest('.panel');
+      closePanel(panel);
+    });
+  });
+
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      closeAllPanels();
+    if (e.key === 'Escape' && currentPanel) {
+      closePanel(currentPanel);
     }
-  });
-
-  // Close with .panel__close
-  document.querySelectorAll('.panel__close').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const panel = btn.closest('.panel');
-      if (panel) panel.removeAttribute('data-open');
-    });
   });
 });
 // #endregion
