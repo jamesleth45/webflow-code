@@ -124,6 +124,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       }
     });
+
+    toggle.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggle.click();
+      }
+    });
   });
 });
 // #endregion
