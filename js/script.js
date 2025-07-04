@@ -67,35 +67,55 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggles = document.querySelectorAll('.header__nav-btn');
 
   toggles.forEach(toggle => {
+    let isAnimating = false;
+
     toggle.addEventListener('click', () => {
+      if (isAnimating) return;
+
       const panel = toggle.nextElementSibling;
-      const isOpen = panel?.hasAttribute('data-open');
+      const isOpen = toggle.getAttribute('data-active') === 'true';
 
       if (!panel?.classList.contains('header__nav-list--nested')) return;
-      if (panel.style.height && panel.style.height !== '0px') return;
 
-      document.querySelectorAll('.header__nav-btn').forEach(t => {
-        t.removeAttribute('data-active');
-        const p = t.nextElementSibling;
-        if (p?.classList.contains('header__nav-list--nested')) {
-          p.removeAttribute('data-open');
-          p.style.removeProperty('height');
-        }
-      });
+      isAnimating = true;
 
-      toggle.setAttribute('data-active', 'true');
-      panel.setAttribute('data-open', 'true');
+      if (isOpen) {
+        toggle.removeAttribute('data-active');
+        panel.style.height = `${panel.scrollHeight}px`;
+        requestAnimationFrame(() => {
+          panel.style.height = '0px';
+        });
+        panel.removeAttribute('data-open');
+        panel.addEventListener(
+          'transitionend',
+          () => {
+            panel.style.removeProperty('height');
+            isAnimating = false;
+          },
+          { once: true }
+        );
+      } else {
+        document.querySelectorAll('.header__nav-btn').forEach(t => {
+          t.removeAttribute('data-active');
+          const p = t.nextElementSibling;
+          if (p?.classList.contains('header__nav-list--nested')) {
+            p.removeAttribute('data-open');
+            p.style.removeProperty('height');
+          }
+        });
 
-      const targetHeight = panel.scrollHeight;
-      panel.style.height = `${targetHeight}px`;
-
-      panel.addEventListener(
-        'transitionend',
-        () => {
-          panel.style.removeProperty('height');
-        },
-        { once: true }
-      );
+        toggle.setAttribute('data-active', 'true');
+        panel.setAttribute('data-open', 'true');
+        panel.style.height = `${panel.scrollHeight}px`;
+        panel.addEventListener(
+          'transitionend',
+          () => {
+            panel.style.removeProperty('height');
+            isAnimating = false;
+          },
+          { once: true }
+        );
+      }
     });
   });
 });
