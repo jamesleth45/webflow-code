@@ -340,7 +340,7 @@ p {
 }
 
 .hero__image {
-  grid-column: 6 / 9;
+  grid-column: 5 / 9;
 }
 
 @media (max-width: 1279px) {
