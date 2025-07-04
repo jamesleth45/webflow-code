@@ -289,7 +289,7 @@ p {
 }
 
 .header__nav[data-open='true'] .header__mobile-btn--search,
-.header__nav[data-open='true'] .header__mobile-btn--cart {
+.header__nav[data-open='true'] .header__mobile-btn--bag {
   opacity: 0;
   pointer-events: none;
 }
