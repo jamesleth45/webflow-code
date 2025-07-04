@@ -223,11 +223,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggles = document.querySelectorAll('[data-toggle]');
   const panels = document.querySelectorAll('.panel');
 
-  function openPanel(target) {
+  function openPanel(id) {
     panels.forEach(panel => {
-      const match = panel.getAttribute('data-panel') === target;
-      if (match) panel.setAttribute('data-open', 'true');
-      else panel.removeAttribute('data-open');
+      const isTarget = panel.getAttribute('data-panel') === id;
+
+      if (isTarget) {
+        panel.style.display = 'block';
+
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            panel.setAttribute('data-open', 'true');
+          });
+        });
+      } else {
+        closePanel(panel);
+      }
     });
   }
 
@@ -235,14 +245,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const inner = panel.querySelector('.panel__inner');
     if (!inner) return;
 
-    // Slide out
+    panel.removeAttribute('data-open');
     inner.style.transform = 'translateX(100%)';
 
-    // Wait for animation to finish, then hide panel
     setTimeout(() => {
-      panel.removeAttribute('data-open');
-      inner.style.transform = ''; // Reset so next open can animate in
-    }, 450); // match your transition: 450ms
+      panel.style.display = 'none';
+      inner.style.transform = '';
+    }, 450); // Match your CSS slide-out timing
   }
 
   toggles.forEach(toggle => {
@@ -259,12 +268,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.addEventListener('click', e => {
-    const panel = e.target.closest('.panel');
-    const isCloseBtn = e.target.closest('.panel__close');
-    const isInner = e.target.closest('.panel__inner');
+    const openPanel = document.querySelector('.panel[data-open="true"]');
+    if (!openPanel) return;
 
-    if (panel && (isCloseBtn || !isInner)) {
-      closePanel(panel);
+    const inner = openPanel.querySelector('.panel__inner');
+    const isCloseBtn = e.target.closest('.panel__close');
+    const isOutside = !e.target.closest('.panel__inner') && !e.target.closest('[data-toggle]');
+
+    if (isCloseBtn || isOutside) {
+      closePanel(openPanel);
     }
   });
 });
