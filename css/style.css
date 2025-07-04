@@ -410,6 +410,15 @@ p {
   }
 }
 
+@media (max-width: 1279px) {
+  .footer__nav-link,
+  .footer__nav-button {
+    display: block;
+    width: 100%;
+    line-height: 1.5625rem;
+  }
+}
+
 /* #endregion */
 
 /* #region Hero */
