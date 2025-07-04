@@ -158,6 +158,7 @@ p {
 @media (max-width: 1279px) {
   .header__nav {
     position: fixed;
+    z-index: 100;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
