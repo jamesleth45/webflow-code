@@ -157,6 +157,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const unlockScroll = () => {
     document.body.style.overflow = '';
+    if (!document.body.getAttribute('style')?.trim()) {
+      document.body.removeAttribute('style');
+    }
   };
 
   setVisible(iconX, false);
@@ -190,8 +193,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   window.addEventListener('resize', () => {
-    if (window.innerWidth >= 1280 && isOpen()) {
-      closeNav();
+    if (window.innerWidth >= 1280) {
+      unlockScroll();
     }
   });
 });
