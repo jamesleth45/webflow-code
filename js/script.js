@@ -195,6 +195,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', () => {
     if (window.innerWidth >= 1280) {
       unlockScroll();
+    } else if (isOpen()) {
+      lockScroll();
     }
   });
 });
