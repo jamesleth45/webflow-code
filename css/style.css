@@ -507,6 +507,7 @@ p {
 @media (max-width: 767px) {
   .panel__inner {
     padding: 3.75rem 1.25rem 1.25rem;
+    grid-column: 1 / -1;
   }
 }
 
