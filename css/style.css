@@ -484,6 +484,26 @@ p {
   gap: 0;
 }
 
+.panel__inner {
+  grid-column: 9 / 13;
+  height: 100%;
+  padding: 8.75rem 1.6875rem 0.625rem 0.625rem;
+  background-color: #fff;
+}
+
+@media (max-width: 1279px) {
+  .panel__inner {
+    grid-column: 1 / -1;
+    padding: 3.75rem 1.25rem 1.25rem 0.625rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .panel__inner {
+    padding: 3.75rem 1.25rem 1.25rem;
+  }
+}
+
 /* #endregion */
 
 /* #region Hero */
