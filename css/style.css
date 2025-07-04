@@ -656,4 +656,8 @@ p {
   border-bottom: 1px solid #000;
 }
 
+.w-input::placeholder {
+  color: #999;
+}
+
 /* #endregion */
