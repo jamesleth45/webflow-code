@@ -380,12 +380,6 @@ p {
   line-height: 1;
 }
 
-@media (max-width: 1279px) {
-  .hero__title {
-    font-size: 1.0625rem;
-  }
-}
-
 .hero__text {
   text-decoration: underline;
 }
