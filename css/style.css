@@ -671,3 +671,17 @@ p {
 }
 
 /* #endregion */
+
+/* #region Panel */
+.search__clear {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+}
+
+.search__clear[data-visibility='true'] {
+  display: block;
+}
+
+/* #endregion */
