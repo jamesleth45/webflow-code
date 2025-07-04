@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'footer__nav-icon',
     'panel__close-icon',
     'panel__close-text',
+    'search__clear-text',
     'header__mobile-icon'
   ];
 
