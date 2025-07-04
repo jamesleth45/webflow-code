@@ -643,12 +643,15 @@ p {
   display: block;
   width: 100%;
   min-width: 0;
+  height: auto;
+  margin-bottom: 0;
   padding: 0 0 0.3125rem;
+  font-size: inherit;
+  line-height: inherit;
   color: #000;
   background: rgb(0 0 0 / 0%);
   border: 0 none;
   border-radius: 0;
-  all: unset;
   border-bottom: 1px solid #000;
 }
 
