@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const nav = document.querySelector('.header__nav');
   const btnSearch = document.querySelector('.header__mobile-btn--search');
   const btnBag = document.querySelector('.header__mobile-btn--bag');
-  const iconHam = document.querySelector('.header__mobile-icon--ham');
+  const iconHam = document.querySelector('.header__mobile-icon--cart');
   const iconX = document.querySelector('.header__mobile-icon--x');
 
   iconX?.setAttribute('data-visible', 'false'); // Ensure X is hidden on load
