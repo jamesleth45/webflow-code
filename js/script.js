@@ -217,22 +217,3 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 // #endregion
-
-// #region Main Nav Toggle
-document.addEventListener('DOMContentLoaded', () => {
-  const searchForm = document.querySelector('.search');
-  const searchInput = document.querySelector('.search__input');
-
-  searchForm?.classList.remove('w-form');
-  searchInput?.classList.remove('w-input');
-});
-// #endregion
-
-// #region Main Nav Toggle
-document.addEventListener('DOMContentLoaded', () => {
-  const searchForm = document.querySelector('.search');
-  if (searchForm) {
-    searchForm.setAttribute('method', 'get');
-  }
-});
-// #endregion
