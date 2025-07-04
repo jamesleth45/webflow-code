@@ -347,7 +347,6 @@ p {
 .hero__image {
   width: 100%;
   grid-column: 5 / 9;
-  object-fit: cover;
 }
 
 @media (max-width: 1279px) {
