@@ -222,49 +222,53 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   const panels = document.querySelectorAll('.panel');
 
+  // Helper: Close all panels
+  function closeAllPanels() {
+    panels.forEach(panel => panel.removeAttribute('data-open'));
+  }
+
   // Open panel
   document.querySelectorAll('[data-toggle]').forEach(toggle => {
-    toggle.addEventListener('click', () => {
+    toggle.addEventListener('click', e => {
       const target = toggle.getAttribute('data-toggle');
       const panel = document.querySelector(`.panel[data-panel="${target}"]`);
-      if (panel) {
-        panel.setAttribute('data-open', 'true');
-      }
+
+      if (!panel) return;
+
+      closeAllPanels();
+      panel.setAttribute('data-open', 'true');
+
+      // Delay binding outside click listener to avoid instant close
+      setTimeout(() => {
+        const handleOutsideClick = event => {
+          if (
+            panel.getAttribute('data-open') === 'true' &&
+            !panel.querySelector('.panel__inner').contains(event.target) &&
+            !event.target.closest('[data-toggle]')
+          ) {
+            panel.removeAttribute('data-open');
+            document.removeEventListener('click', handleOutsideClick);
+          }
+        };
+
+        document.addEventListener('click', handleOutsideClick);
+      }, 0);
     });
   });
 
-  // Close on .panel__close click
-  document.querySelectorAll('.panel__close').forEach(button => {
-    button.addEventListener('click', () => {
-      const panel = button.closest('.panel');
-      if (panel) {
-        panel.removeAttribute('data-open');
-      }
-    });
-  });
-
-  // Close on outside click
-  document.addEventListener('click', e => {
-    panels.forEach(panel => {
-      if (
-        panel.getAttribute('data-open') === 'true' &&
-        !panel.querySelector('.panel__inner').contains(e.target) &&
-        !e.target.closest('[data-toggle]')
-      ) {
-        panel.removeAttribute('data-open');
-      }
-    });
-  });
-
-  // Close on Escape
+  // Close with ESC
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
-      panels.forEach(panel => {
-        if (panel.getAttribute('data-open') === 'true') {
-          panel.removeAttribute('data-open');
-        }
-      });
+      closeAllPanels();
     }
+  });
+
+  // Close with .panel__close
+  document.querySelectorAll('.panel__close').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const panel = btn.closest('.panel');
+      if (panel) panel.removeAttribute('data-open');
+    });
   });
 });
 // #endregion
