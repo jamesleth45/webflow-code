@@ -42,8 +42,9 @@ button {
 }
 
 a {
+  text-decoration: none;
+  color: inherit;
   cursor: pointer;
-  all: unset;
 }
 
 @media (hover: hover) {
