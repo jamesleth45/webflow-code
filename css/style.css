@@ -71,6 +71,11 @@ h6 {
   all: unset;
 }
 
+h1 {
+  font-family: neue-haas-grotesk-display, neue-haas-grotesk-display-fallback, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
 p {
   all: unset;
 }
@@ -364,6 +369,12 @@ p {
   align-items: center;
   text-align: center;
   transform: translate(-50%, -50%);
+}
+
+.hero__title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  line-height: 1;
 }
 
 /* #endregion */
