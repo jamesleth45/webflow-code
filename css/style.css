@@ -314,12 +314,12 @@ p {
   pointer-events: none;
 }
 
-.header__nav[data-open='true'] .header__mobile-icon--x {
+.header__nav[data-open='true'] ~ .header__mobile-icon--x {
   opacity: 1;
   pointer-events: auto;
 }
 
-.header__nav[data-open='true'] .header__mobile-icon--ham {
+.header__nav[data-open='true'] ~ .header__mobile-icon--ham {
   opacity: 0;
   pointer-events: none;
 }
