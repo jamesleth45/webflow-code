@@ -448,6 +448,10 @@ p {
   }
 }
 
+.footer__nav-icon {
+  display: flex;
+}
+
 @media (min-width: 1280px) {
   .footer__nav-icon--social {
     display: none;
