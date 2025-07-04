@@ -352,6 +352,7 @@ p {
 
 .hero__image {
   grid-column: 5 / 9;
+  height: 100vh;
 }
 
 @media (max-width: 1279px) {
