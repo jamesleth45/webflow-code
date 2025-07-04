@@ -288,8 +288,7 @@ p {
   pointer-events: auto;
 }
 
-.header__nav[data-open='true'] .header__mobile-btn--search,
-.header__nav[data-open='true'] .header__mobile-btn--bag {
+.header__mobile-btn[data-visible='false'] {
   opacity: 0;
   pointer-events: none;
 }
@@ -309,19 +308,14 @@ p {
   pointer-events: auto;
 }
 
-.header__mobile-icon--x {
+.header__mobile-icon[data-visible='false'] {
   opacity: 0;
   pointer-events: none;
 }
 
-.header__nav[data-open='true'] ~ .header__mobile-icon--x {
+.header__mobile-icon[data-visible='true'] {
   opacity: 1;
   pointer-events: auto;
-}
-
-.header__nav[data-open='true'] ~ .header__mobile-icon--ham {
-  opacity: 0;
-  pointer-events: none;
 }
 
 /* #endregion */
