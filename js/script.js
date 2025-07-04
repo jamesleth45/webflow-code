@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // #region Nested List Toggle
 document.addEventListener('DOMContentLoaded', () => {
-  const toggles = document.querySelectorAll('.header__nav-btn');
+  const toggles = document.querySelectorAll('.header__nav-button');
 
   toggles.forEach(toggle => {
     toggle.addEventListener('click', () => {
@@ -139,8 +139,8 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('[data-toggle="nav"]');
   const nav = document.querySelector('.header__nav');
-  const btnSearch = document.querySelector('.header__mobile-btn--search');
-  const btnBag = document.querySelector('.header__mobile-btn--cart');
+  const btnSearch = document.querySelector('.header__mobile-button--search');
+  const btnBag = document.querySelector('.header__mobile-button--cart');
   const iconHam = document.querySelector('.header__mobile-icon--ham');
   const iconX = document.querySelector('.header__mobile-icon--x');
 

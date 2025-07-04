@@ -249,13 +249,13 @@ p {
   }
 }
 
-.header__nav-btn[data-active='true'] {
+.header__nav-button[data-active='true'] {
   font-weight: 700;
 }
 
 @media (max-width: 1279px) {
   .header__nav-link,
-  .header__nav-btn {
+  .header__nav-button {
     display: block;
     width: 100%;
     line-height: 1.5625rem;
@@ -284,7 +284,7 @@ p {
   }
 }
 
-.header__mobile-btn {
+.header__mobile-button {
   position: relative;
   width: 2.375rem;
   height: 3.5rem;
@@ -293,12 +293,12 @@ p {
   pointer-events: auto;
 }
 
-.header__mobile-btn[data-visible='false'] {
+.header__mobile-button[data-visible='false'] {
   opacity: 0;
   pointer-events: none;
 }
 
-.header__mobile-btn--nav {
+.header__mobile-button--nav {
   margin-right: 0.625rem;
 }
 
