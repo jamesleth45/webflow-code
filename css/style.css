@@ -469,14 +469,13 @@ p {
 .panel {
   position: fixed;
   z-index: 105;
-  opacity: 0;
-  transition: opacity 1ms ease;
+  visibility: hidden;
   pointer-events: none;
   inset: 0;
 }
 
 .panel[data-open='true'] {
-  opacity: 1;
+  visibility: visible;
   pointer-events: auto;
 }
 
