@@ -660,4 +660,15 @@ p {
   color: #999;
 }
 
+.w-input:focus {
+  border-color: #000;
+}
+
+.w-input:-internal-autofill-selected {
+  color: #000 !important;
+  background-color: #fff !important;
+  background-image: none !important;
+  appearance: none !important;
+}
+
 /* #endregion */
