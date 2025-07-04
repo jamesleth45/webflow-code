@@ -376,6 +376,18 @@ p {
   }
 }
 
+.footer__nav-list--legal {
+  grid-column: span 2;
+}
+
+@media (max-width: 1279px) {
+  .footer__nav-list--legal {
+    grid-column: span 6;
+    padding: 0 1.25rem 1.25rem 0;
+    text-align: right;
+  }
+}
+
 /* #endregion */
 
 /* #region Hero */
