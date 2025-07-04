@@ -529,6 +529,13 @@ p {
   position: fixed;
   top: 1.6875rem;
   right: 1.6875rem;
+  transition: opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  will-change: opacity;
+}
+
+.panel[data-open='true'] .panel__close {
+  opacity: 1;
+  transition: opacity 350ms cubic-bezier(0.215, 0.61, 0.355, 1) 150ms;
 }
 
 @media (max-width: 1279px) {
