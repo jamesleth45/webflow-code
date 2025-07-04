@@ -664,11 +664,13 @@ p {
   border-color: #000;
 }
 
-.w-input:-internal-autofill-selected {
-  color: #000 !important;
-  background-color: #fff !important;
-  background-image: none !important;
-  appearance: none !important;
+.w-input:-webkit-autofill,
+.w-input:-webkit-autofill:hover,
+.w-input:-webkit-autofill:focus,
+.w-input:-webkit-autofill:active {
+  box-shadow: 0 0 0 1000px #fff inset;
+  -webkit-text-fill-color: #000;
+  transition: background-color 9999s ease-in-out 0s;
 }
 
 /* #endregion */
