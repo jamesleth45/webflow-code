@@ -436,6 +436,12 @@ p {
   }
 }
 
+@media (min-width: 1280px) {
+  .footer__nav-icon--social {
+    display: none;
+  }
+}
+
 /* #endregion */
 
 /* #region Hero */
