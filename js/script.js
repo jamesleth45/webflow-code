@@ -227,3 +227,12 @@ document.addEventListener('DOMContentLoaded', () => {
   searchInput?.classList.remove('w-input');
 });
 // #endregion
+
+// #region Main Nav Toggle
+document.addEventListener('DOMContentLoaded', () => {
+  const searchForm = document.querySelector('.search');
+  if (searchForm) {
+    searchForm.setAttribute('method', 'get');
+  }
+});
+// #endregion
