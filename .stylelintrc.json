@@ -1,22 +1,10 @@
 {
-  "extends": ["stylelint-config-standard-scss"],
-  "plugins": ["stylelint-order", "stylelint-scss"],
+  "extends": ["stylelint-config-standard"],
+  "plugins": ["stylelint-order"],
   "rules": {
-    "selector-class-pattern": "^(w-[a-z0-9-]+|[a-z0-9]+(?:__[a-z0-9-]+)?(?:--[a-z0-9-]+)?)$",
-    "selector-max-id": 0,
-    "selector-max-type": 1,
-    "selector-max-universal": 1,
-
-    "declaration-no-important": true,
-    "block-no-empty": true,
-    "no-duplicate-selectors": true,
-    "max-nesting-depth": 3,
-    "no-descending-specificity": true,
-    "selector-pseudo-element-colon-notation": "double",
-    "media-feature-range-notation": null,
-
     "order/properties-order": [
       "position",
+      "inset",
       "top",
       "right",
       "bottom",
@@ -24,23 +12,15 @@
       "z-index",
 
       "display",
-      "flex-direction",
-      "justify-content",
-      "align-items",
-      "align-content",
-      "order",
-      "flex",
-      "flex-grow",
-      "flex-shrink",
-      "flex-basis",
-
+      "float",
+      "clear",
+      "box-sizing",
       "width",
       "min-width",
       "max-width",
       "height",
       "min-height",
       "max-height",
-
       "margin",
       "margin-top",
       "margin-right",
@@ -51,58 +31,88 @@
       "padding-right",
       "padding-bottom",
       "padding-left",
-
       "overflow",
       "overflow-x",
       "overflow-y",
       "visibility",
 
+      "flex",
+      "flex-grow",
+      "flex-shrink",
+      "flex-basis",
+      "flex-direction",
+      "flex-wrap",
+      "justify-content",
+      "align-items",
+      "align-self",
+      "align-content",
+      "order",
+      "grid-template-columns",
+      "grid-template-rows",
+      "grid-column",
+      "grid-row",
+      "gap",
+      "grid-gap",
+      "place-items",
+
       "font",
       "font-family",
       "font-size",
       "font-weight",
+      "font-style",
+      "font-variant",
       "line-height",
       "letter-spacing",
-      "text-align",
-      "text-transform",
-      "text-decoration",
       "color",
+      "text-align",
+      "text-decoration",
+      "text-transform",
+      "white-space",
+      "word-break",
+      "word-wrap",
 
       "background",
       "background-color",
       "background-image",
-      "background-size",
       "background-position",
+      "background-size",
       "background-repeat",
-
       "border",
       "border-width",
       "border-style",
       "border-color",
       "border-radius",
-
       "box-shadow",
       "opacity",
-      "transition",
-      "transform",
+      "outline",
+      "outline-offset",
 
+      "transition",
+      "transition-property",
+      "transition-duration",
+      "transition-timing-function",
+      "transition-delay",
+      "animation",
+      "animation-name",
+      "animation-duration",
+      "animation-timing-function",
+      "animation-delay",
+      "animation-iteration-count",
+      "animation-direction",
+      "animation-fill-mode",
+      "animation-play-state",
+
+      "appearance",
+      "content",
       "cursor",
       "pointer-events",
       "user-select"
     ],
 
-    "order/order": [
-      "custom-properties",
-      "dollar-variables",
-      "declarations",
-      {
-        "type": "at-rule",
-        "name": "media"
-      },
-      {
-        "type": "rule",
-        "selector": "^&:"
-      }
-    ]
+    "order/properties-alphabetical-order": null,
+
+    "media-feature-range-notation": "prefix",
+
+    "selector-class-pattern": "^(u-)?[a-z0-9]+(?:-[a-z0-9]+)*(?:__(?:[a-z0-9]+(?:-[a-z0-9]+)*))?(?:--(?:[a-z0-9]+(?:-[a-z0-9]+)*))?$"
   }
 }
