@@ -219,5 +219,57 @@ document.addEventListener('DOMContentLoaded', () => {
 // #endregion
 
 // #region Panel Toggle
+document.addEventListener('click', function (e) {
+  const toggle = e.target.closest('[data-toggle]');
+  const closeButton = e.target.closest('.panel__close');
 
+  // OPEN PANEL
+  if (toggle) {
+    const panelKey = toggle.getAttribute('data-toggle');
+    const panel = document.querySelector(`[data-panel="${panelKey}"]`);
+    if (panel) {
+      panel.setAttribute('data-open', 'true');
+    }
+  }
+
+  // CLOSE via .panel__close
+  if (closeButton) {
+    const panel = closeButton.closest('.panel');
+    closePanel(panel);
+  }
+
+  // CLOSE by clicking outside .panel__inner
+  const openPanel = document.querySelector(".panel[data-open='true']");
+  if (openPanel && !e.target.closest('.panel__inner') && !e.target.closest('[data-toggle]')) {
+    closePanel(openPanel);
+  }
+});
+
+// CLOSE via Escape key
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    const openPanel = document.querySelector(".panel[data-open='true']");
+    if (openPanel) closePanel(openPanel);
+  }
+});
+
+// Close function with animation delay
+function closePanel(panel) {
+  if (!panel) return;
+
+  const inner = panel.querySelector('.panel__inner');
+  if (inner) {
+    inner.style.transform = 'translateX(100%)';
+    inner.addEventListener(
+      'transitionend',
+      () => {
+        panel.removeAttribute('data-open');
+        inner.style.transform = '';
+      },
+      { once: true }
+    );
+  } else {
+    panel.removeAttribute('data-open');
+  }
+}
 // #endregion
