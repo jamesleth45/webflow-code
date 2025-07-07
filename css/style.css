@@ -163,4 +163,26 @@ a {
   }
 }
 
+.header__nav-item--brand {
+  margin-top: .8125rem;
+}
+
+@media (max-width: 1279px) {
+  .header__nav-item--brand {
+    margin-top: 1.875rem;
+  }
+}
+
+.header__nav-item--search {
+  position: fixed;
+  top: 1.6875rem;
+  right: 1.6875rem;
+}
+
+@media (max-width: 1279px) {
+  .header__nav-item--search {
+    display: none;
+  }
+}
+
 /* #endregion */
