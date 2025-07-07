@@ -89,4 +89,17 @@ a {
   }
 }
 
+.header__logo-text {
+  font-family: neue-haas-grotesk-display, "neue-haas-grotesk-display fallback", sans-serif;
+  font-size: 1.67rem;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (max-width: 1279px) {
+  .header__logo-text {
+    font-size: 1.25rem;
+  }
+}
+
 /* #endregion */
