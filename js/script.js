@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // #region Replace <span class="i"> with <!---->
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('span.i').forEach(el => {
+  document.querySelectorAll('div.i').forEach(el => {
     const comment = document.createComment('');
     el.replaceWith(comment);
   });
