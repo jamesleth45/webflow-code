@@ -1,4 +1,4 @@
-// #region Webflow class cleanup
+// #region Remove unwanted Webflow classes
 document.addEventListener('DOMContentLoaded', () => {
   const classesToRemove = ['w-inline-block', 'w--current', 'w-embed'];
 
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // #endregion
 
-// #region Text div cleanup
+// #region Replace text-only divs with spans
 document.addEventListener('DOMContentLoaded', () => {
   const isTextOnlyDiv = (el) => {
     return Array.from(el.childNodes).every(node => {
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // #endregion
 
-// #region Icon div cleanup
+// #region Replace icon-only divs with spans
 document.addEventListener('DOMContentLoaded', () => {
   const isIconDiv = (el) => {
     const children = Array.from(el.children);
@@ -84,6 +84,15 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('ul[role="list"], ol[role="list"]').forEach(el => {
     el.removeAttribute('role');
+  });
+});
+// #endregion
+
+// #region Replace class="i"> with HTML comment
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('span.i').forEach(el => {
+    const comment = document.createComment(' spacer ');
+    el.replaceWith(comment);
   });
 });
 // #endregion
