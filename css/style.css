@@ -248,6 +248,8 @@ a {
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
   transform: translate(-50%, -50%);
 }
 
