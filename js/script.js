@@ -1,16 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const classesToRemove = ['w-inline-block', 'w--current', 'w-embed'];
 
-  function removeClasses() {
+  const cleanClasses = () => {
     classesToRemove.forEach(cls => {
       document.querySelectorAll(`.${cls}`).forEach(el => {
         el.classList.remove(cls);
       });
     });
+  };
 
-    // Keep removing `w--current` for a short time in case Webflow re-adds it
-    requestAnimationFrame(() => requestAnimationFrame(removeClasses));
-  }
+  cleanClasses();
 
-  removeClasses();
+  new MutationObserver(cleanClasses).observe(document.body, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    attributeFilter: ['class'],
+  });
 });
