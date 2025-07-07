@@ -72,3 +72,22 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.css').forEach(el => el.remove());
 });
 // #endregion
+
+// #region Remove elements with class .css
+document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.querySelector('.header__nav');
+  const toggleBtn = document.querySelector('.header__mobile-btn--menu');
+  const closeIcon = document.querySelector('.header__mobile-icon--close');
+
+  // Toggle open/close on main menu button click
+  toggleBtn.addEventListener('click', () => {
+    const isOpen = nav.getAttribute('data-open') === 'true';
+    nav.setAttribute('data-open', isOpen ? 'false' : 'true');
+  });
+
+  // Optional: Also close when clicking the close icon
+  closeIcon.addEventListener('click', () => {
+    nav.setAttribute('data-open', 'false');
+  });
+});
+// #endregion
