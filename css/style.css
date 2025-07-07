@@ -21,8 +21,8 @@ button {
 
 body {
   font-family: neue-haas-grotesk-text, "neue-haas-grotesk-text fallback", sans-serif;
-  font-size: .75rem;
-  line-height: .9375rem;
+  font-size: .625rem;
+  line-height: .8125rem;
   letter-spacing: .03em;
   text-transform: uppercase;
   color: #000;
@@ -32,10 +32,10 @@ body {
   -moz-osx-font-smoothing: auto;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 767px) {
   body {
-    font-size: .625rem;
-    line-height: .8125rem;
+    font-size: .75rem;
+    line-height: .9375rem;
   }
 }
 
