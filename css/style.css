@@ -20,6 +20,16 @@ button {
   cursor: pointer;
 }
 
+body {
+  min-height: 100dvh;
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
 img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
