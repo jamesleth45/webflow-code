@@ -23,47 +23,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // #region Replace text-only divs with spans
 document.addEventListener('DOMContentLoaded', () => {
-  const isTextOnlyDiv = (el) => {
-    return Array.from(el.childNodes).every(node => {
-      return (
-        node.nodeType === Node.TEXT_NODE ||
-        (node.nodeType === Node.ELEMENT_NODE &&
-         ['inline', 'inline-block'].includes(window.getComputedStyle(node).display))
-      );
+  const targetClasses = [
+    'header__nav-text',
+    'footer__nav-text',
+    'header__logo-text',
+    'panel__close-text'
+  ];
+
+  const selector = targetClasses.map(cls => `div.${cls}`).join(', ');
+  const divsToReplace = document.querySelectorAll(selector);
+
+  divsToReplace.forEach(div => {
+    const span = document.createElement('span');
+
+    Array.from(div.attributes).forEach(attr => {
+      span.setAttribute(attr.name, attr.value);
     });
-  };
 
-  document.querySelectorAll('div').forEach(div => {
-    if (isTextOnlyDiv(div)) {
-      const span = document.createElement('span');
-
-      Array.from(div.attributes).forEach(attr => {
-        span.setAttribute(attr.name, attr.value);
-      });
-
-      while (div.firstChild) {
-        span.appendChild(div.firstChild);
-      }
-
-      div.replaceWith(span);
+    while (div.firstChild) {
+      span.appendChild(div.firstChild);
     }
+
+    div.replaceWith(span);
   });
 });
 // #endregion
 
 // #region Replace icon-only divs with spans
 document.addEventListener('DOMContentLoaded', () => {
-  const isIconDiv = (el) => {
-    const children = Array.from(el.children);
-    const onlyHasSVG = children.length === 1 && children[0].tagName === 'SVG';
-    const hasNoChildrenAndNoText = children.length === 0 && el.textContent.trim() === '';
-    const isInlineOrInlineBlock = ['inline', 'inline-block'].includes(window.getComputedStyle(el).display);
-    
-    return (onlyHasSVG || hasNoChildrenAndNoText) && isInlineOrInlineBlock;
-  };
+  const targetClasses = [
+    'header__nav-icon',
+    'header__mobile-icon',
+    'panel__close-icon',
+    'footer__nav-icon'
+  ];
 
-  document.querySelectorAll('div').forEach(div => {
-    if (isIconDiv(div)) {
+  const selector = targetClasses.map(cls => `div.${cls}`).join(', ');
+  const divsToReplace = document.querySelectorAll(selector);
+
+  divsToReplace.forEach(div => {
+    const children = Array.from(div.children);
+    const onlyHasSVG = children.length === 1 && children[0].tagName === 'SVG';
+    const hasNoChildrenAndNoText = children.length === 0 && div.textContent.trim() === '';
+    const isInlineOrInlineBlock = ['inline', 'inline-block'].includes(window.getComputedStyle(div).display);
+
+    if ((onlyHasSVG || hasNoChildrenAndNoText) && isInlineOrInlineBlock) {
       const span = document.createElement('span');
 
       Array.from(div.attributes).forEach(attr => {
