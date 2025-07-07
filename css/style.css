@@ -222,6 +222,7 @@ a {
 @media (max-width: 1279px) {
   .header__nav-link,
   .header__nav-btn {
+    display: inline-flex;
     width: 100%;
     line-height: 1.5625rem;
   }
