@@ -21,19 +21,18 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // #endregion
 
-// #region Replace text-only divs with spans
+// #region Replace divs with spans
 document.addEventListener('DOMContentLoaded', () => {
-  const targetClasses = [
+  const classList = [
     'header__nav-text',
     'footer__nav-text',
     'header__logo-text',
     'panel__close-text'
   ];
 
-  const selector = targetClasses.map(cls => `div.${cls}`).join(', ');
-  const divsToReplace = document.querySelectorAll(selector);
-
-  divsToReplace.forEach(div => {
+  const selector = classList.map(cls => `div.${cls}`).join(', ');
+  
+  document.querySelectorAll(selector).forEach(div => {
     const span = document.createElement('span');
 
     Array.from(div.attributes).forEach(attr => {
@@ -45,41 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     div.replaceWith(span);
-  });
-});
-// #endregion
-
-// #region Replace icon-only divs with spans
-document.addEventListener('DOMContentLoaded', () => {
-  const targetClasses = [
-    'header__nav-icon',
-    'header__mobile-icon',
-    'panel__close-icon',
-    'footer__nav-icon'
-  ];
-
-  const selector = targetClasses.map(cls => `div.${cls}`).join(', ');
-  const divsToReplace = document.querySelectorAll(selector);
-
-  divsToReplace.forEach(div => {
-    const children = Array.from(div.children);
-    const onlyHasSVG = children.length === 1 && children[0].tagName === 'SVG';
-    const hasNoChildrenAndNoText = children.length === 0 && div.textContent.trim() === '';
-    const isInlineOrInlineBlock = ['inline', 'inline-block'].includes(window.getComputedStyle(div).display);
-
-    if ((onlyHasSVG || hasNoChildrenAndNoText) && isInlineOrInlineBlock) {
-      const span = document.createElement('span');
-
-      Array.from(div.attributes).forEach(attr => {
-        span.setAttribute(attr.name, attr.value);
-      });
-
-      while (div.firstChild) {
-        span.appendChild(div.firstChild);
-      }
-
-      div.replaceWith(span);
-    }
   });
 });
 // #endregion
