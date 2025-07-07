@@ -1,3 +1,4 @@
+// #region Webflow class cleanup
 document.addEventListener('DOMContentLoaded', () => {
   const classesToRemove = ['w-inline-block', 'w--current', 'w-embed'];
 
@@ -18,30 +19,28 @@ document.addEventListener('DOMContentLoaded', () => {
     attributeFilter: ['class'],
   });
 });
+// #endregion
 
-
+// #region Text div cleanup
 document.addEventListener('DOMContentLoaded', () => {
-  const isInlineOnly = (element) => {
-    return Array.from(element.childNodes).every(node => {
-      if (node.nodeType === Node.TEXT_NODE) return true;
-      if (node.nodeType === Node.ELEMENT_NODE) {
-        const display = window.getComputedStyle(node).display;
-        return display === 'inline' || display === 'inline-block';
-      }
-      return false;
+  const isTextOnlyDiv = (el) => {
+    return Array.from(el.childNodes).every(node => {
+      return (
+        node.nodeType === Node.TEXT_NODE ||
+        (node.nodeType === Node.ELEMENT_NODE &&
+         ['inline', 'inline-block'].includes(window.getComputedStyle(node).display))
+      );
     });
   };
 
   document.querySelectorAll('div').forEach(div => {
-    if (isInlineOnly(div)) {
+    if (isTextOnlyDiv(div)) {
       const span = document.createElement('span');
 
-      // Copy attributes
       Array.from(div.attributes).forEach(attr => {
         span.setAttribute(attr.name, attr.value);
       });
 
-      // Move children
       while (div.firstChild) {
         span.appendChild(div.firstChild);
       }
@@ -50,3 +49,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+// #endregion
+
+// #region Icon div cleanup
+document.addEventListener('DOMContentLoaded', () => {
+  const isIconDiv = (el) => {
+    const children = Array.from(el.children);
+    const onlyHasSVG = children.length === 1 && children[0].tagName === 'SVG';
+    const hasNoChildrenAndNoText = children.length === 0 && el.textContent.trim() === '';
+    const isInlineOrInlineBlock = ['inline', 'inline-block'].includes(window.getComputedStyle(el).display);
+    
+    return (onlyHasSVG || hasNoChildrenAndNoText) && isInlineOrInlineBlock;
+  };
+
+  document.querySelectorAll('div').forEach(div => {
+    if (isIconDiv(div)) {
+      const span = document.createElement('span');
+
+      Array.from(div.attributes).forEach(attr => {
+        span.setAttribute(attr.name, attr.value);
+      });
+
+      while (div.firstChild) {
+        span.appendChild(div.firstChild);
+      }
+
+      div.replaceWith(span);
+    }
+  });
+});
+// #endregion
