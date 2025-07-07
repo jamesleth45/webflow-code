@@ -108,13 +108,13 @@ a {
 .header__logo-text::before {
   content: "";
   display: table;
-  margin-bottom: calc(-0.5lh + 0.34em);
+  margin-bottom: calc(-0.5lh + 0.411em);
 }
 
 .header__logo-text::after {
   content: "";
   display: table;
-  margin-bottom: calc(-0.5lh + 0.38em);
+  margin-bottom: calc(-0.5lh + 0.34em);
 }
 
 /* #endregion */
