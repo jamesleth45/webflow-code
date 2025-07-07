@@ -1,0 +1,25 @@
+{
+  "name": "webflow-custom-code",
+  "version": "1.0.0",
+  "description": "This project is a fully custom, clean-coded Webflow site using external CSS and JavaScript.   Built in VS Code, pushed to Netlify, and linked into Webflow.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesleth45/webflow-code.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamesleth45/webflow-code/issues"
+  },
+  "homepage": "https://github.com/jamesleth45/webflow-code#readme",
+  "devDependencies": {
+    "stylelint": "^16.21.1",
+    "stylelint-config-standard": "^38.0.0",
+    "stylelint-order": "^7.0.0"
+  }
+}
