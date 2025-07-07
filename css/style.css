@@ -239,4 +239,8 @@ a {
   height: 3.5rem;
 }
 
+.header__mobile-btn--nav {
+  margin-right: .625rem;
+}
+
 /* #endregion */
