@@ -149,6 +149,7 @@ a {
 
   .header__nav-list--right {
     right: 1.6875rem;
+    text-align: right;
   }
 }
 
