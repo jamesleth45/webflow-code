@@ -97,6 +97,7 @@ a {
   font-weight: 700;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @media (max-width: 1279px) {
