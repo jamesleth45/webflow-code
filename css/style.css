@@ -130,7 +130,6 @@ a {
     overflow-y: auto;
     background-color: #fff;
     inset: 0;
-    align-content: space-between;
     row-gap: 4.375rem;
   }
 }
