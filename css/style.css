@@ -153,6 +153,12 @@ a {
   }
 }
 
+@media (min-width: 1280px) {
+  .header__nav-list--nested {
+    text-align: right;
+  }
+}
+
 .header__nav-item--preview {
   margin-top: .8125rem;
 }
