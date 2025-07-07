@@ -53,7 +53,7 @@ a {
 @media (hover: hover) {
   a:hover,
   button:hover {
-    font-weight: bold;
+    font-weight: 700;
   }
 }
 
