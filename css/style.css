@@ -69,6 +69,18 @@ a {
 /* #endregion */
 
 /* #region Header */
+.header__logo {
+  position: fixed;
+  top: 1.6875rem;
+  left: 1.6875rem;
+  z-index: 101;
+}
 
+@media (max-width: 1279px) {
+  .header__logo {
+    top: 0;
+    left: 0;
+  }
+}
 
 /* #endregion */
