@@ -218,4 +218,10 @@ a {
   }
 }
 
+@media (min-width: 1280px) {
+  .header__mobile {
+    display: none;
+  }
+}
+
 /* #endregion */
