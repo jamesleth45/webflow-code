@@ -91,6 +91,7 @@ a {
 }
 
 .header__logo-text {
+  display: flow-root;
   font-family: neue-haas-grotesk-display, "neue-haas-grotesk-display fallback", sans-serif;
   font-size: 1.67rem;
   font-weight: 700;
@@ -102,6 +103,18 @@ a {
   .header__logo-text {
     font-size: 1.25rem;
   }
+}
+
+.header__logo-text::before {
+  content: "";
+  display: table;
+  margin-bottom: calc(-0.5lh + 0.34em);
+}
+
+.header__logo-text::after {
+  content: "";
+  display: table;
+  margin-bottom: calc(-0.5lh + 0.38em);
 }
 
 /* #endregion */
