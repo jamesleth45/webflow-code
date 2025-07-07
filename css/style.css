@@ -139,8 +139,8 @@ a {
   .header__nav-list--left,
   .header__nav-list--right {
     position: fixed;
+    top: 8.75rem;
     z-index: 100;
-    width: 8.75rem;
   }
 
   .header__nav-list--left {
