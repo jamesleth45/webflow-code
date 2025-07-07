@@ -159,6 +159,14 @@ a {
   }
 }
 
+.header__nav-list--nested > :first-child {
+  margin-top: .625rem;
+}
+
+.header__nav-list--nested > :last-child {
+  margin-bottom: 1.875rem;
+}
+
 .header__nav-item--preview {
   margin-top: .8125rem;
 }
