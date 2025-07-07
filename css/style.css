@@ -135,4 +135,21 @@ a {
   }
 }
 
+@media (min-width: 1280px) {
+  .header__nav-list--left,
+  .header__nav-list--right {
+    position: fixed;
+    z-index: 100;
+    width: 8.75rem;
+  }
+
+  .header__nav-list--left {
+    left: 1.6875rem;
+  }
+
+  .header__nav-list--right {
+    right: 1.6875rem;
+  }
+}
+
 /* #endregion */
