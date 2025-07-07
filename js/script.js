@@ -88,10 +88,10 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // #endregion
 
-// #region Replace class="i"> with HTML comment
+// #region Replace <span class="i"> with <!---->
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('span.i').forEach(el => {
-    const comment = document.createComment(' spacer ');
+    const comment = document.createComment('');
     el.replaceWith(comment);
   });
 });
