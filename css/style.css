@@ -234,4 +234,9 @@ a {
   justify-content: flex-end;
 }
 
+.header__mobile-btn {
+  position: relative;
+  height: 3.5rem;
+}
+
 /* #endregion */
