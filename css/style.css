@@ -50,4 +50,11 @@ a {
   color: inherit;
 }
 
+@media (hover: hover) {
+  a:hover,
+  button:hover {
+    font-weight: bold;
+  }
+}
+
 /* #endregion */
