@@ -153,4 +153,14 @@ a {
   }
 }
 
+.header__nav-item--preview {
+  margin-top: .8125rem;
+}
+
+@media (max-width: 1279px) {
+  .header__nav-item--preview {
+    margin-top: 1.25rem;
+  }
+}
+
 /* #endregion */
