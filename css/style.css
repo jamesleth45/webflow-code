@@ -50,6 +50,11 @@ a {
   color: inherit;
 }
 
+*::selection {
+  color: #fff;
+  background: #000;
+}
+
 @media (hover: hover) {
   a:hover,
   button:hover {
