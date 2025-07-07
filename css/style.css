@@ -92,6 +92,7 @@ a {
 .header__logo-text {
   font-family: neue-haas-grotesk-display, "neue-haas-grotesk-display fallback", sans-serif;
   font-size: 1.67rem;
+  font-weight: 700;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
 }
