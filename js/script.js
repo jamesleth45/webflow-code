@@ -66,3 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 // #endregion
+
+// #region Remove elements with class .css
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.css').forEach(el => el.remove());
+});
+// #endregion
