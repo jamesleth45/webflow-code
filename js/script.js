@@ -79,3 +79,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 // #endregion
+
+// #region Remove redundant role="list" from native lists
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('ul[role="list"], ol[role="list"]').forEach(el => {
+    el.removeAttribute('role');
+  });
+});
+// #endregion
