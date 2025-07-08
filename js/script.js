@@ -147,10 +147,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const openMenu = () => {
     nav.setAttribute('data-open', 'true');
-    searchBtn?.setAttribute('data-visibility', 'false');
-    cartBtn?.setAttribute('data-visibility', 'false');
-    iconOpen?.setAttribute('data-visibility', 'false');
-    iconClose?.setAttribute('data-visibility', 'true');
+    searchBtn?.setAttribute('data-visible', 'false');
+    cartBtn?.setAttribute('data-visible', 'false');
+    iconOpen?.setAttribute('data-visible', 'false');
+    iconClose?.setAttribute('data-visible', 'true');
     document.body.style.overflow = 'hidden';
     document.body.style.width = '100%';
     userOpenedMenu = true;
@@ -158,10 +158,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const closeMenu = () => {
     nav.removeAttribute('data-open');
-    searchBtn?.removeAttribute('data-visibility');
-    cartBtn?.removeAttribute('data-visibility');
-    iconOpen?.removeAttribute('data-visibility');
-    iconClose?.setAttribute('data-visibility', 'false');
+    searchBtn?.removeAttribute('data-visible');
+    cartBtn?.removeAttribute('data-visible');
+    iconOpen?.removeAttribute('data-visible');
+    iconClose?.setAttribute('data-visible', 'false');
     document.body.style.overflow = '';
     document.body.style.width = '';
     if (!document.body.getAttribute('style')) {

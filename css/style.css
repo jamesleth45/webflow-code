@@ -277,17 +277,17 @@ a {
   transform: translate(-50%, -50%);
 }
 
-.header__mobile-btn--search[data-visibility="false"],
-.header__mobile-btn--cart[data-visibility="false"],
-.header__mobile-icon--open[data-visibility="false"],
-.header__mobile-icon--close[data-visibility="false"] {
+.header__mobile-btn--search[data-visible="false"],
+.header__mobile-btn--cart[data-visible="false"],
+.header__mobile-icon--open[data-visible="false"],
+.header__mobile-icon--close[data-visible="false"] {
   opacity: 0;
   transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
   pointer-events: none;
 }
 
-.header__mobile-icon--close[data-visibility="true"],
-.header__mobile-icon--open[data-visibility="true"] {
+.header__mobile-icon--close[data-visible="true"],
+.header__mobile-icon--open[data-visible="true"] {
   opacity: 1;
   pointer-events: auto;
 }
