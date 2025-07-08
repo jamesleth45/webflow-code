@@ -166,16 +166,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
   menuBtn?.addEventListener('click', () => {
     const isOpen = nav.hasAttribute('data-open');
-    if (isOpen) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
+    isOpen ? closeMenu() : openMenu();
   });
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && nav.hasAttribute('data-open')) {
       closeMenu();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    const isOpen = nav.hasAttribute('data-open');
+    const isMobile = window.innerWidth < 1280;
+
+    if (isOpen) {
+      if (isMobile) {
+        document.body.style.overflow = 'hidden';
+        document.body.style.width = '100%';
+      } else {
+        document.body.style.overflow = '';
+        document.body.style.width = '';
+      }
     }
   });
 });
