@@ -315,13 +315,7 @@ a {
 }
 
 .hero__img {
-  grid-column: 5 / 9;
-}
-
-@media (max-width: 1279px) {
-  .hero__img {
-    grid-column: 1 / -1;
-  }
+  grid-column: 1 / -1;
 }
 
 /* #endregion */
