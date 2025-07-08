@@ -284,17 +284,19 @@ a {
   transform: translate(-50%, -50%);
 }
 
-.header__mobile-icon--open[data-visible="false"],
-.header__mobile-icon--close[data-visible="false"] {
-  opacity: 0;
+.header__mobile-icon {
   transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.header__mobile-icon[data-visible="false"] {
+  opacity: 0;
   pointer-events: none;
 }
 
-.header__mobile-icon--close[data-visible="true"],
-.header__mobile-icon--open[data-visible="true"] {
+.header__mobile-icon[data-visible="true"] {
   opacity: 1;
   pointer-events: auto;
 }
+
 
 /* #endregion */
