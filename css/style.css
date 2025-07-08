@@ -41,7 +41,6 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: neue-haas-grotesk-display, "neue-haas-grotesk-display fallback", sans-serif;
-  font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -317,12 +316,6 @@ a {
 .hero {
   position: relative;
   color: #fff;
-}
-
-@media (max-width: 1279px) {
-  .hero {
-    top: 3.5rem;
-  }
 }
 
 .hero__grid {
