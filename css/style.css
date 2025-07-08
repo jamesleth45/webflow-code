@@ -251,6 +251,7 @@ a {
 @media (max-width: 1279px) {
   .header__mobile {
     position: fixed;
+    top: 0;
     z-index: 100;
     display: flex;
     width: 100%;
