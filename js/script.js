@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // #endregion
 
-// #region Open nested list
+// #region Toggle nested nav
 document.addEventListener('DOMContentLoaded', () => {
   const buttons = document.querySelectorAll('.header__nav-btn');
   let animating = false;
@@ -133,3 +133,49 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 // #endregion
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const menuBtn = document.querySelector('.header__mobile-btn--menu');
+  const nav = document.querySelector('.header__nav');
+  const searchBtn = document.querySelector('.header__mobile-btn--search');
+  const cartBtn = document.querySelector('.header__mobile-btn--cart');
+  const iconOpen = document.querySelector('.header__mobile-icon--open');
+  const iconClose = document.querySelector('.header__mobile-icon--close');
+
+  const openMenu = () => {
+    nav.setAttribute('data-open', 'true');
+    searchBtn?.setAttribute('data-visibility', 'false');
+    cartBtn?.setAttribute('data-visibility', 'false');
+    iconOpen?.setAttribute('data-visibility', 'false');
+    iconClose?.setAttribute('data-visibility', 'true');
+    document.body.style.overflow = 'hidden';
+    document.body.style.width = '100%';
+  };
+
+  const closeMenu = () => {
+    nav.removeAttribute('data-open');
+    searchBtn?.removeAttribute('data-visibility');
+    cartBtn?.removeAttribute('data-visibility');
+    iconOpen?.removeAttribute('data-visibility');
+    iconClose?.removeAttribute('data-visibility');
+    document.body.style.overflow = '';
+    document.body.style.width = '';
+  };
+
+  menuBtn?.addEventListener('click', () => {
+    const isOpen = nav.hasAttribute('data-open');
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.hasAttribute('data-open')) {
+      closeMenu();
+    }
+  });
+});
