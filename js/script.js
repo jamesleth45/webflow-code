@@ -187,6 +187,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (isMobile && userOpenedMenu) {
       nav.setAttribute('data-open', 'true');
+      searchBtn?.setAttribute('data-visibility', 'false');
+      cartBtn?.setAttribute('data-visibility', 'false');
+      iconOpen?.setAttribute('data-visibility', 'false');
+      iconClose?.setAttribute('data-visibility', 'true');
       document.body.style.overflow = 'hidden';
       document.body.style.width = '100%';
     }
