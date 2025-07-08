@@ -302,7 +302,8 @@ a {
 
 /* #region Hero */
 .hero {
-  position: relative;;
+  position: relative;
+  color: #fff;
 }
 
 @media (max-width: 1279px) {
@@ -332,7 +333,6 @@ a {
   position: absolute;
   top: 50%;
   left: 50%;
-  color: #fff;
   transform: translate(-50%, -50%);
 }
 
