@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
     searchBtn?.removeAttribute('data-visibility');
     cartBtn?.removeAttribute('data-visibility');
     iconOpen?.removeAttribute('data-visibility');
-    iconClose?.removeAttribute('data-visibility');
+    iconClose?.setAttribute('data-visibility', 'false');
     document.body.style.overflow = '';
     document.body.style.width = '';
   };
