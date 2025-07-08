@@ -312,10 +312,6 @@ a {
 /* #endregion */
 
 /* #region Hero */
-.hero {
-  position: relative;
-}
-
 .hero__grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
