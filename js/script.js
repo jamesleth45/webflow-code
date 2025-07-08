@@ -145,14 +145,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let userOpenedMenu = false;
 
+  const lockScroll = () => {
+    document.body.style.overflow = 'hidden';
+    document.body.style.width = '100%';
+  };
+
+  const unlockScroll = () => {
+    document.body.style.overflow = '';
+    document.body.style.width = '';
+    if (!document.body.getAttribute('style')) {
+      document.body.removeAttribute('style');
+    }
+  };
+
   const openMenu = () => {
     nav.setAttribute('data-open', 'true');
     searchBtn?.setAttribute('data-visible', 'false');
     cartBtn?.setAttribute('data-visible', 'false');
     iconOpen?.setAttribute('data-visible', 'false');
     iconClose?.setAttribute('data-visible', 'true');
-    document.body.style.overflow = 'hidden';
-    document.body.style.width = '100%';
+    lockScroll();
     userOpenedMenu = true;
   };
 
@@ -162,17 +174,12 @@ document.addEventListener('DOMContentLoaded', () => {
     cartBtn?.removeAttribute('data-visible');
     iconOpen?.removeAttribute('data-visible');
     iconClose?.setAttribute('data-visible', 'false');
-    document.body.style.overflow = '';
-    document.body.style.width = '';
-    if (!document.body.getAttribute('style')) {
-      document.body.removeAttribute('style');
-    }
+    unlockScroll();
     userOpenedMenu = false;
   };
 
   menuBtn?.addEventListener('click', () => {
-    const isOpen = nav.hasAttribute('data-open');
-    isOpen ? closeMenu() : openMenu();
+    nav.hasAttribute('data-open') ? closeMenu() : openMenu();
   });
 
   document.addEventListener('keydown', (e) => {
@@ -184,27 +191,17 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', () => {
     const isMobile = window.innerWidth < 1280;
 
-    if (isMobile && userOpenedMenu) {
-      nav.setAttribute('data-open', 'true');
-      searchBtn?.setAttribute('data-visible', 'false');
-      cartBtn?.setAttribute('data-visible', 'false');
-      iconOpen?.setAttribute('data-visible', 'false');
-      iconClose?.setAttribute('data-visible', 'true');
-      document.body.style.overflow = 'hidden';
-      document.body.style.width = '100%';
-    }
-
     if (!isMobile) {
-      nav.removeAttribute('data-open');
+      // always clean state on desktop
+      closeMenu();
       searchBtn?.removeAttribute('data-visible');
       cartBtn?.removeAttribute('data-visible');
       iconOpen?.removeAttribute('data-visible');
       iconClose?.removeAttribute('data-visible');
-      document.body.style.overflow = '';
-      document.body.style.width = '';
-      if (!document.body.getAttribute('style')) {
-        document.body.removeAttribute('style');
-      }
+    }
+
+    if (isMobile && userOpenedMenu) {
+      openMenu(); // only restore if user opened before
     }
   });
 });
