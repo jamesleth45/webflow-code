@@ -324,7 +324,7 @@ a {
 }
 
 .hero__img {
-  grid-column: 5 / 9;
+  grid-column: span 6;
 }
 
 @media (max-width: 1279px) {
