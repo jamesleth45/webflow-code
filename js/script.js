@@ -144,6 +144,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const iconOpen = document.querySelector('.header__mobile-icon--open');
   const iconClose = document.querySelector('.header__mobile-icon--close');
 
+  let userOpenedMenu = false;
+
   const openMenu = () => {
     nav.setAttribute('data-open', 'true');
     searchBtn?.setAttribute('data-visibility', 'false');
@@ -152,6 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
     iconClose?.setAttribute('data-visibility', 'true');
     document.body.style.overflow = 'hidden';
     document.body.style.width = '100%';
+    userOpenedMenu = true;
   };
 
   const closeMenu = () => {
@@ -162,6 +165,10 @@ document.addEventListener('DOMContentLoaded', () => {
     iconClose?.setAttribute('data-visibility', 'false');
     document.body.style.overflow = '';
     document.body.style.width = '';
+    if (!document.body.getAttribute('style')) {
+      document.body.removeAttribute('style');
+    }
+    userOpenedMenu = false;
   };
 
   menuBtn?.addEventListener('click', () => {
@@ -176,16 +183,20 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   window.addEventListener('resize', () => {
-    const isOpen = nav.hasAttribute('data-open');
     const isMobile = window.innerWidth < 1280;
 
-    if (isOpen) {
-      if (isMobile) {
-        document.body.style.overflow = 'hidden';
-        document.body.style.width = '100%';
-      } else {
-        document.body.style.overflow = '';
-        document.body.style.width = '';
+    if (isMobile && userOpenedMenu) {
+      nav.setAttribute('data-open', 'true');
+      document.body.style.overflow = 'hidden';
+      document.body.style.width = '100%';
+    }
+
+    if (!isMobile) {
+      nav.removeAttribute('data-open');
+      document.body.style.overflow = '';
+      document.body.style.width = '';
+      if (!document.body.getAttribute('style')) {
+        document.body.removeAttribute('style');
       }
     }
   });
