@@ -73,21 +73,70 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // #endregion
 
-// #region Remove elements with class .css
+// #region Open nested list
 document.addEventListener('DOMContentLoaded', () => {
-  const nav = document.querySelector('.header__nav');
-  const toggleBtn = document.querySelector('.header__mobile-btn--menu');
-  const closeIcon = document.querySelector('.header__mobile-icon--close');
+  const buttons = document.querySelectorAll('.header__nav-btn');
+  let animating = false;
 
-  // Toggle open/close on main menu button click
-  toggleBtn.addEventListener('click', () => {
-    const isOpen = nav.getAttribute('data-open') === 'true';
-    nav.setAttribute('data-open', isOpen ? 'false' : 'true');
-  });
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      if (animating) return;
 
-  // Optional: Also close when clicking the close icon
-  closeIcon.addEventListener('click', () => {
-    nav.setAttribute('data-open', 'false');
+      const currentList = button.closest('.header__nav-item')?.querySelector('.header__nav-list--nested');
+      const isOpen = currentList?.dataset.open === 'true';
+
+      const openList = document.querySelector('.header__nav-list--nested[data-open="true"]');
+      const openBtn = document.querySelector('.header__nav-btn[data-active="true"]');
+
+      const close = (list, btn) => {
+        if (!list || !btn) return;
+
+        animating = true;
+        const fullHeight = list.scrollHeight;
+
+        list.style.height = `${fullHeight}px`; // Set to full height so it can animate to 0
+        requestAnimationFrame(() => {
+          list.style.height = '0px';
+        });
+
+        list.addEventListener('transitionend', function handler() {
+          list.removeAttribute('data-open');
+          list.style.height = '';
+          list.removeEventListener('transitionend', handler);
+          animating = false;
+        });
+
+        btn.removeAttribute('data-active');
+      };
+
+      const open = (list, btn) => {
+        if (!list || !btn) return;
+
+        animating = true;
+        const fullHeight = list.scrollHeight;
+
+        list.style.height = '0px';
+        requestAnimationFrame(() => {
+          list.setAttribute('data-open', 'true');
+          list.style.height = `${fullHeight}px`;
+        });
+
+        list.addEventListener('transitionend', function handler() {
+          list.style.height = 'auto';
+          list.removeEventListener('transitionend', handler);
+          animating = false;
+        });
+
+        btn.setAttribute('data-active', 'true');
+      };
+
+      if (isOpen) {
+        close(currentList, button);
+      } else {
+        if (openList && openList !== currentList) close(openList, openBtn);
+        open(currentList, button);
+      }
+    });
   });
 });
 // #endregion
