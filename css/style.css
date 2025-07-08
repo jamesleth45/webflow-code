@@ -133,6 +133,14 @@ a {
     inset: 0;
     align-content: space-between;
     row-gap: 4.375rem;
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    pointer-events: none;
+  }
+
+   .header__nav[data-open="true"] {
+    opacity: 1;
+    pointer-events: auto;
   }
 }
 
@@ -267,17 +275,6 @@ a {
   left: 50%;
   width: 1.5rem;
   transform: translate(-50%, -50%);
-}
-
-.header__nav {
-  opacity: 0;
-  transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-  pointer-events: none;
-}
-
-.header__nav[data-open="true"] {
-  opacity: 1;
-  pointer-events: auto;
 }
 
 .header__mobile-btn--search[data-visibility="false"],
