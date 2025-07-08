@@ -79,12 +79,6 @@ a {
 /* #endregion */
 
 /* #region Header */
-@media (min-width: 1280px) {
-  .header {
-    color: #fff;
-  }
-}
-
 .header__logo {
   position: fixed;
   top: 1.6875rem;
