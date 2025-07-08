@@ -193,6 +193,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!isMobile) {
       nav.removeAttribute('data-open');
+      searchBtn?.removeAttribute('data-visibility');
+      cartBtn?.removeAttribute('data-visibility');
+      iconOpen?.removeAttribute('data-visibility');
+      iconClose?.removeAttribute('data-visibility');
       document.body.style.overflow = '';
       document.body.style.width = '';
       if (!document.body.getAttribute('style')) {
