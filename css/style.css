@@ -6,6 +6,8 @@
 body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, blockquote, dl, dd {
   margin: 0;
   padding: 0;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 ul, ol {
@@ -39,13 +41,10 @@ body {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
   font-family: neue-haas-grotesk-display, "neue-haas-grotesk-display fallback", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-h1 {
   font-size: 1.25rem;
   line-height: 1.25rem;
 }
