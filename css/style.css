@@ -338,6 +338,7 @@ a {
 }
 
 .hero__text {
+  margin-top: 1.25rem;
   text-decoration: underline;
 }
 
