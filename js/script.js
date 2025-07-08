@@ -186,12 +186,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (isMobile && userOpenedMenu) {
       nav.setAttribute('data-open', 'true');
+      searchBtn?.setAttribute('data-visible', 'false');
+      cartBtn?.setAttribute('data-visible', 'false');
+      iconOpen?.setAttribute('data-visible', 'false');
+      iconClose?.setAttribute('data-visible', 'true');
       document.body.style.overflow = 'hidden';
       document.body.style.width = '100%';
     }
 
     if (!isMobile) {
       nav.removeAttribute('data-open');
+      searchBtn?.removeAttribute('data-visible');
+      cartBtn?.removeAttribute('data-visible');
+      iconOpen?.removeAttribute('data-visible');
+      iconClose?.removeAttribute('data-visible');
       document.body.style.overflow = '';
       document.body.style.width = '';
       if (!document.body.getAttribute('style')) {
