@@ -344,4 +344,8 @@ a {
   transform: translate(-50%, -50%);
 }
 
+.hero__text {
+  text-decoration: underline;
+}
+
 /* #endregion */
