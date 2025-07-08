@@ -333,6 +333,8 @@ a {
 
 .hero__content {
   grid-column: 5 / 9;
+  margin-top: 1.25rem;
+  margin-bottom: 1.6875rem;
 }
 
 .hero__text {
