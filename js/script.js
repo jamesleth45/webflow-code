@@ -90,43 +90,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const close = (list, btn) => {
         if (!list || !btn) return;
-
         animating = true;
         const fullHeight = list.scrollHeight;
-
-        list.style.height = `${fullHeight}px`; // Set to full height so it can animate to 0
+        list.style.height = `${fullHeight}px`;
         requestAnimationFrame(() => {
           list.style.height = '0px';
         });
-
         list.addEventListener('transitionend', function handler() {
           list.removeAttribute('data-open');
-          list.style.height = '';
+          list.style.removeProperty('height');
           list.removeEventListener('transitionend', handler);
           animating = false;
         });
-
         btn.removeAttribute('data-active');
       };
 
       const open = (list, btn) => {
         if (!list || !btn) return;
-
         animating = true;
         const fullHeight = list.scrollHeight;
-
         list.style.height = '0px';
         requestAnimationFrame(() => {
           list.setAttribute('data-open', 'true');
           list.style.height = `${fullHeight}px`;
         });
-
         list.addEventListener('transitionend', function handler() {
           list.style.height = 'auto';
           list.removeEventListener('transitionend', handler);
           animating = false;
         });
-
         btn.setAttribute('data-active', 'true');
       };
 
