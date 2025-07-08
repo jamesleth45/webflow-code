@@ -134,8 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // #endregion
 
-
-
+// #region Toggle menu nav
 document.addEventListener('DOMContentLoaded', () => {
   const menuBtn = document.querySelector('.header__mobile-btn--menu');
   const nav = document.querySelector('.header__nav');
@@ -201,3 +200,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+// #endregion
