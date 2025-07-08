@@ -99,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
         list.addEventListener('transitionend', function handler() {
           list.removeAttribute('data-open');
           list.style.removeProperty('height');
+          if (!list.getAttribute('style')) list.removeAttribute('style');
           list.removeEventListener('transitionend', handler);
           animating = false;
         });
