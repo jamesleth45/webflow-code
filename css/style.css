@@ -81,7 +81,7 @@ a {
 /* #region Header */
 .header__logo {
   position: fixed;
-  top: calc(1.6875rem + var(--banner-offset));
+  top: 1.6875rem;
   left: 1.6875rem;
   z-index: 101;
   display: flex;
@@ -158,7 +158,7 @@ a {
   .header__nav-list--left,
   .header__nav-list--right {
     position: fixed;
-    top: calc(8.75rem + var(--banner-offset));
+    top: 8.75rem;
     z-index: 100;
   }
 
@@ -216,7 +216,7 @@ a {
 
 .header__nav-item--search {
   position: fixed;
-  top: calc(1.6875rem + var(--banner-offset));
+  top: 1.6875rem;
   right: 1.6875rem;
   display: flex;
 }
@@ -484,20 +484,7 @@ a {
 
 /* #endregion */
 
-/* #region Banner */
-.banner {
-  padding: .625rem;
-  text-align: center;
-  background-color: #fff;
-  border-bottom: 1px solid #eee;
-}
+/* #region Test */
 
-.banner__link {
-  text-decoration: underline;
-}
-
-:root {
-  --banner-offset: 0rem;
-}
 
 /* #endregion */
