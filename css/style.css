@@ -45,8 +45,8 @@ h1 {
   font-family: neue-haas-grotesk-display, "neue-haas-grotesk-display fallback", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 1.25rem;
-  line-height: 1.25rem;
+  font-size: 1.375rem;
+  line-height: 1.375rem;
 }
 
 img, picture, video, canvas, svg {
