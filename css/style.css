@@ -338,6 +338,8 @@ a {
   .footer__nav-list--region {
     grid-column: span 6;
     margin-left: 0;
+    padding-top: 1.25rem;
+    padding-left: 1.25rem;
   }
 }
 
@@ -348,6 +350,9 @@ a {
 @media (max-width: 1279px) {
   .footer__nav-list--main {
     grid-column: span 6;
+    padding-top: 1.25rem;
+    padding-right: 1.25rem;
+    text-align: right;
   }
 }
 
@@ -357,6 +362,8 @@ a {
 
 @media (max-width: 1279px) {
   .footer__nav-list--legal {
+    padding-right: 1.25rem;
+    padding-bottom: 1.25rem;
     grid-column: span 12;
   }
 }
@@ -368,6 +375,8 @@ a {
 @media (max-width: 1279px) {
   .footer__nav-list--social {
     grid-column: span 12;
+    padding: 1.25rem;
+    border-top: 1px solid #eee;
   }
 }
 
@@ -380,6 +389,8 @@ a {
   .footer__nav-list--newsletter {
     grid-column: span 12;
     margin-right: 0;
+    padding: 1.25rem;
+    border-top: 1px solid #eee;
   }
 }
 
