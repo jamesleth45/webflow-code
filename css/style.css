@@ -473,6 +473,11 @@ a {
   object-fit: cover;
 }
 
+.hero__wrap {
+  grid-column: span 6;
+  position: relative;
+}
+
 @media (max-width: 1279px) {
   .hero__img {
     grid-column: 1 / -1;
