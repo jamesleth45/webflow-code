@@ -336,7 +336,7 @@ a {
 
 @media (max-width: 1279px) {
   .footer__nav-list--region {
-    grid-column: span 3;
+    grid-column: span 6;
   }
 }
 
@@ -346,7 +346,7 @@ a {
 
 @media (max-width: 1279px) {
   .footer__nav-list--main {
-    grid-column: span 3;
+    grid-column: span 6;
   }
 }
 
