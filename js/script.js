@@ -203,3 +203,29 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 // #endregion
+
+
+
+const banner = document.querySelector('.banner');
+
+function updateBannerOffset() {
+  const root = document.documentElement;
+  if (banner && banner.offsetHeight > 0) {
+    root.style.setProperty('--banner-offset', `${banner.offsetHeight}px`);
+  } else {
+    root.style.setProperty('--banner-offset', '0rem');
+  }
+}
+
+// Run on load
+window.addEventListener('load', updateBannerOffset);
+
+// Run on resize (just in case)
+window.addEventListener('resize', updateBannerOffset);
+
+// Optional: if banner is dismissible
+const bannerCloseBtn = document.querySelector('.banner__close');
+bannerCloseBtn?.addEventListener('click', () => {
+  banner?.remove();
+  updateBannerOffset();
+});

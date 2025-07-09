@@ -158,7 +158,7 @@ a {
   .header__nav-list--left,
   .header__nav-list--right {
     position: fixed;
-    top: 8.75rem;
+    top: calc(8.75rem + var(--banner-offset));
     z-index: 100;
   }
 
@@ -494,11 +494,6 @@ a {
 
 :root {
   --banner-offset: 0rem;
-}
-
-.header__nav-list--left,
-.header__nav-list--right {
-  top: calc(8.75rem + var(--banner-offset));
 }
 
 /* #endregion */
