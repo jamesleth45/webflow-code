@@ -350,6 +350,36 @@ a {
   }
 }
 
+.footer__nav-list--legal {
+  grid-column: span 2;
+}
+
+@media (max-width: 1279px) {
+  .footer__nav-list--legal {
+    grid-column: span 12;
+  }
+}
+
+.footer__nav-list--social {
+  grid-column: span 2;
+}
+
+@media (max-width: 1279px) {
+  .footer__nav-list--social {
+    grid-column: span 12;
+  }
+}
+
+.footer__nav-list--newsletter {
+  grid-column: span 2;
+}
+
+@media (max-width: 1279px) {
+  .footer__nav-list--newsletter {
+    grid-column: span 12;
+  }
+}
+
 /* #endregion */
 
 /* #region Hero */
