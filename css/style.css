@@ -317,6 +317,13 @@ a {
   border-top: 1px solid #eee;
 }
 
+@media (max-width: 1279px) {
+  .footer {
+    padding-top: 1.6875rem;
+    padding-bottom: 1.6875rem;
+  }
+}
+
 /* #endregion */
 
 /* #region Hero */
