@@ -483,3 +483,13 @@ a {
 }
 
 /* #endregion */
+
+/* #region Banner */
+.banner {
+  padding: .625rem;
+  text-align: center;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+/* #endregion */
