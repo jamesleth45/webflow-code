@@ -81,7 +81,7 @@ a {
 /* #region Header */
 .header__logo {
   position: fixed;
-  top: 1.6875rem;
+  top: calc(8.75rem + var(--banner-offset));
   left: 1.6875rem;
   z-index: 101;
   display: flex;
