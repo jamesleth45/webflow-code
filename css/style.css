@@ -81,7 +81,7 @@ a {
 /* #region Header */
 .header__logo {
   position: fixed;
-  top: calc(8.75rem + var(--banner-offset));
+  top: calc(1.6875rem + var(--banner-offset));
   left: 1.6875rem;
   z-index: 101;
   display: flex;
@@ -216,7 +216,7 @@ a {
 
 .header__nav-item--search {
   position: fixed;
-  top: 1.6875rem;
+  top: calc(1.6875rem + var(--banner-offset));
   right: 1.6875rem;
   display: flex;
 }
