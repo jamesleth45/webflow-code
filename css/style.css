@@ -332,6 +332,7 @@ a {
 .footer__nav-list--region {
   grid-column: span 4;
   margin-left: 1.6875rem;
+  font-weight: 700;
 }
 
 @media (max-width: 1279px) {
