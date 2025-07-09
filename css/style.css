@@ -340,6 +340,16 @@ a {
   }
 }
 
+.footer__nav-list--main {
+  grid-column: span 2;
+}
+
+@media (max-width: 1279px) {
+  .footer__nav-list--main {
+    grid-column: span 3;
+  }
+}
+
 /* #endregion */
 
 /* #region Hero */
