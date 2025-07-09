@@ -492,4 +492,13 @@ a {
   border-bottom: 1px solid #eee;
 }
 
+:root {
+  --banner-offset: 0rem;
+}
+
+.header__nav-list--left,
+.header__nav-list--right {
+  top: calc(8.75rem + var(--banner-offset));
+}
+
 /* #endregion */
