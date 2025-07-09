@@ -417,6 +417,18 @@ a {
   }
 }
 
+@media (max-width: 1279px) {
+  .footer__nav-text--social {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  .footer__nav-icon--social {
+    display: none;
+  }
+}
+
 /* #endregion */
 
 /* #region Hero */
