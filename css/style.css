@@ -7,7 +7,6 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, blockquote, dl, dd {
   margin: 0;
   padding: 0;
   font-size: inherit;
-  font-weight: inherit;
   line-height: inherit;
 }
 
@@ -413,9 +412,12 @@ a {
     position: absolute;
     top: 50%;
     left: 1.25rem;
-    font-weight: 400;
     transform: translateY(-50%);
   }
+}
+
+.footer__nav-title {
+  font-weight: 400;
 }
 
 @media (max-width: 1279px) {
