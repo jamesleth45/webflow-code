@@ -492,6 +492,10 @@ a {
   border-bottom: 1px solid #eee;
 }
 
+.banner__link {
+  text-decoration: underline;
+}
+
 :root {
   --banner-offset: 0rem;
 }
