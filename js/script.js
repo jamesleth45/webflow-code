@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'footer__nav-text',
     'header__logo-text',
     'panel__close-text',
+    'panel__close-icon',
     'header__mobile-icon',
     'header__nav-icon',
     'footer__nav-icon'
