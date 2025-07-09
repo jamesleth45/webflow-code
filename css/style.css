@@ -402,6 +402,15 @@ a {
 }
 
 @media (max-width: 1279px) {
+  .footer__nav-item--title {
+    position: absolute;
+    top: 50%;
+    left: 1.25rem;
+    transform: translateY(-50%);
+  }
+}
+
+@media (max-width: 1279px) {
   .footer__nav-link,
   .footer__nav-btn {
     line-height: 1.5625rem;
