@@ -401,6 +401,13 @@ a {
   }
 }
 
+@media (max-width: 1279px) {
+  .footer__nav-link,
+  .footer__nav-btn {
+    line-height: 1.5625rem;
+  }
+}
+
 /* #endregion */
 
 /* #region Hero */
