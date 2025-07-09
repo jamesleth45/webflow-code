@@ -36,8 +36,8 @@ body {
 
 @media (max-width: 767px) {
   body {
-    font-size: .6875rem;
-    line-height: .6875rem;
+    font-size: .75rem;
+    line-height: .9375rem;
   }
 }
 
@@ -169,12 +169,6 @@ a {
   .header__nav-list--right {
     right: 1.6875rem;
     text-align: right;
-  }
-}
-
-@media (max-width: 1279px) {
-  .header__nav-list--left {
-    font-weight: 700;
   }
 }
 
