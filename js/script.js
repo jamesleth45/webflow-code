@@ -29,7 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
     'header__logo-text',
     'panel__close-text',
     'header__mobile-icon',
-    'header__nav-icon'
+    'header__nav-icon',
+    'footer__nav-icon'
   ];
 
   const selector = classList.map(cls => `div.${cls}`).join(', ');
