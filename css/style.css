@@ -423,6 +423,12 @@ a {
   }
 }
 
+.footer__nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .625rem;
+}
+
 @media (max-width: 1279px) {
   .footer__nav-text--social {
     display: none;
