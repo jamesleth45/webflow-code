@@ -511,9 +511,14 @@ a {
 }
 
 .panel__inner {
+  display: grid;
+  height: 100%;
   padding: 8.75rem 1.6875rem 1.6875rem .625rem;
   background-color: #fff;
   grid-column: 9 / 13;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  gap: 0;
 }
 
 /* #endregion */
