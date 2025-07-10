@@ -301,3 +301,31 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 // #endregion
+
+// #region Search clear
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.form__input').forEach(input => {
+    const label = input.closest('form')?.querySelector('.form__label');
+
+    if (!label) return;
+
+    // Move label up on focus
+    input.addEventListener('focus', () => {
+      label.setAttribute('data-active', 'true');
+    });
+
+    // On blur, only keep label up if there's value
+    input.addEventListener('blur', () => {
+      if (input.value.trim() === '') {
+        label.removeAttribute('data-active');
+      }
+    });
+
+    // On load: handle pre-filled values (e.g. browser autofill)
+    if (input.value.trim() !== '') {
+      label.setAttribute('data-active', 'true');
+    }
+  });
+});
+
+// #endregion
