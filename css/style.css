@@ -673,6 +673,10 @@ a {
   margin-top: .625rem;
 }
 
+.form__legal-text {
+  text-decoration: underline;
+}
+
 /* #endregion */
 
 /* #region Webflow */
