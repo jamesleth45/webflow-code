@@ -782,17 +782,13 @@ select:-webkit-autofill {
   word-wrap: break-word;
   text-overflow: ellipsis;
   text-wrap: balance;
-  -webkit-line-clamp: 3;
-
-  /*! autoprefixer: ignore next */
-  -webkit-box-orient: vertical
 }
 
 .w-button:hover {
   background-color: #222;
 }
 
-.w--redirected-checked {
+.w-checkbox-input--inputType-custom.w--redirected-checked {
   background-color: #000;
   background-image: none;
   border-color: #000;
