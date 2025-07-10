@@ -473,8 +473,12 @@ a {
   gap: 0;
 }
 
-.hero__img {
+.hero__link {
   grid-column: 5 / 9;
+  width: 100%;
+}
+
+.hero__img {
   width: 100%;
   min-height:100svh;
   object-fit: cover;
