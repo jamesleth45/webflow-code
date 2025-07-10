@@ -500,6 +500,13 @@ a {
   position: fixed;
   inset: 0;
   z-index: 110;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.panel[data-open="true"] {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .panel__grid {
@@ -515,10 +522,17 @@ a {
   height: 100%;
   padding: 8.75rem 1.6875rem 1.6875rem .625rem;
   background-color: #fff;
+  transition: transform 450ms cubic-bezier(0.19, 1, 0.22, 1) 50ms;
+  transform: translateX(100%);
   grid-column: 9 / 13;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
   gap: 0;
+}
+
+.panel[data-open="true"] .panel__inner {
+  transition: transform 650ms cubic-bezier(0.19, 1, 0.22, 1);
+  transform: translateX(0);
 }
 
 @media (max-width: 1279px) {
