@@ -226,6 +226,8 @@ document.addEventListener('DOMContentLoaded', () => {
       content.setAttribute('data-visible', 'true');
       closeBtn.setAttribute('data-visible', 'true');
       input?.focus();
+      document.body.style.overflow = 'hidden';
+      document.body.style.width = '100%';
     });
   });
 
@@ -247,6 +249,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setTimeout(() => {
       panel.removeAttribute('data-open');
+      document.body.style.overflow = '';
+      document.body.style.width = '';
     }, 500);
   };
 
