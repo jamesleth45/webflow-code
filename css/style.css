@@ -586,6 +586,15 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  transition: opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  pointer-events: none;
+}
+
+.panel__close[data-visible="true"] {
+  opacity: 1;
+  transition: opacity 350ms cubic-bezier(0.215, 0.61, 0.355, 1) 150ms;
+  pointer-events: auto;
 }
 
 @media (max-width: 1279px) {
