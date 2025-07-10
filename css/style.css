@@ -510,6 +510,8 @@ a {
 }
 
 .panel__inner {
+  padding: 8.75rem 1.6875rem 1.6875rem .625rem;
+  background-color: #fff;
   grid-column: 9 / 13;
 }
 
