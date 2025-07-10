@@ -604,6 +604,8 @@ a {
   display: block;
   width: 100%;
   min-width: 0;
+  height: auto;
+  margin: 0;
   padding: 0 0 .3125rem;
   font-size: inherit;
   line-height: inherit;
