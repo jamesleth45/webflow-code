@@ -616,6 +616,7 @@ a {
    height: 3.5rem;
    margin-right: .625rem;
    background-color: #fff;
+   align-items: right;
   }
 }
 
