@@ -11,7 +11,9 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, blockquote, dl, dd {
 }
 
 label {
-  all: unset;
+  display: block;
+  margin-bottom: inherit;
+  font-weight: inherit;
 }
 
 ul, ol {
