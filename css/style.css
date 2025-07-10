@@ -463,11 +463,7 @@ a {
 /* #region Hero */
 .hero {
   position: relative;
-  display: flex;
-  height: 100vh;
   color: #fff;
-  align-items: center;
-  justify-content: center;
 }
 
 .hero__grid {
@@ -484,6 +480,8 @@ a {
 
 .hero__img {
   width: 100%;
+  min-height:100svh;
+  object-fit: cover;
 }
 
 @media (max-width: 1279px) {
