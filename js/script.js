@@ -251,6 +251,9 @@ document.addEventListener('DOMContentLoaded', () => {
       panel.removeAttribute('data-open');
       document.body.style.overflow = '';
       document.body.style.width = '';
+      if (!document.body.getAttribute('style')?.trim()) {
+        document.body.removeAttribute('style');
+      }
     }, 500);
   };
 
