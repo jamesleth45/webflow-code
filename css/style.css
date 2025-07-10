@@ -595,11 +595,11 @@ a {
 /* #endregion */
 
 /* #region Search */
-.search {
+.w-form {
   margin: 0;
 }
 
-.search__input {
+.w-input {
   position: relative;
   display: block;
   width: 100%;
