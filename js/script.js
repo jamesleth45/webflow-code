@@ -233,12 +233,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const inner = panel.querySelector('.panel__inner');
     const content = panel.querySelector('.panel__content');
     const closeBtn = panel.querySelector('.panel__close');
+    const input = panel.querySelector('.search__input');
+    const clearBtn = panel.querySelector('.search__clear');
 
     if (!inner || !content || !closeBtn) return;
 
     inner.removeAttribute('data-slide');
     content.removeAttribute('data-visible');
     closeBtn.removeAttribute('data-visible');
+
+    if (input) input.value = '';
+    if (clearBtn) clearBtn.removeAttribute('data-visible');
 
     setTimeout(() => {
       panel.removeAttribute('data-open');
