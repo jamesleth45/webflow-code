@@ -521,6 +521,13 @@ a {
   gap: 0;
 }
 
+.panel__content {
+  grid-column: span 3;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  gap: 0;
+}
+
 /* #endregion */
 
 /* #region Form */
