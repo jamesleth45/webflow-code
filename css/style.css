@@ -713,9 +713,11 @@ select:-webkit-autofill {
 
 .w-checkbox {
   all: unset;
+  position: relative;
 }
 
 .w-checkbox-input {
+  position: absolute;
   top: .125rem;
   float: left;
   width: .5rem;
