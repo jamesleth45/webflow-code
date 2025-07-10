@@ -612,13 +612,9 @@ a {
   .panel__close {
    top: 0;
    right: 0;
-   width: 100%;
+   width: 2.75rem;
    height: 3.5rem;
    margin-right: .625rem;
-   padding-right: .375rem;
-   padding-left: .375rem;
-   background-color: #fff;
-   justify-content: flex-end;
   }
 }
 
