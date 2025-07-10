@@ -501,6 +501,13 @@ a {
   inset: 0;
 }
 
+.panel__grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  gap: 0;
+}
+
 /* #endregion */
 
 /* #region Form */
