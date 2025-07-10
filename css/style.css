@@ -589,12 +589,20 @@ a {
 
 /* #endregion */
 
-/* #region Form */
+/* #region Search */
+.search {
+  position: relative;
+}
 
+.search__clear {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 
 /* #endregion */
 
-/* #region Search */
+/* #region Webflow */
 .w-form {
   margin: 0;
 }
