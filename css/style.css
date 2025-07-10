@@ -594,6 +594,10 @@ a {
   position: relative;
 }
 
+.search__input {
+  padding-right: 3.5rem;
+}
+
 .search__clear {
   position: absolute;
   top: 0;
