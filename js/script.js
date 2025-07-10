@@ -204,3 +204,65 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 // #endregion
+
+// #region Toggle panel
+document.addEventListener('DOMContentLoaded', () => {
+  const openButtons = document.querySelectorAll('[data-toggle]');
+  const panels = document.querySelectorAll('[data-panel]');
+
+  openButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const id = button.getAttribute('data-toggle');
+      const panel = document.querySelector(`[data-panel="${id}"]`);
+      const inner = panel.querySelector('.panel__inner');
+      const content = panel.querySelector('.panel__content');
+
+      if (!panel || !inner || !content) return;
+
+      // Open
+      panel.setAttribute('data-open', 'true');
+      inner.setAttribute('data-slide', 'in');
+      content.setAttribute('data-visible', 'true');
+    });
+  });
+
+  const closePanel = panel => {
+    const inner = panel.querySelector('.panel__inner');
+    const content = panel.querySelector('.panel__content');
+
+    if (!inner || !content) return;
+
+    // Remove slide & visible first
+    inner.removeAttribute('data-slide');
+    content.removeAttribute('data-visible');
+
+    // Wait for animation to finish (450ms + 50ms = 500ms total)
+    setTimeout(() => {
+      panel.removeAttribute('data-open');
+    }, 500);
+  };
+
+  // ESC key
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      panels.forEach(panel => {
+        if (panel.hasAttribute('data-open')) closePanel(panel);
+      });
+    }
+  });
+
+  // Click outside panel__inner or on panel__close
+  panels.forEach(panel => {
+    panel.addEventListener('click', e => {
+      const inner = panel.querySelector('.panel__inner');
+      const closeBtn = e.target.closest('.panel__close');
+
+      const clickedOutside = inner && !inner.contains(e.target);
+
+      if (clickedOutside || closeBtn) {
+        closePanel(panel);
+      }
+    });
+  });
+});
+// #endregion
