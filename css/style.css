@@ -784,5 +784,9 @@ select:-webkit-autofill {
   -webkit-box-orient: vertical
 }
 
+.w-button:hover {
+  background-color: #222;
+}
+
 
 /* #endregion */
