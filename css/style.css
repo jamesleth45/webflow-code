@@ -524,6 +524,7 @@ a {
 @media (max-width: 1023px) {
   .panel__inner {
     grid-column: 7 / 13;
+    display: block;
   }
 }
 
