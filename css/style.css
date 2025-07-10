@@ -792,5 +792,10 @@ select:-webkit-autofill {
   background-color: #222;
 }
 
+.w--redirected-checked {
+  background-color: #000;
+  background-image: none;
+  border-color: #000;
+}
 
 /* #endregion */
