@@ -510,10 +510,7 @@ a {
 }
 
 .panel__inner {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 1fr;
-  gap: 0;
+  grid-column: 9 / 13;
 }
 
 /* #endregion */
