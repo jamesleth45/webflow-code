@@ -521,6 +521,18 @@ a {
   gap: 0;
 }
 
+@media (max-width: 1023px) {
+  .panel__inner {
+    grid-column: 6 / 13;
+  }
+}
+
+@media (max-width: 767px) {
+  .panel__inner {
+    grid-column: 1 / -1;
+  }
+}
+
 .panel__content {
   grid-column: span 3;
   grid-template-columns: repeat(4, 1fr);
