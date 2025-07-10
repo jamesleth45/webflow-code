@@ -749,6 +749,7 @@ select:-webkit-autofill {
 
 @media (max-width: 767px) {
   .w-checkbox-input {
+    top: .1875rem;
     width: .5625rem;
     height: .5625rem;
   }
