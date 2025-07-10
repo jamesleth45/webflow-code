@@ -549,6 +549,12 @@ a {
   max-width: 28.75rem;
 }
 
+@media (max-width: 1279px) {
+  .panel__content {
+    max-width: none;
+  }
+}
+
 /* #endregion */
 
 /* #region Form */
