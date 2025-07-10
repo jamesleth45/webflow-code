@@ -563,6 +563,14 @@ a {
 }
 
 @media (max-width: 1279px) {
+  .panel__close {
+   top: 0;
+   right: 0;
+   width: 2.25rem;
+  }
+}
+
+@media (max-width: 1279px) {
   .panel__close-text {
    display: none;
   }
