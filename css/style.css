@@ -603,7 +603,6 @@ a {
   position: relative;
   display: block;
   width: 100%;
-  min-width: 0;
   height: auto;
   margin: 0;
   padding: 0 0 .3125rem;
@@ -621,6 +620,11 @@ a {
   font-style: normal;
   border-bottom: 1px solid #000;
   outline: none
+}
+
+.w-input:focus, .w-select:focus {
+  border-bottom: 1px solid #000;
+  outline: 0;
 }
 
 /* #endregion */
