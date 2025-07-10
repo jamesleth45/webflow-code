@@ -526,6 +526,7 @@ a {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
   gap: 0;
+  max-width: 28.75rem;
 }
 
 /* #endregion */
