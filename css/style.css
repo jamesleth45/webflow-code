@@ -599,4 +599,26 @@ a {
   margin: 0;
 }
 
+.search__input {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 0 0 .3125rem;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-transform: uppercase;
+  color: #000;
+  background: rgb(0 0 0 / 0%);
+  border: 0 none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-style: normal;
+  border-bottom: 1px solid #000;
+  outline: none
+}
+
 /* #endregion */
