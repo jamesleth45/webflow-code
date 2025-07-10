@@ -692,6 +692,12 @@ a {
   margin-bottom: 0;
 }
 
+.w-form-done {
+  padding: 0;
+  text-align: left;
+  background-color: transparent;
+}
+
 .w-input {
   position: relative;
   display: block;
