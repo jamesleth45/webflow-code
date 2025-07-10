@@ -496,7 +496,10 @@ a {
 /* #endregion */
 
 /* #region Panel */
-
+.panel {
+  position: fixed;
+  inset: 0;
+}
 
 /* #endregion */
 
