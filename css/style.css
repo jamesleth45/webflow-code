@@ -747,6 +747,13 @@ select:-webkit-autofill {
   border-radius: 0;
 }
 
+@media (max-width: 767px) {
+  .w-checkbox-input {
+    width: .5625rem;
+    height: .5625rem;
+  }
+}
+
 .w-form-label {
   margin-left: 1.25rem ;
 }
