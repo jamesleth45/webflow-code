@@ -322,15 +322,3 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // #endregion
-
-
-
-// Nukes all debugger statements
-setInterval(() => {
-  const scripts = document.querySelectorAll('script');
-  scripts.forEach(script => {
-    if (script.innerText.includes('debugger')) script.innerText = script.innerText.replace(/debugger;/g, '');
-  });
-  // Try nuking breakpoints
-  if (typeof window !== 'undefined') window.debugger = () => {};
-}, 500);
