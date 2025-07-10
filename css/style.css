@@ -617,7 +617,9 @@ a {
   width: 100%;
   height: auto;
   margin: 0;
+  padding-top: 0;
   padding-bottom: .3125rem;
+  padding-bottom: 0;
   font-size: inherit;
   line-height: inherit;
   letter-spacing: inherit;
