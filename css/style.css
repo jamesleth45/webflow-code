@@ -669,6 +669,10 @@ a {
   margin-top: 1.25rem;
 }
 
+.form__legal {
+  margin-top: .625rem;
+}
+
 /* #endregion */
 
 /* #region Webflow */
