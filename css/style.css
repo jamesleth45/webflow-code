@@ -602,6 +602,11 @@ a {
   position: absolute;
   top: 0;
   right: 0;
+  display: none;
+}
+
+.search__clear[data-visible="true"] {
+  display: block;
 }
 
 /* #endregion */
