@@ -796,7 +796,7 @@ select:-webkit-autofill {
 }
 
 .w-checkbox-input--inputType-custom.w--redirected-focus {
-  all: unset;
+  box-shadow: 0 0 3px 1px #3898ec00;
 }
 
 /* #endregion */
