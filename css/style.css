@@ -650,6 +650,14 @@ a {
 /* #endregion */
 
 /* #region Form */
+.form {
+  margin-top: 1.875rem;
+}
+
+.form__title {
+  font-weight: 700;
+}
+
 .form__label {
   margin-bottom: -.875rem;
   color: #999;
