@@ -714,7 +714,6 @@ select:-webkit-autofill {
 .w-checkbox {
   all: unset;
   position: relative;
-  padding-left: 1.25rem;
 }
 
 .w-checkbox-input {
@@ -727,6 +726,10 @@ select:-webkit-autofill {
   line-height: normal;
   border: 1px solid #000;
   border-radius: 0;
+}
+
+.w-form-label {
+  margin-left: 1.25rem ;
 }
 
 /* #endregion */
