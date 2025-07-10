@@ -595,6 +595,8 @@ a {
 /* #endregion */
 
 /* #region Search */
-
+.search {
+  margin: 0;
+}
 
 /* #endregion */
