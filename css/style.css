@@ -530,7 +530,7 @@ a {
   gap: 0;
 }
 
-.panel[data-open="true"] .panel__inner {
+.panel__inner[data-slide="in"] {
   transition: transform 650ms cubic-bezier(0.19, 1, 0.22, 1);
   transform: translateX(0);
 }
@@ -556,11 +556,20 @@ a {
 }
 
 .panel__content {
+  max-width: 28.75rem;
+  opacity: 0;
+  transition: opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  pointer-events: none;
   grid-column: span 3;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
   gap: 0;
-  max-width: 28.75rem;
+}
+
+.panel__content[data-visible="true"] {
+  opacity: 1;
+  transition: opacity 350ms cubic-bezier(0.215, 0.61, 0.355, 1) 150ms;
+  pointer-events: auto;
 }
 
 @media (max-width: 1279px) {
