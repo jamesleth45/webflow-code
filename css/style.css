@@ -599,7 +599,7 @@ a {
   margin: 0;
 }
 
-.w-input {
+input, textarea, select {
   position: relative;
   display: block;
   width: 100%;
@@ -619,10 +619,12 @@ a {
   appearance: none;
   font-style: normal;
   border-bottom: 1px solid #000;
-  outline: none
+  outline: none;
 }
 
-.w-input:focus, .w-select:focus {
+input:focus,
+textarea:focus,
+select:focus {
   border-color: #000;
   outline: 0;
 }
