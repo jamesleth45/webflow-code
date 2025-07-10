@@ -562,6 +562,18 @@ a {
   z-index: 140;
 }
 
+@media (max-width: 1279px) {
+  .panel__close-text {
+   display: none;
+  }
+}
+
+@media (min-width: 1280px) {
+  .panel__close-icon {
+    display: none;
+  }
+}
+
 /* #endregion */
 
 /* #region Form */
