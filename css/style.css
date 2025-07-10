@@ -480,7 +480,7 @@ a {
 
 .hero__img {
   width: 100%;
-  min-height:200svh;
+  min-height:100svh;
   object-fit: cover;
 }
 
