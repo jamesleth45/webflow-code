@@ -463,7 +463,11 @@ a {
 /* #region Hero */
 .hero {
   position: relative;
+  display: flex;
+  height: 100vh;
   color: #fff;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero__grid {
