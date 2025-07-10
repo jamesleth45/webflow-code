@@ -217,6 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const inner = panel.querySelector('.panel__inner');
       const content = panel.querySelector('.panel__content');
       const closeBtn = panel.querySelector('.panel__close');
+      const input = panel.querySelector('.search__input');
 
       if (!panel || !inner || !content || !closeBtn) return;
 
@@ -224,6 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
       inner.setAttribute('data-slide', 'in');
       content.setAttribute('data-visible', 'true');
       closeBtn.setAttribute('data-visible', 'true');
+      input?.focus();
     });
   });
 
@@ -261,6 +263,29 @@ document.addEventListener('DOMContentLoaded', () => {
         closePanel(panel);
       }
     });
+  });
+});
+// #endregion
+
+// #region Search clear
+document.addEventListener('DOMContentLoaded', () => {
+  const input = document.querySelector('.search__input');
+  const clearBtn = document.querySelector('.search__clear');
+
+  if (!input || !clearBtn) return;
+
+  input.addEventListener('input', () => {
+    if (input.value.trim() !== '') {
+      clearBtn.setAttribute('data-visible', 'true');
+    } else {
+      clearBtn.removeAttribute('data-visible');
+    }
+  });
+
+  clearBtn.addEventListener('click', () => {
+    input.value = '';
+    clearBtn.removeAttribute('data-visible');
+    input.focus();
   });
 });
 // #endregion
