@@ -216,33 +216,33 @@ document.addEventListener('DOMContentLoaded', () => {
       const panel = document.querySelector(`[data-panel="${id}"]`);
       const inner = panel.querySelector('.panel__inner');
       const content = panel.querySelector('.panel__content');
+      const closeBtn = panel.querySelector('.panel__close');
 
-      if (!panel || !inner || !content) return;
+      if (!panel || !inner || !content || !closeBtn) return;
 
-      // Open
       panel.setAttribute('data-open', 'true');
       inner.setAttribute('data-slide', 'in');
       content.setAttribute('data-visible', 'true');
+      closeBtn.setAttribute('data-visible', 'true');
     });
   });
 
   const closePanel = panel => {
     const inner = panel.querySelector('.panel__inner');
     const content = panel.querySelector('.panel__content');
+    const closeBtn = panel.querySelector('.panel__close');
 
-    if (!inner || !content) return;
+    if (!inner || !content || !closeBtn) return;
 
-    // Remove slide & visible first
     inner.removeAttribute('data-slide');
     content.removeAttribute('data-visible');
+    closeBtn.removeAttribute('data-visible');
 
-    // Wait for animation to finish (450ms + 50ms = 500ms total)
     setTimeout(() => {
       panel.removeAttribute('data-open');
     }, 500);
   };
 
-  // ESC key
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
       panels.forEach(panel => {
@@ -251,12 +251,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Click outside panel__inner or on panel__close
   panels.forEach(panel => {
     panel.addEventListener('click', e => {
       const inner = panel.querySelector('.panel__inner');
       const closeBtn = e.target.closest('.panel__close');
-
       const clickedOutside = inner && !inner.contains(e.target);
 
       if (clickedOutside || closeBtn) {
