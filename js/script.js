@@ -1,6 +1,6 @@
 // #region Remove unwanted Webflow classes
 document.addEventListener('DOMContentLoaded', () => {
-  const classesToRemove = ['w-inline-block', 'w--current', 'w-embed', 'w-layout-grid'];
+  const classesToRemove = ['w-inline-block', 'w--current', 'w-embed', 'w-layout-grid', 'w--redirected-focus'];
 
   const cleanClasses = () => {
     classesToRemove.forEach(cls => {
