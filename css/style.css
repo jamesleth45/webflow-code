@@ -661,6 +661,10 @@ a {
   transform: translateY(-15px);
 }
 
+.form__confirm {
+  margin-top: 1.25rem;
+}
+
 /* #endregion */
 
 /* #region Webflow */
