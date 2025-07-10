@@ -10,6 +10,10 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, blockquote, dl, dd {
   line-height: inherit;
 }
 
+label {
+  all: unset;
+}
+
 ul, ol {
   list-style: none;
 }
@@ -639,6 +643,17 @@ a {
 
 .search__clear[data-visible="true"] {
   display: block;
+}
+
+/* #endregion */
+
+/* #region Form */
+.form__label {
+  position: relative;
+}
+
+.form__label {
+  position: relative;
 }
 
 /* #endregion */
