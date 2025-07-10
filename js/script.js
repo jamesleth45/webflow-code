@@ -31,7 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
     'panel__close-icon',
     'header__mobile-icon',
     'header__nav-icon',
-    'footer__nav-icon'
+    'footer__nav-icon',
+    'search__clear-text'
   ];
 
   const selector = classList.map(cls => `div.${cls}`).join(', ');
@@ -203,29 +204,3 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 // #endregion
-
-
-
-const banner = document.querySelector('.banner');
-
-function updateBannerOffset() {
-  const root = document.documentElement;
-  if (banner && banner.offsetHeight > 0) {
-    root.style.setProperty('--banner-offset', `${banner.offsetHeight}px`);
-  } else {
-    root.style.setProperty('--banner-offset', '0rem');
-  }
-}
-
-// Run on load
-window.addEventListener('load', updateBannerOffset);
-
-// Run on resize (just in case)
-window.addEventListener('resize', updateBannerOffset);
-
-// Optional: if banner is dismissible
-const bannerCloseBtn = document.querySelector('.banner__close');
-bannerCloseBtn?.addEventListener('click', () => {
-  banner?.remove();
-  updateBannerOffset();
-});
