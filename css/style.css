@@ -792,6 +792,7 @@ select:-webkit-autofill {
   background-color: #000;
   background-image: none;
   border-color: #000;
+  box-shadow: 0 0 0 .0625rem inset, 0 0 0 .125rem #fff inset;
 }
 
 /* #endregion */
