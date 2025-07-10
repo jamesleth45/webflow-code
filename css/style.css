@@ -485,7 +485,7 @@ a {
 }
 
 @media (max-width: 1279px) {
-  .hero__img {
+  .hero__link {
     grid-column: 1 / -1;
   }
 }
