@@ -649,7 +649,14 @@ a {
 
 /* #region Form */
 .form__label {
-  position: relative;
+  margin-bottom: -.875rem;
+  color: #999;
+  transition: transform 450ms cubic-bezier(0.19, 1, 0.22, 1);
+  transform: translateY(0);
+}
+
+.search__clear[data-active="true"] {
+  transform: translateY(-15px);
 }
 
 /* #endregion */
