@@ -461,6 +461,10 @@ a {
 /* #endregion */
 
 /* #region Hero */
+body:has(.hero) .header {
+  color: #fff;
+}
+
 .hero {
   position: relative;
   color: #fff;
@@ -474,7 +478,7 @@ a {
 }
 
 .hero__link {
-  grid-column: 5 / 9;
+  grid-column: 1 / -1;
   width: 100%;
 }
 
