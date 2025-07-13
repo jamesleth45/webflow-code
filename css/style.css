@@ -1,25 +1,36 @@
-/* #region Global */
+/* #region Box sizing */
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, blockquote, dl, dd {
-  margin: 0;
-  padding: 0;
-  font-size: inherit;
-  line-height: inherit;
+/* #endregion */
+
+/* #region Selection */
+*::selection {
+  color: #fff;
+  background: #000;
 }
 
-label {
+/* #endregion */
+
+/* #region Media */
+img, picture, video, canvas, svg {
   display: block;
-  margin-bottom: inherit;
-  font-weight: inherit;
+  max-width: 100%;
+  height: auto;
 }
 
-ul, ol {
-  list-style: none;
+/* #endregion */
+
+/* #region Link */
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
+/* #endregion */
+
+/* #region Button */
 button {
   padding: 0;
   text-transform: inherit;
@@ -27,6 +38,59 @@ button {
   background: none;
 }
 
+/* #endregion */
+
+/* #region Hover */
+@media (hover: hover) {
+  a:hover,
+  button:hover {
+    font-weight: 700;
+  }
+}
+
+/* #endregion */
+
+/* #region Label */
+label {
+  display: block;
+  margin-bottom: 0;
+  font-weight: inherit;
+}
+
+/* #endregion */
+
+/* #region List */
+ul, ol {
+  list-style: none;
+}
+
+/* #endregion */
+
+/* #region Typography */
+h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, blockquote, dl, dd {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+h1 {
+  font-family: neue-haas-grotesk-display, "neue-haas-grotesk-display fallback", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1.375rem;
+  line-height: 1.375rem;
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 1.25rem;
+    line-height: 1.25rem;
+  }
+}
+
+/* #endregion */
+
+/* #region Body */
 body {
   font-family: neue-haas-grotesk-text, "neue-haas-grotesk-text fallback", sans-serif;
   font-size: .625rem;
@@ -45,48 +109,6 @@ body {
     font-size: .75rem;
     line-height: .9375rem;
   }
-}
-
-h1 {
-  font-family: neue-haas-grotesk-display, "neue-haas-grotesk-display fallback", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 1.375rem;
-  line-height: 1.375rem;
-}
-
-@media (max-width: 767px) {
-  h1 {
-    font-size: 1.25rem;
-    line-height: 1.25rem;
-  }
-}
-
-img, picture, video, canvas, svg {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-*::selection {
-  color: #fff;
-  background: #000;
-}
-
-@media (hover: hover) {
-  a:hover,
-  button:hover {
-    font-weight: 700;
-  }
-}
-
-.i {
-  display: none;
 }
 
 /* #endregion */
