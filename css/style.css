@@ -483,6 +483,10 @@ body {
 /* #endregion */
 
 /* #region Hero */
+body:has(.hero) .header {
+  color: #fff;
+}
+
 .hero {
   position: relative;
   color: #fff;
