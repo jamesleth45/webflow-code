@@ -207,24 +207,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // #region Toggle panel
 document.addEventListener('DOMContentLoaded', () => {
+  function fadeIn(el, delay = '150ms') {
+    if (!el) return
+    el.style.opacity = '0'
+    requestAnimationFrame(() => {
+      el.style.transition = `opacity 350ms cubic-bezier(0.215, 0.61, 0.355, 1) ${delay}`
+      el.style.opacity = '1'
+      el.addEventListener('transitionend', () => {
+        el.style.transition = ''
+        el.style.opacity = ''
+      }, { once: true })
+    })
+  }
+
+  function slideIn(el) {
+    if (!el) return
+    el.style.transform = 'translateX(100%)'
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        el.style.transition = 'transform 650ms cubic-bezier(0.19, 1, 0.22, 1)'
+        el.style.transform = 'translateX(0)'
+        el.addEventListener('transitionend', () => {
+          el.style.transition = ''
+          el.style.transform = ''
+        }, { once: true })
+      })
+    })
+  }
+
   document.querySelectorAll('[data-state]').forEach(panel => {
     if (panel.getAttribute('data-state') === 'closed') {
       panel.style.display = 'none'
     } else {
       const inner = panel.querySelector('.panel__inner')
-      if (inner) {
-        inner.style.transform = 'translateX(100%)'
-      }
-
       const content = panel.querySelector('.panel__content')
-      if (content) {
-        content.style.opacity = '0'
-      }
-
       const close = panel.querySelector('.panel__close')
-      if (close) {
-        close.style.opacity = '0'
-      }
+      if (inner) inner.style.transform = 'translateX(100%)'
+      if (content) content.style.opacity = '0'
+      if (close) close.style.opacity = '0'
     }
   })
 
@@ -238,36 +258,12 @@ document.addEventListener('DOMContentLoaded', () => {
       panel.style.display = 'block'
 
       const inner = panel.querySelector('.panel__inner')
-      if (inner) {
-        inner.style.transform = 'translateX(100%)'
-
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            inner.style.transition = 'transform 650ms cubic-bezier(0.19, 1, 0.22, 1)'
-            inner.style.transform = 'translateX(0)'
-          })
-        })
-      }
-
       const content = panel.querySelector('.panel__content')
-      if (content) {
-        content.style.opacity = '0'
-
-        requestAnimationFrame(() => {
-          content.style.transition = 'opacity 350ms cubic-bezier(0.215, 0.61, 0.355, 1) 150ms'
-          content.style.opacity = '1'
-        })
-      }
-
       const close = panel.querySelector('.panel__close')
-      if (close) {
-        close.style.opacity = '0'
 
-        requestAnimationFrame(() => {
-          close.style.transition = 'opacity 350ms cubic-bezier(0.215, 0.61, 0.355, 1) 150ms'
-          close.style.opacity = '1'
-        })
-      }
+      slideIn(inner)
+      fadeIn(content)
+      fadeIn(close)
     })
   })
 })
