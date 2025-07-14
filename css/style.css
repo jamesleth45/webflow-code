@@ -496,7 +496,6 @@ body {
 .form__label {
   position: absolute;
   top: 0;
-  left: 0;
   margin-bottom: -0.875rem;
   color: #999;
   transition: transform 450ms cubic-bezier(0.19, 1, 0.22, 1);
