@@ -214,17 +214,11 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', () => {
       const id = button.getAttribute('data-toggle');
       const panel = document.querySelector(`[data-panel="${id}"]`);
-      const inner = panel.querySelector('.panel__inner');
-      const content = panel.querySelector('.panel__content');
-      const closeBtn = panel.querySelector('.panel__close');
-      const input = panel.querySelector('.search__input');
+      const input = panel?.querySelector('.search__input');
 
-      if (!panel || !inner || !content || !closeBtn) return;
+      if (!panel) return;
 
       panel.setAttribute('data-open', 'true');
-      inner.setAttribute('data-slide', 'in');
-      content.setAttribute('data-visible', 'true');
-      closeBtn.setAttribute('data-visible', 'true');
       input?.focus();
       document.body.style.overflow = 'hidden';
       document.body.style.width = '100%';
@@ -232,29 +226,18 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const closePanel = panel => {
-    const inner = panel.querySelector('.panel__inner');
-    const content = panel.querySelector('.panel__content');
-    const closeBtn = panel.querySelector('.panel__close');
     const input = panel.querySelector('.search__input');
     const clearBtn = panel.querySelector('.search__clear');
-
-    if (!inner || !content || !closeBtn) return;
-
-    inner.removeAttribute('data-slide');
-    content.removeAttribute('data-visible');
-    closeBtn.removeAttribute('data-visible');
 
     if (input) input.value = '';
     if (clearBtn) clearBtn.removeAttribute('data-visible');
 
-    setTimeout(() => {
-      panel.removeAttribute('data-open');
-      document.body.style.overflow = '';
-      document.body.style.width = '';
-      if (!document.body.getAttribute('style')?.trim()) {
-        document.body.removeAttribute('style');
-      }
-    }, 500);
+    panel.removeAttribute('data-open');
+    document.body.style.overflow = '';
+    document.body.style.width = '';
+    if (!document.body.getAttribute('style')?.trim()) {
+      document.body.removeAttribute('style');
+    }
   };
 
   document.addEventListener('keydown', e => {
@@ -269,9 +252,9 @@ document.addEventListener('DOMContentLoaded', () => {
     panel.addEventListener('click', e => {
       const inner = panel.querySelector('.panel__inner');
       const closeBtn = e.target.closest('.panel__close');
-      const clickedOutside = inner && !inner.contains(e.target);
+      if (!inner) return;
 
-      if (clickedOutside || closeBtn) {
+      if (!inner.contains(e.target) || closeBtn) {
         closePanel(panel);
       }
     });
