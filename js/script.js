@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!inner || !content || !closeBtn) return;
 
-    inner.removeAttribute('data-slide');
+    inner.removeAttribute('data-open');
     content.removeAttribute('data-visible');
     closeBtn.removeAttribute('data-visible');
 
