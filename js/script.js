@@ -207,6 +207,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // #region Toggle panel
 document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('[data-state]').forEach(panel => {
+    if (panel.getAttribute('data-state') === 'closed') {
+      panel.style.display = 'none'
+    }
+  })
+
   document.querySelectorAll('[data-target]').forEach(button => {
     button.addEventListener('click', () => {
       const targetSelector = button.getAttribute('data-target')
