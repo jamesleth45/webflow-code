@@ -241,8 +241,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.querySelectorAll('[data-state]').forEach(panel => {
-    if (panel.getAttribute('data-state') === 'closed') {
+    const isClosed = panel.getAttribute('data-state') === 'closed'
+
+    if (isClosed) {
       panel.style.display = 'none'
+      requestAnimationFrame(() => {
+        panel.style.display = ''
+        if (panel.getAttribute('style') === '') panel.removeAttribute('style')
+      })
     } else {
       const inner = panel.querySelector('.panel__inner')
       const content = panel.querySelector('.panel__content')
