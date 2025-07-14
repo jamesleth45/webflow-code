@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // #endregion
 
-// #region Panel
+// #region Panel Open
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-target]').forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -216,29 +216,32 @@ document.addEventListener('DOMContentLoaded', () => {
       panel.setAttribute('data-state', 'open');
     });
   });
+});
+// #endregion
 
-  document.addEventListener('click', (e) => {
-    const panel = e.target.closest('.panel');
-    if (!panel) return;
+// #region Panel Close
+document.addEventListener('click', (e) => {
+  const panel = e.target.closest('.panel');
+  if (!panel) return;
 
-    const inner = panel.querySelector('.panel__inner');
-    const close = panel.querySelector('.panel__close');
+  const inner = panel.querySelector('.panel__inner');
+  const close = panel.querySelector('.panel__close');
 
-    if (
-      e.target === close ||                          // clicked .panel__close
-      !inner.contains(e.target)                      // clicked outside .panel__inner
-    ) {
+  if (e.target === close || !inner.contains(e.target)) {
+    setTimeout(() => {
       panel.removeAttribute('data-state');
-    }
-  });
+    }, 500);
+  }
+});
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      document.querySelectorAll('.panel[data-state="open"]').forEach((panel) => {
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.panel[data-state="open"]').forEach((panel) => {
+      setTimeout(() => {
         panel.removeAttribute('data-state');
-      });
-    }
-  });
+      }, 500);
+    });
+  }
 });
 // #endregion
 
