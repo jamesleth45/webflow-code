@@ -215,6 +215,16 @@ document.addEventListener('DOMContentLoaded', () => {
       if (inner) {
         inner.style.transform = 'translateX(100%)'
       }
+
+      const content = panel.querySelector('.panel__content')
+      if (content) {
+        content.style.opacity = '0'
+      }
+
+      const close = panel.querySelector('.panel__close')
+      if (close) {
+        close.style.opacity = '0'
+      }
     }
   })
 
@@ -236,6 +246,26 @@ document.addEventListener('DOMContentLoaded', () => {
             inner.style.transition = 'transform 650ms cubic-bezier(0.19, 1, 0.22, 1)'
             inner.style.transform = 'translateX(0)'
           })
+        })
+      }
+
+      const content = panel.querySelector('.panel__content')
+      if (content) {
+        content.style.opacity = '0'
+
+        requestAnimationFrame(() => {
+          content.style.transition = 'opacity 350ms cubic-bezier(0.215, 0.61, 0.355, 1) 150ms'
+          content.style.opacity = '1'
+        })
+      }
+
+      const close = panel.querySelector('.panel__close')
+      if (close) {
+        close.style.opacity = '0'
+
+        requestAnimationFrame(() => {
+          close.style.transition = 'opacity 350ms cubic-bezier(0.215, 0.61, 0.355, 1) 150ms'
+          close.style.opacity = '1'
         })
       }
     })
