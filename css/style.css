@@ -1,36 +1,24 @@
-/* #region Box sizing */
+/* #region Global */
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
-/* #endregion */
-
-/* #region Selection */
 *::selection {
   color: #fff;
   background: #000;
 }
 
-/* #endregion */
-
-/* #region Media */
 img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-/* #endregion */
-
-/* #region Link */
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* #endregion */
-
-/* #region Button */
 button {
   padding: 0;
   text-transform: inherit;
@@ -38,9 +26,6 @@ button {
   background: none;
 }
 
-/* #endregion */
-
-/* #region Hover */
 @media (hover: hover) {
   a:hover,
   button:hover {
@@ -48,25 +33,16 @@ button {
   }
 }
 
-/* #endregion */
-
-/* #region Label */
 label {
   display: block;
   margin-bottom: 0;
   font-weight: inherit;
 }
 
-/* #endregion */
-
-/* #region List */
 ul, ol {
   list-style: none;
 }
 
-/* #endregion */
-
-/* #region Typography */
 h1, h2, h3, h4, h5, h6, p, ul, ol, li, figure, blockquote, dl, dd {
   margin: 0;
   padding: 0;
@@ -88,9 +64,6 @@ h1 {
   }
 }
 
-/* #endregion */
-
-/* #region Body */
 body {
   font-family: neue-haas-grotesk-text, "neue-haas-grotesk-text fallback", sans-serif;
   font-size: .625rem;
@@ -482,51 +455,6 @@ body {
 
 /* #endregion */
 
-/* #region Hero */
-.hero {
-  position: relative;
-  color: #fff;
-}
-
-.hero__grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 1fr;
-  gap: 0;
-}
-
-.hero__link {
-  grid-column: 5 / 9;
-  width: 100%;
-}
-
-.hero__img {
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
-}
-
-@media (max-width: 1279px) {
-  .hero__link {
-    grid-column: 1 / -1;
-  }
-}
-
-.hero__content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  text-align: center;
-  transform: translate(-50%, -50%);
-}
-
-.hero__text {
-  font-weight: 400;
-  text-decoration: underline;
-}
-
-/* #endregion */
-
 /* #region Panel */
 .panel {
   position: fixed;
@@ -709,6 +637,51 @@ body {
 }
 
 .form__legal-link {
+  text-decoration: underline;
+}
+
+/* #endregion */
+
+/* #region Hero */
+.hero {
+  position: relative;
+  color: #fff;
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  gap: 0;
+}
+
+.hero__link {
+  grid-column: 5 / 9;
+  width: 100%;
+}
+
+.hero__img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+@media (max-width: 1279px) {
+  .hero__link {
+    grid-column: 1 / -1;
+  }
+}
+
+.hero__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.hero__text {
+  font-weight: 400;
   text-decoration: underline;
 }
 
