@@ -726,6 +726,7 @@ select:-webkit-autofill {
 /* #region Panel close */
 .panel__close {
   position: fixed;
+  z-index: 110;
   top: 1.6875rem;
   right: 1.6875rem;
   opacity: 0;
