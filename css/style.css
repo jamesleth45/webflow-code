@@ -204,8 +204,23 @@ body {
 
 @media (max-width: 1279px) {
   .header__nav-list--nested {
-    margin-left: .625rem;
+    position: fixed;
+    z-index: 100;
+    display: grid;
+    height: auto;
+    padding: 3.5rem 1.25rem 1.25rem;
+    overflow-y: auto;
     text-align: left;
+    background-color: #fff;
+    transition: transform 0.4s cubic-bezier(.22, 1, .36, 1);
+    transform: translateX(100%);
+    inset: 0;
+    align-content: space-between;
+    row-gap: 4.375rem;
+  }
+
+  .header__nav-list--nested[data-open="true"] {
+    transform: translateX(0);
   }
 }
 
