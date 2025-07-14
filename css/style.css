@@ -793,6 +793,11 @@ select:-webkit-autofill {
   transform: translateX(0);
 }
 
+.panel[data-state="closed"] .panel__inner {
+  transition: transform 450ms cubic-bezier(0.19, 1, 0.22, 1) 50ms;
+  transform: translateX(100%);
+}
+
 @media (max-width: 1279px) {
   .panel__inner {
     display: block;
