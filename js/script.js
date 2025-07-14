@@ -285,27 +285,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // #endregion
 
-// #region Form Label Move
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.form__input').forEach(input => {
-    const label = input.closest('form')?.querySelector('.form__label');
-    if (!label) return;
-    input.addEventListener('focus', () => {
-      label.setAttribute('data-active', 'true');
-    });
-    input.addEventListener('blur', () => {
-      if (input.value.trim() === '') {
-        label.removeAttribute('data-active');
-      }
-    });
-    if (input.value.trim() !== '') {
-      label.setAttribute('data-active', 'true');
-    }
-  });
-});
-
-// #endregion
-
 // #region search panel autofocus
 document.addEventListener('DOMContentLoaded', () => {
   const observer = new MutationObserver((mutations) => {
