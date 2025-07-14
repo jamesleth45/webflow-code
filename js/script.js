@@ -333,21 +333,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.querySelectorAll('.panel').forEach(panel => {
-    const inner = panel.querySelector('.panel__inner')
     const closeBtn = panel.querySelector('.panel__close')
+    const inner = panel.querySelector('.panel__inner')
 
     if (closeBtn) {
       closeBtn.addEventListener('click', () => closePanel(panel))
     }
 
-    if (inner) {
-      inner.addEventListener('click', e => {
-        e.stopPropagation() // 💥 stops bubbling to panel
-      })
-    }
-
-    panel.addEventListener('click', () => {
-      closePanel(panel)
+    panel.addEventListener('click', e => {
+      if (!inner || !inner.contains(e.target)) {
+        closePanel(panel)
+      }
     })
 
     document.addEventListener('keydown', e => {
