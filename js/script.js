@@ -205,152 +205,18 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // #endregion
 
-// #region Open panel
+// #region Panel
 document.addEventListener('DOMContentLoaded', () => {
-  const fadeIn = (el, delay = 150) => {
-    if (!el) return
-    el.style.transition = ''
-    el.style.opacity = '0'
+  document.querySelectorAll('[data-target]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-target');
+      const panel = document.getElementById(targetId);
+      if (!panel) return;
 
-    requestAnimationFrame(() => {
-      el.style.transition = `opacity 350ms cubic-bezier(0.215, 0.61, 0.355, 1) ${delay}ms`
-      el.style.opacity = '1'
-    })
-  }
-
-  const slideIn = el => {
-    if (!el) return
-    el.style.transition = ''
-    el.style.transform = 'translateX(100%)'
-
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        el.style.transition = 'transform 650ms cubic-bezier(0.19, 1, 0.22, 1)'
-        el.style.transform = 'translateX(0)'
-      })
-    })
-  }
-
-  const clean = el => {
-    if (!el) return
-    el.style.transition = ''
-    el.style.opacity = ''
-    el.style.transform = ''
-    el.style.display = ''
-    if (el.getAttribute('style') === '') el.removeAttribute('style')
-  }
-
-  document.querySelectorAll('[data-state]').forEach(panel => {
-    if (panel.getAttribute('data-state') === 'open') {
-      const inner = panel.querySelector('.panel__inner')
-      const content = panel.querySelector('.panel__content')
-      const close = panel.querySelector('.panel__close')
-      if (inner) inner.style.transform = 'translateX(100%)'
-      if (content) content.style.opacity = '0'
-      if (close) close.style.opacity = '0'
-    }
-  })
-
-  document.querySelectorAll('[data-target]').forEach(button => {
-    button.addEventListener('click', () => {
-      const target = button.getAttribute('data-target')
-      const panel = document.querySelector(target)
-      if (!panel) return
-
-      // 💥 force reset before opening again
-      panel.removeAttribute('data-state')
-      clean(panel)
-      const inner = panel.querySelector('.panel__inner')
-      const content = panel.querySelector('.panel__content')
-      const close = panel.querySelector('.panel__close')
-      clean(inner)
-      clean(content)
-      clean(close)
-
-      panel.setAttribute('data-state', 'open')
-      panel.style.display = 'block'
-
-      slideIn(inner)
-      fadeIn(content)
-      fadeIn(close)
-
-      setTimeout(() => {
-        [panel, inner, content, close].forEach(clean)
-      }, 700)
-    })
-  })
-})
-// #endregion
-
-// #region Close panel
-document.addEventListener('DOMContentLoaded', () => {
-  const fadeOut = el => {
-    if (!el) return
-    el.style.transition = 'opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1)'
-    el.style.opacity = '0'
-  }
-
-  const slideOut = el => {
-    if (!el) return
-    el.style.transition = 'transform 450ms cubic-bezier(0.19, 1, 0.22, 1) 50ms'
-    el.style.transform = 'translateX(100%)'
-  }
-
-  const clean = el => {
-    if (!el) return
-    el.style.transition = ''
-    el.style.opacity = ''
-    el.style.transform = ''
-    el.style.display = ''
-    if (el.getAttribute('style') === '') el.removeAttribute('style')
-  }
-
-  const closePanel = panel => {
-    if (!panel || panel.getAttribute('data-state') !== 'open') return
-
-    panel.removeAttribute('data-state')
-    clean(panel)
-
-    const inner = panel.querySelector('.panel__inner')
-    const content = panel.querySelector('.panel__content')
-    const close = panel.querySelector('.panel__close')
-
-    clean(inner)
-    clean(content)
-    clean(close)
-
-    slideOut(inner)
-    fadeOut(content)
-    fadeOut(close)
-
-    setTimeout(() => {
-      panel.setAttribute('data-state', 'closed')
-      clean(panel)
-      clean(inner)
-      clean(content)
-      clean(close)
-    }, 500)
-  }
-
-  document.querySelectorAll('.panel').forEach(panel => {
-    const closeBtn = panel.querySelector('.panel__close')
-    const inner = panel.querySelector('.panel__inner')
-
-    if (closeBtn) {
-      closeBtn.addEventListener('click', () => closePanel(panel))
-    }
-
-    panel.addEventListener('click', e => {
-      if (!inner || !inner.contains(e.target)) {
-        closePanel(panel)
-      }
-    })
-
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closePanel(panel)
-    })
-  })
-})
+      panel.setAttribute('data-state', 'open');
+    });
+  });
+});
 // #endregion
 
 // #region Search clear
