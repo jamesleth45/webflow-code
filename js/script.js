@@ -153,6 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
   openBtn.addEventListener('click', () => {
     nav.setAttribute('data-state', 'open');
 
+    // Animate elements
     cartBtn.style.transition = fade;
     cartBtn.style.opacity = '0';
     cartBtn.style.pointerEvents = 'none';
@@ -168,6 +169,14 @@ document.addEventListener('DOMContentLoaded', () => {
     iconX.style.transition = fade;
     iconX.style.opacity = '1';
     iconX.style.pointerEvents = 'auto';
+
+    // After animation: remove all inline styles
+    setTimeout(() => {
+      cartBtn.removeAttribute('style');
+      searchBtn.removeAttribute('style');
+      iconHam.removeAttribute('style');
+      iconX.removeAttribute('style');
+    }, 250);
   });
 });
 // #endregion
