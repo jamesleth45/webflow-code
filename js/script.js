@@ -229,12 +229,20 @@ document.addEventListener('click', (e) => {
 
   if (e.target === close || !inner.contains(e.target)) {
     panel.setAttribute('data-state', 'closed');
+
+    // ⛑ Force reflow by reading a layout property
+    void panel.offsetWidth; // This line is the hack
+
+    // Re-set closed so the transition applies
+    panel.setAttribute('data-state', 'closed');
   }
 });
 
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     document.querySelectorAll('.panel[data-state="open"]').forEach((panel) => {
+      panel.setAttribute('data-state', 'closed');
+      void panel.offsetWidth;
       panel.setAttribute('data-state', 'closed');
     });
   }
