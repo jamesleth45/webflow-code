@@ -207,7 +207,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // #region Toggle panel
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('JS loaded!');
+  document.querySelectorAll('.panel[data-state="closed"]').forEach(panel => {
+    panel.style.opacity = '0';
+    panel.style.pointerEvents = 'none';
+
+    const inner = panel.querySelector('.panel__inner');
+    if (inner) {
+      inner.style.transform = 'translateX(100%)';
+    }
+  });
+
   function openPanel(panel) {
     const inner = panel.querySelector('.panel__inner');
     if (!inner) return;
