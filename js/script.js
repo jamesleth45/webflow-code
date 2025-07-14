@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // #endregion
 
-// #region Toggle panel
+// #region Open panel
 document.addEventListener('DOMContentLoaded', () => {
   const fadeIn = (el, delay = 150) => {
     if (!el) return
@@ -274,6 +274,65 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })
 })
+// #endregion
+
+// #region Close panel
+document.addEventListener('DOMContentLoaded', () => {
+  const fadeOut = el => {
+    if (!el) return
+    el.style.transition = 'opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1)'
+    el.style.opacity = '0'
+  }
+
+  const slideOut = el => {
+    if (!el) return
+    el.style.transition = 'transform 450ms cubic-bezier(0.19, 1, 0.22, 1) 50ms'
+    el.style.transform = 'translateX(100%)'
+  }
+
+  const clean = el => {
+    if (!el) return
+    el.style.transition = ''
+    el.style.opacity = ''
+    el.style.transform = ''
+    el.style.display = ''
+    if (el.getAttribute('style') === '') el.removeAttribute('style')
+  }
+
+  const closePanel = panel => {
+    if (!panel || panel.getAttribute('data-state') !== 'open') return
+
+    const inner = panel.querySelector('.panel__inner')
+    const content = panel.querySelector('.panel__content')
+    const close = panel.querySelector('.panel__close')
+
+    slideOut(inner)
+    fadeOut(content)
+    fadeOut(close)
+
+    setTimeout(() => {
+      panel.setAttribute('data-state', 'closed')
+      [panel, inner, content, close].forEach(clean)
+    }, 500)
+  }
+
+  document.querySelectorAll('.panel').forEach(panel => {
+    const closeBtn = panel.querySelector('.panel__close')
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => closePanel(panel))
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closePanel(panel)
+    })
+
+    panel.addEventListener('click', e => {
+      const inner = panel.querySelector('.panel__inner')
+      if (inner && !inner.contains(e.target)) closePanel(panel)
+    })
+  })
+})
+
 // #endregion
 
 // #region Search clear
