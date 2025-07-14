@@ -228,12 +228,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const closePanel = panel => {
     const input = panel.querySelector('.search__input');
     const clearBtn = panel.querySelector('.search__clear');
+    const inner = panel.querySelector('.panel__inner');
+
+    if (!inner) return;
 
     if (input) input.value = '';
     if (clearBtn) clearBtn.removeAttribute('data-visible');
 
+    inner.style.transform = 'translateX(100%)';
+    inner.style.transition = 'transform 450ms cubic-bezier(0.19, 1, 0.22, 1) 50ms';
+
     setTimeout(() => {
       panel.removeAttribute('data-open');
+      inner.style.transform = '';
+      inner.style.transition = '';
       document.body.style.overflow = '';
       document.body.style.width = '';
       if (!document.body.getAttribute('style')?.trim()) {
