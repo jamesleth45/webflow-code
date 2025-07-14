@@ -216,6 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
       el.addEventListener('transitionend', () => {
         el.style.transition = ''
         el.style.opacity = ''
+        if (el.getAttribute('style') === '') el.removeAttribute('style')
       }, { once: true })
     })
   }
@@ -230,6 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
         el.addEventListener('transitionend', () => {
           el.style.transition = ''
           el.style.transform = ''
+          if (el.getAttribute('style') === '') el.removeAttribute('style')
         }, { once: true })
       })
     })
@@ -273,6 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
           doneCount++
           if (doneCount === allDone.length) {
             panel.style.display = ''
+            if (panel.getAttribute('style') === '') panel.removeAttribute('style')
           }
         }, { once: true })
       })
