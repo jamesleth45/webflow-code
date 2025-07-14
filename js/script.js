@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // #endregion
 
-// #region Panel Open
+// #region panel open
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-target]').forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // #endregion
 
-// #region Panel Close
+// #region Panel close
 document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('click', (e) => {
     const panel = e.target.closest('.panel');
@@ -244,7 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // #endregion
 
-// #region Scroll Lock
+// #region panel scroll lock
 document.addEventListener('DOMContentLoaded', () => {
   const observer = new MutationObserver(() => {
     const isAnyPanelOpen = document.querySelector('.panel[data-state="open"]');
@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // #endregion
 
-// #region Search clear
+// #region search clear
 document.addEventListener('DOMContentLoaded', () => {
   const input = document.querySelector('.search__input');
   const clearBtn = document.querySelector('.search__clear');
@@ -271,22 +271,21 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!input || !clearBtn) return;
 
   input.addEventListener('input', () => {
-    if (input.value.trim() !== '') {
-      clearBtn.setAttribute('data-visible', 'true');
-    } else {
-      clearBtn.removeAttribute('data-visible');
-    }
+    clearBtn.hidden = input.value.trim() === '';
   });
 
   clearBtn.addEventListener('click', () => {
     input.value = '';
-    clearBtn.removeAttribute('data-visible');
+    clearBtn.hidden = true;
     input.focus();
   });
+
+  // optional: initialize state on load
+  clearBtn.hidden = input.value.trim() === '';
 });
 // #endregion
 
-// #region Form clear
+// #region Form Label Move
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.form__input').forEach(input => {
     const label = input.closest('form')?.querySelector('.form__label');
@@ -307,7 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // #endregion
 
-// #region Search Autofocus
+// #region search panel autofocus
 document.addEventListener('DOMContentLoaded', () => {
   const observer = new MutationObserver((mutations) => {
     for (const mutation of mutations) {
