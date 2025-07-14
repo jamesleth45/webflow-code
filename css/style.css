@@ -483,10 +483,6 @@ body {
 /* #endregion */
 
 /* #region Hero */
-body:has(.hero) .header {
-  color: #fff;
-}
-
 .hero {
   position: relative;
   color: #fff;
@@ -500,7 +496,7 @@ body:has(.hero) .header {
 }
 
 .hero__link {
-  grid-column: 1 / -1;
+  grid-column: 6 / 9;
   width: 100%;
 }
 
