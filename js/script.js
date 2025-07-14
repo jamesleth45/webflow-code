@@ -220,32 +220,30 @@ document.addEventListener('DOMContentLoaded', () => {
 // #endregion
 
 // #region Panel Close
-document.addEventListener('click', (e) => {
-  const panel = e.target.closest('.panel');
-  if (!panel) return;
+document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('click', (e) => {
+    const panel = e.target.closest('.panel');
+    if (!panel) return;
 
-  const inner = panel.querySelector('.panel__inner');
-  const close = panel.querySelector('.panel__close');
+    const inner = panel.querySelector('.panel__inner');
+    const close = panel.querySelector('.panel__close');
 
-  if (e.target === close || !inner.contains(e.target)) {
-    panel.setAttribute('data-state', 'closed');
-
-    // ⛑ Force reflow by reading a layout property
-    void panel.offsetWidth; // This line is the hack
-
-    // Re-set closed so the transition applies
-    panel.setAttribute('data-state', 'closed');
-  }
-});
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    document.querySelectorAll('.panel[data-state="open"]').forEach((panel) => {
+    if (e.target === close || !inner.contains(e.target)) {
       panel.setAttribute('data-state', 'closed');
       void panel.offsetWidth;
       panel.setAttribute('data-state', 'closed');
-    });
-  }
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.panel[data-state="open"]').forEach((panel) => {
+        panel.setAttribute('data-state', 'closed');
+        void panel.offsetWidth;
+        panel.setAttribute('data-state', 'closed');
+      });
+    }
+  });
 });
 // #endregion
 
