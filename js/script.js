@@ -329,3 +329,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 // #endregion
+
+// #region Force Placeholder for Floating Labels
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.form__input').forEach(input => {
+    if (input.placeholder === '') {
+      input.placeholder = ' ';
+    }
+  });
+});
+// #endregion
