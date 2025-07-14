@@ -495,12 +495,11 @@ body {
 
 .form__label {
   position: absolute;
-  top: 50%;
-  left: 0;
+  top: 0;
+  margin-bottom: -.875rem;
   color: #999;
   transition: transform 450ms cubic-bezier(0.19, 1, 0.22, 1);
-  transform: translateY(-50%);
-  pointer-events: none;
+  transform: translateY(0);
 }
 
 .form__input:focus + .form__label,
@@ -524,6 +523,7 @@ body {
 .form__legal-link {
   text-decoration: underline;
 }
+
 /* #endregion */
 
 /* #region Hero */
