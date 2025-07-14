@@ -214,6 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!panel) return;
 
       panel.setAttribute('data-state', 'open');
+      document.body.style.overflow = 'hidden';
     });
   });
 });
@@ -226,10 +227,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!panel) return;
 
     const inner = panel.querySelector('.panel__inner');
-    const close = panel.querySelector('.panel__close');
+    const isCloseBtn = e.target.matches('.panel__close');
+    const clickedOutsideInner = !inner.contains(e.target);
 
-    if (e.target === close || !inner.contains(e.target)) {
+    if (isCloseBtn || clickedOutsideInner) {
       panel.setAttribute('data-state', 'closed');
+
+      setTimeout(() => {
+        if (!document.querySelector('.panel[data-state="open"]')) {
+          document.body.style.overflow = '';
+        }
+      }, 0);
     }
   });
 
@@ -238,6 +246,12 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.panel[data-state="open"]').forEach((panel) => {
         panel.setAttribute('data-state', 'closed');
       });
+
+      setTimeout(() => {
+        if (!document.querySelector('.panel[data-state="open"]')) {
+          document.body.style.overflow = '';
+        }
+      }, 0);
     }
   });
 });
@@ -266,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // #endregion
 
-// #region Search clear
+// #region Form clear
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.form__input').forEach(input => {
     const label = input.closest('form')?.querySelector('.form__label');
