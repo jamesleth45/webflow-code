@@ -210,6 +210,11 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-state]').forEach(panel => {
     if (panel.getAttribute('data-state') === 'closed') {
       panel.style.display = 'none'
+    } else {
+      const inner = panel.querySelector('.panel__inner')
+      if (inner) {
+        inner.style.transform = 'translateX(100%)'
+      }
     }
   })
 
@@ -221,6 +226,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
       panel.setAttribute('data-state', 'open')
       panel.style.display = 'block'
+
+      const inner = panel.querySelector('.panel__inner')
+      if (inner) {
+        inner.style.transform = 'translateX(100%)'
+
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            inner.style.transition = 'transform 650ms cubic-bezier(0.19, 1, 0.22, 1)'
+            inner.style.transform = 'translateX(0)'
+          })
+        })
+      }
     })
   })
 })
