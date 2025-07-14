@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       panel.removeAttribute('style');
       inner.removeAttribute('style');
-    }, 500);
+    }, 550);
   }
 
   document.addEventListener('click', (e) => {
