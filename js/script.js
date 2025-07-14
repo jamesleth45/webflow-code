@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!panel || !inner || !content || !closeBtn) return;
 
       panel.setAttribute('data-open', 'true');
-      inner.setAttribute('data-slide', 'in');
+      inner.setAttribute('data-open', 'true');
       content.setAttribute('data-visible', 'true');
       closeBtn.setAttribute('data-visible', 'true');
       input?.focus();
