@@ -475,13 +475,6 @@ body {
   position: fixed;
   inset: 0;
   z-index: 110;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.panel[data-open="true"] {
-  opacity: 1;
-  pointer-events: auto;
 }
 
 .panel__grid {
@@ -494,28 +487,17 @@ body {
 
 .panel__inner {
   display: grid;
-  height: 100%;
-  padding: 8.75rem 1.6875rem 1.6875rem .625rem;
+  padding: 8.75rem 1.6875rem 1.6875rem 0.625rem;
   overflow-y: auto;
   background-color: #fff;
-  opacity: 1;
-  transition: transform 450ms cubic-bezier(0.19, 1, 0.22, 1) 50ms;
-  transform: translateX(100%);
   grid-column: 9 / 13;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 1fr;
-  gap: 0;
-}
-
-.panel[data-open="true"] .panel__inner {
-  transition: transform 650ms cubic-bezier(0.19, 1, 0.22, 1);
-  transform: translateX(0);
 }
 
 @media (max-width: 1279px) {
   .panel__inner {
     display: block;
-    padding: 3.5rem 1.25rem 1.25rem .625rem;
+    padding: 3.5rem 1.25rem 1.25rem 0.625rem;
   }
 }
 
@@ -534,19 +516,10 @@ body {
 
 .panel__content {
   max-width: 28.75rem;
-  opacity: 0;
-  transition: opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
-  pointer-events: none;
   grid-column: span 3;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
   gap: 0;
-}
-
-.panel[data-open="true"] .panel__content {
-  opacity: 1;
-  transition: opacity 350ms cubic-bezier(0.215, 0.61, 0.355, 1) 150ms;
-  pointer-events: auto;
 }
 
 @media (max-width: 1279px) {
@@ -563,15 +536,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  transition: opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
-  pointer-events: none;
-}
-
-.panel[data-open="true"] .panel__close {
-  opacity: 1;
-  transition: opacity 350ms cubic-bezier(0.215, 0.61, 0.355, 1) 150ms;
-  pointer-events: auto;
 }
 
 @media (max-width: 1279px) {
