@@ -221,6 +221,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // #region Panel Close
 document.addEventListener('DOMContentLoaded', () => {
+  const closePanel = (panel) => {
+    const inner = panel.querySelector('.panel__inner');
+
+    inner.style.transition = 'transform 450ms cubic-bezier(0.19, 1, 0.22, 1) 50ms';
+    inner.style.transform = 'translateX(100%)';
+
+    // allow panel__inner to animate first
+    setTimeout(() => {
+      panel.setAttribute('data-state', 'closed');
+      panel.removeAttribute('style');
+      inner.removeAttribute('style');
+    }, 500); // 450ms + 50ms delay
+  };
+
   document.addEventListener('click', (e) => {
     const panel = e.target.closest('.panel');
     if (!panel) return;
@@ -229,18 +243,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const close = panel.querySelector('.panel__close');
 
     if (e.target === close || !inner.contains(e.target)) {
-      panel.setAttribute('data-state', 'closed');
-      void panel.offsetWidth;
-      panel.setAttribute('data-state', 'closed');
+      closePanel(panel);
     }
   });
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       document.querySelectorAll('.panel[data-state="open"]').forEach((panel) => {
-        panel.setAttribute('data-state', 'closed');
-        void panel.offsetWidth;
-        panel.setAttribute('data-state', 'closed');
+        closePanel(panel);
       });
     }
   });
