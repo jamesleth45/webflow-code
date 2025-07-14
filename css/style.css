@@ -489,17 +489,11 @@ body {
 
 /* #region Form */
 .form {
+  position: relative;
   margin-top: 1.875rem;
 }
 
-.panel__title {
-  font-weight: 700;
-}
-
 .form__label {
-  position: absolute;
-  top: 50%;
-  left: 0;
   margin-bottom: -0.875rem;
   color: #999;
   transition: transform 450ms cubic-bezier(0.19, 1, 0.22, 1);
@@ -510,6 +504,7 @@ body {
 .form__input:not(:placeholder-shown) + .form__label {
   transform: translateY(-15px);
 }
+
 
 .form__confirm {
   margin-top: 1.25rem;
@@ -835,3 +830,7 @@ select:-webkit-autofill {
   pointer-events: auto;
 }
 /* #endregion */
+
+.panel__title {
+  font-weight: 700;
+}
