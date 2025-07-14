@@ -167,7 +167,7 @@ body {
     align-content: space-between;
     row-gap: 4.375rem;
     opacity: 0;
-    transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition: opacity 0.3s cubic-bezier(.25,.1,.25,1);
     pointer-events: none;
   }
 
