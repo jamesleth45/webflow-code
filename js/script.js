@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
   openBtn.addEventListener('click', () => {
     nav.setAttribute('data-state', 'open');
 
-    // Animate elements
+    // Animate hidden stuff
     cartBtn.style.transition = fade;
     cartBtn.style.opacity = '0';
     cartBtn.style.pointerEvents = 'none';
@@ -170,12 +170,23 @@ document.addEventListener('DOMContentLoaded', () => {
     iconX.style.opacity = '1';
     iconX.style.pointerEvents = 'auto';
 
-    // After animation: remove all inline styles
+    // After transition ends (keep them visually hidden/shown, but clean styles)
     setTimeout(() => {
-      cartBtn.removeAttribute('style');
-      searchBtn.removeAttribute('style');
-      iconHam.removeAttribute('style');
-      iconX.removeAttribute('style');
+      cartBtn.style.opacity = '';
+      cartBtn.style.pointerEvents = '';
+      cartBtn.style.transition = '';
+
+      searchBtn.style.opacity = '';
+      searchBtn.style.pointerEvents = '';
+      searchBtn.style.transition = '';
+
+      iconHam.style.opacity = '';
+      iconHam.style.pointerEvents = '';
+      iconHam.style.transition = '';
+
+      iconX.style.opacity = '';
+      iconX.style.pointerEvents = '';
+      iconX.style.transition = '';
     }, 250);
   });
 });
