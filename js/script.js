@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!panel || !inner || !content || !closeBtn) return;
 
       panel.setAttribute('data-open', 'true');
-      inner.setAttribute('data-open', 'true');
+      inner.setAttribute('data-slide', 'in');
       content.setAttribute('data-visible', 'true');
       closeBtn.setAttribute('data-visible', 'true');
       input?.focus();
@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!inner || !content || !closeBtn) return;
 
-    inner.removeAttribute('data-open');
+    inner.removeAttribute('data-slide');
     content.removeAttribute('data-visible');
     closeBtn.removeAttribute('data-visible');
 
