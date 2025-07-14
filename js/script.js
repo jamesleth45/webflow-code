@@ -79,7 +79,10 @@ document.addEventListener('DOMContentLoaded', () => {
 // #region Toggle nested nav
 document.addEventListener('DOMContentLoaded', () => {
   const buttons = document.querySelectorAll('.header__nav-btn');
+  const nav = document.querySelector('.header__nav');
   let animating = false;
+
+  const isMobile = () => window.matchMedia('(max-width: 1279px)').matches;
 
   buttons.forEach(button => {
     button.addEventListener('click', () => {
@@ -107,6 +110,8 @@ document.addEventListener('DOMContentLoaded', () => {
           animating = false;
         });
         btn.removeAttribute('data-active');
+
+        if (isMobile()) nav.removeAttribute('data-slide');
       };
 
       const open = (list, btn) => {
@@ -124,6 +129,8 @@ document.addEventListener('DOMContentLoaded', () => {
           animating = false;
         });
         btn.setAttribute('data-active', 'true');
+
+        if (isMobile()) nav.setAttribute('data-slide', 'out');
       };
 
       if (isOpen) {
