@@ -177,6 +177,16 @@ body {
   }
 }
 
+@media (max-width: 1279px) {
+  .header__nav {
+    transition: transform 0.4s cubic-bezier(.22, 1, .36, 1);
+  }
+
+  .header__nav[data-slide="out"] {
+    transform: translateX(-100%);
+  }
+}
+
 @media (min-width: 1280px) {
   .header__nav-list--left,
   .header__nav-list--right {
