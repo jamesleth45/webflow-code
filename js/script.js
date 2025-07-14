@@ -214,7 +214,6 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!panel) return;
 
       panel.setAttribute('data-state', 'open');
-      document.body.style.overflow = 'hidden';
     });
   });
 });
@@ -232,12 +231,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (isCloseBtn || clickedOutsideInner) {
       panel.setAttribute('data-state', 'closed');
-
-      setTimeout(() => {
-        if (!document.querySelector('.panel[data-state="open"]')) {
-          document.body.removeAttribute('style');
-        }
-      }, 0);
     }
   });
 
@@ -246,13 +239,26 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('.panel[data-state="open"]').forEach((panel) => {
         panel.setAttribute('data-state', 'closed');
       });
-
-      setTimeout(() => {
-        if (!document.querySelector('.panel[data-state="open"]')) {
-          document.body.removeAttribute('style');
-        }
-      }, 0);
     }
+  });
+});
+// #endregion
+
+// #region Scroll Lock
+document.addEventListener('DOMContentLoaded', () => {
+  const observer = new MutationObserver(() => {
+    const isAnyPanelOpen = document.querySelector('.panel[data-state="open"]');
+    if (isAnyPanelOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.removeAttribute('style');
+    }
+  });
+
+  observer.observe(document.body, {
+    attributes: true,
+    subtree: true,
+    attributeFilter: ['data-state'],
   });
 });
 // #endregion
