@@ -230,16 +230,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (e.target === close || !inner.contains(e.target)) {
       panel.setAttribute('data-state', 'closed');
-      void panel.offsetWidth;
-      panel.setAttribute('data-state', 'closed');
     }
   });
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       document.querySelectorAll('.panel[data-state="open"]').forEach((panel) => {
-        panel.setAttribute('data-state', 'closed');
-        void panel.offsetWidth;
         panel.setAttribute('data-state', 'closed');
       });
     }
