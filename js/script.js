@@ -312,8 +312,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setTimeout(() => {
       panel.setAttribute('data-state', 'closed')
-      [panel, inner, content, close].forEach(clean)
-    }, 500)
+      clean(panel)
+      clean(inner)
+      clean(content)
+      clean(close)
+    }, 500) // matches longest transition (450ms + 50ms delay)
   }
 
   document.querySelectorAll('.panel').forEach(panel => {
