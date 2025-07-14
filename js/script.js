@@ -308,9 +308,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const closePanel = panel => {
     if (!panel || panel.getAttribute('data-state') !== 'open') return
 
+    // 💥 force reset first
+    panel.removeAttribute('data-state')
+    clean(panel)
+
     const inner = panel.querySelector('.panel__inner')
     const content = panel.querySelector('.panel__content')
     const close = panel.querySelector('.panel__close')
+
+    clean(inner)
+    clean(content)
+    clean(close)
 
     slideOut(inner)
     fadeOut(content)
@@ -322,7 +330,7 @@ document.addEventListener('DOMContentLoaded', () => {
       clean(inner)
       clean(content)
       clean(close)
-    }, 500) // matches longest transition (450ms + 50ms delay)
+    }, 500)
   }
 
   document.querySelectorAll('.panel').forEach(panel => {
