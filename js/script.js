@@ -209,6 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
   function fadeIn(el, delay = '150ms') {
     if (!el) return
+    el.style.transition = ''
     el.style.opacity = '0'
     requestAnimationFrame(() => {
       el.style.transition = `opacity 350ms cubic-bezier(0.215, 0.61, 0.355, 1) ${delay}`
@@ -223,6 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function slideIn(el) {
     if (!el) return
+    el.style.transition = ''
     el.style.transform = 'translateX(100%)'
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
