@@ -306,3 +306,27 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // #endregion
+
+// #region Search Autofocus
+document.addEventListener('DOMContentLoaded', () => {
+  const observer = new MutationObserver((mutations) => {
+    for (const mutation of mutations) {
+      const panel = mutation.target;
+      if (
+        panel.matches('.panel') &&
+        panel.getAttribute('data-state') === 'open'
+      ) {
+        const input = panel.querySelector('.search__input');
+        if (input) input.focus();
+      }
+    }
+  });
+
+  document.querySelectorAll('.panel').forEach((panel) => {
+    observer.observe(panel, {
+      attributes: true,
+      attributeFilter: ['data-state'],
+    });
+  });
+});
+// #endregion
