@@ -710,7 +710,7 @@ select:-webkit-autofill {
 /* #region Panel */
 .panel {
   position: fixed;
-  z-index: 100;
+  z-index: 120;
   opacity: 0;
   transition: opacity 0s linear 450ms;
   pointer-events: none;
