@@ -308,7 +308,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const closePanel = panel => {
     if (!panel || panel.getAttribute('data-state') !== 'open') return
 
-    // 💥 force reset first
     panel.removeAttribute('data-state')
     clean(panel)
 
@@ -334,18 +333,25 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.querySelectorAll('.panel').forEach(panel => {
+    const inner = panel.querySelector('.panel__inner')
     const closeBtn = panel.querySelector('.panel__close')
+
     if (closeBtn) {
       closeBtn.addEventListener('click', () => closePanel(panel))
     }
 
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closePanel(panel)
+    if (inner) {
+      inner.addEventListener('click', e => {
+        e.stopPropagation() // 💥 stops bubbling to panel
+      })
+    }
+
+    panel.addEventListener('click', () => {
+      closePanel(panel)
     })
 
-    panel.addEventListener('click', e => {
-      const inner = panel.querySelector('.panel__inner')
-      if (inner && !inner.contains(e.target)) closePanel(panel)
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closePanel(panel)
     })
   })
 })
