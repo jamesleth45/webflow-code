@@ -708,12 +708,14 @@ select:-webkit-autofill {
 /* #endregion */
 
 /* #region Panel */
+/* Panel */
 .panel {
   position: fixed;
-  inset: 0;
   z-index: 100;
   opacity: 0;
+  transition: opacity 450ms cubic-bezier(0.19, 1, 0.22, 1);
   pointer-events: none;
+  inset: 0;
 }
 
 .panel[data-state="open"] {
