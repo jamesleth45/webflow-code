@@ -216,6 +216,29 @@ document.addEventListener('DOMContentLoaded', () => {
       panel.setAttribute('data-state', 'open');
     });
   });
+
+  document.addEventListener('click', (e) => {
+    const panel = e.target.closest('.panel');
+    if (!panel) return;
+
+    const inner = panel.querySelector('.panel__inner');
+    const close = panel.querySelector('.panel__close');
+
+    if (
+      e.target === close ||                          // clicked .panel__close
+      !inner.contains(e.target)                      // clicked outside .panel__inner
+    ) {
+      panel.removeAttribute('data-state');
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.panel[data-state="open"]').forEach((panel) => {
+        panel.removeAttribute('data-state');
+      });
+    }
+  });
 });
 // #endregion
 
