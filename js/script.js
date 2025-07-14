@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // #region Toggle panel
 document.addEventListener('DOMContentLoaded', () => {
-  function fadeIn(el, delay = 150) {
+  const fadeIn = (el, delay = 150) => {
     if (!el) return
     el.style.transition = ''
     el.style.opacity = '0'
@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-  function slideIn(el) {
+  const slideIn = el => {
     if (!el) return
     el.style.transition = ''
     el.style.transform = 'translateX(100%)'
@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
-  function clean(el) {
+  const clean = el => {
     if (!el) return
     el.style.transition = ''
     el.style.opacity = ''
@@ -241,9 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   document.querySelectorAll('[data-state]').forEach(panel => {
-    if (panel.getAttribute('data-state') === 'closed') {
-      panel.style.display = 'none'
-    } else {
+    if (panel.getAttribute('data-state') === 'open') {
       const inner = panel.querySelector('.panel__inner')
       const content = panel.querySelector('.panel__content')
       const close = panel.querySelector('.panel__close')
@@ -255,8 +253,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('[data-target]').forEach(button => {
     button.addEventListener('click', () => {
-      const targetSelector = button.getAttribute('data-target')
-      const panel = document.querySelector(targetSelector)
+      const target = button.getAttribute('data-target')
+      const panel = document.querySelector(target)
       if (!panel) return
 
       panel.setAttribute('data-state', 'open')
@@ -271,10 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
       fadeIn(close)
 
       setTimeout(() => {
-        clean(panel)
-        clean(inner)
-        clean(content)
-        clean(close)
+        [panel, inner, content, close].forEach(clean)
       }, 700)
     })
   })
