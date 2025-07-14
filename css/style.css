@@ -708,7 +708,6 @@ select:-webkit-autofill {
 /* #endregion */
 
 /* #region Panel */
-/* Panel */
 .panel {
   position: fixed;
   z-index: 100;
