@@ -264,6 +264,18 @@ document.addEventListener('DOMContentLoaded', () => {
       slideIn(inner)
       fadeIn(content)
       fadeIn(close)
+
+      const allDone = [inner, content, close].filter(Boolean)
+      let doneCount = 0
+
+      allDone.forEach(el => {
+        el.addEventListener('transitionend', () => {
+          doneCount++
+          if (doneCount === allDone.length) {
+            panel.style.display = ''
+          }
+        }, { once: true })
+      })
     })
   })
 })
