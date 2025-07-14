@@ -496,7 +496,7 @@ body {
 }
 
 .hero__link {
-  grid-column: 6 / 9;
+  grid-column: 5 / 9;
   width: 100%;
 }
 
