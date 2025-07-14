@@ -246,6 +246,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setTimeout(() => {
       panel.removeAttribute('style');
+    }, 500);
+
+    setTimeout(() => {
       inner.removeAttribute('style');
     }, 550);
   }
