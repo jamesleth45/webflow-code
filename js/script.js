@@ -229,10 +229,6 @@ document.addEventListener('click', (e) => {
 
   if (e.target === close || !inner.contains(e.target)) {
     panel.setAttribute('data-state', 'closed');
-
-    setTimeout(() => {
-      panel.removeAttribute('data-state');
-    }, 500);
   }
 });
 
@@ -240,10 +236,6 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     document.querySelectorAll('.panel[data-state="open"]').forEach((panel) => {
       panel.setAttribute('data-state', 'closed');
-
-      setTimeout(() => {
-        panel.removeAttribute('data-state');
-      }, 500);
     });
   }
 });
