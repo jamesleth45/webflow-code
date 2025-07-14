@@ -207,6 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // #region Toggle panel
 document.addEventListener('DOMContentLoaded', () => {
+  console.log('JS loaded!');
   function openPanel(panel) {
     const inner = panel.querySelector('.panel__inner');
     if (!inner) return;
