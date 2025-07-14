@@ -207,84 +207,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // #region Toggle panel
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.panel[data-state="closed"]').forEach(panel => {
-    panel.style.opacity = '0';
-    panel.style.pointerEvents = 'none';
+  document.querySelectorAll('[data-target]').forEach(button => {
+    button.addEventListener('click', () => {
+      const targetSelector = button.getAttribute('data-target')
+      const panel = document.querySelector(targetSelector)
+      if (!panel) return
 
-    const inner = panel.querySelector('.panel__inner');
-    if (inner) {
-      inner.style.transform = 'translateX(100%)';
-    }
-  });
-
-  function openPanel(panel) {
-    const inner = panel.querySelector('.panel__inner');
-    if (!inner) return;
-
-    panel.setAttribute('data-state', 'open');
-
-    inner.style.transform = 'translateX(0)';
-    inner.style.transition = 'transform 650ms cubic-bezier(0.19, 1, 0.22, 1)';
-
-    panel.style.opacity = '1';
-    panel.style.pointerEvents = 'auto';
-    panel.style.transition = 'opacity 350ms cubic-bezier(0.215, 0.61, 0.355, 1)';
-  }
-
-  function closePanel(panel) {
-    const inner = panel.querySelector('.panel__inner');
-    if (!inner) return;
-
-    panel.setAttribute('data-state', 'closed');
-
-    inner.style.transform = 'translateX(100%)';
-    inner.style.transition = 'transform 450ms cubic-bezier(0.19, 1, 0.22, 1) 50ms';
-
-    panel.style.opacity = '0';
-    panel.style.pointerEvents = 'none';
-    panel.style.transition = 'opacity 350ms cubic-bezier(0.215, 0.61, 0.355, 1)';
-
-    setTimeout(() => {
-      panel.removeAttribute('style');
-    }, 500);
-
-    setTimeout(() => {
-      inner.removeAttribute('style');
-    }, 550);
-  }
-
-  document.addEventListener('click', (e) => {
-    const trigger = e.target.closest('[data-target]');
-    if (trigger) {
-      const panel = document.querySelector(trigger.getAttribute('data-target'));
-      if (panel) {
-        const isOpen = panel.getAttribute('data-state') === 'open';
-        isOpen ? closePanel(panel) : openPanel(panel);
-      }
-    }
-
-    const closeBtn = e.target.closest('.panel__close');
-    if (closeBtn) {
-      const panel = closeBtn.closest('[data-state="open"]');
-      if (panel) closePanel(panel);
-    }
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      document.querySelectorAll('[data-state="open"]').forEach(closePanel);
-    }
-  });
-
-  document.addEventListener('mousedown', (e) => {
-    document.querySelectorAll('[data-state="open"]').forEach(panel => {
-      const inner = panel.querySelector('.panel__inner');
-      if (inner && !inner.contains(e.target)) {
-        closePanel(panel);
-      }
-    });
-  });
-});
+      panel.setAttribute('data-state', 'open')
+      panel.style.display = 'block'
+    })
+  })
+})
 // #endregion
 
 // #region Search clear
