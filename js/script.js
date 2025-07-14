@@ -232,12 +232,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (input) input.value = '';
     if (clearBtn) clearBtn.removeAttribute('data-visible');
 
-    panel.removeAttribute('data-open');
-    document.body.style.overflow = '';
-    document.body.style.width = '';
-    if (!document.body.getAttribute('style')?.trim()) {
-      document.body.removeAttribute('style');
-    }
+    setTimeout(() => {
+      panel.removeAttribute('data-open');
+      document.body.style.overflow = '';
+      document.body.style.width = '';
+      if (!document.body.getAttribute('style')?.trim()) {
+        document.body.removeAttribute('style');
+      }
+    }, 500);
   };
 
   document.addEventListener('keydown', e => {
