@@ -164,7 +164,10 @@ body {
     overflow-y: auto;
     background-color: #fff;
     opacity: 0;
-    transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition:
+      opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1),
+      transform 0.4s cubic-bezier(.22, 1, .36, 1);
+    transform: translateX(0); /* base position */
     pointer-events: none;
     inset: 0;
     align-content: space-between;
@@ -174,6 +177,10 @@ body {
   .header__nav[data-open="true"] {
     opacity: 1;
     pointer-events: auto;
+  }
+
+  .header__nav[data-slide="out"] {
+    transform: translateX(-100%);
   }
 }
 
@@ -205,7 +212,7 @@ body {
 @media (max-width: 1279px) {
   .header__nav-list--nested {
     position: fixed;
-    z-index: 110; /* higher than header__nav */
+    z-index: 110;
     display: grid;
     padding: 3.5rem 1.25rem 1.25rem;
     overflow-y: auto;
