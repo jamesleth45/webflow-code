@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       setTimeout(() => {
         if (!document.querySelector('.panel[data-state="open"]')) {
-          document.body.style.overflow = '';
+          document.body.removeAttribute('style');
         }
       }, 0);
     }
@@ -249,7 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       setTimeout(() => {
         if (!document.querySelector('.panel[data-state="open"]')) {
-          document.body.style.overflow = '';
+          document.body.removeAttribute('style');
         }
       }, 0);
     }
