@@ -207,18 +207,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // #region Toggle panel
 document.addEventListener('DOMContentLoaded', () => {
-  function fadeIn(el, delay = '150ms') {
+  function fadeIn(el, delay = 150) {
     if (!el) return
     el.style.transition = ''
     el.style.opacity = '0'
+
     requestAnimationFrame(() => {
-      el.style.transition = `opacity 350ms cubic-bezier(0.215, 0.61, 0.355, 1) ${delay}`
+      el.style.transition = `opacity 350ms cubic-bezier(0.215, 0.61, 0.355, 1) ${delay}ms`
       el.style.opacity = '1'
-      el.addEventListener('transitionend', () => {
-        el.style.transition = ''
-        el.style.opacity = ''
-        if (el.getAttribute('style') === '') el.removeAttribute('style')
-      }, { once: true })
     })
   }
 
@@ -226,17 +222,21 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!el) return
     el.style.transition = ''
     el.style.transform = 'translateX(100%)'
+
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         el.style.transition = 'transform 650ms cubic-bezier(0.19, 1, 0.22, 1)'
         el.style.transform = 'translateX(0)'
-        el.addEventListener('transitionend', () => {
-          el.style.transition = ''
-          el.style.transform = ''
-          if (el.getAttribute('style') === '') el.removeAttribute('style')
-        }, { once: true })
       })
     })
+  }
+
+  function clean(el) {
+    if (!el) return
+    el.style.transition = ''
+    el.style.opacity = ''
+    el.style.transform = ''
+    if (el.getAttribute('style') === '') el.removeAttribute('style')
   }
 
   document.querySelectorAll('[data-state]').forEach(panel => {
@@ -269,18 +269,12 @@ document.addEventListener('DOMContentLoaded', () => {
       fadeIn(content)
       fadeIn(close)
 
-      const allDone = [inner, content, close].filter(Boolean)
-      let doneCount = 0
-
-      allDone.forEach(el => {
-        el.addEventListener('transitionend', () => {
-          doneCount++
-          if (doneCount === allDone.length) {
-            panel.style.display = ''
-            if (panel.getAttribute('style') === '') panel.removeAttribute('style')
-          }
-        }, { once: true })
-      })
+      setTimeout(() => {
+        clean(panel)
+        clean(inner)
+        clean(content)
+        clean(close)
+      }, 700)
     })
   })
 })
