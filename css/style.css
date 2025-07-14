@@ -497,10 +497,11 @@ body {
 }
 
 .form__label {
+  top: 50%;
   margin-bottom: -0.875rem;
   color: #999;
   transition: transform 450ms cubic-bezier(0.19, 1, 0.22, 1);
-  transform: translateY(0);
+  transform: translateY(-50%);
 }
 
 .form__input:focus + .form__label,
