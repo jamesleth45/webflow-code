@@ -236,6 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
     el.style.transition = ''
     el.style.opacity = ''
     el.style.transform = ''
+    el.style.display = ''
     if (el.getAttribute('style') === '') el.removeAttribute('style')
   }
 
