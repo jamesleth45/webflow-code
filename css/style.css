@@ -687,7 +687,7 @@ select:-webkit-autofill {
     inset: 0;
   }
 
-   .header__nav[data-open="true"] {
+   .header__nav[data-state="open"] {
     opacity: 1;
     pointer-events: auto;
   }
@@ -836,10 +836,6 @@ select:-webkit-autofill {
 /* #endregion */
 
 /* #region header mobile btn */
-
-/* #endregion */
-
-/* #region header mobile btn */
 .header__mobile-btn {
   position: relative;
   width: 2.25rem;
@@ -847,12 +843,7 @@ select:-webkit-autofill {
 /* #endregion */
 
 /* #region header mobile btn search */
-.header__mobile-btn--cart[data-visible="false"],
-.header__mobile-btn--search[data-visible="false"] {
-  opacity: 0;
-  transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
-  pointer-events: none;
-}
+
 /* #endregion */
 
 /* #region header mobile btn cart */
@@ -893,5 +884,8 @@ select:-webkit-autofill {
 /* #endregion */
 
 /* #region header mobile icon x */
-
+.header__mobile-icon--x {
+  opacity: 0;
+  pointer-events: none;
+}
 /* #endregion */

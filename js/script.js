@@ -139,68 +139,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // #region Toggle menu nav
 document.addEventListener('DOMContentLoaded', () => {
-  const menuBtn = document.querySelector('.header__mobile-btn--menu');
   const nav = document.querySelector('.header__nav');
-  const searchBtn = document.querySelector('.header__mobile-btn--search');
+  const openBtn = document.querySelector('.header__mobile-btn--menu');
+
   const cartBtn = document.querySelector('.header__mobile-btn--cart');
-  const iconOpen = document.querySelector('.header__mobile-icon--open');
-  const iconClose = document.querySelector('.header__mobile-icon--close');
+  const searchBtn = document.querySelector('.header__mobile-btn--search');
 
-  let userOpenedMenu = false;
+  const iconHam = document.querySelector('.header__mobile-icon--ham');
+  const iconX = document.querySelector('.header__mobile-icon--x');
 
-  const openMenu = () => {
-    nav.setAttribute('data-open', 'true');
-    searchBtn?.setAttribute('data-visible', 'false');
-    cartBtn?.setAttribute('data-visible', 'false');
-    iconOpen?.setAttribute('data-visible', 'false');
-    iconClose?.setAttribute('data-visible', 'true');
-    document.body.style.overflow = 'hidden';
-    document.body.style.width = '100%';
-    userOpenedMenu = true;
-  };
+  const fade = 'opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1)';
 
-  const closeMenu = () => {
-    nav.removeAttribute('data-open');
-    searchBtn?.removeAttribute('data-visible');
-    cartBtn?.removeAttribute('data-visible');
-    iconOpen?.removeAttribute('data-visible');
-    iconClose?.setAttribute('data-visible', 'false');
-    document.body.style.overflow = '';
-    document.body.style.width = '';
-    if (!document.body.getAttribute('style')) {
-      document.body.removeAttribute('style');
-    }
-    userOpenedMenu = false;
-  };
+  openBtn.addEventListener('click', () => {
+    nav.setAttribute('data-state', 'open');
 
-  menuBtn?.addEventListener('click', () => {
-    const isOpen = nav.hasAttribute('data-open');
-    isOpen ? closeMenu() : openMenu();
-  });
+    cartBtn.style.transition = fade;
+    cartBtn.style.opacity = '0';
+    cartBtn.style.pointerEvents = 'none';
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && nav.hasAttribute('data-open')) {
-      closeMenu();
-    }
-  });
+    searchBtn.style.transition = fade;
+    searchBtn.style.opacity = '0';
+    searchBtn.style.pointerEvents = 'none';
 
-  window.addEventListener('resize', () => {
-    const isMobile = window.innerWidth < 1280;
+    iconHam.style.transition = fade;
+    iconHam.style.opacity = '0';
+    iconHam.style.pointerEvents = 'none';
 
-    if (isMobile && userOpenedMenu) {
-      nav.setAttribute('data-open', 'true');
-      document.body.style.overflow = 'hidden';
-      document.body.style.width = '100%';
-    }
-
-    if (!isMobile) {
-      nav.removeAttribute('data-open');
-      document.body.style.overflow = '';
-      document.body.style.width = '';
-      if (!document.body.getAttribute('style')) {
-        document.body.removeAttribute('style');
-      }
-    }
+    iconX.style.transition = fade;
+    iconX.style.opacity = '1';
+    iconX.style.pointerEvents = 'auto';
   });
 });
 // #endregion
@@ -309,7 +276,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // #endregion
 
-// #region Force Placeholder for Floating Labels
+// #region adds placeholder to form label
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.form__input').forEach(input => {
     if (input.placeholder === '') {
