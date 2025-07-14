@@ -257,12 +257,18 @@ document.addEventListener('DOMContentLoaded', () => {
       const panel = document.querySelector(target)
       if (!panel) return
 
-      panel.setAttribute('data-state', 'open')
-      panel.style.display = 'block'
-
+      // 💥 force reset before opening again
+      panel.removeAttribute('data-state')
+      clean(panel)
       const inner = panel.querySelector('.panel__inner')
       const content = panel.querySelector('.panel__content')
       const close = panel.querySelector('.panel__close')
+      clean(inner)
+      clean(content)
+      clean(close)
+
+      panel.setAttribute('data-state', 'open')
+      panel.style.display = 'block'
 
       slideIn(inner)
       fadeIn(content)
@@ -335,7 +341,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })
 })
-
 // #endregion
 
 // #region Search clear
