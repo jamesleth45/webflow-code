@@ -84,6 +84,57 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const isMobile = () => window.matchMedia('(max-width: 1279px)').matches;
 
+  const close = (list, btn) => {
+    if (!list || !btn) return;
+    animating = true;
+
+    if (!isMobile()) {
+      const fullHeight = list.scrollHeight;
+      list.style.height = `${fullHeight}px`;
+      requestAnimationFrame(() => {
+        list.style.height = '0px';
+      });
+      list.addEventListener('transitionend', function handler() {
+        list.removeAttribute('data-open');
+        list.style.removeProperty('height');
+        if (!list.getAttribute('style')) list.removeAttribute('style');
+        list.removeEventListener('transitionend', handler);
+        animating = false;
+      });
+    } else {
+      list.removeAttribute('data-open');
+      animating = false;
+    }
+
+    btn.removeAttribute('data-active');
+    if (isMobile()) nav.removeAttribute('data-slide');
+  };
+
+  const open = (list, btn) => {
+    if (!list || !btn) return;
+    animating = true;
+
+    if (!isMobile()) {
+      const fullHeight = list.scrollHeight;
+      list.style.height = '0px';
+      requestAnimationFrame(() => {
+        list.setAttribute('data-open', 'true');
+        list.style.height = `${fullHeight}px`;
+      });
+      list.addEventListener('transitionend', function handler() {
+        list.style.height = 'auto';
+        list.removeEventListener('transitionend', handler);
+        animating = false;
+      });
+    } else {
+      list.setAttribute('data-open', 'true');
+      animating = false;
+    }
+
+    btn.setAttribute('data-active', 'true');
+    if (isMobile()) nav.setAttribute('data-slide', 'out');
+  };
+
   buttons.forEach(button => {
     button.addEventListener('click', () => {
       if (animating) return;
@@ -93,45 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const openList = document.querySelector('.header__nav-list--nested[data-open="true"]');
       const openBtn = document.querySelector('.header__nav-btn[data-active="true"]');
-
-      const close = (list, btn) => {
-        if (!list || !btn) return;
-        animating = true;
-        const fullHeight = list.scrollHeight;
-        list.style.height = `${fullHeight}px`;
-        requestAnimationFrame(() => {
-          list.style.height = '0px';
-        });
-        list.addEventListener('transitionend', function handler() {
-          list.removeAttribute('data-open');
-          list.style.removeProperty('height');
-          if (!list.getAttribute('style')) list.removeAttribute('style');
-          list.removeEventListener('transitionend', handler);
-          animating = false;
-        });
-        btn.removeAttribute('data-active');
-
-        if (isMobile()) nav.removeAttribute('data-slide');
-      };
-
-      const open = (list, btn) => {
-        if (!list || !btn) return;
-        animating = true;
-        const fullHeight = list.scrollHeight;
-        list.style.height = '0px';
-        requestAnimationFrame(() => {
-          list.setAttribute('data-open', 'true');
-          list.style.height = `${fullHeight}px`;
-        });
-        list.addEventListener('transitionend', function handler() {
-          list.style.height = 'auto';
-          list.removeEventListener('transitionend', handler);
-          animating = false;
-        });
-        btn.setAttribute('data-active', 'true');
-
-        if (isMobile()) nav.setAttribute('data-slide', 'out');
-      };
 
       if (isOpen) {
         close(currentList, button);
