@@ -245,3 +245,15 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('div').forEach((div) => {
+    const isEmpty = !div.innerHTML.trim();
+    const hasNoAttributes = div.attributes.length === 0;
+
+    if (isEmpty && hasNoAttributes) {
+      div.remove();
+    }
+  });
+});
+
