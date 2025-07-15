@@ -137,8 +137,18 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // #endregion
 
-// #region Toggle menu nav
+// #region Nav Nested Open
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.nav__btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const nested = btn.nextElementSibling;
+      if (!nested || nested.getAttribute('data-state') === 'open') return;
 
+      nested.setAttribute('data-state', 'open');
+      nested.style.height = nested.scrollHeight + 'px';
+    });
+  });
+});
 // #endregion
 
 // #region panel open
