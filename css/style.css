@@ -127,3 +127,8 @@ input[type="password"] {
   -moz-osx-font-smoothing: auto;
   outline: none;
 }
+
+input[type="password"],
+input[type="email"] {
+  text-decoration: none;
+}
