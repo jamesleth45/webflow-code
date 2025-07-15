@@ -7,6 +7,19 @@
   grid-template-columns: repeat(12, 1fr);
 }
 
+.footer__nav-list--left {
+  display: flex;
+  flex-wrap: nowrap; /* optional: prevents wrapping */
+  grid-column: span 6;
+  gap: 0 1.5rem; /* optional, just for clarity */
+}
+
+.footer__nav-list--right {
+  grid-column: span 6;
+  text-align: right;
+}
+
+
 .footer__nav-list--region {
   grid-column: 3 / 5;
   font-weight: 700;
