@@ -130,5 +130,5 @@ input[type="password"] {
 
 input[type="password"],
 input[type="email"] {
-  text-decoration: none;
+  text-transform: none;
 }
