@@ -282,3 +282,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const target = document.querySelector('.search');
+  if (!target) return;
+
+  target.outerHTML = `
+    <form action="/search" method="GET" class="search">
+      <input 
+        type="text" 
+        name="q" 
+        class="search__input" 
+        placeholder="Search" 
+        autocomplete="off" 
+        required
+      >
+    </form>
+  `;
+});
