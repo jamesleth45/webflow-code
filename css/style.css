@@ -154,6 +154,7 @@ input[type="email"] {
   width: .5rem;
   min-width: .5rem;
   height: .5rem;
+  min-height: .5rem;
   background-color: transparent;
   box-shadow: 0 0 0 .0625rem inset, 0 0 0 .125rem #fff inset;
   content: "";
