@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
             required 
             class="form__checkbox"
           >
-          Subscribe to receive info about James Carter.
+          Subscribe to receive information about JAMES CARTER shows, offers, news and events.
         </label>
       </div>
 
