@@ -1,6 +1,6 @@
 .header__logo {
   position: fixed;
-  z-index: 100;
+  z-index: 110;
   top: 1.6875rem;
   left: 1.6875rem;
 }
