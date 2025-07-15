@@ -228,15 +228,16 @@ document.addEventListener('DOMContentLoaded', () => {
   target.outerHTML = `
     <form class="form" id="newsletterForm" method="post" action="">
       <div class="form__group">
-        <label for="email" class="form__label">Email</label>
         <input 
           type="email" 
           id="email" 
           name="email" 
           class="form__input" 
+          placeholder=" "
           autocomplete="email"
           required
         >
+        <label for="email" class="form__label">Email</label>
       </div>
 
       <div class="form__group form__group--consent">
@@ -254,7 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </label>
       </div>
 
-      <button type="submit" class="form__submit" type="submit">Register</button>
+      <button type="submit" class="form__submit">Register</button>
     </form>
 
     <div class="form__done" hidden>
