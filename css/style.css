@@ -608,10 +608,6 @@ select:-webkit-autofill {
 }
 /* #endregion */
 
-/* #region header */
-
-/* #endregion */
-
 /* #region header logo */
 .header__logo {
   position: fixed;
@@ -872,5 +868,11 @@ select:-webkit-autofill {
 .header__mobile-icon--x {
   opacity: 0;
   pointer-events: none;
+}
+/* #endregion */
+
+/* #region nav */
+.nav {
+  height: 100%;
 }
 /* #endregion */
