@@ -137,13 +137,11 @@ input[type="email"] {
 
 
 .form__checkbox {
-  /* hide native checkbox but keep it accessible */
   position: absolute;
   opacity: 0;
   pointer-events: none;
 }
 
-/* wrapper label should be positioned to style the box */
 .form__checkbox-label {
   position: relative;
   display: inline-flex;
@@ -152,7 +150,7 @@ input[type="email"] {
   cursor: pointer;
 }
 
-/* custom checkbox box */
+/* empty box */
 .form__checkbox-label::before {
   display: inline-block;
   box-sizing: border-box;
@@ -160,11 +158,11 @@ input[type="email"] {
   height: 1rem;
   background-color: transparent;
   border: 1px solid #000;
+  transition: background-color 200ms ease;
   content: "";
 }
 
-/* checked state — your custom tick or filled box */
+/* when checked → black bg */
 .form__checkbox:checked + .form__checkbox-label::before {
   background-color: #000;
-  /* optional: add your own "tick" with mask or SVG later */
 }
