@@ -18,19 +18,33 @@
 }
 
 
-.form__group--consent {
+.form__group--consent,
+.form__group--note {
   margin-top: 1.25rem;
 }
 
 .form__submit {
+  display: block;
+  width: 100%;
+  min-height: 2.5rem;
   margin-top: 1.25rem;
+  padding: 0.75rem 0.625rem 0.8125rem;
+  font: inherit;
+  text-align: center;
+  white-space: nowrap;
+  color: rgb(255 255 255);
+  background-color: rgb(0 0 0);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(0 0 0);
+  cursor: pointer;
 }
 
-.form__legal {
+.form__group--legal {
   margin-top: .625rem;
 }
 
-.form__legal-link {
+.form__privacy-link {
   text-decoration: underline;
 }
 
