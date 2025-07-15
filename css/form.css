@@ -69,6 +69,7 @@
 
 @media (max-width: 767px) {
   .form__checkbox-label::before {
+    top: .1875rem;
     width: .5625rem;
     height: .5625rem;
   }
