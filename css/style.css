@@ -152,9 +152,6 @@ input[type="email"] {
 
 /* empty box */
 .form__checkbox-label::before {
-  display: inline-block;
-  flex-shrink: 0;
-  box-sizing: border-box;
   width: .5625rem;
   height: .5625rem;
   background-color: transparent;
