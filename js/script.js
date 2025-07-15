@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // #region Nav Nested Open + Close (separate logic, same listener)
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.nav__btn').forEach((btn) => {
+  document.querySelectorAll('.nav__btn, .header__nav-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
       const nested = btn.nextElementSibling;
       if (!nested) return;
