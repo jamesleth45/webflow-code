@@ -111,7 +111,7 @@ input[type="password"] {
   display: block;
   width: 100%;
   min-width: 0;
-  padding: 0 0 0.3125rem;
+  padding: 0 0 .3125rem;
   font: inherit;
   text-transform: uppercase;
   color: #000;
