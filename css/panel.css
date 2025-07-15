@@ -100,8 +100,11 @@
     display: none;
   }
 
-  .panel--nav .panel__inner {
+  .panel__inner {
     display: block;
+  }
+
+  .panel--nav .panel__inner {
     grid-column: 1 / -1;
     padding: 3.5rem 1.25rem 1.25rem;
     transform: none !important;
