@@ -255,6 +255,10 @@ document.addEventListener('DOMContentLoaded', () => {
         </label>
       </div>
 
+      <p class="form__note">
+        YOU WILL RECEIVE A CONFIRMATION EMAIL with a LINK TO COMPLETE SUBSCRIBTION.
+      </p>
+
       <button type="submit" class="form__submit">Register</button>
     </form>
 
