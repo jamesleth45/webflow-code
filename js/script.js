@@ -262,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
 
       <div class="form__submit">
-        <button type="submit" class="form__submi-btn">Register</button>
+        <button type="submit" class="form__submit-btn">Register</button>
       </div>
 
       <div class="form__legal">
