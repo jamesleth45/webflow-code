@@ -255,8 +255,8 @@ document.addEventListener('DOMContentLoaded', () => {
         </label>
       </div>
 
-      <p class="form__note">
-        YOU WILL RECEIVE A CONFIRMATION EMAIL with a LINK TO COMPLETE SUBSCRIBTION.
+      <p class="form__group form__group--note">
+        You will receive a confirmation email with a link to complete subscribtion.
       </p>
 
       <button type="submit" class="form__submit">Register</button>
