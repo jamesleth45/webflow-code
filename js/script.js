@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   target.outerHTML = `
     <form class="form" id="newsletterForm" method="post" action="">
-      <div class="form__group">
+      <div class="form__newsletter">
         <input 
           type="email" 
           id="email" 
