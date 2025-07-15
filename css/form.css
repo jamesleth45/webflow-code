@@ -1,6 +1,13 @@
 .form {
   position: relative;
   margin-top: 1.875rem;
+  margin-bottom: 0;
+}
+
+.form__done {
+  padding: 0;
+  text-align: left;
+  background-color: transparent;
 }
 
 .form__label {
