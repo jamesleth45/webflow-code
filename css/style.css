@@ -155,11 +155,10 @@ input[type="email"] {
   display: inline-block;
   flex-shrink: 0;
   box-sizing: border-box;
-  width: 1rem;
-  height: 1rem;
+  width: .5625rem;
+  height: .5625rem;
   background-color: transparent;
-  border: 1px solid #000;
-  transition: background-color 200ms ease;
+  box-shadow: 0 0 0 .0625rem inset, 0 0 0 .125rem #fff inset;
   content: "";
 }
 
