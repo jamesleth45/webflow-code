@@ -1,0 +1,48 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 4.375rem;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.nav__list--nested {
+  height: 0;
+  overflow: hidden;
+  transition: height .25s ease;
+}
+
+.nav__list--nested > :first-child {
+  margin-top: .625rem;
+}
+
+.nav__list--nested > :last-child {
+  margin-bottom: 1.875rem;
+}
+
+@media (max-width: 1279px) {
+  .nav__item--preview {
+    margin-top: 1.25rem;
+  }
+
+  .nav__item--brand,
+  .nav__item--region {
+    margin-top: 1.875rem;
+  }
+
+  .nav__item--region {
+    font-weight: 700;
+  }
+
+  .nav__link,
+  .nav__btn {
+    display: inline-flex;
+    width: 100%;
+    line-height: 1.5625rem;
+  }
+
+  .nav__list--nested {
+    margin-left: .625rem;
+  }
+}
