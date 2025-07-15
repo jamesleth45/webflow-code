@@ -133,3 +133,13 @@
     background-color: #fff;
   }
 }
+
+@media (min-width: 1280px) {
+  .header__logo {
+    position: fixed;
+    z-index: 130;
+    top: 1.6875rem;
+    left: 1.6875rem;
+    display: flex;
+  }
+}
