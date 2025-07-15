@@ -885,3 +885,12 @@ select:-webkit-autofill {
   }
 }
 /* #endregion */
+
+/* #region nav item region */
+@media (max-width: 1279px) {
+  .nav__item--brand {
+    margin-top: 1.875rem;
+    font-weight: 700;
+  }
+}
+/* #endregion */
