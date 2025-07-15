@@ -731,12 +731,6 @@ select:-webkit-autofill {
 .header__nav-item--preview {
   margin-top: .8125rem;
 }
-
-@media (max-width: 1279px) {
-  .header__nav-item--preview {
-    margin-top: 1.25rem;
-  }
-}
 /* #endregion */
 
 /* #region header nav item brand */
@@ -879,5 +873,13 @@ select:-webkit-autofill {
   row-gap: 4.375rem;
   height: 100%;
   overflow-y: auto;
+}
+/* #endregion */
+
+/* #region nav item preview */
+@media (max-width: 1279px) {
+  .nav {
+    margin-top: 1.25rem;
+  }
 }
 /* #endregion */
