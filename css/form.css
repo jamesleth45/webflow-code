@@ -1,0 +1,35 @@
+.form {
+  position: relative;
+  margin-top: 1.875rem;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  margin-bottom: -.875rem;
+  color: #999;
+  transition: transform 450ms cubic-bezier(0.19, 1, 0.22, 1);
+  transform: translateY(0);
+}
+
+.form__input:focus + .form__label,
+.form__input:not(:placeholder-shown) + .form__label {
+  transform: translateY(-15px);
+}
+
+
+.form__confirm {
+  margin-top: 1.25rem;
+}
+
+.form__submit {
+  margin-top: 1.25rem;
+}
+
+.form__legal {
+  margin-top: .625rem;
+}
+
+.form__legal-link {
+  text-decoration: underline;
+}
