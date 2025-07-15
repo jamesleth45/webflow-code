@@ -76,66 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // #endregion
 
-// #region Toggle nested nav
-document.addEventListener('DOMContentLoaded', () => {
-  const buttons = document.querySelectorAll('.header__nav-btn');
-  let animating = false;
-
-  buttons.forEach(button => {
-    button.addEventListener('click', () => {
-      if (animating) return;
-
-      const currentList = button.closest('.header__nav-item')?.querySelector('.header__nav-list--nested');
-      const isOpen = currentList?.dataset.open === 'true';
-
-      const openList = document.querySelector('.header__nav-list--nested[data-open="true"]');
-      const openBtn = document.querySelector('.header__nav-btn[data-active="true"]');
-
-      const close = (list, btn) => {
-        if (!list || !btn) return;
-        animating = true;
-        const fullHeight = list.scrollHeight;
-        list.style.height = `${fullHeight}px`;
-        requestAnimationFrame(() => {
-          list.style.height = '0px';
-        });
-        list.addEventListener('transitionend', function handler() {
-          list.removeAttribute('data-open');
-          list.style.removeProperty('height');
-          if (!list.getAttribute('style')) list.removeAttribute('style');
-          list.removeEventListener('transitionend', handler);
-          animating = false;
-        });
-        btn.removeAttribute('data-active');
-      };
-
-      const open = (list, btn) => {
-        if (!list || !btn) return;
-        animating = true;
-        const fullHeight = list.scrollHeight;
-        list.style.height = '0px';
-        requestAnimationFrame(() => {
-          list.setAttribute('data-open', 'true');
-          list.style.height = `${fullHeight}px`;
-        });
-        list.addEventListener('transitionend', function handler() {
-          list.style.height = 'auto';
-          list.removeEventListener('transitionend', handler);
-          animating = false;
-        });
-        btn.setAttribute('data-active', 'true');
-      };
-
-      if (isOpen) {
-        close(currentList, button);
-      } else {
-        if (openList && openList !== currentList) close(openList, openBtn);
-        open(currentList, button);
-      }
-    });
-  });
-});
-// #endregion
 
 // #region Nav Nested Open + Close (separate logic, same listener)
 document.addEventListener('DOMContentLoaded', () => {
