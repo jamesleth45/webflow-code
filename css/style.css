@@ -610,6 +610,12 @@ select:-webkit-autofill {
     padding: 3.5rem 1.25rem 1.25rem;
   }
 }
+
+@media (min-width: 1280px) {
+  .panel--nav {
+    display: none;
+  }
+}
 /* #endregion */
 
 /* #region panel content */
