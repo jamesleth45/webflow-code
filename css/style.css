@@ -135,6 +135,7 @@ input[type="email"] {
 
 
 .form__checkbox-label {
+  position: relative;
   display: inline-flex;
   gap: .625rem;
   cursor: pointer;
