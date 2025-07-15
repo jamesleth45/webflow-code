@@ -132,3 +132,8 @@ input[type="password"],
 input[type="email"] {
   text-transform: none;
 }
+
+input:-webkit-autofill {
+  box-shadow: 0 0 0 1000px #fff inset !important;
+  -webkit-text-fill-color: #000 !important;
+}
