@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // #endregion
 
-// #region Panel open
+// #region panel open
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-target]').forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -114,16 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const panel = document.getElementById(targetId);
       if (!panel) return;
 
-      // Open the target panel
       panel.setAttribute('data-state', 'open');
-
-      // If opening a specific nested panel, close panel--nav
-      if (targetId === 'panel-brand') {
-        const navPanel = document.querySelector('.panel--nav');
-        if (navPanel) {
-          navPanel.setAttribute('data-state', 'closed');
-        }
-      }
     });
   });
 });
