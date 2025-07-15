@@ -76,6 +76,10 @@
 }
 
 @media (min-width: 1280px) {
+  .header {
+    color: #fff;
+  }
+
   .header__nav-list--left,
   .header__nav-list--right {
     position: fixed;
