@@ -878,7 +878,7 @@ select:-webkit-autofill {
 
 /* #region nav item preview */
 @media (max-width: 1279px) {
-  .nav {
+  .nav__item--preview {
     margin-top: 1.25rem;
   }
 }
