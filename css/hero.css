@@ -1,6 +1,8 @@
 .hero {
   position: relative;
-  color: #fff;
+  padding-top: 1.6875rem;
+  padding-right: 1.6875rem;
+  color: #fff;;
 }
 
 .hero__grid {
@@ -11,7 +13,7 @@
 }
 
 .hero__link {
-  grid-column: 5 / 9;
+  grid-column: 3 / 13;
   width: 100%;
 }
 
