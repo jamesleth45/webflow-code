@@ -5,8 +5,6 @@
 .footer__grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 1fr;
-  gap: 0;
 }
 
 .footer__nav-list--region {
@@ -15,20 +13,14 @@
   font-weight: 700;
 }
 
-.footer__nav-list--main {
-  grid-column: span 2;
-}
-
-.footer__nav-list--legal {
-  grid-column: span 2;
-}
-
-.footer__nav-list--social {
+.footer__nav-list--main,
+.footer__nav-list--legal,
+.footer__nav-list--social,
+.footer__nav-list--newsletter {
   grid-column: span 2;
 }
 
 .footer__nav-list--newsletter {
-  grid-column: span 2;
   margin-right: 1.6875rem;
 }
 
@@ -48,10 +40,7 @@
     padding-bottom: 1.6875rem;
   }
 
-  .footer__nav-item--title {
-    display: none;
-  }
-
+  .footer__nav-item--title,
   .footer__nav-icon--social {
     display: none;
   }
