@@ -758,17 +758,6 @@ select:-webkit-autofill {
 
 /* #endregion */
 
-/* #region header nav link */
-@media (max-width: 1279px) {
-  .header__nav-link,
-  .header__nav-btn {
-    display: inline-flex;
-    width: 100%;
-    line-height: 1.5625rem;
-  }
-}
-/* #endregion */
-
 /* #region header nav btn */
 .header__nav-btn[data-active="true"] {
   font-weight: 700;
@@ -891,6 +880,17 @@ select:-webkit-autofill {
   .nav__item--region {
     margin-top: 1.875rem;
     font-weight: 700;
+  }
+}
+/* #endregion */
+
+/* #region nav link */
+@media (max-width: 1279px) {
+  .nav__link,
+  .nav__btn {
+    display: inline-flex;
+    width: 100%;
+    line-height: 1.5625rem;
   }
 }
 /* #endregion */
