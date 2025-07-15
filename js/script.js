@@ -1,12 +1,33 @@
 // #region Remove unwanted Webflow classes
 document.addEventListener('DOMContentLoaded', () => {
-  const classesToRemove = ['w-inline-block', 'w--current', 'w-embed', 'w-layout-grid', 'w--redirected-focus', 'w-script'];
+  const classesToRemove = [
+    'w-inline-block',
+    'w--current',
+    'w-embed',
+    'w-layout-grid',
+    'w--redirected-focus',
+    'w-script',
+  ];
 
   const cleanClasses = () => {
+    // Remove Webflow classes
     classesToRemove.forEach(cls => {
       document.querySelectorAll(`.${cls}`).forEach(el => {
         el.classList.remove(cls);
       });
+    });
+
+    // Remove empty <div>s that only contained scripts or whitespace
+    document.querySelectorAll('div').forEach(div => {
+      const onlyScriptsOrWhitespace = [...div.childNodes].every(node =>
+        (node.nodeType === 1 && node.tagName === 'SCRIPT') ||
+        (node.nodeType === 8) || // comment
+        (node.nodeType === 3 && !node.textContent.trim()) // whitespace
+      );
+
+      if (onlyScriptsOrWhitespace) {
+        div.remove();
+      }
     });
   };
 
