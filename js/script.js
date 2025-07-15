@@ -221,11 +221,11 @@ document.addEventListener('DOMContentLoaded', () => {
 // #endregion
 
 document.addEventListener('DOMContentLoaded', () => {
-  const target = document.querySelector('.form#newsletter');
+  const target = document.querySelector('.form#newsletterForm');
   if (!target) return;
 
   target.outerHTML = `
-    <form class="form" id="newsletter">
+    <form class="form" id="newsletterForm">
       <div class="form__group">
         <label for="email" class="form__label">Email</label>
         <input 
@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
   `;
 
-  const form = document.getElementById('newsletter');
+  const form = document.getElementById('newsletterForm');
   const done = document.querySelector('.form__done');
 
   form.addEventListener('submit', async (e) => {
