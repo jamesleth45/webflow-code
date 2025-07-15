@@ -246,9 +246,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const target = document.querySelector('.form#signup-form');
+  if (!target) return;
 
-document.querySelectorAll('div').forEach(div => {
-  if (!div.innerHTML.trim() && div.attributes.length === 0) {
-    div.remove();
-  }
+  target.outerHTML = `
+    <form class="form" id="signup-form">
+      <div class="form__group">
+        <label for="email" class="form__label">Email</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          class="form__input" 
+          autocomplete="email"
+          required 
+        >
+      </div>
+
+      <div class="form__group">
+        <label class="form__checkbox-label">
+          <input 
+            type="checkbox" 
+            name="marketingConsent" 
+            value="Yes" 
+            required 
+            class="form__checkbox"
+          >
+          Subscribe to receive info about James Carter.
+        </label>
+      </div>
+
+      <button type="submit" class="form__submit">Sign Up</button>
+    </form>
+
+    <div class="form__done" hidden>
+      <p>Thank you for signing up!</p>
+    </div>
+  `;
 });
+
