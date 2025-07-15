@@ -32,12 +32,17 @@
   font: inherit;
   text-align: center;
   white-space: nowrap;
-  color: rgb(255 255 255);
-  background-color: rgb(0 0 0);
+  color: #fff;
+  background-color: #000;
   border-width: 1px;
   border-style: solid;
-  border-color: rgb(0 0 0);
+  border-color: #000;
   cursor: pointer;
+}
+
+.form__submit:hover {
+  font-weight: 400;
+  background-color: #222;
 }
 
 .form__group--legal {
