@@ -873,6 +873,11 @@ select:-webkit-autofill {
 
 /* #region nav */
 .nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 4.375rem;
   height: 100%;
+  overflow-y: auto;
 }
 /* #endregion */
