@@ -566,17 +566,20 @@ select:-webkit-autofill {
 }
 
 @media (max-width: 1279px) {
-@media (max-width: 1279px) {
-  .panel--nav[data-state="closed"] .panel__inner {
+  .panel--nav .panel__inner {
     opacity: 0;
-    transition: transform 650ms cubic-bezier(0.19, 1, 0.22, 1), opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
-    transform: translateX(-100%);
+    transition: opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: none !important;
   }
 
   .panel--nav[data-state="open"] .panel__inner {
     opacity: 1;
-    transition: transform 650ms cubic-bezier(0.19, 1, 0.22, 1), opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
-    transform: translateX(0);
+    transition: opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  .panel--nav[data-state="closed"] .panel__inner {
+    opacity: 0;
+    transition: opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
   }
 }
 
@@ -613,132 +616,6 @@ select:-webkit-autofill {
     display: none;
   }
 }
-
-@media (max-width: 1279px) {
-  .header__logo {
-    top: 0;
-    left: 0;
-  }
-}
-/* #endregion */
-
-/* #region header logo link */
-@media (max-width: 1279px) {
-  .header__logo-link {
-    padding: 1.25rem;
-  }
-}
-
-@media (max-width: 1279px) {
-  .header__logo-text {
-    font-size: 1.25rem;
-  }
-}
-/* #endregion */
-
-/* #region header nav */
-@media (max-width: 1279px) {
-  .header__nav {
-    display: none;
-  }
-}
-/* #endregion */
-
-/* #region header nav list left */
-@media (min-width: 1280px) {
-  .header__nav-list--left,
-  .header__nav-list--right {
-    position: fixed;
-    z-index: 100;
-    top: 8.75rem;
-  }
-
-  .header__nav-list--left {
-    left: 1.6875rem;
-  }
-
-  .header__nav-list--right {
-    right: 1.6875rem;
-    text-align: right;
-  }
-}
-
-@media (max-width: 1279px) {
-  .header__nav-item--search {
-    display: none;
-  }
-}
-/* #endregion */
-
-/* #region header nav text */
-
-/* #endregion */
-
-/* #region header nav icon */
-
-/* #endregion */
-
-/* #region header mobile */
-@media (min-width: 1280px) {
-  .header__mobile {
-    display: none;
-  }
-}
-
-@media (max-width: 1279px) {
-  .header__mobile {
-    position: fixed;
-    z-index: 100;
-    right: 0;
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    height: 3.5rem;
-    background-color: #fff;
-  }
-}
-/* #endregion */
-
-/* #region nav item preview */
-@media (max-width: 1279px) {
-  .nav__item--preview {
-    margin-top: 1.25rem;
-  }
-}
-/* #endregion */
-
-/* #region nav item brand */
-@media (max-width: 1279px) {
-  .nav__item--brand {
-    margin-top: 1.875rem;
-  }
-}
-/* #endregion */
-
-/* #region nav item region */
-@media (max-width: 1279px) {
-  .nav__item--region {
-    margin-top: 1.875rem;
-    font-weight: 700;
-  }
-}
-/* #endregion */
-
-/* #region nav link */
-@media (max-width: 1279px) {
-  .nav__link,
-  .nav__btn {
-    display: inline-flex;
-    width: 100%;
-    line-height: 1.5625rem;
-  }
-}
-
-@media (max-width: 1279px) {
-  .nav__list--nested {
-    margin-left: .625rem;
-  }
-}
 /* #endregion */
 
 /* #region panel content */
@@ -771,6 +648,21 @@ select:-webkit-autofill {
   left: 1.6875rem;
   display: flex;
 }
+
+@media (max-width: 1279px) {
+  .header__logo {
+    top: 0;
+    left: 0;
+  }
+}
+/* #endregion */
+
+/* #region header logo link */
+@media (max-width: 1279px) {
+  .header__logo-link {
+    padding: 1.25rem;
+  }
+}
 /* #endregion */
 
 /* #region header logo text */
@@ -788,6 +680,12 @@ select:-webkit-autofill {
   white-space: nowrap;
 }
 
+@media (max-width: 1279px) {
+  .header__logo-text {
+    font-size: 1.25rem;
+  }
+}
+
 .header__logo-text::before {
   content: "";
   display: table;
@@ -798,6 +696,34 @@ select:-webkit-autofill {
   content: "";
   display: table;
   margin-bottom: calc(-0.5lh + 0.34em);
+}
+/* #endregion */
+
+/* #region header nav */
+@media (max-width: 1279px) {
+  .header__nav {
+    display: none;
+  }
+}
+/* #endregion */
+
+/* #region header nav list left */
+@media (min-width: 1280px) {
+  .header__nav-list--left,
+  .header__nav-list--right {
+    position: fixed;
+    z-index: 100;
+    top: 8.75rem;
+  }
+
+  .header__nav-list--left {
+    left: 1.6875rem;
+  }
+
+  .header__nav-list--right {
+    right: 1.6875rem;
+    text-align: right;
+  }
 }
 /* #endregion */
 
@@ -845,6 +771,12 @@ select:-webkit-autofill {
   right: 1.6875rem;
   display: flex;
 }
+
+@media (max-width: 1279px) {
+  .header__nav-item--search {
+    display: none;
+  }
+}
 /* #endregion */
 
 /* #region header nav item region */
@@ -854,6 +786,35 @@ select:-webkit-autofill {
 /* #region header nav btn */
 .header__nav-btn[data-active="true"] {
   font-weight: 700;
+}
+/* #endregion */
+
+/* #region header nav text */
+
+/* #endregion */
+
+/* #region header nav icon */
+
+/* #endregion */
+
+/* #region header mobile */
+@media (min-width: 1280px) {
+  .header__mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 1279px) {
+  .header__mobile {
+    position: fixed;
+    z-index: 100;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 3.5rem;
+    background-color: #fff;
+  }
 }
 /* #endregion */
 
@@ -923,11 +884,53 @@ select:-webkit-autofill {
 }
 /* #endregion */
 
+/* #region nav item preview */
+@media (max-width: 1279px) {
+  .nav__item--preview {
+    margin-top: 1.25rem;
+  }
+}
+/* #endregion */
+
+/* #region nav item brand */
+@media (max-width: 1279px) {
+  .nav__item--brand {
+    margin-top: 1.875rem;
+  }
+}
+/* #endregion */
+
+/* #region nav item region */
+@media (max-width: 1279px) {
+  .nav__item--region {
+    margin-top: 1.875rem;
+    font-weight: 700;
+  }
+}
+/* #endregion */
+
+/* #region nav link */
+@media (max-width: 1279px) {
+  .nav__link,
+  .nav__btn {
+    display: inline-flex;
+    width: 100%;
+    line-height: 1.5625rem;
+  }
+}
+/* #endregion */
+
 /* #region header nav list nested */
 .nav__list--nested {
   height: 0;
   overflow: hidden;
   transition: height 0.25s ease;
+}
+
+@media (max-width: 1279px) {
+  .nav__list--nested {
+    margin-left: .625rem;
+  }
 }
 
 .nav__list--nested > :first-child {
@@ -945,4 +948,4 @@ select:-webkit-autofill {
 
 .header__nav-item:has(.header__nav-list--nested[data-state="open"]) > .header__nav-btn {
   font-weight: 700;
-}}
+}
