@@ -152,8 +152,8 @@ input[type="email"] {
 
 /* empty box */
 .form__checkbox-label::before {
-  width: .5625rem;
-  height: .5625rem;
+  width: .5rem;
+  height: .5rem;
   background-color: transparent;
   box-shadow: 0 0 0 .0625rem inset, 0 0 0 .125rem #fff inset;
   content: "";
@@ -161,4 +161,11 @@ input[type="email"] {
 
 .form__checkbox-label:has(.form__checkbox:checked)::before {
   background-color: #000;
+}
+
+@media (max-width: 1279px) {
+  .form__checkbox-label::before {
+    width: .5625rem;
+    height: .5625rem;
+  }
 }
