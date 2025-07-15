@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
             class="form__checkbox"
           >
           <span class="form__checkbox-text">
-            Subscribe to receive information about James Carter shows, offers, news and events.
+            Subscribe to receive information about James Carter offers, news and events.
           </span>
         </label>
       </div>
@@ -274,7 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </form>
 
     <div class="form__done" hidden>
-      <p>Thank you for signing up.</p>
+      <p>Thank you for your registration</p>
     </div>
   `;
 
