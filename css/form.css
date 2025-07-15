@@ -18,8 +18,9 @@
 }
 
 
-.form__consent,
-.form__note {
+.form__group--consent,
+.form__group--note,
+.form__group--submit {
   margin-top: 1.25rem;
 }
 
@@ -27,7 +28,6 @@
   display: block;
   width: 100%;
   min-height: 2.5rem;
-  margin-top: 1.25rem;
   padding: 0.75rem 0.625rem 0.8125rem;
   font: inherit;
   text-align: center;
@@ -45,7 +45,7 @@
   background-color: #222;
 }
 
-.form__legal {
+.form__group--legal {
   margin-top: .625rem;
 }
 
