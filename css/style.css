@@ -909,3 +909,7 @@ select:-webkit-autofill {
   margin-bottom: 1.875rem;
 }
 /* #endregion */
+
+.nav__btn + .nav__list--nested[data-state="open"] {
+  font-weight: 700; /* or 700 depending on your font */
+}
