@@ -153,6 +153,7 @@ input[type="email"] {
 /* empty box */
 .form__checkbox-label::before {
   display: inline-block;
+  flex-shrink: 0;
   box-sizing: border-box;
   width: 1rem;
   height: 1rem;
@@ -162,7 +163,6 @@ input[type="email"] {
   content: "";
 }
 
-/* when checked → black bg */
-.form__checkbox:checked + .form__checkbox-label::before {
+.form__checkbox-label:has(.form__checkbox:checked)::before {
   background-color: #000;
 }
