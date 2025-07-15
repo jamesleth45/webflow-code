@@ -131,14 +131,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const clickedOutsideInner = !inner.contains(e.target);
 
     if (isCloseBtn || clickedOutsideInner) {
-      panel.removeAttribute('data-state');
+      panel.setAttribute('data-state', 'closed');
     }
   });
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       document.querySelectorAll('.panel[data-state="open"]').forEach((panel) => {
-        panel.removeAttribute('data-state');
+        panel.setAttribute('data-state', 'closed');
       });
     }
   });
