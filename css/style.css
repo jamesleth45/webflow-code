@@ -913,3 +913,7 @@ select:-webkit-autofill {
 .nav__item:has(.nav__list--nested[data-state="open"]) > .nav__btn {
   font-weight: 700;
 }
+
+.header__nav-item:has(.header__nav-list--nested[data-state="open"]) > .header__nav-btn {
+  font-weight: 700;
+}
