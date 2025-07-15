@@ -578,11 +578,6 @@ select:-webkit-autofill {
     transition: transform 650ms cubic-bezier(0.19, 1, 0.22, 1), opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
     transform: translateX(0);
   }
-
-  .panel--nav[data-state="closed"] .panel__inner {
-    opacity: 0;
-    transition: opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
 }
 
 @media (max-width: 1279px) {
