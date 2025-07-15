@@ -24,7 +24,7 @@
   margin-top: 1.25rem;
 }
 
-.form__submit {
+.form__submit-btn {
   display: block;
   width: 100%;
   min-height: 2.5rem;
@@ -40,7 +40,7 @@
   cursor: pointer;
 }
 
-.form__submit:hover {
+.form__submit-btn:hover {
   font-weight: 400;
   background-color: #222;
 }
