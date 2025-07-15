@@ -21,12 +21,6 @@
   object-fit: cover;
 }
 
-@media (max-width: 1279px) {
-  .hero__link {
-    grid-column: 1 / -1;
-  }
-}
-
 .hero__content {
   position: absolute;
   top: 50%;
@@ -38,4 +32,10 @@
 .hero__text {
   font-weight: 400;
   text-decoration: underline;
+}
+
+@media (max-width: 1279px) {
+  .hero__link {
+    grid-column: 1 / -1;
+  }
 }

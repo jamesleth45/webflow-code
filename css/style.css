@@ -102,11 +102,6 @@ body {
 /* #endregion */
 
 
-
-
-
-
-/* #region Webflow */
 .w-form {
   margin-bottom: 0;
 }
@@ -236,17 +231,4 @@ select:-webkit-autofill {
   box-shadow: 0 0 0 .0625rem inset, 0 0 0 .125rem #fff inset
 }
 
-/* #endregion */
 
-
-
-
-
-
-
-
-
-
-/* #region hero */
-
-/* #endregion */
