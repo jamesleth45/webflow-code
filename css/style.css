@@ -102,22 +102,7 @@ body {
 /* #endregion */
 
 
-/* #region Search */
-.search {
-  position: relative;
-}
 
-.search__input {
-  padding-right: 3.5rem;
-}
-
-.search__clear {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-/* #endregion */
 
 
 
