@@ -240,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <label for="email" class="form__label">Email</label>
       </div>
 
-      <div class="form__group form__group--consent">
+      <div class="form__consent">
         <label class="form__checkbox-label">
           <input 
             type="checkbox" 
@@ -255,13 +255,13 @@ document.addEventListener('DOMContentLoaded', () => {
         </label>
       </div>
 
-      <p class="form__group form__group--note">
+      <p class="form__group form__note">
         You will receive a confirmation email with a link to complete subscribtion.
       </p>
 
       <button type="submit" class="form__submit">Register</button>
 
-      <div class="form__group form__group--legal">
+      <div class="form__group form__legal">
         <p>
           For further information on the processing of your personal data, please consult our 
           <a href="#" class="form__privacy-link">privacy policy</a>.
