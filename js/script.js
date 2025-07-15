@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
         >
       </div>
 
-      <div class="form__group">
+      <div class="form__group form__group--consent">
         <label class="form__checkbox-label">
           <input 
             type="checkbox" 
