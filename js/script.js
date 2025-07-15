@@ -220,32 +220,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // #endregion
 
-
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('signup-form');
-    const done = document.querySelector('.form__done');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const formData = new FormData(form);
-
-      const res = await fetch('https://formspree.io/f/xpwlzqvw', {
-        method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: formData,
-      });
-
-      if (res.ok) {
-        form.hidden = true;
-        done.hidden = false;
-      } else {
-        alert('Something went wrong. Try again later.');
-      }
-    });
-  });
-
 document.addEventListener('DOMContentLoaded', () => {
   const target = document.querySelector('.form#signup-form');
   if (!target) return;
@@ -284,5 +258,27 @@ document.addEventListener('DOMContentLoaded', () => {
       <p>Thank you for signing up!</p>
     </div>
   `;
-});
 
+  // 🔥 attach logic AFTER injection
+  const form = document.getElementById('signup-form');
+  const done = document.querySelector('.form__done');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    const res = await fetch('https://formspree.io/f/xpwlzqvw', {
+      method: 'POST',
+      headers: { Accept: 'application/json' },
+      body: formData,
+    });
+
+    if (res.ok) {
+      form.hidden = true;
+      done.hidden = false;
+    } else {
+      alert('Something went wrong. Try again later.');
+    }
+  });
+});
