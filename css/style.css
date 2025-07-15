@@ -892,7 +892,6 @@ select:-webkit-autofill {
 .nav__list--nested {
   height: 0;
   overflow: hidden;
-  text-align: right;
   transition: height 0.25s ease;
 }
 
