@@ -579,7 +579,7 @@ select:-webkit-autofill {
 
   .panel--nav[data-state="closed"] .panel__inner {
     opacity: 0;
-    transition: opacity 150ms cubic-bezier(0.215, 0.61, 0.355, 1) 200ms; 
+    transition: opacity 150ms cubic-bezier(0.215, 0.61, 0.355, 1); 
   }
 }
 
