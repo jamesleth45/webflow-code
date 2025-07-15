@@ -809,6 +809,7 @@ select:-webkit-autofill {
 @media (max-width: 1279px) {
   .header__mobile {
     position: fixed;
+    z-index: 100;
     right: 0;
     display: flex;
     width: 100%;
