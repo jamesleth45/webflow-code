@@ -113,6 +113,11 @@
     opacity: 1;
     transition: opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
   }
+
+  .panel--nav[data-state="closed"] .panel__inner {
+    opacity: 0;
+    transition: opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
 }
 
 
