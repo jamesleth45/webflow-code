@@ -1,5 +1,10 @@
 .form {
   position: relative;
+  margin-top: 1.875rem;
+}
+
+.form__done {
+  margin-top: 1.875rem;
 }
 
 .form__label {
