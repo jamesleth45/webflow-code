@@ -10,12 +10,12 @@
   font-family: neue-haas-grotesk-display, "neue-haas-grotesk-display fallback", sans-serif;
   font-size: 1.67rem;
   font-weight: 700;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  white-space: nowrap;
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .header__logo-text::before {
