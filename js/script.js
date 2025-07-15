@@ -260,6 +260,13 @@ document.addEventListener('DOMContentLoaded', () => {
       </p>
 
       <button type="submit" class="form__submit">Register</button>
+
+      <div class="form__group form__group--legal">
+        <p>
+          For further information on the processing of your personal data, please consult our 
+          <a href="#" class="form__privacy-link">privacy policy</a>.
+        </p>
+      </div>
     </form>
 
     <div class="form__done" hidden>
