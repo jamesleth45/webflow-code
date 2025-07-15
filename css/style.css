@@ -566,6 +566,24 @@ select:-webkit-autofill {
 }
 
 @media (max-width: 1279px) {
+  .panel--nav .panel__inner {
+    opacity: 0;
+    transition: opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: none !important;
+  }
+
+  .panel--nav[data-state="open"] .panel__inner {
+    opacity: 1;
+    transition: opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  .panel--nav[data-state="closed"] .panel__inner {
+    opacity: 0;
+    transition: opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+}
+
+@media (max-width: 1279px) {
   .panel__inner {
     display: block;
     padding: 3.5rem 1.25rem 1.25rem .625rem;
