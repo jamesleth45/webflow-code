@@ -147,9 +147,7 @@ input[type="email"] {
   top: .1875rem;
   left: 0;
   width: .5rem;
-  min-width: .5rem;
   height: .5rem;
-  min-height: .5rem;
   opacity: 0;
   pointer-events: none;
 }
@@ -159,9 +157,7 @@ input[type="email"] {
   top: .1875rem;
   left: 0;
   width: .5rem;
-  min-width: .5rem;
   height: .5rem;
-  min-height: .5rem;
   background-color: transparent;
   box-shadow: 0 0 0 .0625rem inset, 0 0 0 .125rem #fff inset;
   content: "";
