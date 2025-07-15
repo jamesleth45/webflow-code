@@ -151,6 +151,28 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // #endregion
 
+// #region Nav Nested Close
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.nav__btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const nested = btn.nextElementSibling;
+      if (!nested || nested.getAttribute('data-state') !== 'open') return;
+
+      nested.style.height = nested.scrollHeight + 'px'; // lock current height
+
+      requestAnimationFrame(() => {
+        nested.style.height = '0px';
+        nested.setAttribute('data-state', 'closed');
+      });
+
+      nested.addEventListener('transitionend', () => {
+        nested.removeAttribute('style');
+      }, { once: true });
+    });
+  });
+});
+// #endregion
+
 // #region panel open
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-target]').forEach((btn) => {
