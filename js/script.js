@@ -138,58 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // #endregion
 
 // #region Toggle menu nav
-document.addEventListener('DOMContentLoaded', () => {
-  const nav = document.querySelector('.header__nav');
-  const openBtn = document.querySelector('.header__mobile-btn--menu');
 
-  const cartBtn = document.querySelector('.header__mobile-btn--cart');
-  const searchBtn = document.querySelector('.header__mobile-btn--search');
-
-  const iconHam = document.querySelector('.header__mobile-icon--ham');
-  const iconX = document.querySelector('.header__mobile-icon--x');
-
-  const fade = 'opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1)';
-
-  openBtn.addEventListener('click', () => {
-    nav.setAttribute('data-state', 'open');
-
-    // Animate hidden stuff
-    cartBtn.style.transition = fade;
-    cartBtn.style.opacity = '0';
-    cartBtn.style.pointerEvents = 'none';
-
-    searchBtn.style.transition = fade;
-    searchBtn.style.opacity = '0';
-    searchBtn.style.pointerEvents = 'none';
-
-    iconHam.style.transition = fade;
-    iconHam.style.opacity = '0';
-    iconHam.style.pointerEvents = 'none';
-
-    iconX.style.transition = fade;
-    iconX.style.opacity = '1';
-    iconX.style.pointerEvents = 'auto';
-
-    // After transition ends (keep them visually hidden/shown, but clean styles)
-    setTimeout(() => {
-      cartBtn.style.opacity = '';
-      cartBtn.style.pointerEvents = '';
-      cartBtn.style.transition = '';
-
-      searchBtn.style.opacity = '';
-      searchBtn.style.pointerEvents = '';
-      searchBtn.style.transition = '';
-
-      iconHam.style.opacity = '';
-      iconHam.style.pointerEvents = '';
-      iconHam.style.transition = '';
-
-      iconX.style.opacity = '';
-      iconX.style.pointerEvents = '';
-      iconX.style.transition = '';
-    }, 250);
-  });
-});
 // #endregion
 
 // #region panel open
