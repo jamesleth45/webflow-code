@@ -104,10 +104,8 @@
   right: 1.6875rem;
 }
 
-@media (min-width: 1280px) {
-  .header__mobile {
-    display: none;
-  }
+.header__mobile {
+  display: none;
 }
 
 @media (max-width: 1279px) {
@@ -130,6 +128,6 @@
   width: 2.25rem;
 }
 
-.header__mobile-btn--menu {
+.header__mobile-btn--nav {
   margin-right: .625rem;
 }
