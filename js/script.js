@@ -251,15 +251,14 @@ document.addEventListener('DOMContentLoaded', () => {
         </label>
       </div>
 
-      <button type="submit" class="form__submit">Sign Up</button>
+      <button type="submit" class="form__submit">Register</button>
     </form>
 
     <div class="form__done" hidden>
-      <p>Thank you for signing up!</p>
+      <p>Thank you for signing up.</p>
     </div>
   `;
 
-  // 🔥 attach logic AFTER injection
   const form = document.getElementById('signup-form');
   const done = document.querySelector('.form__done');
 
