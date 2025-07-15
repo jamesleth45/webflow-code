@@ -401,3 +401,107 @@ document.addEventListener('DOMContentLoaded', () => {
   `;
 });
 // #endregion
+
+// #region panel
+document.addEventListener('DOMContentLoaded', () => {
+  const target = document.querySelector('.panels');
+  if (!target) return;
+
+  target.outerHTML = `
+    <div class="panels">
+      <section id="panelNav" data-state="closed" class="panel panel--nav">
+        <button type="button" class="panel__close">
+          <span class="panel__close-text">Close</span>
+          <span class="panel__close-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 7L7 17M17 17L7 7" stroke="black"></path>
+            </svg>
+          </span>
+        </button>
+        <div class="panel__grid">
+          <div class="panel__inner">
+            <div class="panel__content">
+              <nav class="nav">
+                <ul class="nav__list nav__list--top">
+                  <li class="nav__item"><a href="#" class="nav__link"><div class="nav__text">Shop</div></a></li>
+                  <li class="nav__item nav__item--preview"><a href="#" class="nav__link"><div class="nav__text">Spring/Summer 2025 Preview</div></a></li>
+                  <li class="nav__item"><a href="#" class="nav__link"><div class="nav__text">Spring/Summer 2025 Lookbook</div></a></li>
+                  <li class="nav__item nav__item--brand">
+                    <button type="button" class="nav__btn"><div class="nav__text">Brand</div></button>
+                    <ul class="nav__list nav__list--nested">
+                      <li class="nav__item"><a href="#" class="nav__link"><div class="nav__text">About the brand</div></a></li>
+                      <li class="nav__item"><a href="#" class="nav__link"><div class="nav__text">Behind the brand</div></a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <ul class="nav__list nav__list--bottom">
+                  <li class="nav__item"><button type="button" data-target="panel-search" class="nav__btn"><div class="nav__text">Bag</div></button></li>
+                  <li class="nav__item"><a href="#" class="nav__link"><div class="nav__text">Log In / Register</div></a></li>
+                  <li class="nav__item"><a href="#" class="nav__link"><div class="nav__text">Client service</div></a></li>
+                  <li class="nav__item nav__item--region"><button type="button" class="nav__btn"><div class="nav__text">PORTUGAL | EN</div></button></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="panelSearch" data-state="closed" class="panel">
+        <button type="button" class="panel__close">
+          <span class="panel__close-text">Close</span>
+          <span class="panel__close-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 7L7 17M17 17L7 7" stroke="black"></path>
+            </svg>
+          </span>
+        </button>
+        <div class="panel__grid">
+          <div class="panel__inner">
+            <div class="panel__content">
+              <form action="/search" method="GET" class="search">
+                <input type="text" name="q" class="search__input" placeholder="Search" autocomplete="off" required>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="panelNewsletter" data-state="closed" class="panel">
+        <button type="button" class="panel__close">
+          <span class="panel__close-text">Close</span>
+          <span class="panel__close-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17 7L7 17M17 17L7 7" stroke="black"></path>
+            </svg>
+          </span>
+        </button>
+        <div class="panel__grid">
+          <div class="panel__inner">
+            <div class="panel__content">
+              <form class="form" id="newsletterForm" method="post" action="">
+                <div class="form__group">
+                  <label for="email" class="form__label">Email</label>
+                  <input type="email" id="email" name="email" class="form__input" autocomplete="email" required>
+                </div>
+                <div class="form__group form__group--consent">
+                  <label class="form__checkbox-label">
+                    <input type="checkbox" name="marketingConsent" value="Yes" required class="form__checkbox">
+                    <span class="form__checkbox-text">
+                      Subscribe to receive information about James Carter shows, offers, news and events.
+                    </span>
+                  </label>
+                </div>
+                <button type="submit" class="form__submit">Register</button>
+              </form>
+
+              <div class="form__done" hidden>
+                <p>Thank you for signing up.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  `;
+});
+// #endregion
