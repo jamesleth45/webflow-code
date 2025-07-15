@@ -137,37 +137,32 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 // #endregion
 
-// #region Nav Nested Open
+// #region Nav Nested Open + Close (separate logic, same listener)
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.nav__btn').forEach((btn) => {
     btn.addEventListener('click', () => {
       const nested = btn.nextElementSibling;
-      if (!nested || nested.getAttribute('data-state') === 'open') return;
+      if (!nested) return;
 
-      nested.setAttribute('data-state', 'open');
-      nested.style.height = nested.scrollHeight + 'px';
-    });
-  });
-});
-// #endregion
+      const isOpen = nested.getAttribute('data-state') === 'open';
 
-// #region Nav Nested Close
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.nav__btn').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const nested = btn.nextElementSibling;
-      if (!nested || nested.getAttribute('data-state') !== 'open') return;
+      if (!isOpen) {
+        // OPEN
+        nested.setAttribute('data-state', 'open');
+        nested.style.height = nested.scrollHeight + 'px';
+      } else {
+        // CLOSE
+        nested.style.height = nested.scrollHeight + 'px';
 
-      nested.style.height = nested.scrollHeight + 'px'; // lock current height
+        requestAnimationFrame(() => {
+          nested.style.height = '0px';
+          nested.setAttribute('data-state', 'closed');
+        });
 
-      requestAnimationFrame(() => {
-        nested.style.height = '0px';
-        nested.setAttribute('data-state', 'closed');
-      });
-
-      nested.addEventListener('transitionend', () => {
-        nested.removeAttribute('style');
-      }, { once: true });
+        nested.addEventListener('transitionend', () => {
+          nested.removeAttribute('style');
+        }, { once: true });
+      }
     });
   });
 });
