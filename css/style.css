@@ -138,6 +138,7 @@ input[type="email"] {
   position: relative;
   display: inline-flex;
   gap: .625rem;
+  padding-left: 1.25rem;
   cursor: pointer;
 }
 
