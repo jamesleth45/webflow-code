@@ -18,9 +18,9 @@
 }
 
 
-.form__group--consent,
-.form__group--note,
-.form__group--submit {
+.form__consent,
+.form__note,
+.form__submit {
   margin-top: 1.25rem;
 }
 
@@ -45,7 +45,7 @@
   background-color: #222;
 }
 
-.form__group--legal {
+.form__legal {
   margin-top: .625rem;
 }
 
