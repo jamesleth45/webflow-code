@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!target) return;
 
   target.outerHTML = `
-    <form class="form" id="newsletterForm">
+    <form class="form" id="newsletterForm" method="post" action="">
       <div class="form__group">
         <label for="email" class="form__label">Email</label>
         <input 
@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
           name="email" 
           class="form__input" 
           autocomplete="email"
-          required 
+          required
         >
       </div>
 
@@ -247,11 +247,13 @@ document.addEventListener('DOMContentLoaded', () => {
             required 
             class="form__checkbox"
           >
-          Subscribe to receive information about James Carter shows, offers, news and events.
+          <span class="form__checkbox-text">
+            Subscribe to receive information about James Carter shows, offers, news and events.
+          </span>
         </label>
       </div>
 
-      <button type="submit" class="form__submit">Register</button>
+      <button type="submit" class="form__submit" type="submit">Register</button>
     </form>
 
     <div class="form__done" hidden>
