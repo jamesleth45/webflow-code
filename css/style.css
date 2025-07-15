@@ -150,6 +150,9 @@ input[type="email"] {
 }
 
 .form__checkbox-label::before {
+  position: absolute;
+  top: .1875rem;
+  left: .0625rem;
   width: .5rem;
   min-width: .5rem;
   height: .5rem;
