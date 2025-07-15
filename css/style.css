@@ -910,6 +910,6 @@ select:-webkit-autofill {
 }
 /* #endregion */
 
-.nav__btn + .nav__list--nested[data-state="open"] {
-  font-weight: 700; /* or 700 depending on your font */
+.nav__item:has(.nav__list--nested[data-state="open"]) > .nav__btn {
+  font-weight: 600;
 }
