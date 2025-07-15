@@ -138,6 +138,8 @@ input[type="email"] {
 
 .form__checkbox {
   position: absolute;
+  top: 0;
+  left: 0;
   opacity: 0;
   pointer-events: none;
 }
@@ -150,7 +152,6 @@ input[type="email"] {
   cursor: pointer;
 }
 
-/* empty box */
 .form__checkbox-label::before {
   width: .5rem;
   height: .5rem;
